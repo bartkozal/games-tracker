@@ -1,0 +1,8 @@
+{
+  "name": "games-tracker",
+  "version": "1.0.0",
+  "description": "Games Tracker",
+  "repository": "git@github.com:bkzl/games-tracker.git",
+  "author": "Bart Kozal <bkzl@me.com>",
+  "private": true
+}
