@@ -4,5 +4,13 @@
   "description": "Games Tracker",
   "repository": "git@github.com:bkzl/games-tracker.git",
   "author": "Bart Kozal <bkzl@me.com>",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
+  },
+  "scripts": {
+    "dev": "webpack --watch",
+    "build": "webpack"
+  }
 }
