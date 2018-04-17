@@ -6,17 +6,26 @@ module.exports = {
   mode: "development",
   entry: "./web/index.js",
   output: {
-    filename: "web.js",
+    filename: "web.bundle.js",
     path: path.resolve(__dirname, "dist")
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
+      }
+    ]
+  },
   devServer: {
-    contentBase: "./dist",
+    contentBase: "dist",
     open: "Google Chrome"
   },
   plugins: [
     new CleanWebpackPlugin(["dist"]),
     new HtmlWebpackPlugin({
-      title: "Games Tracker"
+      template: "web/index.html"
     })
   ]
 };
