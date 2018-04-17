@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import IndexPage from "./pages/index";
+import Root from "./Root";
 
-ReactDOM.render(<IndexPage />, document.getElementById("root"));
+ReactDOM.render(<Root />, document.getElementById("root"));
