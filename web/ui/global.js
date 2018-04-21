@@ -5,11 +5,13 @@ import {
   FONT_BASE,
   FONT_LEADING,
   FONT_RATIO,
-  SPACING_UNIT,
+  SPACING_BASE,
   HEADING_ASCENT,
   HEADING_DESCENT,
   HEADING_LEADING,
   HEADING_WEIGHT,
+  COLOR_BODY,
+  COLOR_TEXT
 } from "./constants";
 
 injectGlobal`
@@ -25,6 +27,8 @@ injectGlobal`
     font-family: ${FONT_STACK};
     font-size: ${FONT_BASE};
     line-height: ${FONT_LEADING};
+    background-color: ${COLOR_BODY};
+    color: ${COLOR_TEXT};
   }
 
   *, *::before, *::after {
@@ -49,7 +53,7 @@ injectGlobal`
 
   p, ul, ol, dl, hr,
   blockquote, pre, table, form {
-    margin-bottom: ${SPACING_UNIT};
+    margin-bottom: ${SPACING_BASE};
   }
 
   ul ul,
