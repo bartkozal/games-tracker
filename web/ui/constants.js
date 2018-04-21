@@ -18,3 +18,5 @@ export const COLOR_TEXT = "#eee";
 export const COLOR_BODY = "#21252b";
 
 export const CONTAINER_WIDTH = rem("1024px");
+
+export const BORDER_RADIUS = rem("4px");

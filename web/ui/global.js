@@ -5,13 +5,15 @@ import {
   FONT_BASE,
   FONT_LEADING,
   FONT_RATIO,
+  SPACING_SMALL,
   SPACING_BASE,
   HEADING_ASCENT,
   HEADING_DESCENT,
   HEADING_LEADING,
   HEADING_WEIGHT,
   COLOR_BODY,
-  COLOR_TEXT
+  COLOR_TEXT,
+  BORDER_RADIUS
 } from "./constants";
 
 injectGlobal`
@@ -134,5 +136,13 @@ injectGlobal`
 
   thead {
     text-align: left;
+  }
+
+  input[type=text],
+  input[type=search] {
+    padding: ${SPACING_SMALL};
+    font-size: ${modularScale(-1, FONT_BASE, FONT_RATIO)};
+    border: 0;
+    border-radius: ${BORDER_RADIUS};
   }
 `;

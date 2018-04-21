@@ -7,7 +7,7 @@ const Flex = styled.div`
   margin-right: -${SPACING_SMALL};
 
   > * {
-    flex: 1;
+    flex: ${({ equal }) => (equal ? "1" : "initial")};
     margin-left: ${SPACING_SMALL};
     margin-right: ${SPACING_SMALL};
   }
