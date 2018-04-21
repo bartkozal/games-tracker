@@ -20,7 +20,9 @@ module.exports = {
   },
   devServer: {
     contentBase: "dist",
-    open: "Google Chrome"
+    open: "Google Chrome",
+    stats: "errors-only",
+    overlay: true
   },
   plugins: [
     new CleanWebpackPlugin(["dist"]),
