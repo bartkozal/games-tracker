@@ -28,7 +28,8 @@ module.exports = {
     contentBase: DIR_OUTPUT,
     open: "Google Chrome",
     stats: "errors-only",
-    overlay: true
+    overlay: true,
+    historyApiFallback: true
   },
   plugins: [
     new CleanWebpackPlugin([DIR_OUTPUT]),
