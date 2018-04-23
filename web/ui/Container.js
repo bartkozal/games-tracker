@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { CONTAINER_WIDTH, SPACING_BASE, SPACING_LARGE } from "./constants";
+import { CONTAINER_WIDTH, SPACING_BASE, SPACING_LARGE } from "config/ui";
 
 const Container = styled.div`
   max-width: ${CONTAINER_WIDTH};

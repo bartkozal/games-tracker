@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SPACING_SMALL } from "./constants";
+import { SPACING_SMALL } from "config/ui";
 
 const Flex = styled.div`
   display: flex;

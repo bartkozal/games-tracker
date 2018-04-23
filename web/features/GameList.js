@@ -1,7 +1,7 @@
 import React from "react";
-import { number } from "prop-types";
-import Flex from "../ui/Flex";
+import PropTypes from "prop-types";
 import { times } from "lodash-es";
+import Flex from "ui/Flex";
 
 const GAME = <img src="//picsum.photos/128/175/" />;
 
@@ -10,7 +10,7 @@ const GameList = ({ count = 7 }) => (
 );
 
 GameList.propTypes = {
-  count: number
+  count: PropTypes.number
 };
 
 export default GameList;

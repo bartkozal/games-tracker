@@ -1,22 +1,24 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import Flex from "../ui/Flex";
+import { ROOT_PATH } from "config/routes";
+import Flex from "ui/Flex";
 
-const findGame = event => {
-  event.preventDefault();
-};
-
-export const Navbar = () => (
+const Navbar = ({ onSearch }) => (
   <Flex>
-    <Link to="/">
+    <Link to={ROOT_PATH}>
       <h1>Games Tracker</h1>
     </Link>
     <div>
-      <form onSubmit={findGame}>
+      <form onSubmit={onSearch}>
         <input type="search" placeholder="Search your game..." />
       </form>
     </div>
   </Flex>
 );
+
+Navbar.propTypes = {
+  onSearch: PropTypes.func
+};
 
 export default Navbar;

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
-import Flex from "../ui/Flex";
-import GameList from "../features/GameList";
+import GameList from "features/GameList";
+import Flex from "ui/Flex";
 
 const DiscoverPage = () => (
   <Fragment>

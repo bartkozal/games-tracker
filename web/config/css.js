@@ -14,7 +14,7 @@ import {
   COLOR_BODY,
   COLOR_TEXT,
   BORDER_RADIUS
-} from "./constants";
+} from "./ui";
 
 injectGlobal`
   ${normalize()}
