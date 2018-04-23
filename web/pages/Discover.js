@@ -1,22 +1,29 @@
 import React, { Fragment } from "react";
 import GameList from "features/GameList";
 import Flex from "ui/Flex";
+import Heading from "ui/Heading";
 
 const DiscoverPage = () => (
   <Fragment>
     <Flex equal>
-      <h3>Keep track and manage your collection</h3>
-      <h3>Rate, get recommendations and discover new games</h3>
-      <h3>Share what are you currently playing</h3>
+      <Heading level={3} noAscent>
+        Keep track and manage your collection
+      </Heading>
+      <Heading level={3} noAscent>
+        Rate, get recommendations and discover new games
+      </Heading>
+      <Heading level={3} noAscent>
+        Share what are you currently playing
+      </Heading>
     </Flex>
 
-    <h2>New releases</h2>
+    <Heading level={3}>New releases</Heading>
     <GameList />
 
-    <h2>Trending</h2>
+    <Heading level={3}>Trending</Heading>
     <GameList />
 
-    <h2>Upcoming</h2>
+    <Heading level={3}>Upcoming</Heading>
     <GameList />
   </Fragment>
 );

@@ -5,7 +5,7 @@ import { ROOT_PATH } from "config/routes";
 import Flex from "ui/Flex";
 
 const Navbar = ({ onSearch }) => (
-  <Flex>
+  <Flex spacing>
     <Link to={ROOT_PATH}>
       <h1>Games Tracker</h1>
     </Link>
