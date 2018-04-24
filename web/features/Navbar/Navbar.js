@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { ROOT_PATH } from "config/routes";
-import Flex from "ui/Flex";
+import Container from "ui/Container";
 
 const Navbar = ({ onSearch }) => (
-  <Flex spacing>
+  <Container spacing>
     <Link to={ROOT_PATH}>
       <h1>Games Tracker</h1>
     </Link>
@@ -14,7 +14,7 @@ const Navbar = ({ onSearch }) => (
         <input type="search" placeholder="Search your game..." />
       </form>
     </div>
-  </Flex>
+  </Container>
 );
 
 Navbar.propTypes = {

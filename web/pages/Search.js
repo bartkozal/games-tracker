@@ -1,9 +1,9 @@
 import React from "react";
 import Game from "features/Game";
-import Flex from "ui/Flex";
+import Container from "ui/Container";
 
 const SearchPage = () => (
-  <Flex>
+  <Container>
     <Game
       title="Mario Odyssey"
       platforms={["Switch"]}
@@ -11,7 +11,7 @@ const SearchPage = () => (
       userRating={10}
       userStatus="playing"
     />
-  </Flex>
+  </Container>
 );
 
 export default SearchPage;

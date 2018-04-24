@@ -1,11 +1,19 @@
 import styled from "styled-components";
-import { CONTAINER_WIDTH, SPACING_BASE, SPACING_LARGE } from "config/ui";
+import { SPACING_SMALL, SPACING_BASE } from "config/ui";
 
 const Container = styled.div`
-  max-width: ${CONTAINER_WIDTH};
-  padding-left: ${SPACING_BASE};
-  padding-right: ${SPACING_BASE};
-  margin: ${SPACING_LARGE} auto;
+  display: flex;
+  margin-bottom: ${({ spacing }) => spacing && SPACING_BASE};
+  align-items: ${({ alignItems }) => alignItems};
+  justify-content: ${({ justifyContent }) => justifyContent};
+
+  > * {
+    flex: ${({ equal }) => equal && "1"};
+
+    + * {
+      margin-left: ${SPACING_SMALL};
+    }
+  }
 `;
 
 export default Container;

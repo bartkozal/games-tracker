@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { times } from "lodash-es";
 import Game from "features/Game";
-import Flex from "ui/Flex";
+import Container from "ui/Container";
 
 const GameList = ({ count = 7 }) => (
-  <Flex>{times(count, key => <Game key={key} />)}</Flex>
+  <Container>{times(count, key => <Game key={key} />)}</Container>
 );
 
 GameList.propTypes = {

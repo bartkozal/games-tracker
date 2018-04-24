@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Flex from "ui/Flex";
-import Heading from "ui/Heading";
+import Container from "ui/Container";
+import { H3 } from "ui/Heading";
 import Rating from "ui/Rating";
 import { capitalize } from "lodash-es";
 
@@ -15,13 +15,13 @@ const Game = ({
   userRating,
   userStatus
 }) => (
-  <Flex alignItems="center">
+  <Container alignItems="center">
     <img src={cover} />
     <div>
       {title && (
-        <Heading level={3} noAscent noDescent>
+        <H3 noAscent noDescent>
           {title}
-        </Heading>
+        </H3>
       )}
 
       {!!platforms.length && <small>{platforms.join(", ")}</small>}
@@ -34,7 +34,7 @@ const Game = ({
       )}
       {userStatus && <span>{capitalize(userStatus)}</span>}
     </div>
-  </Flex>
+  </Container>
 );
 
 Game.propTypes = {

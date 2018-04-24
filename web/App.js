@@ -3,17 +3,17 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import DiscoverPage from "pages/Discover";
 import SearchPage from "pages/Search";
 import Navbar from "features/Navbar";
-import Container from "ui/Container";
+import Wrapper from "ui/Wrapper";
 import { ROOT_PATH, SEARCH_PATH } from "config/routes";
 import "config/css";
 
 const App = () => (
   <Router>
-    <Container>
+    <Wrapper>
       <Navbar />
       <Route exact path={ROOT_PATH} component={DiscoverPage} />
       <Route path={SEARCH_PATH} component={SearchPage} />
-    </Container>
+    </Wrapper>
   </Router>
 );
 
