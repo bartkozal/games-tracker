@@ -8,7 +8,7 @@ const DiscoverPage = () => (
     <Container equal>
       <H3 noAscent>Keep track and manage your collection</H3>
       <H3 noAscent>Rate, get recommendations and discover new games</H3>
-      <H3 noAscent>Share what are you currently playing</H3>
+      <H3 noAscent>Share what you are currently playing</H3>
     </Container>
 
     <H3>New releases</H3>
