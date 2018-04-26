@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Container from "ui/Container";
+import { Link } from "react-router-dom";
 import { H3 } from "ui/Heading";
 import Rating from "ui/Rating";
 import { capitalize } from "lodash-es";
+import { GAME_PATH } from "config/routes";
 
 const COVER_URL = "//picsum.photos/128/175/";
 
@@ -16,12 +18,17 @@ const Game = ({
   userStatus
 }) => (
   <Container alignItems="center">
-    <img src={cover} />
+    <Link to={GAME_PATH}>
+      <img src={cover} />
+    </Link>
+
     <div>
       {title && (
-        <H3 noAscent noDescent>
-          {title}
-        </H3>
+        <Link to={GAME_PATH}>
+          <H3 noAscent noDescent>
+            {title}
+          </H3>
+        </Link>
       )}
 
       {!!platforms.length && <small>{platforms.join(", ")}</small>}
