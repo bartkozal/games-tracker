@@ -4,8 +4,9 @@ import DiscoverPage from "pages/Discover";
 import SearchPage from "pages/Search";
 import GamePage from "pages/Game";
 import Navbar from "features/Navbar";
+import ProfilePage from "pages/Profile";
 import Wrapper from "ui/Wrapper";
-import { ROOT_PATH, SEARCH_PATH, GAME_PATH } from "config/routes";
+import { ROOT_PATH, SEARCH_PATH, GAME_PATH, PROFILE_PATH } from "config/routes";
 import "config/css";
 
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
       <Route exact path={ROOT_PATH} component={DiscoverPage} />
       <Route path={SEARCH_PATH} component={SearchPage} />
       <Route path={GAME_PATH} component={GamePage} />
+      <Route path={PROFILE_PATH} component={ProfilePage} />
     </Wrapper>
   </Router>
 );
