@@ -26,10 +26,17 @@ module.exports = {
   },
   devServer: {
     contentBase: DIR_OUTPUT,
+    historyApiFallback: true,
     open: "Google Chrome",
-    stats: "errors-only",
     overlay: true,
-    historyApiFallback: true
+    port: 8080,
+    proxy: {
+      "/api": {
+        target: "http://localhost:3000",
+        pathRewrite: { "^/api": "" }
+      }
+    },
+    stats: "errors-only"
   },
   plugins: [
     new CleanWebpackPlugin([DIR_OUTPUT]),
