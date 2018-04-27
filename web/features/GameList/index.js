@@ -5,7 +5,7 @@ import Game from "features/Game";
 import Container from "ui/Container";
 
 const GameList = ({ count }) => (
-  <Container>{times(count, key => <Game key={key} />)}</Container>
+  <Container noGap>{times(count, key => <Game key={key} />)}</Container>
 );
 
 GameList.defaultProps = {

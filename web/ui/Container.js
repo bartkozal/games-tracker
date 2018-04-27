@@ -1,17 +1,21 @@
 import styled from "styled-components";
-import { SPACING_SMALL, SPACING_BASE } from "config/ui";
+import { SPACING_BASE } from "config/ui";
+
+const isColumn = direction => direction === "column";
 
 const Container = styled.div`
   display: flex;
   margin-bottom: ${({ noDescent }) => (noDescent ? 0 : SPACING_BASE)};
   align-items: ${({ alignItems }) => alignItems};
   justify-content: ${({ justifyContent }) => justifyContent};
+  flex-direction: ${({ direction }) => direction};
 
   > * {
     flex: ${({ equal }) => equal && "1"};
 
     + * {
-      margin-left: ${SPACING_SMALL};
+      margin-left: ${({ direction, noGap }) =>
+        isColumn(direction) || noGap ? 0 : SPACING_BASE};
     }
   }
 `;
