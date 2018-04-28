@@ -94,10 +94,6 @@ injectGlobal`
     font-size: ${modularScale(1, FONT_BASE, FONT_RATIO)};
   }
 
-  strong, em, small, code, hr {
-    line-height: 1;
-  }
-
   small {
     font-size: ${modularScale(-1, FONT_BASE, FONT_RATIO)};
   }
@@ -158,6 +154,6 @@ injectGlobal`
     overflow: visible;
     outline: none;
     cursor: pointer;
-    -webkit-appearance: none;
+    appearance: none;
   }
 `;

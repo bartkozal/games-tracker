@@ -20,7 +20,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: ["babel-loader", "eslint-loader"]
+        loader: ["babel-loader", "eslint-loader", "stylelint-custom-processor-loader"]
       }
     ]
   },
@@ -42,6 +42,6 @@ module.exports = {
     new CleanWebpackPlugin([DIR_OUTPUT]),
     new HtmlWebpackPlugin({
       template: `${DIR_WEB}/index.html`
-    })
+    }),
   ]
 };
