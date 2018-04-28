@@ -145,4 +145,19 @@ injectGlobal`
     border: 0;
     border-radius: ${BORDER_RADIUS};
   }
+
+  button {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
 `;

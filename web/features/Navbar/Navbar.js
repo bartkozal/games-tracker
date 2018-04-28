@@ -6,7 +6,7 @@ import Container from "ui/Container";
 import { H1 } from "ui/Heading";
 import Form from "ui/Form";
 
-const Navbar = ({ onSearch }) => (
+const Navbar = ({ currentUser, onSearch, onLogInClick }) => (
   <Container alignItems="center" justifyContent="space-between">
     <Container noDescent>
       <Link to={ROOT_PATH}>
@@ -16,11 +16,22 @@ const Navbar = ({ onSearch }) => (
         <input type="search" placeholder="Search your game..." />
       </Form>
     </Container>
-    <Link to={PROFILE_PATH}>Username</Link>
+    {currentUser.isLoggedIn ? (
+      <Link to={PROFILE_PATH}>Username</Link>
+    ) : (
+      <Container alignItems="center" noDescent>
+        <button onClick={onLogInClick}>Sign up</button>
+        <button onClick={onLogInClick}>Log in</button>
+      </Container>
+    )}
   </Container>
 );
 
 Navbar.propTypes = {
+  currentUser: PropTypes.shape({
+    isLoggedIn: PropTypes.bool
+  }),
+  onLogInClick: PropTypes.func,
   onSearch: PropTypes.func
 };
 

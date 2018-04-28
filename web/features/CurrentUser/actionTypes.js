@@ -1,0 +1,1 @@
+export const CURRENT_USER_LOG_IN = "CURRENT_USER_LOG_IN";
