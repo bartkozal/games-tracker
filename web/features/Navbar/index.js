@@ -1,22 +1,11 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { SEARCH_PATH } from "config/routes";
-import { logIn } from "features/CurrentUser";
+import { logUserIn } from "features/CurrentUser/actionCreators";
 import Navbar from "./Navbar";
 
 class NavbarContainer extends Component {
-  static propTypes = {
-    currentUser: PropTypes.shape({
-      isLoggedIn: PropTypes.bool
-    }),
-    logIn: PropTypes.func,
-    history: PropTypes.shape({
-      push: PropTypes.func
-    })
-  };
-
   findGame = event => {
     const { history } = this.props;
     event.preventDefault();
@@ -24,23 +13,24 @@ class NavbarContainer extends Component {
   };
 
   render() {
-    const { currentUser, logIn } = this.props;
+    const { isUserLoggedIn, logUserIn } = this.props;
     return (
       <Navbar
-        currentUser={currentUser}
+        isUserLoggedIn={isUserLoggedIn}
         onSearch={this.findGame}
-        onLogInClick={logIn}
+        onSignUpClick={logUserIn}
+        onLogInClick={logUserIn}
       />
     );
   }
 }
 
 const mapStateToProps = ({ currentUser }) => ({
-  currentUser
+  isUserLoggedIn: currentUser.isLoggedIn
 });
 
 const mapDispatchToProps = {
-  logIn
+  logUserIn
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(

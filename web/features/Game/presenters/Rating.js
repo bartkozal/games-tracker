@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Container from "ui/Container";
 
 const Rating = ({ rating, userRating }) => {
@@ -11,11 +10,6 @@ const Rating = ({ rating, userRating }) => {
       {userRating && <div>Your rating: ★ {userRating}</div>}
     </Container>
   );
-};
-
-Rating.propTypes = {
-  rating: PropTypes.number,
-  userRating: PropTypes.number
 };
 
 export default Rating;
