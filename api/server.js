@@ -10,11 +10,13 @@ const { API_TIMEOUT, NODE_ENV } = require("./config");
 
 const server = express();
 
-server.use(timeout(API_TIMEOUT));
-server.use(helmet());
-server.use(bodyParser.json());
-server.use(morgan(NODE_ENV));
-server.use(cors());
-server.use(compression());
+if (NODE_ENV !== "test") {
+  server.use(timeout(API_TIMEOUT));
+  server.use(helmet());
+  server.use(bodyParser.json());
+  server.use(morgan(NODE_ENV));
+  server.use(cors());
+  server.use(compression());
+}
 
 module.exports = server;

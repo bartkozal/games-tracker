@@ -1,6 +1,6 @@
 import { LOG_USER_IN } from "./actionTypes";
 
-const initialState = {
+export const initialState = {
   isLoggedIn: false
 };
 

@@ -1,6 +1,4 @@
 const { API_PORT } = require("./config");
-const api = require("./server");
+const app = require("./app");
 
-api.get("/", (_, res) => res.json({ version: "v1" }));
-
-api.listen(API_PORT);
+app.listen(API_PORT);
