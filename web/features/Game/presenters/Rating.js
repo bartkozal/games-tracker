@@ -1,7 +1,13 @@
+// @flow
 import React from "react";
 import Container from "ui/Container";
 
-const Rating = ({ rating, userRating }) => {
+type Props = {
+  rating: ?number,
+  userRating: ?number
+};
+
+const Rating = ({ rating, userRating }: Props) => {
   if (!rating || !userRating) return null;
 
   return (

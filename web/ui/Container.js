@@ -1,7 +1,6 @@
+// @flow
 import styled from "styled-components";
 import { SPACING_BASE } from "config/ui";
-
-const isColumn = direction => direction === "column";
 
 const Container = styled.div`
   display: flex;
@@ -15,7 +14,7 @@ const Container = styled.div`
 
     + * {
       margin-left: ${({ direction, noGap }) =>
-        isColumn(direction) || noGap ? 0 : SPACING_BASE};
+        direction === "column" || noGap ? 0 : SPACING_BASE};
     }
   }
 `;

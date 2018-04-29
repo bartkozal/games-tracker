@@ -1,9 +1,14 @@
+// @flow
 import React from "react";
 import { Link } from "react-router-dom";
 import { H3 } from "ui/Heading";
 import { GAME_PATH } from "config/routes";
 
-const Title = ({ children }) => {
+type Props = {
+  children: ?string
+};
+
+const Title = ({ children }: Props) => {
   if (!children) return null;
 
   return (

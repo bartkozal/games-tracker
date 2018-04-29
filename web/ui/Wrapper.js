@@ -1,3 +1,4 @@
+// @flow
 import styled from "styled-components";
 import { WRAPPER_WIDTH, SPACING_BASE, SPACING_LARGE } from "config/ui";
 

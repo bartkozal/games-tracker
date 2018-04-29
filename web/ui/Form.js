@@ -1,3 +1,4 @@
+// @flow
 import styled from "styled-components";
 import { SPACING_BASE } from "config/ui";
 

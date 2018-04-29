@@ -1,3 +1,4 @@
+// @flow
 import React from "react";
 import Game from "features/Game";
 import Container from "ui/Container";

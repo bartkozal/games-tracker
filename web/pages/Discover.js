@@ -1,3 +1,4 @@
+// @flow
 import React, { Fragment } from "react";
 import GameList from "features/GameList";
 import Container from "ui/Container";

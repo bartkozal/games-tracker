@@ -1,11 +1,18 @@
+// @flow
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, type RouterHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { SEARCH_PATH } from "config/routes";
 import { logUserIn } from "features/CurrentUser/actionCreators";
 import Navbar from "./Navbar";
 
-class NavbarContainer extends Component {
+type Props = {
+  history: RouterHistory,
+  isUserLoggedIn: boolean,
+  logUserIn: () => any
+};
+
+class NavbarContainer extends Component<Props> {
   findGame = event => {
     const { history } = this.props;
     event.preventDefault();
@@ -17,7 +24,7 @@ class NavbarContainer extends Component {
     return (
       <Navbar
         isUserLoggedIn={isUserLoggedIn}
-        onSearch={this.findGame}
+        onSearchSubmit={this.findGame}
         onSignUpClick={logUserIn}
         onLogInClick={logUserIn}
       />

@@ -1,3 +1,4 @@
+// @flow
 import React from "react";
 import Container from "ui/Container";
 import Cover from "./presenters/Cover";
@@ -6,16 +7,16 @@ import Platforms from "./presenters/Platforms";
 import Rating from "./presenters/Rating";
 import Status from "./presenters/Status";
 
-// export type GameStatus = "playing" | "backlog" | "wishlist" | "completed";
+export type GameStatus = "playing" | "backlog" | "wishlist" | "completed";
 
-// type Props = {
-//   cover?: string,
-//   title?: string,
-//   platforms?: string[],
-//   rating?: number,
-//   userRating?: number,
-//   userStatus?: GameStatus
-// };
+type Props = {
+  cover?: string,
+  title?: string,
+  platforms?: string[],
+  rating?: number,
+  userRating?: number,
+  userStatus?: GameStatus
+};
 
 const COVER_URL = "//picsum.photos/128/175/";
 
@@ -26,7 +27,7 @@ const Game = ({
   rating,
   userRating,
   userStatus
-}) => (
+}: Props) => (
   <Container alignItems="center">
     <Cover>{cover}</Cover>
 

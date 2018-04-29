@@ -1,3 +1,4 @@
+// @flow
 import React, { Fragment } from "react";
 import { H3 } from "ui/Heading";
 import GameList from "features/GameList";
