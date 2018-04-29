@@ -13,7 +13,9 @@
     "lint:es": "eslint **/*.js --ignore-path .gitignore",
     "lint:style": "stylelint '**/*.{js,css}' --ignore-path .gitignore",
     "lint": "run-s lint:*",
-    "test": "jest"
+    "test:api": "jest api",
+    "test:web": "jest web",
+    "test": "run-s test:*"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
