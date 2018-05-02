@@ -1,7 +1,12 @@
 // @flow
 import React, { Component } from "react";
-import { withRouter, type RouterHistory } from "react-router-dom";
+import {
+  withRouter,
+  type RouterHistory,
+  type Location
+} from "react-router-dom";
 import { connect } from "react-redux";
+import qs from "querystringify";
 import { SEARCH_PATH } from "config/routes";
 import { logUserIn } from "features/CurrentUser/actionCreators";
 import { updateSearchQuery } from "features/Search/actionCreators";
@@ -9,6 +14,7 @@ import Navbar from "./Navbar";
 
 type Props = {
   history: RouterHistory,
+  location: Location,
   isUserLoggedIn: boolean,
   searchQuery: string,
   logUserIn: () => any,
@@ -16,6 +22,12 @@ type Props = {
 };
 
 class NavbarContainer extends Component<Props> {
+  componentDidMount() {
+    const { updateSearchQuery, location } = this.props;
+    const query = qs.parse(location.search).q;
+    updateSearchQuery(query);
+  }
+
   updateSearch = event => {
     const { updateSearchQuery } = this.props;
     updateSearchQuery(event.currentTarget.value);
