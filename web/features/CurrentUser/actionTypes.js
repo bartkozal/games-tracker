@@ -1,1 +1,1 @@
-export const LOG_USER_IN = "CurrentUser/LOG_USER_IN";
+export const LOG_IN = "CurrentUser/LOG_IN";

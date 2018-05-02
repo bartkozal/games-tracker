@@ -8,6 +8,8 @@ import Form from "ui/Form";
 
 type Props = {
   isUserLoggedIn: boolean,
+  searchQuery: string,
+  onSearchInputChange: (SyntheticEvent<HTMLInputElement>) => void,
   onSearchSubmit: (SyntheticEvent<HTMLFormElement>) => void,
   onSignUpClick: (SyntheticEvent<HTMLButtonElement>) => void,
   onLogInClick: (SyntheticEvent<HTMLButtonElement>) => void
@@ -15,6 +17,8 @@ type Props = {
 
 const Navbar = ({
   isUserLoggedIn,
+  searchQuery,
+  onSearchInputChange,
   onSearchSubmit,
   onSignUpClick,
   onLogInClick
@@ -25,7 +29,12 @@ const Navbar = ({
         <H1 noDescent>Games Tracker</H1>
       </Link>
       <Form onSubmit={onSearchSubmit} noDescent>
-        <input type="search" placeholder="Search your game..." />
+        <input
+          onChange={onSearchInputChange}
+          type="search"
+          placeholder="Search your game..."
+          value={searchQuery}
+        />
       </Form>
     </Container>
     {isUserLoggedIn ? (

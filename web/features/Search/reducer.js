@@ -1,15 +1,15 @@
-import { LOG_IN } from "./actionTypes";
+import { UPDATE_QUERY } from "./actionTypes";
 
 export const initialState = {
-  isLoggedIn: false
+  query: ""
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case LOG_IN:
+    case UPDATE_QUERY:
       return {
         ...state,
-        isLoggedIn: true
+        query: action.payload.query
       };
     default:
       return state;
