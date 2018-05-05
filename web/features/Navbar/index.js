@@ -25,7 +25,10 @@ class NavbarContainer extends Component<Props> {
   componentDidMount() {
     const { updateSearchQuery, location } = this.props;
     const query = qs.parse(location.search).q;
-    updateSearchQuery(query);
+
+    if (query) {
+      updateSearchQuery(query);
+    }
   }
 
   updateSearch = event => {
