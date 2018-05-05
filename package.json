@@ -16,8 +16,7 @@
     "lint": "run-s lint:*",
     "test:api": "jest api",
     "test:web": "jest web",
-    "test": "run-s test:*",
-    "postinstall": "flow-typed install"
+    "test": "run-s test:*"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
