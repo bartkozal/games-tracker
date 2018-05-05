@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { connect } from "react-redux";
 import qs from "querystringify";
-import { SEARCH_PATH } from "config/routes";
+import { SEARCH_RESULTS_PATH } from "config/routes";
 import { logUserIn } from "features/CurrentUser/actionCreators";
 import { updateSearchQuery } from "features/Search/actionCreators";
 import Navbar from "./Navbar";
@@ -38,7 +38,10 @@ class NavbarContainer extends Component<Props> {
   findGame = event => {
     const { history, searchQuery } = this.props;
     event.preventDefault();
-    history.push({ pathname: SEARCH_PATH, search: `?q=${searchQuery}` });
+    history.push({
+      pathname: SEARCH_RESULTS_PATH,
+      search: `?q=${searchQuery}`
+    });
   };
 
   render() {

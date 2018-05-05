@@ -4,7 +4,7 @@ import Game from "features/Game";
 import Container from "ui/Container";
 import { times } from "lodash-es";
 
-const SearchPage = () => (
+const SearchResultsPage = () => (
   <Container equal>
     {times(3, key => (
       <Game
@@ -19,4 +19,4 @@ const SearchPage = () => (
   </Container>
 );
 
-export default SearchPage;
+export default SearchResultsPage;

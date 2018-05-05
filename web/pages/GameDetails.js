@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import Game from "features/Game";
 import Container from "ui/Container";
 
-const GamePage = () => (
+const GameDetailsPage = () => (
   <Fragment>
     <Game
       title="Mario Odyssey"
@@ -31,4 +31,4 @@ const GamePage = () => (
   </Fragment>
 );
 
-export default GamePage;
+export default GameDetailsPage;
