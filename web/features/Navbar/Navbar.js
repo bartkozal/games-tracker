@@ -1,10 +1,10 @@
 // @flow
 import React from "react";
 import { Link } from "react-router-dom";
-import { ROOT_PATH, PROFILE_PATH, LOGIN_PATH } from "config/routes";
+import { PROFILE_PATH, LOGIN_PATH } from "config/routes";
 import Container from "ui/Container";
-import { H1 } from "ui/Heading";
 import Form from "ui/Form";
+import Logo from "ui/Logo";
 
 type Props = {
   isUserLoggedIn: boolean,
@@ -21,9 +21,7 @@ const Navbar = ({
 }: Props) => (
   <Container alignItems="center" justifyContent="space-between">
     <Container noDescent>
-      <Link to={ROOT_PATH}>
-        <H1 noDescent>Games Tracker</H1>
-      </Link>
+      <Logo />
       <Form onSubmit={onSearchSubmit} noDescent>
         <input
           onChange={onSearchInputChange}

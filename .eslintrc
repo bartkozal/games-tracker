@@ -33,6 +33,7 @@
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
     "no-console": "warn",
+    "react/no-unescaped-entities": "off",
     "react/prop-types": "off",
     "flowtype/space-after-type-colon": [
       "error",

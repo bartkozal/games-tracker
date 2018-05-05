@@ -13,6 +13,7 @@ import {
   HEADING_WEIGHT,
   COLOR_BODY,
   COLOR_TEXT,
+  COLOR_MUTED,
   BORDER_RADIUS
 } from "./ui";
 
@@ -96,6 +97,7 @@ injectGlobal`
 
   small {
     font-size: ${modularScale(-1, FONT_BASE, FONT_RATIO)};
+    color: ${COLOR_MUTED};
   }
 
   a {
@@ -134,8 +136,10 @@ injectGlobal`
     text-align: left;
   }
 
+  textarea,
   input[type=text],
-  input[type=search] {
+  input[type=search],
+  input[type=password] {
     padding: ${SPACING_SMALL};
     font-size: ${modularScale(-1, FONT_BASE, FONT_RATIO)};
     border: 0;

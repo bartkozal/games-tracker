@@ -1,10 +1,21 @@
 // @flow
 import styled from "styled-components";
-import { SPACING_BASE } from "config/ui";
+import { SPACING_SMALL, SPACING_BASE } from "config/ui";
+
+type getBottomMarginArgs = {
+  noDescent?: boolean,
+  smallDescent?: boolean
+};
+
+const getBottomMargin = ({ noDescent, smallDescent }: getBottomMarginArgs) => {
+  if (noDescent) return 0;
+  if (smallDescent) return SPACING_SMALL;
+  return SPACING_BASE;
+};
 
 const Container = styled.div`
   display: flex;
-  margin-bottom: ${({ noDescent }) => (noDescent ? 0 : SPACING_BASE)};
+  margin-bottom: ${props => getBottomMargin(props)};
   align-items: ${({ alignItems }) => alignItems};
   justify-content: ${({ justifyContent }) => justifyContent};
   flex-direction: ${({ direction }) => direction};
