@@ -17,7 +17,6 @@ type Props = {
   location: Location,
   isUserLoggedIn: boolean,
   searchQuery: string,
-  logUserIn: () => any,
   updateSearchQuery: (query: string) => any
 };
 
@@ -43,15 +42,13 @@ class NavbarContainer extends Component<Props> {
   };
 
   render() {
-    const { isUserLoggedIn, searchQuery, logUserIn } = this.props;
+    const { isUserLoggedIn, searchQuery } = this.props;
     return (
       <Navbar
         isUserLoggedIn={isUserLoggedIn}
         searchQuery={searchQuery}
         onSearchInputChange={this.updateSearch}
         onSearchSubmit={this.findGame}
-        onSignUpClick={logUserIn}
-        onLogInClick={logUserIn}
       />
     );
   }

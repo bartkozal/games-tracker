@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import { Link } from "react-router-dom";
-import { ROOT_PATH, PROFILE_PATH } from "config/routes";
+import { ROOT_PATH, PROFILE_PATH, LOGIN_PATH } from "config/routes";
 import Container from "ui/Container";
 import { H1 } from "ui/Heading";
 import Form from "ui/Form";
@@ -10,18 +10,14 @@ type Props = {
   isUserLoggedIn: boolean,
   searchQuery: string,
   onSearchInputChange: (SyntheticEvent<HTMLInputElement>) => void,
-  onSearchSubmit: (SyntheticEvent<HTMLFormElement>) => void,
-  onSignUpClick: (SyntheticEvent<HTMLButtonElement>) => void,
-  onLogInClick: (SyntheticEvent<HTMLButtonElement>) => void
+  onSearchSubmit: (SyntheticEvent<HTMLFormElement>) => void
 };
 
 const Navbar = ({
   isUserLoggedIn,
   searchQuery,
   onSearchInputChange,
-  onSearchSubmit,
-  onSignUpClick,
-  onLogInClick
+  onSearchSubmit
 }: Props) => (
   <Container alignItems="center" justifyContent="space-between">
     <Container noDescent>
@@ -38,12 +34,9 @@ const Navbar = ({
       </Form>
     </Container>
     {isUserLoggedIn ? (
-      <Link to={PROFILE_PATH}>Username</Link>
+      <Link to={PROFILE_PATH}>Your Games</Link>
     ) : (
-      <Container alignItems="center" noDescent>
-        <button onClick={onSignUpClick}>Sign up</button>
-        <button onClick={onLogInClick}>Log in</button>
-      </Container>
+      <Link to={LOGIN_PATH}>Log in</Link>
     )}
   </Container>
 );
