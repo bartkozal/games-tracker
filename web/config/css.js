@@ -144,6 +144,10 @@ injectGlobal`
     font-size: ${modularScale(-1, FONT_BASE, FONT_RATIO)};
     border: 0;
     border-radius: ${BORDER_RADIUS};
+
+    &:focus {
+      outline: 0;
+    }
   }
 
   button {

@@ -17,6 +17,7 @@ export const SPACING_LARGE = rem("32px");
 export const COLOR_TEXT = "#eee";
 export const COLOR_MUTED = darken(0.5, COLOR_TEXT);
 export const COLOR_BODY = "#21252b";
+export const COLOR_BRAND = "#ff9ff3";
 
 export const WRAPPER_WIDTH = rem("1024px");
 export const WRAPPER_COMPACT_WIDTH = rem("512px");
