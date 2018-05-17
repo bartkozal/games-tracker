@@ -6,9 +6,9 @@
   "author": "Bart Kozal <bkzl@me.com>",
   "private": true,
   "scripts": {
-    "build": "webpack",
-    "dev:api": "PORT=3000 nodemon ./api/index.js",
-    "dev:web": "webpack-dev-server",
+    "build": "webpack --config webpack.prod.js",
+    "dev:api": "nodemon --exec 'node -r dotenv/config' ./api/index.js",
+    "dev:web": "webpack-dev-server --config webpack.dev.js",
     "dev": "run-p dev:*",
     "lint:es": "eslint **/*.js --ignore-path .gitignore",
     "lint:style": "stylelint '**/*.{js,css}' --ignore-path .gitignore",
@@ -55,6 +55,7 @@
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
     "cypress": "^2.1.0",
+    "dotenv": "^5.0.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
@@ -76,6 +77,7 @@
     "supertest": "^3.0.0",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14",
-    "webpack-dev-server": "^3.1.3"
+    "webpack-dev-server": "^3.1.3",
+    "webpack-merge": "^4.1.2"
   }
 }

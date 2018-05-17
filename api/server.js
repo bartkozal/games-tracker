@@ -6,15 +6,13 @@ const morgan = require("morgan");
 const timeout = require("connect-timeout");
 const helmet = require("helmet");
 
-const { API_TIMEOUT, NODE_ENV } = require("./config");
-
 const server = express();
 
-if (NODE_ENV !== "test") {
-  server.use(timeout(API_TIMEOUT));
+if (process.env.NODE_ENV !== "test") {
+  server.use(timeout(process.env.API_TIMEOUT));
   server.use(helmet());
   server.use(bodyParser.json());
-  server.use(morgan(NODE_ENV));
+  server.use(morgan(process.env.NODE_ENV));
   server.use(cors());
   server.use(compression());
 }
