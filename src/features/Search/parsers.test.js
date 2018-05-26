@@ -7,7 +7,7 @@ test("transformSearchResults", () => {
     {
       name: "Max Payne",
       cover:
-        "https://www.giantbomb.com/api/image/scale_small/2737109-maxpayne.jpg",
+        "https://www.giantbomb.com/api/image/scale_avatar/2737109-maxpayne.jpg",
       platforms: [
         "GBA",
         "MAC",
@@ -25,13 +25,13 @@ test("transformSearchResults", () => {
     {
       name: "Max Payne 3",
       cover:
-        "https://www.giantbomb.com/api/image/scale_small/2737108-maxpayne3.jpg",
+        "https://www.giantbomb.com/api/image/scale_avatar/2737108-maxpayne3.jpg",
       platforms: ["MAC", "X360", "PS3", "XBGS", "PS3N", "PC"]
     },
     {
       name: "Max Payne 2: The Fall of Max Payne",
       cover:
-        "https://www.giantbomb.com/api/image/scale_small/2737112-maxpayne2.jpg",
+        "https://www.giantbomb.com/api/image/scale_avatar/2737112-maxpayne2.jpg",
       platforms: ["PS2", "XBOX", "PC"]
     }
   ];
