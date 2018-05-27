@@ -1,10 +1,12 @@
 import styled from "react-emotion";
-import { CONTAINER_WIDTH, SPACING_UNIT } from "../config/ui";
+import { CONTAINER_WIDTH, SPACING_BASE } from "../config/ui";
 
 const Container = styled("div")({
   maxWidth: CONTAINER_WIDTH,
-  padding: SPACING_UNIT,
-  margin: "0 auto"
+  marginLeft: "auto",
+  marginRight: "auto",
+  paddingLeft: SPACING_BASE,
+  paddingRight: SPACING_BASE
 });
 
 export default Container;
