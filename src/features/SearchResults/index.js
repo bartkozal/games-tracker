@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
-import GameCard from "../GameCard";
+import Game from "../Game";
 
 const SearchResults = ({ results }) => (
   <Fragment>
-    {results.map(props => <GameCard key={props.name} {...props} />)}
+    {results.map(props => <Game key={props.name} {...props} />)}
   </Fragment>
 );
 

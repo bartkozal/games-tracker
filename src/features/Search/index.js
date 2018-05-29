@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { updateQuery } from "./actionCreators";
 import { searchQuery } from "./actions";
-import SearchForm from "./SearchForm";
+import SearchForm from "../../ui/SearchForm";
 
 class Search extends Component {
   updateSearchInput = event => {
