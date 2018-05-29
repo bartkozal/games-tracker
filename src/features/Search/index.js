@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { updateQuery } from "./actionCreators";
 import { searchQuery } from "./actions";
+import SearchForm from "./SearchForm";
 
 class Search extends Component {
   updateSearchInput = event => {
@@ -21,9 +22,11 @@ class Search extends Component {
     const { query } = this.props;
 
     return (
-      <form onSubmit={this.searchGames}>
-        <input onChange={this.updateSearchInput} value={query} type="search" />
-      </form>
+      <SearchForm
+        onSubmit={this.searchGames}
+        onChange={this.updateSearchInput}
+        value={query}
+      />
     );
   }
 }
