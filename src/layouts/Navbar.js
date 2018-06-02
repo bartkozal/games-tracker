@@ -1,7 +1,7 @@
 import React from "react";
-import { Flex, Box } from "./FlexBox";
-import Title from "./Title";
-import Button from "./Button";
+import { Flex, Box } from "../ui/FlexBox";
+import Title from "../ui/Title";
+import Button from "../ui/Button";
 
 const Navbar = () => (
   <Flex alignItems="center" justifyContent="space-between">

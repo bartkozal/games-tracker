@@ -1,15 +1,13 @@
 import React from "react";
+import BaseLayout from "../layouts/BaseLayout";
 import Search from "../features/Search";
 import SearchResults from "../features/SearchResults";
-import Container from "../ui/Container";
-import Navbar from "../ui/Navbar";
 
 const SearchPage = () => (
-  <Container>
-    <Navbar />
+  <BaseLayout>
     <Search />
     <SearchResults />
-  </Container>
+  </BaseLayout>
 );
 
 export default SearchPage;
