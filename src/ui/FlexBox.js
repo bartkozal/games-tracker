@@ -4,10 +4,16 @@ export const Flex = styled("div")(
   {
     display: "flex"
   },
-  ({ alignItems, justifyContent }) => ({
+  ({ wrap, alignItems, justifyContent, direction, fullHeight }) => ({
+    flexDirection: direction,
+    flexWrap: wrap,
     alignItems,
-    justifyContent
+    justifyContent,
+    minHeight: fullHeight ? "100vh" : null
   })
 );
 
-export const Box = styled("div")({});
+export const Box = styled("div")(({ size, grow }) => ({
+  flexBasis: size,
+  flexGrow: grow
+}));

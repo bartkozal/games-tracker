@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "react-emotion";
 import Button from "./Button";
+import { paddingVertical, paddingHorizontal } from "../config/emotion";
 import {
   SPACING_SMALL,
   SPACING_BASE,
@@ -14,23 +15,20 @@ const DropdownWrapper = styled("div")({
 });
 
 const DropdownMenu = styled("div")({
+  ...paddingVertical(SPACING_SMALL),
   display: "flex",
   flexDirection: "column",
   position: "absolute",
   top: 34,
   left: 0,
-  paddingTop: SPACING_SMALL,
-  paddingBottom: SPACING_SMALL,
   border: `1px solid ${COLOR_UI}`,
   backgroundColor: DROPDOWN_ITEM
 });
 
 const DropdownItem = styled("button")({
+  ...paddingVertical(SPACING_SMALL),
+  ...paddingHorizontal(SPACING_BASE),
   margin: 0,
-  paddingTop: SPACING_SMALL,
-  paddingBottom: SPACING_SMALL,
-  paddingRight: SPACING_BASE,
-  paddingLeft: SPACING_BASE,
   border: 0,
   textAlign: "left",
   backgroundColor: DROPDOWN_ITEM,
