@@ -1,14 +1,16 @@
 import React from "react";
 import { Flex, Box } from "./FlexBox";
+import Title from "./Title";
+import Button from "./Button";
 
 const Navbar = () => (
   <Flex alignItems="center" justifyContent="space-between">
     <Box>
-      <h1>GamesTracker</h1>
+      <Title>GamesTracker</Title>
     </Box>
 
     <Box>
-      <button>Sign in with Facebook</button>
+      <Button type="facebook">Sign in with Facebook</Button>
     </Box>
   </Flex>
 );

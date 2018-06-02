@@ -1,7 +1,8 @@
 import React from "react";
+import Button from "./Button";
 
 const GameStatus = ({ type }) => (
-  <div>{type ? type : <button>Add to shelf</button>}</div>
+  <div>{type ? type : <Button>Add to Shelf</Button>}</div>
 );
 
 export default GameStatus;
