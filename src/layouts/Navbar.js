@@ -1,16 +1,16 @@
 import React from "react";
+import Auth from "../features/Auth";
 import { Flex, Box } from "../ui/FlexBox";
 import Title from "../ui/Title";
-import Button from "../ui/Button";
 
 const Navbar = () => (
   <Flex alignItems="center" justifyContent="space-between">
     <Box>
-      <Title>GamesTracker</Title>
+      <Title>Games Tracker</Title>
     </Box>
 
     <Box>
-      <Button type="facebook">Sign in with Facebook</Button>
+      <Auth />
     </Box>
   </Flex>
 );

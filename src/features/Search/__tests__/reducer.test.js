@@ -3,8 +3,8 @@ import {
   requestResults,
   resolveResults,
   rejectResults
-} from "./actionCreators";
-import reducer, { initialState } from "./reducer";
+} from "../actionCreators";
+import reducer, { initialState } from "../reducer";
 
 describe("Search reducer", () => {
   test("updateQuery", () => {

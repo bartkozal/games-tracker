@@ -1,13 +1,12 @@
-import React from "react";
-import BaseLayout from "../layouts/BaseLayout";
+import React, { Fragment } from "react";
 import Search from "../features/Search";
 import SearchResults from "../features/SearchResults";
 
 const SearchPage = () => (
-  <BaseLayout>
+  <Fragment>
     <Search />
     <SearchResults />
-  </BaseLayout>
+  </Fragment>
 );
 
 export default SearchPage;

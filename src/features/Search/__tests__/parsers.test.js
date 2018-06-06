@@ -1,9 +1,9 @@
-import { parseResults } from "./parsers";
-import responseResultsData from "./mocks/responseResultsData";
+import { parseResults } from "../parsers";
+import resultsResponse from "resultsResponse";
 
 test("transformSearchResults", () => {
-  const returnedValue = parseResults(responseResultsData);
-  const expectedValue = [
+  const returnedValue = parseResults(resultsResponse);
+  const expected = [
     {
       name: "Max Payne",
       cover:
@@ -38,5 +38,5 @@ test("transformSearchResults", () => {
 
   expect(returnedValue).toHaveLength(3);
 
-  returnedValue.forEach((item, n) => expect(item).toEqual(expectedValue[n]));
+  returnedValue.forEach((item, n) => expect(item).toEqual(expected[n]));
 });

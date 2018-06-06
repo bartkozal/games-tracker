@@ -1,4 +1,4 @@
-const responseResultsData = [
+export default [
   {
     image: {
       icon_url:
@@ -225,5 +225,3 @@ const responseResultsData = [
     resource_type: "game"
   }
 ];
-
-export default responseResultsData;
