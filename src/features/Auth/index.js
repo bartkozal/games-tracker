@@ -1,39 +1,69 @@
-import React, { PureComponent } from "react";
-import Firebase from "firebase/app";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { isEmpty } from "lodash-es";
+import { signUserIn, signUserOut } from "./actionCreators";
+import {
+  auth as firebaseAuth,
+  facebookAuthProvider
+} from "../../config/firebase";
 import Button from "../../ui/Button";
+import Avatar from "../../ui/Avatar";
+import { Box, Flex } from "../../ui/FlexBox";
 
-class Auth extends PureComponent {
+class Auth extends Component {
   componentDidMount() {
-    Firebase.auth().onAuthStateChanged(user => {
+    firebaseAuth.onAuthStateChanged(user => {
       if (user) {
-        console.log("Auth status: USER");
-        console.log(user);
+        this.props.signUserIn({ email: user.email });
       } else {
-        console.log("Auth status: NO USER");
+        this.props.signUserOut();
       }
     });
   }
 
   signInWithFacebook() {
-    const facebookProvider = new Firebase.auth.FacebookAuthProvider();
-    Firebase.auth().signInWithRedirect(facebookProvider);
+    firebaseAuth.signInWithRedirect(facebookAuthProvider);
   }
 
   signOut() {
-    Firebase.auth().signOut();
+    firebaseAuth.signOut();
   }
 
   render() {
-    return (
-      <div>
-        <Button type="facebook" onClick={this.signInWithFacebook}>
-          Sign in with Facebook
-        </Button>
+    const { currentUser } = this.props;
 
-        <Button onClick={this.signOut}>Sign out</Button>
-      </div>
+    if (!currentUser) {
+      return null;
+    }
+
+    return isEmpty(currentUser) ? (
+      <Button type="facebook" onClick={this.signInWithFacebook}>
+        Sign in with Facebook
+      </Button>
+    ) : (
+      <Flex alignItems="center">
+        <Box>
+          <Avatar email={currentUser.email} />
+        </Box>
+
+        <Box>
+          <Button onClick={this.signOut}>Sign out</Button>
+        </Box>
+      </Flex>
     );
   }
 }
 
-export default Auth;
+const mapStateToProps = ({ Auth }) => ({
+  currentUser: Auth.currentUser
+});
+
+const mapDispatchToProps = {
+  signUserIn,
+  signUserOut
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Auth);

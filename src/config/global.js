@@ -8,7 +8,14 @@ injectGlobal`
   }
 
   body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
     background-color: ${COLOR_BODY};
     color: ${COLOR_TEXT};
+  }
+
+  img {
+    box-sizing: content-box;
+    vertical-align: middle;
   }
 `;

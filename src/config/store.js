@@ -2,9 +2,11 @@ import { combineReducers, createStore, applyMiddleware } from "redux";
 import logger from "redux-logger";
 import thunk from "redux-thunk";
 import Search from "../features/Search/reducer";
+import Auth from "../features/Auth/reducer";
 
 const rootReducer = combineReducers({
-  Search
+  Search,
+  Auth
 });
 
 const middlewares = [thunk];

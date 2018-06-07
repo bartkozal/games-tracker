@@ -1,28 +1,28 @@
 import {
-  UPDATE_QUERY,
-  REQUEST_RESULTS,
-  RESOLVE_RESULTS,
-  REJECT_RESULTS
+  QUERY_UPDATED,
+  RESULTS_REQUESTED,
+  RESULTS_RESOLVED,
+  RESULTS_REJECTED
 } from "./actionTypes";
 
 export const updateQuery = query => ({
-  type: UPDATE_QUERY,
+  type: QUERY_UPDATED,
   payload: {
     query
   }
 });
 
 export const requestResults = () => ({
-  type: REQUEST_RESULTS
+  type: RESULTS_REQUESTED
 });
 
 export const resolveResults = results => ({
-  type: RESOLVE_RESULTS,
+  type: RESULTS_RESOLVED,
   payload: {
     results
   }
 });
 
 export const rejectResults = () => ({
-  type: REJECT_RESULTS
+  type: RESULTS_REJECTED
 });

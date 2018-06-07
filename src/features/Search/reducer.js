@@ -1,8 +1,8 @@
 import {
-  UPDATE_QUERY,
-  REQUEST_RESULTS,
-  RESOLVE_RESULTS,
-  REJECT_RESULTS
+  QUERY_UPDATED,
+  RESULTS_REQUESTED,
+  RESULTS_RESOLVED,
+  RESULTS_REJECTED
 } from "./actionTypes";
 
 export const initialState = {
@@ -44,24 +44,24 @@ export const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case UPDATE_QUERY:
+    case QUERY_UPDATED:
       return {
         ...state,
         query: action.payload.query
       };
-    case REQUEST_RESULTS:
+    case RESULTS_REQUESTED:
       return {
         ...state,
         isSearching: true
       };
-    case RESOLVE_RESULTS:
+    case RESULTS_RESOLVED:
       return {
         ...state,
         isSearching: false,
         results: action.payload.results,
         query: ""
       };
-    case REJECT_RESULTS:
+    case RESULTS_REJECTED:
       return {
         ...state,
         isSearching: false,
