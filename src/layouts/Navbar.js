@@ -1,12 +1,16 @@
 import React from "react";
 import Auth from "../features/Auth";
+import { Link } from "react-router-dom";
+import { ROOT_PATH } from "../config/routes";
 import { Flex, Box } from "../ui/FlexBox";
-import Title from "../ui/Title";
+import { Title } from "../ui/Headings";
 
 const Navbar = () => (
   <Flex alignItems="center" justifyContent="space-between">
     <Box>
-      <Title>Games Tracker</Title>
+      <Link to={ROOT_PATH}>
+        <Title>Games Tracker</Title>
+      </Link>
     </Box>
 
     <Box>

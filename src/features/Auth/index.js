@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { isEmpty } from "lodash-es";
 import { signUserIn, signUserOut } from "./actionCreators";
 import {
   auth as firebaseAuth,
   facebookAuthProvider
 } from "../../config/firebase";
+import { PROFILE_PATH } from "../../config/routes";
 import Button from "../../ui/Button";
 import Avatar from "../../ui/Avatar";
 import { Box, Flex } from "../../ui/FlexBox";
@@ -43,7 +45,9 @@ class Auth extends Component {
     ) : (
       <Flex alignItems="center">
         <Box>
-          <Avatar email={currentUser.email} />
+          <Link to={PROFILE_PATH}>
+            <Avatar email={currentUser.email} />
+          </Link>
         </Box>
 
         <Box>
