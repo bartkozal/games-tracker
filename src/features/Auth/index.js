@@ -16,7 +16,7 @@ class Auth extends Component {
   componentDidMount() {
     firebaseAuth.onAuthStateChanged(user => {
       if (user) {
-        this.props.signUserIn({ email: user.email });
+        this.props.signUserIn(user);
       } else {
         this.props.signUserOut();
       }
