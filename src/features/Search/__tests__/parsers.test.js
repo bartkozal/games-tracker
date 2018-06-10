@@ -5,34 +5,22 @@ test("transformSearchResults", () => {
   const returnedValue = parseResults(resultsResponse);
   const expected = [
     {
-      name: "Max Payne",
+      name: "The Witcher 3: Wild Hunt",
       cover:
-        "https://www.giantbomb.com/api/image/scale_avatar/2737109-maxpayne.jpg",
-      platforms: [
-        "GBA",
-        "MAC",
-        "PS2",
-        "XBOX",
-        "XBGS",
-        "PS3N",
-        "PC",
-        "IPHN",
-        "IPAD",
-        "ANDR",
-        "PS4"
-      ]
+        "https://images.igdb.com/igdb/image/upload/t_cover_big/tri1c6vbydeosoqajwt1.jpg",
+      platforms: ["PC", "PS4", "XONE"]
     },
     {
-      name: "Max Payne 3",
+      name: "The Witcher 2: Assassins of Kings",
       cover:
-        "https://www.giantbomb.com/api/image/scale_avatar/2737108-maxpayne3.jpg",
-      platforms: ["MAC", "X360", "PS3", "XBGS", "PS3N", "PC"]
+        "https://images.igdb.com/igdb/image/upload/t_cover_big/mcou7xzxq0qnerehesrh.jpg",
+      platforms: ["PC", "MAC", "X360", "LIN"]
     },
     {
-      name: "Max Payne 2: The Fall of Max Payne",
+      name: "The Witcher",
       cover:
-        "https://www.giantbomb.com/api/image/scale_avatar/2737112-maxpayne2.jpg",
-      platforms: ["PS2", "XBOX", "PC"]
+        "https://images.igdb.com/igdb/image/upload/t_cover_big/nrkdzmkevbbevdvm9bxh.jpg",
+      platforms: ["PC", "MAC"]
     }
   ];
 

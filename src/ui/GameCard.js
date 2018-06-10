@@ -13,7 +13,7 @@ const GameCard = ({
 }) => (
   <Flex>
     <Box>
-      <img src={cover} alt={name} />
+      <img src={cover} alt={name} width={150} />
     </Box>
 
     <Box>

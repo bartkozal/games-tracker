@@ -1,13 +1,17 @@
 import { get } from "axios";
 
 export const getSearchResults = query =>
-  get("/search/", {
-    baseURL: "https://www.giantbomb.com/api",
+  get("/games/", {
+    baseURL: "https://api-endpoint.igdb.com",
+    headers: {
+      "user-key": process.env.REACT_APP_IGDB_API_KEY
+    },
     params: {
-      api_key: process.env.REACT_APP_GIANT_BOMB_API_KEY,
-      format: "json",
-      resources: "game",
-      field_list: "name,platforms,image",
-      query
+      search: query,
+      fields: "name,platforms,platforms.slug,cover.cloudinary_id",
+      expand: "platforms",
+      order: "popularity:desc",
+      limit: 16,
+      "filter[version_parent][not_exists]": 1
     }
   });
