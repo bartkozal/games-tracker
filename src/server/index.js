@@ -1,6 +1,7 @@
 import React from "react";
 import { StaticRouter } from "react-router-dom";
 import { renderToString } from "react-dom/server";
+import { extractCritical } from "emotion-server";
 import { Provider } from "react-redux";
 import express from "express";
 import App from "../client/App";
@@ -14,12 +15,14 @@ server
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
   .get("/*", (req, res) => {
     const context = {};
-    const markup = renderToString(
-      <Provider store={store}>
-        <StaticRouter context={context} location={req.url}>
-          <App />
-        </StaticRouter>
-      </Provider>
+    const { html, css, ids } = extractCritical(
+      renderToString(
+        <Provider store={store}>
+          <StaticRouter context={context} location={req.url}>
+            <App />
+          </StaticRouter>
+        </Provider>
+      )
     );
 
     if (context.url) {
@@ -32,12 +35,13 @@ server
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <title>Games Tracker</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
             ${
               assets.client.css
                 ? `<link rel="stylesheet" href="${assets.client.css}">`
                 : ""
             }
+            ${css ? `<style>${css}</style>` : ""}
+            <script>window.__emotion = ${JSON.stringify(ids)}</script>
             ${
               process.env.NODE_ENV === "production"
                 ? `<script src="${assets.client.js}" defer></script>`
@@ -48,7 +52,7 @@ server
           </head>
 
           <body>
-            <div id="root">${markup}</div>
+            <div id="root">${html}</div>
           </body>
         </html>`
       );
