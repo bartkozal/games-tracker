@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Subtitle } from "../../ui/Headings";
+import { Subtitle } from "../../elements/Headings";
 
 class Profile extends Component {
   render() {

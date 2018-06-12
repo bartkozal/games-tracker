@@ -1,7 +1,7 @@
 import React from "react";
-import Rating from "./Rating";
+import Rating from "../elements/Rating";
 import GameStatus from "./GameStatus";
-import { Flex, Box } from "./FlexBox";
+import { Flex, Box } from "../elements/FlexBox";
 
 const GameCard = ({
   name,

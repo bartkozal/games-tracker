@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "react-emotion";
-import Button from "./Button";
+import Button from "../elements/Button";
 import { paddingVertical, paddingHorizontal } from "../config/emotion";
 import {
   SPACING_SMALL,

@@ -1,10 +1,10 @@
 import React from "react";
-import Container from "../ui/Container";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import { Flex, Box } from "../ui/FlexBox";
+import Container from "../elements/Container";
+import Navbar from "../ui/Navbar";
+import Footer from "../ui/Footer";
+import { Flex, Box } from "../elements/FlexBox";
 
-const BaseLayout = ({ children }) => (
+const Layout = ({ children }) => (
   <Container>
     <Flex direction="column" fullHeight>
       <Box grow={1}>
@@ -19,4 +19,4 @@ const BaseLayout = ({ children }) => (
   </Container>
 );
 
-export default BaseLayout;
+export default Layout;

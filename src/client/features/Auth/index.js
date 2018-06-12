@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { isEmpty } from "lodash";
 import { signUserIn, signUserOut } from "./actionCreators";
 import { PROFILE_PATH } from "../../config/routes";
-import Button from "../../ui/Button";
-import Avatar from "../../ui/Avatar";
-import { Box, Flex } from "../../ui/FlexBox";
+import Button from "../../elements/Button";
+import Avatar from "../../elements/Avatar";
+import { Box, Flex } from "../../elements/FlexBox";
 
 class Auth extends Component {
   componentDidMount() {

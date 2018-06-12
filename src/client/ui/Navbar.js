@@ -2,8 +2,8 @@ import React from "react";
 import Auth from "../features/Auth";
 import { Link } from "react-router-dom";
 import { ROOT_PATH } from "../config/routes";
-import { Flex, Box } from "../ui/FlexBox";
-import { Title } from "../ui/Headings";
+import { Flex, Box } from "../elements/FlexBox";
+import { Title } from "../elements/Headings";
 
 const Navbar = () => (
   <Flex alignItems="center" justifyContent="space-between">

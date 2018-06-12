@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Game from "../Game";
-import { Flex, Box } from "../../ui/FlexBox";
+import { Flex, Box } from "../../elements/FlexBox";
 
 const SearchResults = ({ results }) => (
   <Flex wrap="wrap">
