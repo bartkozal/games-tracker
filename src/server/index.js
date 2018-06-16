@@ -4,6 +4,7 @@ import { renderToString } from "react-dom/server";
 import { extractCritical } from "emotion-server";
 import { Provider } from "react-redux";
 import express from "express";
+import { render as renderTemplate } from "./template";
 import App from "../client/App";
 import store from "../client/config/store";
 
@@ -28,34 +29,15 @@ server
     if (context.url) {
       res.redirect(context.url);
     } else {
-      res.status(200).send(
-        `<!DOCTYPE html>
-          <html lang="en">
-          <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <title>Games Tracker</title>
-            ${
-              assets.client.css
-                ? `<link rel="stylesheet" href="${assets.client.css}">`
-                : ""
-            }
-            ${css ? `<style>${css}</style>` : ""}
-            <script>window.__emotion = ${JSON.stringify(ids)}</script>
-            ${
-              process.env.NODE_ENV === "production"
-                ? `<script src="${assets.client.js}" defer></script>`
-                : `<script src="${
-                    assets.client.js
-                  }" defer crossorigin></script>`
-            }
-          </head>
+      const template = renderTemplate({
+        html,
+        css: assets.client.css,
+        js: assets.client.js,
+        inlineCSS: css,
+        emotionCSS: JSON.stringify(ids)
+      });
 
-          <body>
-            <div id="root">${html}</div>
-          </body>
-        </html>`
-      );
+      res.status(200).send(template);
     }
   });
 
