@@ -1,5 +1,4 @@
 import { getSearchResults } from "./api";
-import { parseResults } from "./parsers";
 import {
   requestResults,
   resolveResults,
@@ -9,6 +8,6 @@ import {
 export const searchQuery = query => dispatch => {
   dispatch(requestResults());
   getSearchResults(query)
-    .then(response => dispatch(resolveResults(parseResults(response.data))))
+    .then(response => dispatch(resolveResults(response.data)))
     .catch(error => dispatch(rejectResults()));
 };

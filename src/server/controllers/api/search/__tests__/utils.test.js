@@ -1,8 +1,8 @@
-import { parseResults } from "../parsers";
-import resultsResponse from "resultsResponse";
+import { transformSearchResults } from "../utils";
+import searchResults from "searchResults";
 
 test("transformSearchResults", () => {
-  const returnedValue = parseResults(resultsResponse);
+  const returnedValue = transformSearchResults(searchResults);
   const expected = [
     {
       name: "The Witcher 3: Wild Hunt",
