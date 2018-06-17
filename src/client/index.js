@@ -3,9 +3,9 @@ import ReactDOM from "react-dom";
 import { hydrate } from "emotion";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "./config/store";
+import store from "./state/store";
 import App from "./App";
-import "./config/css";
+import "./ui/css";
 
 hydrate(window.__emotion);
 
