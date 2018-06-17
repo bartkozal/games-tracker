@@ -16,7 +16,8 @@ search.get("/", async (req, res) => {
       expand: "platforms",
       order: "popularity:desc",
       limit: 12,
-      "filter[version_parent][not_exists]": 1
+      "filter[version_parent][not_exists]": 1,
+      "filter[platforms][any]": "6,14,3,48,9,49,12,130"
     }
   });
 
