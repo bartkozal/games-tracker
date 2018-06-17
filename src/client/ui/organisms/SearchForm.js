@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import SearchInput from "../molecules/SearchInput";
 import { updateQuery } from "../../state/search/actionCreators";
 import { searchQuery } from "../../state/search/actions";
 
@@ -30,9 +31,11 @@ class Search extends Component {
     const { query } = this.props;
 
     return (
-      <form onSubmit={this.searchGames}>
-        <input onChange={this.updateSearchInput} value={query} type="search" />
-      </form>
+      <SearchInput
+        onSubmit={this.searchGames}
+        onChange={this.updateSearchInput}
+        value={query}
+      />
     );
   }
 }

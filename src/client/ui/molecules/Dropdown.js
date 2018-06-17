@@ -7,7 +7,7 @@ import {
   COLOR_UI,
   DROPDOWN_ITEM,
   DROPDOWN_ITEM_HOVER
-} from "../config";
+} from "../quarks";
 import Button from "../atoms/Button";
 
 const DropdownWrapper = styled("div")({

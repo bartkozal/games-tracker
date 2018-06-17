@@ -4,7 +4,7 @@ import {
   COLOR_PRIMARY,
   COLOR_TEXT_INVERTED,
   COLOR_FACEBOOK
-} from "../config";
+} from "../quarks";
 
 const getButtonColors = type => {
   switch (type) {

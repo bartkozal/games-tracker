@@ -1,8 +1,8 @@
 import React from "react";
 import { Flex, Box } from "../atoms/FlexBox";
 import Image from "../atoms/Image";
-import Dropdown from "./Dropdown";
-import Rating from "./Rating";
+import Dropdown from "../molecules/Dropdown";
+import Rating from "../molecules/Rating";
 
 const GameCard = ({
   name,
