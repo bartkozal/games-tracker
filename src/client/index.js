@@ -5,7 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./state/store";
 import App from "./App";
-import "./ui/css";
+import "../../node_modules/modern-normalize/modern-normalize.css";
+import "./global.css";
 
 hydrate(window.__emotion);
 
