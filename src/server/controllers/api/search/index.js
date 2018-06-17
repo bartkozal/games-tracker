@@ -15,7 +15,7 @@ search.get("/", async (req, res) => {
       fields: "name,platforms,platforms.slug,cover.cloudinary_id",
       expand: "platforms",
       order: "popularity:desc",
-      limit: 16,
+      limit: 12,
       "filter[version_parent][not_exists]": 1
     }
   });
