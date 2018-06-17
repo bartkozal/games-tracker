@@ -4,8 +4,8 @@ import { renderToString } from "react-dom/server";
 import { extractCritical } from "emotion-server";
 import { Provider } from "react-redux";
 import { renderIndex } from "../views/app";
-import App from "../client/App";
-import store from "../client/config/store";
+import App from "../../client/App";
+import store from "../../client/config/store";
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
