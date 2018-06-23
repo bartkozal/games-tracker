@@ -1,3 +1,4 @@
+// @flow
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { ROOT_PATH, PROFILE_PATH } from "./routes/paths";

@@ -1,15 +1,21 @@
+// @flow
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { isEmpty } from "lodash";
-import { signUserIn, signUserOut } from "../../state/auth/actionCreators";
+import {
+  signUserIn,
+  signUserOut,
+  type SignUserIn,
+  type SignUserOut
+} from "../../state/auth/actionCreators";
 import { ROOT_PATH, PROFILE_PATH } from "../../routes/paths";
 import Button from "../atoms/Button";
 import Title from "../atoms/Title";
 import { Box, Flex } from "../atoms/FlexBox";
 import Avatar from "../molecules/Avatar";
+import type { State } from "../../state";
 
-const mapStateToProps = ({ Auth }) => ({
+const mapStateToProps = ({ Auth }: State) => ({
   currentUser: Auth.currentUser
 });
 
@@ -18,7 +24,13 @@ const mapDispatchToProps = {
   signUserOut
 };
 
-class Navbar extends Component {
+type Props = {
+  currentUser: CurrentUser,
+  signUserIn: SignUserIn,
+  signUserOut: SignUserOut
+};
+
+class Navbar extends Component<Props> {
   render() {
     const { currentUser, signUserIn, signUserOut } = this.props;
 
@@ -31,11 +43,7 @@ class Navbar extends Component {
         </Box>
 
         <Box>
-          {isEmpty(currentUser) ? (
-            <Button type="facebook" onClick={signUserIn}>
-              Sign in with Facebook
-            </Button>
-          ) : (
+          {currentUser.email ? (
             <Flex alignItems="center">
               <Box>
                 <Link to={PROFILE_PATH}>
@@ -47,6 +55,13 @@ class Navbar extends Component {
                 <Button onClick={signUserOut}>Sign out</Button>
               </Box>
             </Flex>
+          ) : (
+            <Button
+              type="facebook"
+              onClick={() => signUserIn({ email: "bkzl@me.com" })}
+            >
+              Sign in with Facebook
+            </Button>
           )}
         </Box>
       </Flex>

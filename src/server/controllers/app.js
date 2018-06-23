@@ -10,30 +10,25 @@ import store from "../../client/state/store";
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
 const app = (req, res) => {
-  const context = {};
   const { html, css, ids } = extractCritical(
     renderToString(
       <Provider store={store}>
-        <StaticRouter context={context} location={req.url}>
+        <StaticRouter context={{}} location={req.url}>
           <App />
         </StaticRouter>
       </Provider>
     )
   );
 
-  if (context.url) {
-    res.redirect(context.url);
-  } else {
-    const view = renderIndex({
-      html,
-      css: assets.client.css,
-      js: assets.client.js,
-      inlineCSS: css,
-      emotionCSS: JSON.stringify(ids)
-    });
+  const view = renderIndex({
+    html,
+    css: assets.client.css,
+    js: assets.client.js,
+    inlineCSS: css,
+    emotionCSS: JSON.stringify(ids)
+  });
 
-    res.status(200).send(view);
-  }
+  res.status(200).send(view);
 };
 
 export default app;

@@ -4,9 +4,14 @@
 [include]
 
 [libs]
+./types/
 
 [lints]
 
 [options]
 
 [strict]
+unclear-type
+unsafe-getters-setters
+untyped-type-import
+unnecessary-optional-chain

@@ -1,10 +1,15 @@
+// @flow
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import SearchInput from "../molecules/SearchInput";
-import { updateQuery } from "../../state/search/actionCreators";
-import { searchQuery } from "../../state/search/actions";
+import {
+  updateQuery,
+  type UpdateQuery
+} from "../../state/search/actionCreators";
+import { searchQuery, type SearchQuery } from "../../state/search/actions";
+import type { State } from "../../state";
 
-const mapStateToProps = ({ Search }) => ({
+const mapStateToProps = ({ Search }: State) => ({
   query: Search.query
 });
 
@@ -13,7 +18,13 @@ const mapDispatchToProps = {
   searchQuery
 };
 
-class Search extends Component {
+type Props = {
+  query: string,
+  updateQuery: UpdateQuery,
+  searchQuery: SearchQuery
+};
+
+class Search extends Component<Props> {
   updateSearchInput = event => {
     const { updateQuery } = this.props;
 

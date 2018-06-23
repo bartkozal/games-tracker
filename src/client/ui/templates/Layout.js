@@ -1,10 +1,15 @@
-import React from "react";
+// @flow
+import React, { type Node } from "react";
 import Container from "../atoms/Container";
 import { Flex, Box } from "../atoms/FlexBox";
 import Navbar from "../organisms/Navbar";
 import Footer from "../organisms/Footer";
 
-const Layout = ({ children }) => (
+type Props = {
+  children: Node
+};
+
+const Layout = ({ children }: Props) => (
   <Container>
     <Flex direction="column" fullHeight>
       <Box grow={1}>

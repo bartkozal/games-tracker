@@ -1,14 +1,20 @@
+// @flow
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import { Flex, Box } from "../atoms/FlexBox";
 import GameCard from "../organisms/GameCard";
 import SearchForm from "../organisms/SearchForm";
+import type { State } from "../../state";
 
-const mapStateToProps = ({ Search }) => ({
+const mapStateToProps = ({ Search }: State) => ({
   results: Search.results
 });
 
-const SearchResultsPage = ({ results }) => (
+type Props = {
+  results: SearchResults
+};
+
+const SearchResultsPage = ({ results }: Props) => (
   <Fragment>
     <SearchForm />
 
@@ -21,7 +27,6 @@ const SearchResultsPage = ({ results }) => (
             platforms={platforms}
             rating={7.7}
             userRating={7}
-            userGameStatus={null}
           />
         </Box>
       ))}

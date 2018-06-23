@@ -1,6 +1,12 @@
+// @flow
 import styled from "react-emotion";
 
-const Image = styled("img")(({ type, width }) => ({
+type Props = {
+  width?: number,
+  type?: "circle"
+};
+
+const Image = styled("img")(({ type, width }: Props) => ({
   width,
   borderRadius: type === "circle" ? "50%" : null
 }));

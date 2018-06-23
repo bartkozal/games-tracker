@@ -1,3 +1,4 @@
+// @flow
 import { Router } from "express";
 import { get } from "axios";
 import { transformSearchResults } from "./utils";

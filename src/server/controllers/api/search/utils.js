@@ -1,23 +1,38 @@
+// @flow
 import { compact } from "lodash";
 
-const getCoverUrl = (hash, size = "cover_big") =>
+const getCoverUrl = (hash: string, size: string = "cover_big"): string =>
   `https://images.igdb.com/igdb/image/upload/t_${size}/${hash}.jpg`;
 
-const mapPlatformName = ({ slug }) => {
+const mapPlatformName = ({ slug }: { slug: string }): Platform => {
   const names = {
-    win: "PC", // 6
-    mac: "MAC", // 14
-    linux: "LIN", // 3
-    "ps4--1": "PS4", // 48
-    ps3: "PS3", // 9
-    xboxone: "XONE", // 49
-    xbox360: "X360", // 12
-    "nintendo-switch": "NSW" // 130
+    win: "PC",
+    mac: "MAC",
+    linux: "LIN",
+    "ps4--1": "PS4",
+    ps3: "PS3",
+    xboxone: "XONE",
+    xbox360: "X360",
+    "nintendo-switch": "NSW"
   };
   return names[slug];
 };
 
-export const transformSearchResults = searchResults =>
+type IGDBSearch = Array<{
+  id: number,
+  name: string,
+  platforms: Array<{
+    id: number,
+    slug: string
+  }>,
+  cover: {
+    cloudinary_id: string
+  }
+}>;
+
+export const transformSearchResults = (
+  searchResults: IGDBSearch
+): SearchResults =>
   searchResults.map(({ name, cover, platforms }) => ({
     name,
     cover: cover ? getCoverUrl(cover.cloudinary_id) : "",
