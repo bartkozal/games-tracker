@@ -2,20 +2,7 @@ export default [
   {
     id: 1942,
     name: "The Witcher 3: Wild Hunt",
-    platforms: [
-      {
-        id: 6,
-        slug: "win"
-      },
-      {
-        id: 48,
-        slug: "ps4--1"
-      },
-      {
-        id: 49,
-        slug: "xboxone"
-      }
-    ],
+    platforms: [6, 48, 49],
     cover: {
       cloudinary_id: "tri1c6vbydeosoqajwt1"
     }
@@ -23,24 +10,7 @@ export default [
   {
     id: 478,
     name: "The Witcher 2: Assassins of Kings",
-    platforms: [
-      {
-        id: 6,
-        slug: "win"
-      },
-      {
-        id: 14,
-        slug: "mac"
-      },
-      {
-        id: 12,
-        slug: "xbox360"
-      },
-      {
-        id: 3,
-        slug: "linux"
-      }
-    ],
+    platforms: [6, 14, 12, 3],
     cover: {
       cloudinary_id: "mcou7xzxq0qnerehesrh"
     }
@@ -48,20 +18,7 @@ export default [
   {
     id: 80,
     name: "The Witcher",
-    platforms: [
-      {
-        id: 6,
-        slug: "win"
-      },
-      {
-        id: 14,
-        slug: "mac"
-      },
-      {
-        id: 0,
-        slug: "undefined"
-      }
-    ],
+    platforms: [6, 14, 0],
     cover: {
       cloudinary_id: "nrkdzmkevbbevdvm9bxh"
     }
@@ -69,24 +26,7 @@ export default [
   {
     id: 1074,
     name: "Super Mario 64",
-    platforms: [
-      {
-        id: 4,
-        slug: "n64"
-      },
-      {
-        id: 41,
-        slug: "wiiu"
-      },
-      {
-        id: 47,
-        slug: "vc"
-      },
-      {
-        id: 5,
-        slug: "wii"
-      }
-    ],
+    platforms: [4, 41, 47, 5],
     cover: {
       cloudinary_id: "scutr4p9gytl4txb2soy"
     }

@@ -4,28 +4,25 @@ import { compact } from "lodash";
 const getCoverUrl = (hash: string, size: string = "cover_big"): string =>
   `https://images.igdb.com/igdb/image/upload/t_${size}/${hash}.jpg`;
 
-const mapPlatformName = ({ slug }: { slug: string }): Platform => {
+const mapPlatformName = (id: number): Platform => {
   const platformNames = {
-    win: "PC",
-    mac: "MAC",
-    linux: "LIN",
-    "ps4--1": "PS4",
-    ps3: "PS3",
-    xboxone: "XONE",
-    xbox360: "X360",
-    "nintendo-switch": "NSW"
+    "6": "PC",
+    "14": "MAC",
+    "3": "LIN",
+    "48": "PS4",
+    "9": "PS3",
+    "49": "XONE",
+    "12": "X360",
+    "130": "NSW"
   };
 
-  return platformNames[slug];
+  return platformNames[`${id}`];
 };
 
 type IGDBSearch = Array<{
   id: number,
   name: string,
-  platforms: Array<{
-    id: number,
-    slug: string
-  }>,
+  platforms: number[],
   cover: {
     cloudinary_id: string
   }

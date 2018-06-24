@@ -1,26 +1,9 @@
 // @flow
 import {
-  QUERY_UPDATED,
   RESULTS_REQUESTED,
   RESULTS_RESOLVED,
   RESULTS_REJECTED
 } from "./actionTypes";
-
-export type QueryUpdated = {
-  type: "Search/QUERY_UPDATED",
-  payload: {
-    query: string
-  }
-};
-
-export type UpdateQuery = string => QueryUpdated;
-
-export const updateQuery: UpdateQuery = query => ({
-  type: QUERY_UPDATED,
-  payload: {
-    query
-  }
-});
 
 export type ResultsRequested = {
   type: "Search/RESULTS_REQUESTED"

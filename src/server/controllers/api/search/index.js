@@ -13,8 +13,7 @@ search.get("/", async (req, res) => {
     },
     params: {
       search: req.query.q,
-      fields: "name,platforms,platforms.slug,cover.cloudinary_id",
-      expand: "platforms",
+      fields: "name,platforms,cover.cloudinary_id",
       order: "popularity:desc",
       limit: 12,
       "filter[version_parent][not_exists]": 1,

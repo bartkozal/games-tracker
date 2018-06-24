@@ -1,5 +1,4 @@
 import {
-  updateQuery,
   requestResults,
   resolveResults,
   rejectResults
@@ -7,45 +6,36 @@ import {
 import reducer, { initialState } from "./";
 
 describe("Search reducer", () => {
-  test("updateQuery", () => {
-    const action = updateQuery("foo");
-    const returnedState = reducer(initialState, action);
-
-    expect(returnedState).toMatchObject({ query: "foo" });
-  });
-
   test("requestResults", () => {
     const action = requestResults();
-    const returnedState = reducer({ ...initialState, query: "foo" }, action);
+    const returnedState = reducer(initialState, action);
 
-    expect(returnedState).toMatchObject({ isSearching: true, query: "foo" });
+    expect(returnedState).toMatchObject({ isSearching: true });
   });
 
   test("resolveResults", () => {
     const action = resolveResults([{ foo: "bar" }]);
     const returnedState = reducer(
-      { ...initialState, isSearching: true, query: "foo" },
+      { ...initialState, isSearching: true },
       action
     );
 
     expect(returnedState).toMatchObject({
       isSearching: false,
-      results: [{ foo: "bar" }],
-      query: ""
+      results: [{ foo: "bar" }]
     });
   });
 
   test("rejectResults", () => {
     const action = rejectResults();
     const returnedState = reducer(
-      { ...initialState, isSearching: true, query: "foo" },
+      { ...initialState, isSearching: true },
       action
     );
 
     expect(returnedState).toMatchObject({
       isSearching: false,
-      results: [],
-      query: ""
+      results: []
     });
   });
 });
