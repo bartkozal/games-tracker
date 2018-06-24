@@ -5,7 +5,7 @@ const getCoverUrl = (hash: string, size: string = "cover_big"): string =>
   `https://images.igdb.com/igdb/image/upload/t_${size}/${hash}.jpg`;
 
 const mapPlatformName = ({ slug }: { slug: string }): Platform => {
-  const names = {
+  const platformNames = {
     win: "PC",
     mac: "MAC",
     linux: "LIN",
@@ -15,7 +15,8 @@ const mapPlatformName = ({ slug }: { slug: string }): Platform => {
     xbox360: "X360",
     "nintendo-switch": "NSW"
   };
-  return names[slug];
+
+  return platformNames[slug];
 };
 
 type IGDBSearch = Array<{
@@ -33,8 +34,11 @@ type IGDBSearch = Array<{
 export const transformSearchResults = (
   searchResults: IGDBSearch
 ): SearchResults =>
-  searchResults.map(({ name, cover, platforms }) => ({
-    name,
-    cover: cover ? getCoverUrl(cover.cloudinary_id) : "",
-    platforms: compact(platforms.map(mapPlatformName))
-  }));
+  searchResults
+    .filter(({ platforms }) => platforms)
+    .map(({ name, cover, platforms }) => ({
+      name,
+      cover: cover ? getCoverUrl(cover.cloudinary_id) : "",
+      platforms: compact(platforms.map(mapPlatformName))
+    }))
+    .filter(({ platforms }) => platforms.length);

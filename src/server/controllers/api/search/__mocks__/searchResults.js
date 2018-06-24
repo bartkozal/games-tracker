@@ -56,10 +56,46 @@ export default [
       {
         id: 14,
         slug: "mac"
+      },
+      {
+        id: 0,
+        slug: "undefined"
       }
     ],
     cover: {
       cloudinary_id: "nrkdzmkevbbevdvm9bxh"
+    }
+  },
+  {
+    id: 1074,
+    name: "Super Mario 64",
+    platforms: [
+      {
+        id: 4,
+        slug: "n64"
+      },
+      {
+        id: 41,
+        slug: "wiiu"
+      },
+      {
+        id: 47,
+        slug: "vc"
+      },
+      {
+        id: 5,
+        slug: "wii"
+      }
+    ],
+    cover: {
+      cloudinary_id: "scutr4p9gytl4txb2soy"
+    }
+  },
+  {
+    id: 95001,
+    name: "BioShock Vita",
+    cover: {
+      cloudinary_id: "yrmbn0bixlihll7uetmu"
     }
   }
 ];
