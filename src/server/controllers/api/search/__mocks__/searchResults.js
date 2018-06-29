@@ -25,7 +25,7 @@ export default [
   },
   {
     id: 1074,
-    name: "Super Mario 64",
+    name: "Game without supported platform",
     platforms: [4, 41, 47, 5],
     cover: {
       cloudinary_id: "scutr4p9gytl4txb2soy"
@@ -33,9 +33,14 @@ export default [
   },
   {
     id: 95001,
-    name: "BioShock Vita",
+    name: "Game without platforms",
     cover: {
       cloudinary_id: "yrmbn0bixlihll7uetmu"
     }
+  },
+  {
+    id: 1942,
+    name: "Game without cover",
+    platforms: [6, 48, 49]
   }
 ];

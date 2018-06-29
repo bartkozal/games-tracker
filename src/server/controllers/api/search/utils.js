@@ -32,7 +32,7 @@ export const transformSearchResults = (
   searchResults: IGDBSearch
 ): SearchResults =>
   searchResults
-    .filter(({ platforms }) => platforms)
+    .filter(({ platforms, cover }) => platforms && cover && cover.cloudinary_id)
     .map(({ name, cover, platforms }) => ({
       name,
       cover: cover ? getCoverUrl(cover.cloudinary_id) : "",
