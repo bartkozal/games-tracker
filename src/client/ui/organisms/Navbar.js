@@ -3,11 +3,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import {
-  signUserIn,
-  signUserOut,
-  type SignUserIn,
-  type SignUserOut
-} from "../../state/auth/actionCreators";
+  signInWithFacebook,
+  signOut,
+  type SignInWithFacebook,
+  type SignOut
+} from "../../state/auth/actions";
 import { ROOT_PATH, PROFILE_PATH } from "../../routes/paths";
 import Button from "../atoms/Button";
 import Title from "../atoms/Title";
@@ -20,19 +20,19 @@ const mapStateToProps = ({ Auth }: State) => ({
 });
 
 const mapDispatchToProps = {
-  signUserIn,
-  signUserOut
+  signInWithFacebook,
+  signOut
 };
 
 type Props = {
   currentUser: CurrentUser,
-  signUserIn: SignUserIn,
-  signUserOut: SignUserOut
+  signInWithFacebook: SignInWithFacebook,
+  signOut: SignOut
 };
 
 class Navbar extends Component<Props> {
   render() {
-    const { currentUser, signUserIn, signUserOut } = this.props;
+    const { currentUser, signInWithFacebook, signOut } = this.props;
 
     return (
       <Flex alignItems="center" justifyContent="space-between">
@@ -52,14 +52,11 @@ class Navbar extends Component<Props> {
               </Box>
 
               <Box>
-                <Button onClick={signUserOut}>Sign out</Button>
+                <Button onClick={signOut}>Sign out</Button>
               </Box>
             </Flex>
           ) : (
-            <Button
-              type="facebook"
-              onClick={() => signUserIn({ email: "bkzl@me.com" })}
-            >
+            <Button type="facebook" onClick={signInWithFacebook}>
               Sign in with Facebook
             </Button>
           )}
