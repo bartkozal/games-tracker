@@ -10,20 +10,18 @@ type FlexProps = {
     | "flex-end"
     | "space-between"
     | "space-around",
-  direction: "row" | "column" | "row-reverse" | "column-reverse",
-  fullHeight: boolean
+  direction: "row" | "column" | "row-reverse" | "column-reverse"
 };
 
 export const Flex = styled("div")(
   {
     display: "flex"
   },
-  ({ wrap, alignItems, justifyContent, direction, fullHeight }: FlexProps) => ({
+  ({ wrap, alignItems, justifyContent, direction }: FlexProps) => ({
     flexDirection: direction,
     flexWrap: wrap,
     alignItems,
-    justifyContent,
-    minHeight: fullHeight ? "100vh" : null
+    justifyContent
   })
 );
 
