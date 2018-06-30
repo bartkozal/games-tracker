@@ -20,7 +20,7 @@ const SearchResultsPage = ({ results }: Props) => (
 
     <Flex wrap="wrap">
       {results.map(({ name, cover, platforms }) => (
-        <Box key={name} size="33.33%">
+        <Box key={name} size="25%">
           <GameCard
             name={name}
             cover={cover}

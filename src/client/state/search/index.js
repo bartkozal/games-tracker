@@ -9,6 +9,7 @@ import type {
   ResultsResolved,
   ResultsRejected
 } from "./actionCreators";
+import results from "./__mocks__/results";
 
 export type State = {
   isSearching: boolean,
@@ -17,7 +18,7 @@ export type State = {
 
 export const initialState = {
   isSearching: false,
-  results: []
+  results: process.env.NODE_ENV === "development" ? results : []
 };
 
 export type Action = ResultsRequested | ResultsResolved | ResultsRejected;

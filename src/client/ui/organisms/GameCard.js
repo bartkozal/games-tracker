@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import React, { Fragment } from "react";
 import { Flex, Box } from "../atoms/FlexBox";
 import Image from "../atoms/Image";
 import Dropdown from "../molecules/Dropdown";
@@ -22,31 +22,35 @@ const GameCard = ({
   userRating,
   userGameStatus
 }: Props) => (
-  <Flex>
-    <Box>
-      <Image src={cover} alt={name} width={150} />
-    </Box>
+  <Fragment>
+    <Flex justifyContent="space-between">
+      <Box>
+        <Rating score={rating} />
+      </Box>
+      <Box>
+        <Rating score={userRating} />
+      </Box>
+    </Flex>
 
-    <Box>
-      <div>{name}</div>
-      <div>{platforms.join(", ")}</div>
-      <Rating score={rating} />
-      <Rating score={userRating} />
-      {userGameStatus ? (
-        userGameStatus
-      ) : (
-        <Dropdown
-          toggle="Add to Shelf"
-          items={[
-            { label: "Wishlist", onClick: () => {} },
-            { label: "Backlog", onClick: () => {} },
-            { label: "Playing", onClick: () => {} },
-            { label: "Completed", onClick: () => {} }
-          ]}
-        />
-      )}
-    </Box>
-  </Flex>
+    <Image src={cover} alt={name} fullWidth />
+
+    <div>{name}</div>
+    <div>{platforms.join(", ")}</div>
+
+    {userGameStatus ? (
+      userGameStatus
+    ) : (
+      <Dropdown
+        toggle="Add to Shelf"
+        items={[
+          { label: "Wishlist", onClick: () => {} },
+          { label: "Backlog", onClick: () => {} },
+          { label: "Playing", onClick: () => {} },
+          { label: "Completed", onClick: () => {} }
+        ]}
+      />
+    )}
+  </Fragment>
 );
 
 export default GameCard;
