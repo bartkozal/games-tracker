@@ -1,4 +1,3 @@
-// @flow
 import React, { Component } from "react";
 import styled from "react-emotion";
 import { paddingVertical, paddingHorizontal } from "../utils";
@@ -40,19 +39,7 @@ const DropdownItem = styled("button")({
   }
 });
 
-type Props = {
-  toggle: string,
-  items: Array<{
-    label: string,
-    onClick: (SyntheticMouseEvent<HTMLButtonElement>) => void
-  }>
-};
-
-type State = {
-  isOpen: boolean
-};
-
-export default class Dropdown extends Component<Props, State> {
+export default class Dropdown extends Component {
   menu = React.createRef();
 
   state = {
@@ -65,7 +52,7 @@ export default class Dropdown extends Component<Props, State> {
     });
   };
 
-  close = (event: MouseEvent) => {
+  close = event => {
     if (this.menu.current && !this.menu.current.contains(event.target)) {
       this.setState({ isOpen: false }, () => {
         document.removeEventListener("click", this.close);

@@ -1,13 +1,8 @@
-// @flow
-import React, { type Node } from "react";
+import React from "react";
 import Container from "../atoms/Container";
 import Navbar from "../organisms/Navbar";
 
-type Props = {
-  children: Node
-};
-
-const Layout = ({ children }: Props) => (
+const Layout = ({ children }) => (
   <Container>
     <Navbar />
 

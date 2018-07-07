@@ -1,18 +1,10 @@
-// @flow
 import { USER_SIGNED_IN, USER_SIGNED_OUT } from "./actionTypes";
-import type { UserSignedIn, UserSignedOut } from "./actionCreators";
-
-export type State = {
-  currentUser: CurrentUser
-};
 
 export const initialState = {
   currentUser: {}
 };
 
-export type Action = UserSignedIn | UserSignedOut;
-
-export default (state: State = initialState, action: Action): State => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case USER_SIGNED_IN:
       return {

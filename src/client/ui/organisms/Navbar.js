@@ -1,21 +1,14 @@
-// @flow
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import {
-  signInWithFacebook,
-  signOut,
-  type SignInWithFacebook,
-  type SignOut
-} from "../../state/auth/actions";
+import { signInWithFacebook, signOut } from "../../state/auth/actions";
 import { ROOT_PATH, PROFILE_PATH } from "../../routes/paths";
 import Button from "../atoms/Button";
 import Title from "../atoms/Title";
 import { Box, Flex } from "../atoms/FlexBox";
 import Avatar from "../molecules/Avatar";
-import type { State } from "../../state";
 
-const mapStateToProps = ({ Auth }: State) => ({
+const mapStateToProps = ({ Auth }) => ({
   currentUser: Auth.currentUser
 });
 
@@ -24,13 +17,7 @@ const mapDispatchToProps = {
   signOut
 };
 
-type Props = {
-  currentUser: CurrentUser,
-  signInWithFacebook: SignInWithFacebook,
-  signOut: SignOut
-};
-
-class Navbar extends Component<Props> {
+class Navbar extends Component {
   render() {
     const { currentUser, signInWithFacebook, signOut } = this.props;
 

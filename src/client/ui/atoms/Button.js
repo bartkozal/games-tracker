@@ -1,4 +1,3 @@
-// @flow
 import styled from "react-emotion";
 import {
   SPACING_SMALL,
@@ -7,9 +6,7 @@ import {
   COLOR_FACEBOOK
 } from "../quarks";
 
-type Type = "facebook";
-
-const getButtonColors = (type: ?Type) => {
+const getButtonColors = type => {
   switch (type) {
     case "facebook":
       return {
@@ -24,10 +21,6 @@ const getButtonColors = (type: ?Type) => {
   }
 };
 
-type Props = {
-  type?: Type
-};
-
 const Button = styled("button")(
   {
     border: 0,
@@ -36,7 +29,7 @@ const Button = styled("button")(
       cursor: "pointer"
     }
   },
-  ({ type }: Props) => ({
+  ({ type }) => ({
     ...getButtonColors(type),
     padding: SPACING_SMALL,
     borderRadius: 4

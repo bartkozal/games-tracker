@@ -1,10 +1,9 @@
-// @flow
 import { compact } from "lodash";
 
-const getCoverUrl = (hash: string, size: string = "cover_big"): string =>
+const getCoverUrl = (hash, size = "cover_big") =>
   `https://images.igdb.com/igdb/image/upload/t_${size}/${hash}.jpg`;
 
-const mapPlatformName = (id: number): Platform => {
+const mapPlatformName = id => {
   const platformNames = {
     "6": "PC",
     "14": "MAC",
@@ -19,18 +18,7 @@ const mapPlatformName = (id: number): Platform => {
   return platformNames[`${id}`];
 };
 
-type IGDBSearch = Array<{
-  id: number,
-  name: string,
-  platforms: number[],
-  cover: {
-    cloudinary_id: string
-  }
-}>;
-
-export const transformSearchResults = (
-  searchResults: IGDBSearch
-): SearchResults =>
+export const transformSearchResults = searchResults =>
   searchResults
     .filter(({ platforms, cover }) => platforms && cover && cover.cloudinary_id)
     .map(({ name, cover, platforms }) => ({

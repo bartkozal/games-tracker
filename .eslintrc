@@ -1,11 +1,3 @@
 {
-  "extends": ["react-app", "plugin:flowtype/recommended"],
-  "plugins": ["flowtype"],
-  "rules": {
-    "flowtype/space-after-type-colon": [
-      "error",
-      "always",
-      { "allowLineBreak": true }
-    ]
-  }
+  "extends": ["react-app"]
 }

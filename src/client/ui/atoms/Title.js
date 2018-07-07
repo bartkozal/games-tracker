@@ -1,4 +1,3 @@
-// @flow
 import styled from "react-emotion";
 import { marginVertical } from "../utils";
 

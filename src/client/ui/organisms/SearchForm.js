@@ -1,22 +1,13 @@
-// @flow
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import SearchInput from "../molecules/SearchInput";
-import { searchQuery, type SearchQuery } from "../../state/search/actions";
+import { searchQuery } from "../../state/search/actions";
 
 const mapDispatchToProps = {
   searchQuery
 };
 
-type Props = {
-  searchQuery: SearchQuery
-};
-
-type State = {
-  query: string
-};
-
-class Search extends Component<Props, State> {
+class Search extends Component {
   state = {
     query: ""
   };

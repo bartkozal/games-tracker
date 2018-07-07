@@ -1,4 +1,3 @@
-// @flow
 export const SPACING_BASE = 16;
 export const SPACING_SMALL = SPACING_BASE / 2;
 

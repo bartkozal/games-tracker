@@ -1,4 +1,3 @@
-// @flow
 import styled from "react-emotion";
 import { CONTAINER_WIDTH, SPACING_BASE } from "../quarks";
 import { marginHorizontal, paddingHorizontal } from "../utils";

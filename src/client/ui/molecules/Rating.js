@@ -1,11 +1,6 @@
-// @flow
 import React from "react";
 
-type Props = {
-  score: number
-};
-
-const Rating = ({ score }: Props) => (
+const Rating = ({ score }) => (
   <div>
     <span role="img" aria-label="star">
       ⭐️

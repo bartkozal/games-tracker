@@ -1,18 +1,12 @@
-// @flow
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import { Flex, Box } from "../atoms/FlexBox";
 import GameCard from "../organisms/GameCard";
 import SearchForm from "../organisms/SearchForm";
-import type { State } from "../../state";
 
 const mapStateToProps = ({ Search }: State) => ({
   results: Search.results
 });
-
-type Props = {
-  results: SearchResults
-};
 
 const SearchResultsPage = ({ results }: Props) => (
   <Fragment>
