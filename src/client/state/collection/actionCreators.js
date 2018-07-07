@@ -1,9 +1,8 @@
-import { GAME_COLLECTION_UPDATED } from "./actionTypes";
+import { GAME_UPDATED } from "./actionTypes";
 
-export const updateGameCollection = (game, collection) => ({
-  type: GAME_COLLECTION_UPDATED,
+export const updateGame = game => ({
+  type: GAME_UPDATED,
   payload: {
-    game,
-    collection
+    game
   }
 });

@@ -1,17 +1,20 @@
-import { updateGameCollection } from "./actionCreators";
-import reducer, { initialState, collectionType } from ".";
+import { updateGame } from "./actionCreators";
+import { statusType } from "./types";
+import reducer, { initialState } from ".";
 
 describe("Collection reducer", () => {
   test("updateGameCollection", () => {
-    const action = updateGameCollection(
-      { name: "Foo" },
-      collectionType.BACKLOG
-    );
+    const action = updateGame({
+      name: "Foo Bar",
+      status: statusType.BACKLOG
+    });
     const returnedState = reducer(initialState, action);
 
-    expect(returnedState.collection).toContainEqual({
-      name: "Foo",
-      userGameCollection: collectionType.BACKLOG
+    expect(returnedState).toMatchObject({
+      fooBar: {
+        name: "Foo Bar",
+        status: statusType.BACKLOG
+      }
     });
   });
 });

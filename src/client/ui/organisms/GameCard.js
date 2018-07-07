@@ -4,44 +4,37 @@ import { Flex, Box } from "../atoms/FlexBox";
 import Image from "../atoms/Image";
 import Dropdown from "../molecules/Dropdown";
 import Rating from "../molecules/Rating";
-import { collectionType } from "../../state/collection";
-import { addGameToCollection } from "../../state/collection/actions";
+import { requestGameUpdate } from "../../state/collection/actions";
+import { statusType } from "../../state/collection/types";
+import { slugify } from "../../state/collection/utils";
 
-const mapStateToProps = ({ Collection }) => ({
-  userCollection: Collection.collection
+const mapStateToProps = ({ Collection }, { name }) => ({
+  gameFromCollection: Collection[slugify(name)] || {}
 });
 
 const mapDispatchToProps = {
-  addGameToCollection
+  requestGameUpdate
 };
 
 class GameCard extends Component {
   render() {
-    const {
-      name,
-      cover,
-      platforms,
-      userCollection,
-      addGameToCollection
-    } = this.props;
-
-    const { rating, userRating, userGameCollection } =
-      userCollection.find(game => name === game.name) || {};
-
+    const { name, cover, platforms, requestGameUpdate } = this.props;
+    const { status } = this.props.gameFromCollection;
     const game = {
       name,
       cover,
-      platforms
+      platforms,
+      status
     };
 
     return (
       <Fragment>
         <Flex justifyContent="space-between">
           <Box>
-            <Rating score={rating} />
+            <Rating score={0} />
           </Box>
           <Box>
-            <Rating score={userRating} />
+            <Rating score={0} />
           </Box>
         </Flex>
 
@@ -50,8 +43,8 @@ class GameCard extends Component {
         <div>{name}</div>
         <div>{platforms.join(", ")}</div>
 
-        {userGameCollection ? (
-          userGameCollection
+        {status ? (
+          status
         ) : (
           <Dropdown
             toggle="Add to Shelf"
@@ -59,22 +52,34 @@ class GameCard extends Component {
               {
                 label: "Wishlist",
                 callback: () =>
-                  addGameToCollection(game, collectionType.WISHLIST)
+                  requestGameUpdate({
+                    ...game,
+                    status: statusType.WISHLIST
+                  })
               },
               {
                 label: "Backlog",
                 callback: () =>
-                  addGameToCollection(game, collectionType.BACKLOG)
+                  requestGameUpdate({
+                    ...game,
+                    status: statusType.BACKLOG
+                  })
               },
               {
                 label: "Playing",
                 callback: () =>
-                  addGameToCollection(game, collectionType.PLAYING)
+                  requestGameUpdate({
+                    ...game,
+                    status: statusType.PLAYING
+                  })
               },
               {
                 label: "Completed",
                 callback: () =>
-                  addGameToCollection(game, collectionType.COMPLETED)
+                  requestGameUpdate({
+                    ...game,
+                    status: statusType.COMPLETED
+                  })
               }
             ]}
           />

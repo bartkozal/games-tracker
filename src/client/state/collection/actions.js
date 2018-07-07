@@ -1,5 +1,5 @@
-import { updateGameCollection } from "./actionCreators";
+import { updateGame } from "./actionCreators";
 
-export const addGameToCollection = (game, collection) => dispatch => {
-  dispatch(updateGameCollection(game, collection));
+export const requestGameUpdate = game => dispatch => {
+  dispatch(updateGame(game));
 };

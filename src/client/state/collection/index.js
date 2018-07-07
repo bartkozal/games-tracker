@@ -1,28 +1,14 @@
-import { GAME_COLLECTION_UPDATED } from "./actionTypes";
+import { GAME_UPDATED } from "./actionTypes";
+import { slugify } from "./utils";
 
-export const collectionType = {
-  WISHLIST: "wishlist",
-  BACKLOG: "backlog",
-  PLAYING: "playing",
-  COMPLETED: "completed"
-};
-
-const initialState = {
-  collection: []
-};
+const initialState = {};
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case GAME_COLLECTION_UPDATED:
+    case GAME_UPDATED:
       return {
         ...state,
-        collection: [
-          ...state.collection,
-          {
-            ...action.payload.game,
-            userGameCollection: action.payload.collection
-          }
-        ]
+        [slugify(action.payload.game.name)]: action.payload.game
       };
     default:
       return state;
