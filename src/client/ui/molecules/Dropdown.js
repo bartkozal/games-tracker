@@ -60,6 +60,11 @@ export default class Dropdown extends Component {
     }
   };
 
+  onItemClick = callback => {
+    this.setState({ isOpen: false });
+    callback();
+  };
+
   render() {
     const { toggle, items } = this.props;
     return (
@@ -68,8 +73,11 @@ export default class Dropdown extends Component {
 
         {this.state.isOpen ? (
           <DropdownMenu innerRef={this.menu}>
-            {items.map(({ onClick, label }) => (
-              <DropdownItem key={label} onClick={onClick}>
+            {items.map(({ callback, label }) => (
+              <DropdownItem
+                key={label}
+                onClick={() => this.onItemClick(callback)}
+              >
                 {label}
               </DropdownItem>
             ))}

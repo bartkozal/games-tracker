@@ -1,0 +1,1 @@
+export const GAME_COLLECTION_UPDATED = "Collection/GAME_COLLECTION_UPDATED";

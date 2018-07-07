@@ -3,9 +3,9 @@ import Subtitle from "../atoms/Subtitle";
 
 const ProfilePage = () => (
   <Fragment>
-    <Subtitle>Playing</Subtitle>
-    <Subtitle>Backlog</Subtitle>
     <Subtitle>Wishlist</Subtitle>
+    <Subtitle>Backlog</Subtitle>
+    <Subtitle>Playing</Subtitle>
     <Subtitle>Completed</Subtitle>
   </Fragment>
 );
