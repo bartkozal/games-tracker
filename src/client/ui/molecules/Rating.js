@@ -6,7 +6,7 @@ const Rating = ({ value, game, onRate }) => (
   <span>
     <Dropdown
       toggle={value || "Rate"}
-      items={range(1, 10).map(rating => ({
+      items={range(1, 11).map(rating => ({
         label: rating,
         callback: () => onRate(rating)
       }))}
