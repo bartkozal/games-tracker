@@ -7,7 +7,7 @@ import GameCard from "../organisms/GameCard";
 import { statusType } from "../../state/collection/types";
 
 const mapStateToProps = ({ Collection }) => {
-  const collection = groupBy(Collection, "status");
+  const collection = groupBy(Collection.games, "status");
 
   return {
     [statusType.WISHLIST]: collection[statusType.WISHLIST] || [],

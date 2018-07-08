@@ -10,7 +10,7 @@ import { statusType } from "../../state/collection/types";
 import { slugify } from "../../state/collection/utils";
 
 const mapStateToProps = ({ Collection }, { name }) => ({
-  gameFromCollection: Collection[slugify(name)] || {}
+  collectedGame: Collection.games[slugify(name)] || {}
 });
 
 const mapDispatchToProps = {
@@ -20,7 +20,7 @@ const mapDispatchToProps = {
 class GameCard extends Component {
   render() {
     const { name, cover, platforms, requestGameUpdate } = this.props;
-    const { status } = this.props.gameFromCollection;
+    const { status } = this.props.collectedGame;
     const game = {
       name,
       cover,
@@ -42,13 +42,16 @@ class GameCard extends Component {
         <Image src={cover} alt={name} fullWidth />
 
         <div>{name}</div>
-        <ButtonGroup
-          buttons={platforms.map(platform => ({
-            caption: platform,
-            type: "outline",
-            callback: () => {}
-          }))}
-        />
+
+        <div>
+          <ButtonGroup
+            buttons={platforms.map(platform => ({
+              caption: platform,
+              type: "outline",
+              callback: () => {}
+            }))}
+          />
+        </div>
 
         {status ? (
           status

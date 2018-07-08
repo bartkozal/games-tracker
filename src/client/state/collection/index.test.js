@@ -11,9 +11,11 @@ describe("Collection reducer", () => {
     const returnedState = reducer(initialState, action);
 
     expect(returnedState).toMatchObject({
-      fooBar: {
-        name: "Foo Bar",
-        status: statusType.BACKLOG
+      games: {
+        fooBar: {
+          name: "Foo Bar",
+          status: statusType.BACKLOG
+        }
       }
     });
   });
