@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { get } from "axios";
-import { transformSearchResults } from "./utils";
+import { transformSearchResults, enrichUserCollection } from "./utils";
 
 const search = Router();
 
@@ -20,7 +20,11 @@ search.get("/", async (req, res) => {
     }
   });
 
-  res.json(transformSearchResults(response.data));
+  const searchResults = enrichUserCollection(
+    transformSearchResults(response.data)
+  );
+
+  res.json(searchResults);
 });
 
 export default search;

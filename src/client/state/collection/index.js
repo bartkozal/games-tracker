@@ -1,20 +1,10 @@
-import { GAME_UPDATED } from "./actionTypes";
-import { slugify } from "./utils";
+import { GAME_UPDATE_RESOLVED } from "./actionTypes";
 
-const initialState = {
-  games: {}
-};
+const initialState = {};
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case GAME_UPDATED:
-      return {
-        ...state,
-        games: {
-          ...state.profile,
-          [slugify(action.payload.game.name)]: action.payload.game
-        }
-      };
+    case GAME_UPDATE_RESOLVED: // TODO
     default:
       return state;
   }

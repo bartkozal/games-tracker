@@ -1,1 +1,1 @@
-export const GAME_UPDATED = "Collection/GAME_UPDATED";
+export const GAME_UPDATE_RESOLVED = "Collection/GAME_UPDATE_RESOLVED";

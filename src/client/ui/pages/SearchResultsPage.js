@@ -13,9 +13,9 @@ const SearchResultsPage = ({ results }) => (
     <SearchForm />
 
     <Flex wrap="wrap">
-      {results.map(({ name, cover, platforms }) => (
-        <Box key={name} size="25%">
-          <GameCard name={name} cover={cover} platforms={platforms} />
+      {results.map(game => (
+        <Box key={game.name} size="25%">
+          <GameCard game={game} />
         </Box>
       ))}
     </Flex>

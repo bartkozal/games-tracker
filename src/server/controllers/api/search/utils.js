@@ -1,4 +1,4 @@
-import { compact } from "lodash";
+import { compact, sample, random, round } from "lodash";
 
 const getCoverUrl = (hash, size = "cover_big") =>
   `https://images.igdb.com/igdb/image/upload/t_${size}/${hash}.jpg`;
@@ -18,8 +18,8 @@ const mapPlatformName = id => {
   return platformNames[`${id}`];
 };
 
-export const transformSearchResults = searchResults =>
-  searchResults
+export const transformSearchResults = response =>
+  response
     .filter(({ platforms, cover }) => platforms && cover && cover.cloudinary_id)
     .map(({ name, cover, platforms }) => ({
       name,
@@ -27,3 +27,19 @@ export const transformSearchResults = searchResults =>
       platforms: compact(platforms.map(mapPlatformName))
     }))
     .filter(({ platforms }) => platforms.length);
+
+export const enrichUserCollection = searchResults =>
+  searchResults.map(game => ({
+    ...game,
+    platforms: game.platforms.reduce(
+      (platforms, name) => ({
+        ...platforms,
+        [name]: sample([true, false])
+      }),
+      {}
+    ),
+    status: sample([null, "wishlist", "backlog", "playing", "completed"]),
+    rating: sample([null, random(1, 10)]),
+    score: round(random(1, 10, true), 1),
+    timesRated: sample([0, random(1, 9999)])
+  }));

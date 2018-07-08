@@ -1,5 +1,5 @@
-import { updateGame } from "./actionCreators";
+import { resolveGameUpdate } from "./actionCreators";
 
-export const requestGameUpdate = game => dispatch => {
-  dispatch(updateGame(game));
+export const updateGame = game => dispatch => {
+  dispatch(resolveGameUpdate(game));
 };

@@ -1,7 +1,7 @@
-import { GAME_UPDATED } from "./actionTypes";
+import { GAME_UPDATE_RESOLVED } from "./actionTypes";
 
-export const updateGame = game => ({
-  type: GAME_UPDATED,
+export const resolveGameUpdate = game => ({
+  type: GAME_UPDATE_RESOLVED,
   payload: {
     game
   }

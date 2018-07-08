@@ -1,8 +1,8 @@
-import { transformSearchResults } from "./utils";
-import searchResults from "searchResults";
+import { transformSearchResults, enrichUserCollection } from "./utils";
+import igdbResponseData from "igdbResponseData";
 
 test("transformSearchResults", () => {
-  const returnedValue = transformSearchResults(searchResults);
+  const returnedValue = transformSearchResults(igdbResponseData);
   const expected = [
     {
       name: "The Witcher 3: Wild Hunt",
@@ -25,6 +25,19 @@ test("transformSearchResults", () => {
   ];
 
   expect(returnedValue).toHaveLength(3);
+  expect(returnedValue).toEqual(expected);
+});
 
-  returnedValue.forEach((item, n) => expect(item).toEqual(expected[n]));
+test("enrichUserCollection", () => {
+  const returnedValue = enrichUserCollection(
+    transformSearchResults(igdbResponseData)
+  );
+
+  returnedValue.forEach(game => {
+    expect(game).toHaveProperty("platforms");
+    expect(game).toHaveProperty("status");
+    expect(game).toHaveProperty("rating");
+    expect(game).toHaveProperty("score");
+    expect(game).toHaveProperty("timesRated");
+  });
 });

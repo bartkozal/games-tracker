@@ -1,8 +1,8 @@
 import { signUserIn, signUserOut } from "./actionCreators";
 import reducer, { initialState } from "./";
 
-describe("Auth reducer", () => {
-  test("signUserIn", () => {
+describe("Auth", () => {
+  test("USER_SIGNED_IN", () => {
     const action = signUserIn({ email: "foo@example.com" });
     const returnedState = reducer(initialState, action);
 
@@ -11,7 +11,7 @@ describe("Auth reducer", () => {
     });
   });
 
-  test("signUserOut", () => {
+  test("USER_SIGNED_OUT", () => {
     const action = signUserOut();
     const returnedState = reducer(initialState, action);
 
