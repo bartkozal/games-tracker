@@ -30,7 +30,7 @@ const getButtonColors = type => {
 
 const Button = styled("button")(
   {
-    border: 0,
+    border: "1px solid transparent",
     padding: 0,
     ":hover": {
       cursor: "pointer"

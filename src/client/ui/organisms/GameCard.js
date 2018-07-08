@@ -32,10 +32,17 @@ const GameCard = ({ game, updateGame }) => {
       <div>{name}</div>
 
       <ButtonGroup
-        buttons={Object.entries(platforms).map(([name, selected]) => ({
-          caption: name,
+        buttons={Object.entries(platforms).map(([platform, selected]) => ({
+          caption: platform,
           type: selected ? "primary" : "outline",
-          callback: () => {}
+          callback: () =>
+            updateGame({
+              ...game,
+              platforms: {
+                ...game.platforms,
+                [platform]: !selected
+              }
+            })
         }))}
       />
 
