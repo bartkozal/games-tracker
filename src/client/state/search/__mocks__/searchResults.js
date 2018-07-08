@@ -7,7 +7,7 @@ export default [
     status: "wishlist",
     rating: null,
     score: 6.4,
-    timesRated: 0
+    votes: 0
   },
   {
     name: "Assassin's Creed: Origins",
@@ -17,7 +17,7 @@ export default [
     status: null,
     rating: 8,
     score: 7.6,
-    timesRated: 0
+    votes: 0
   },
   {
     name: "Assassin's Creed IV: Black Flag",
@@ -27,7 +27,7 @@ export default [
     status: "backlog",
     rating: 8,
     score: 3.8,
-    timesRated: 0
+    votes: 0
   },
   {
     name: "Assassin's Creed",
@@ -37,7 +37,7 @@ export default [
     status: "playing",
     rating: 9,
     score: 8.4,
-    timesRated: 0
+    votes: 0
   },
   {
     name: "Assassin's Creed II",
@@ -47,7 +47,7 @@ export default [
     status: "backlog",
     rating: null,
     score: 7,
-    timesRated: 9563
+    votes: 9563
   },
   {
     name: "Assassin's Creed: Syndicate",
@@ -57,7 +57,7 @@ export default [
     status: "wishlist",
     rating: null,
     score: 7.7,
-    timesRated: 0
+    votes: 0
   },
   {
     name: "Assassin's Creed III",
@@ -67,7 +67,7 @@ export default [
     status: "completed",
     rating: 8,
     score: 6.1,
-    timesRated: 0
+    votes: 0
   },
   {
     name: "Assassin's Creed: Brotherhood",
@@ -77,7 +77,7 @@ export default [
     status: "backlog",
     rating: 7,
     score: 4.1,
-    timesRated: 0
+    votes: 0
   },
   {
     name: "The Witcher 2: Assassins of Kings",
@@ -87,7 +87,7 @@ export default [
     status: "playing",
     rating: 5,
     score: 7.9,
-    timesRated: 0
+    votes: 0
   },
   {
     name: "Assassin's Creed: Unity",
@@ -97,7 +97,7 @@ export default [
     status: "wishlist",
     rating: null,
     score: 6,
-    timesRated: 179
+    votes: 179
   },
   {
     name: "Assassin's Creed: Revelations",
@@ -107,6 +107,6 @@ export default [
     status: "completed",
     rating: 8,
     score: 5.7,
-    timesRated: 0
+    votes: 0
   }
 ];

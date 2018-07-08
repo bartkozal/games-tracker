@@ -41,5 +41,5 @@ export const enrichUserCollection = searchResults =>
     status: sample([null, "wishlist", "backlog", "playing", "completed"]),
     rating: sample([null, random(1, 10)]),
     score: round(random(1, 10, true), 1),
-    timesRated: sample([0, random(1, 9999)])
+    votes: sample([0, random(1, 9999)])
   }));

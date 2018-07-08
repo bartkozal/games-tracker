@@ -38,6 +38,6 @@ test("enrichUserCollection", () => {
     expect(game).toHaveProperty("status");
     expect(game).toHaveProperty("rating");
     expect(game).toHaveProperty("score");
-    expect(game).toHaveProperty("timesRated");
+    expect(game).toHaveProperty("votes");
   });
 });

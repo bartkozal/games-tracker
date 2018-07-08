@@ -6,6 +6,7 @@ import Image from "../atoms/Image";
 import Dropdown from "../molecules/Dropdown";
 import ButtonGroup from "../molecules/ButtonGroup";
 import Rating from "../molecules/Rating";
+import Score from "../molecules/Score";
 import { updateGame } from "../../state/collection/actions";
 import { statusType } from "../../state/collection/types";
 
@@ -14,16 +15,24 @@ const mapDispatchToProps = {
 };
 
 const GameCard = ({ game, updateGame }) => {
-  const { name, cover, platforms, status, rating, score, timesRated } = game;
+  const { name, cover, platforms, status, rating, score, votes } = game;
 
   return (
     <Fragment>
-      <Flex justifyContent="space-between">
+      <Flex alignItems="center" justifyContent="space-between">
         <Box>
-          <Rating score={score} /> / {timesRated}
+          <Score value={score} votes={votes} />
         </Box>
         <Box>
-          <Rating score={rating} />
+          <Rating
+            value={rating}
+            onRate={rating =>
+              updateGame({
+                ...game,
+                rating
+              })
+            }
+          />
         </Box>
       </Flex>
 
