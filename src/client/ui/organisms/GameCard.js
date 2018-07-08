@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
+import { capitalize } from "lodash";
 import { Flex, Box } from "../atoms/FlexBox";
 import Image from "../atoms/Image";
 import Dropdown from "../molecules/Dropdown";
@@ -38,47 +39,43 @@ const GameCard = ({ game, updateGame }) => {
         }))}
       />
 
-      {status ? (
-        status
-      ) : (
-        <Dropdown
-          toggle="Add to Shelf"
-          items={[
-            {
-              label: "Wishlist",
-              callback: () =>
-                updateGame({
-                  ...game,
-                  status: statusType.WISHLIST
-                })
-            },
-            {
-              label: "Backlog",
-              callback: () =>
-                updateGame({
-                  ...game,
-                  status: statusType.BACKLOG
-                })
-            },
-            {
-              label: "Playing",
-              callback: () =>
-                updateGame({
-                  ...game,
-                  status: statusType.PLAYING
-                })
-            },
-            {
-              label: "Completed",
-              callback: () =>
-                updateGame({
-                  ...game,
-                  status: statusType.COMPLETED
-                })
-            }
-          ]}
-        />
-      )}
+      <Dropdown
+        toggle={capitalize(status) || "Add to collection"}
+        items={[
+          {
+            label: "Wishlist",
+            callback: () =>
+              updateGame({
+                ...game,
+                status: statusType.WISHLIST
+              })
+          },
+          {
+            label: "Backlog",
+            callback: () =>
+              updateGame({
+                ...game,
+                status: statusType.BACKLOG
+              })
+          },
+          {
+            label: "Playing",
+            callback: () =>
+              updateGame({
+                ...game,
+                status: statusType.PLAYING
+              })
+          },
+          {
+            label: "Completed",
+            callback: () =>
+              updateGame({
+                ...game,
+                status: statusType.COMPLETED
+              })
+          }
+        ]}
+      />
     </Fragment>
   );
 };

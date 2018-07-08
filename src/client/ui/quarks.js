@@ -7,7 +7,7 @@ export const COLOR_UI = "#95a5a6";
 export const COLOR_TEXT = "#000";
 export const COLOR_BODY = "#fff";
 export const COLOR_TEXT_INVERTED = "#fff";
-export const COLOR_PRIMARY = "#e67e22";
+export const COLOR_PRIMARY = "#ff0084";
 export const COLOR_FACEBOOK = "#3b5998";
 
 export const DROPDOWN_ITEM = "#fff";
