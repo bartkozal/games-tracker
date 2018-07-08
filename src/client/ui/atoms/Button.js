@@ -13,6 +13,13 @@ const getButtonColors = type => {
         backgroundColor: COLOR_FACEBOOK,
         color: COLOR_TEXT_INVERTED
       };
+    case "outline":
+      return {
+        backgroundColor: "transparent",
+        color: COLOR_PRIMARY,
+        border: `1px solid ${COLOR_PRIMARY}`
+      };
+    case "primary":
     default:
       return {
         backgroundColor: COLOR_PRIMARY,

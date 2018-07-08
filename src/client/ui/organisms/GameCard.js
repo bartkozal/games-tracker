@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Flex, Box } from "../atoms/FlexBox";
 import Image from "../atoms/Image";
 import Dropdown from "../molecules/Dropdown";
+import ButtonGroup from "../molecules/ButtonGroup";
 import Rating from "../molecules/Rating";
 import { requestGameUpdate } from "../../state/collection/actions";
 import { statusType } from "../../state/collection/types";
@@ -41,7 +42,13 @@ class GameCard extends Component {
         <Image src={cover} alt={name} fullWidth />
 
         <div>{name}</div>
-        <div>{platforms.join(", ")}</div>
+        <ButtonGroup
+          buttons={platforms.map(platform => ({
+            caption: platform,
+            type: "outline",
+            callback: () => {}
+          }))}
+        />
 
         {status ? (
           status
