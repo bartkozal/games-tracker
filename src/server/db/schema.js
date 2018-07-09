@@ -1,12 +1,13 @@
-import { Schema, Types } from "mongoose";
+import { Schema } from "mongoose";
 
 export const user = new Schema({
-  email: { type: String, required: true },
-  collection: [
+  email: { type: String, required: true, unique: true },
+  gamesCollection: [
     {
-      game: { type: Types.ObjectId, ref: "Game", required: true },
-      platforms: [{ type: Types.ObjectId, ref: "Platform" }],
+      game: { type: Schema.Types.ObjectId, ref: "Game", required: true },
+      platforms: [{ type: Schema.Types.ObjectId, ref: "Platform" }],
       status: {
+        type: String,
         enum: ["Wishlist", "Backlog", "Playing", "Completed"]
       }
     }
@@ -16,15 +17,15 @@ export const user = new Schema({
 export const game = new Schema({
   name: { type: String, required: true },
   cover: { type: String, required: true },
-  platforms: [{ type: Types.ObjectId, ref: "Platform" }]
+  platforms: [{ type: Schema.Types.ObjectId, ref: "Platform" }]
 });
 
 export const platform = new Schema({
-  slug: { type: String, required: true }
+  slug: { type: String, required: true, unique: true }
 });
 
 export const rating = new Schema({
-  game: { type: Types.ObjectId, ref: "Game", required: true },
-  user: { type: Types.ObjectId, ref: "User", required: true },
+  game: { type: Schema.Types.ObjectId, ref: "Game", required: true },
+  user: { type: Schema.Types.ObjectId, ref: "User", required: true },
   value: { type: Number, required: true }
 });
