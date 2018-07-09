@@ -7,6 +7,11 @@ $ yarn install
 $ yarn start
 ```
 
+## Dependencies
+
+- Node 9.10.1
+- Mongodb 4.0.0
+
 ## Deployment
 
 n/a

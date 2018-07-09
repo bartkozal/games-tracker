@@ -1,6 +1,9 @@
 import express from "express";
+import connectToDatabase from "./db";
 import api from "./controllers/api";
 import app from "./controllers/app";
+
+connectToDatabase();
 
 const server = express();
 
