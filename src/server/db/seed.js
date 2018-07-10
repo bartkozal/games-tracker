@@ -4,15 +4,20 @@ import Platform from "../models/platform";
 
 dotenv.config();
 
-connectToDatabase();
+const seed = async mongoose => {
+  try {
+    await Platform.insertMany(
+      ["PC", "MAC", "LIN", "PS4", "PS3", "XONE", "X360", "NSW"].map(slug => ({
+        slug
+      }))
+    );
 
-["PC", "MAC", "LIN", "PS4", "PS3", "XONE", "X360", "NSW"].forEach(
-  async slug => {
-    try {
-      await Platform.create({ slug });
-      console.log(`-> ${slug}`);
-    } catch (err) {
-      console.error(err);
-    }
+    console.log("-> Platforms seeded");
+
+    mongoose.disconnect();
+  } catch (err) {
+    console.error(err);
   }
-);
+};
+
+connectToDatabase(seed);
