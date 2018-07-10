@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+mongoose.set("debug", true);
+
 export default async onSuccess => {
   try {
     await mongoose.connect(
