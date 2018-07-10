@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { get } from "axios";
 import { transformSearchResults, enrichUserCollection } from "./utils";
+import Game from "../../../models/game";
 
 const search = Router();
 
@@ -19,12 +20,11 @@ search.get("/", async (req, res) => {
       "filter[platforms][any]": "6,14,3,48,9,49,12,130"
     }
   });
+  const searchResults = transformSearchResults(response.data);
 
-  const searchResults = enrichUserCollection(
-    transformSearchResults(response.data)
-  );
+  Game.updateFromSearchResults(searchResults);
 
-  res.json(searchResults);
+  res.json(enrichUserCollection(searchResults));
 });
 
 export default search;

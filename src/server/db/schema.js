@@ -15,7 +15,7 @@ export const user = new Schema({
 });
 
 export const game = new Schema({
-  name: { type: String, required: true },
+  name: { type: String, unique: true, required: true },
   cover: { type: String, required: true },
   platforms: [{ type: Schema.Types.ObjectId, ref: "Platform" }]
 });
