@@ -1,8 +1,7 @@
 import { GAME_UPDATE_RESOLVED } from "./actionTypes";
-import collection from "../__mocks__/collection";
 
 const initialState = {
-  games: process.env.NODE_ENV === "development" ? collection : []
+  games: []
 };
 
 export default (state = initialState, action) => {

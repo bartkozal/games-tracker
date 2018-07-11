@@ -4,11 +4,10 @@ import {
   RESULTS_REJECTED
 } from "./actionTypes";
 import { GAME_UPDATE_RESOLVED } from "../collection/actionTypes";
-import searchResults from "../__mocks__/searchResults";
 
 export const initialState = {
   isSearching: false,
-  results: process.env.NODE_ENV === "development" ? searchResults : []
+  results: []
 };
 
 export default (state = initialState, action) => {
