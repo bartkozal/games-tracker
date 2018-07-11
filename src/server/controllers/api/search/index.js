@@ -22,7 +22,7 @@ search.get("/", async (req, res) => {
   });
   const searchResults = transformSearchResults(response.data);
 
-  Game.updateFromSearchResults(searchResults);
+  Game.createBySearchResults(searchResults);
 
   res.json(enrichUserCollection(searchResults));
 });
