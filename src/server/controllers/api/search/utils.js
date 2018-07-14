@@ -29,6 +29,7 @@ export const transformSearchResults = response =>
     .filter(({ platforms }) => platforms.length);
 
 export const enrichUserCollection = searchResults =>
+  // TODO
   searchResults.map(game => ({
     ...game,
     platforms: game.platforms.reduce(
