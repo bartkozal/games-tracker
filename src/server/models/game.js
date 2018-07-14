@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { game as schema } from "../db/schema";
+import { game as schema } from "../config/schema";
 import Platform from "./platform";
 
 schema.statics.createBySearchResults = function(searchResults) {

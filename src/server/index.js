@@ -1,10 +1,11 @@
 import express from "express";
 import morgan from "morgan";
-import connectToDatabase from "./db";
+import initDatabase from "./config/db";
 import api from "./controllers/api";
 import app from "./controllers/app";
 
 connectToDatabase();
+initDatabase();
 
 const server = express();
 

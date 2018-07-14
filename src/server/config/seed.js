@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import connectToDatabase from "./";
+import initDatabase from "../initializers/db";
 import Platform from "../models/platform";
 
 dotenv.config();
@@ -20,4 +20,4 @@ const seed = async mongoose => {
   }
 };
 
-connectToDatabase(seed);
+initDatabase(seed);
