@@ -5,7 +5,7 @@
   "scripts": {
     "analyze": "source-map-explorer build/static/js/bundle.*",
     "build": "razzle build",
-    "db:seed": "NODE_ENV=production babel-node --presets env src/server/config/seed.js",
+    "db:seed": "babel-node --presets env src/server/config/db/seed.js",
     "lint": "eslint src/",
     "start": "razzle start",
     "start:prod": "NODE_ENV=production node build/server.js",

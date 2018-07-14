@@ -1,6 +1,6 @@
 import { compact, sample, random, round } from "lodash";
 
-const getCoverUrl = (hash, size = "cover_big") =>
+const getCover = (hash, size = "cover_big") =>
   `https://images.igdb.com/igdb/image/upload/t_${size}/${hash}.jpg`;
 
 const mapPlatformName = id => {
@@ -18,12 +18,12 @@ const mapPlatformName = id => {
   return platformNames[`${id}`];
 };
 
-export const transformSearchResults = response =>
+export const parseSearchResults = response =>
   response
     .filter(({ platforms, cover }) => platforms && cover && cover.cloudinary_id)
     .map(({ name, cover, platforms }) => ({
       name,
-      cover: cover ? getCoverUrl(cover.cloudinary_id) : "",
+      cover: getCover(cover.cloudinary_id),
       platforms: compact(platforms.map(mapPlatformName))
     }))
     .filter(({ platforms }) => platforms.length);

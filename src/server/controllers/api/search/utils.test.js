@@ -1,8 +1,8 @@
-import { transformSearchResults, enrichUserCollection } from "./utils";
+import { parseSearchResults, enrichUserCollection } from "./utils";
 import igdbResponseData from "igdbResponseData";
 
-test("transformSearchResults", () => {
-  const returnedValue = transformSearchResults(igdbResponseData);
+test("parseSearchResults", () => {
+  const returnedValue = parseSearchResults(igdbResponseData);
   const expected = [
     {
       name: "The Witcher 3: Wild Hunt",
@@ -30,7 +30,7 @@ test("transformSearchResults", () => {
 
 test("enrichUserCollection", () => {
   const returnedValue = enrichUserCollection(
-    transformSearchResults(igdbResponseData)
+    parseSearchResults(igdbResponseData)
   );
 
   returnedValue.forEach(game => {
