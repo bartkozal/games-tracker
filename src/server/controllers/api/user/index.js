@@ -1,9 +1,12 @@
 import { Router } from "express";
+import User from "../../../models/user";
 
 const user = Router();
 
-user.get("/games", (req, res) => {
-  res.json({ todo: true });
+user.get("/games", async (req, res) => {
+  const user = await User.findOne({ email: req.user.email });
+
+  res.json(user.gamesCollection);
 });
 
 user.put("/games/:id", (req, res) => {

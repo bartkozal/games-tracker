@@ -4,7 +4,7 @@ import { resolveGames, resolveGameUpdate } from "./actionCreators";
 export const fetchGames = () => (dispatch, getState) => {
   const { token } = getState().Auth.currentUser;
 
-  getUserGames(token).then(response => resolveGames(response.data));
+  getUserGames(token).then(response => dispatch(resolveGames(response.data)));
 };
 
 export const updateGame = game => (dispatch, getState) => {
