@@ -12,9 +12,8 @@ export default new Strategy(
   async (_, __, profile, onAuth) => {
     try {
       const email = profile.emails[0].value;
-      const token = jwt.sign({ email }, process.env.APP_SECRET);
-
-      await User.createByEmail(email);
+      const user = await User.createByEmail(email);
+      const token = jwt.sign({ id: user.id, email }, process.env.APP_SECRET);
 
       return onAuth(null, { email, token });
     } catch (error) {

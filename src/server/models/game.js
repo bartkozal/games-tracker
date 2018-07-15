@@ -5,7 +5,7 @@ import Platform from "./platform";
 schema.statics.createFromSearchResults = async function(searchResults) {
   const games = searchResults.map(async result => {
     const { name, cover } = result;
-    const platforms = await Platform.where("slug").in(result.platforms);
+    const platforms = await Platform.mapSlug(result.platforms);
     let game = await this.findOne({ name });
 
     if (!game) {

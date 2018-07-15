@@ -2,7 +2,7 @@ import { Schema } from "mongoose";
 
 export const user = new Schema({
   email: { type: String, required: true, unique: true },
-  gamesCollection: [
+  games: [
     {
       game: { type: Schema.Types.ObjectId, ref: "Game", required: true },
       platforms: [{ type: Schema.Types.ObjectId, ref: "Platform" }],
