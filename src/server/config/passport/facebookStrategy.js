@@ -12,7 +12,7 @@ export default new Strategy(
   async (_, __, profile, onAuth) => {
     try {
       const email = profile.emails[0].value;
-      const token = jwt.sign(email, process.env.APP_SECRET);
+      const token = jwt.sign({ email }, process.env.APP_SECRET);
 
       await User.createByEmail(email);
 
