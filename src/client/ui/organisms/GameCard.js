@@ -7,15 +7,16 @@ import Dropdown from "../molecules/Dropdown";
 import ButtonGroup from "../molecules/ButtonGroup";
 import Rating from "../molecules/Rating";
 import Score from "../molecules/Score";
-import { updateGame } from "../../state/collection/actions";
+import { updateGame, rateGame } from "../../state/collection/actions";
 import { statusType } from "../../state/collection/types";
 
 const mapDispatchToProps = {
-  updateGame
+  updateGame,
+  rateGame
 };
 
 const GameCard = ({ game, updateGame }) => {
-  const { name, cover, platforms, status, rating, score, votes } = game;
+  const { id, name, cover, platforms, status, rating, score, votes } = game;
 
   return (
     <Fragment>
@@ -24,15 +25,7 @@ const GameCard = ({ game, updateGame }) => {
           <Score value={score} votes={votes} />
         </Box>
         <Box>
-          <Rating
-            value={rating}
-            onRate={rating =>
-              updateGame({
-                ...game,
-                rating
-              })
-            }
-          />
+          <Rating value={rating} onRate={rating => rateGame(id, rating)} />
         </Box>
       </Flex>
 

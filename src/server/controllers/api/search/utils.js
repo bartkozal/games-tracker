@@ -29,18 +29,17 @@ export const parseSearchResults = response =>
     .filter(({ platforms }) => platforms.length);
 
 export const enrichUserCollection = searchResults =>
-  // TODO
   searchResults.map(game => ({
     ...game,
     platforms: game.platforms.reduce(
       (platforms, name) => ({
         ...platforms,
-        [name]: sample([true, false])
+        [name]: sample([true, false]) // TODO
       }),
       {}
     ),
-    status: sample([null, "wishlist", "backlog", "playing", "completed"]),
-    rating: sample([null, random(1, 10)]),
-    score: round(random(1, 10, true), 1),
-    votes: sample([0, random(1, 9999)])
+    status: sample([null, "wishlist", "backlog", "playing", "completed"]), // TODO
+    rating: sample([null, random(1, 10)]), // TODO
+    score: round(random(1, 10, true), 1), // TODO
+    votes: sample([0, random(1, 9999)]) // TODO
   }));

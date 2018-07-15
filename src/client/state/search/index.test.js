@@ -43,7 +43,7 @@ describe("Search", () => {
 
   test("GAME_UPDATE_RESOLVED", () => {
     const action = resolveGameUpdate({
-      name: "Foo",
+      id: "foo",
       status: statusType.BACKLOG
     });
     const returnedState = reducer(
@@ -51,11 +51,11 @@ describe("Search", () => {
         ...initialState,
         results: [
           {
-            name: "Foo",
+            id: "foo",
             status: null
           },
           {
-            name: "Bar",
+            id: "bar",
             status: statusType.WISHLIST
           }
         ]
@@ -65,11 +65,11 @@ describe("Search", () => {
 
     expect(returnedState.results).toEqual([
       {
-        name: "Foo",
+        id: "foo",
         status: statusType.BACKLOG
       },
       {
-        name: "Bar",
+        id: "bar",
         status: statusType.WISHLIST
       }
     ]);

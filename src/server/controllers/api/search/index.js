@@ -21,10 +21,9 @@ search.get("/", async (req, res) => {
     }
   });
   const searchResults = parseSearchResults(response.data);
+  const games = await Game.createFromSearchResults(searchResults);
 
-  Game.createFromSearchResults(searchResults);
-
-  res.json(enrichUserCollection(searchResults));
+  res.json(enrichUserCollection(games));
 });
 
 export default search;

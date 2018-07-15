@@ -32,11 +32,10 @@ export default (state = initialState, action) => {
     case GAME_UPDATE_RESOLVED:
       return {
         ...state,
-        results: state.results.map(game => ({
-          ...(game.name === action.payload.game.name
-            ? action.payload.game
-            : game)
-        }))
+        results: state.results.map(
+          game =>
+            game.id === action.payload.game.id ? action.payload.game : game
+        )
       };
     default:
       return state;
