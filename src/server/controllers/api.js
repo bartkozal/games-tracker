@@ -5,4 +5,6 @@ const api = Router();
 
 api.use("/search", search);
 
+// passport.authenticate('jwt', {session: false})
+
 export default api;

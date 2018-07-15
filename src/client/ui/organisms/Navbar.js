@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { signInWithFacebook, signOut } from "../../state/auth/actions";
-import { ROOT_PATH, PROFILE_PATH } from "../../routes/paths";
+import { setCurrentUser, signOut } from "../../state/auth/actions";
+import {
+  ROOT_PATH,
+  PROFILE_PATH,
+  FACEBOOK_AUTH_PATH
+} from "../../routes/paths";
 import Button from "../atoms/Button";
 import Title from "../atoms/Title";
 import { Box, Flex } from "../atoms/FlexBox";
@@ -13,13 +17,17 @@ const mapStateToProps = ({ Auth }) => ({
 });
 
 const mapDispatchToProps = {
-  signInWithFacebook,
+  setCurrentUser,
   signOut
 };
 
 class Navbar extends Component {
+  componentDidMount() {
+    this.props.setCurrentUser();
+  }
+
   render() {
-    const { currentUser, signInWithFacebook, signOut } = this.props;
+    const { currentUser, signOut } = this.props;
 
     return (
       <Flex alignItems="center" justifyContent="space-between">
@@ -43,7 +51,10 @@ class Navbar extends Component {
               </Box>
             </Flex>
           ) : (
-            <Button type="facebook" onClick={signInWithFacebook}>
+            <Button
+              type="facebook"
+              onClick={() => window.location.assign(FACEBOOK_AUTH_PATH)}
+            >
               Sign in with Facebook
             </Button>
           )}

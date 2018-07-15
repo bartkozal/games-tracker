@@ -9,9 +9,7 @@ export default (state = initialState, action) => {
     case USER_SIGNED_IN:
       return {
         ...state,
-        currentUser: {
-          email: action.payload.user.email
-        }
+        currentUser: action.payload.user
       };
     case USER_SIGNED_OUT:
       return {

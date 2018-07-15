@@ -1,11 +1,9 @@
 import { USER_SIGNED_IN, USER_SIGNED_OUT } from "./actionTypes";
 
-export const signUserIn = ({ email }) => ({
+export const signUserIn = user => ({
   type: USER_SIGNED_IN,
   payload: {
-    user: {
-      email
-    }
+    user
   }
 });
 

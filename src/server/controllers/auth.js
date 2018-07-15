@@ -14,8 +14,7 @@ auth.get(
     session: false
   }),
   (req, res) => {
-    // TODO
-    console.log(req.user);
+    res.cookie("auth", JSON.stringify(req.user));
     res.redirect("/");
   }
 );
