@@ -1,30 +1,35 @@
 import { Router } from "express";
 import User from "../../../models/user";
+import { parseUserGames } from "./utils";
 
 const user = Router();
 
 user.get("/games", async (req, res) => {
-  const user = await User.findById(req.user.id);
+  const user = await User.findById(req.user.id).populate("games.game");
+  const games = parseUserGames(user.games.toObject());
 
-  res.json({});
+  res.json(games);
 });
 
 user.put("/games/:id", async (req, res) => {
   const user = await User.findById(req.user.id);
 
-  // await user.games.create({
-  //   game: req.params.id,
-  //   platforms,
-  //   status: req.body.status
-  // });
+  // TODO
+  user.set("games", {
+    game: req.params.id,
+    platforms: req.body.platforms,
+    status: req.body.status
+  });
 
-  res.json({});
+  await user.save();
+
+  res.status(204).end();
 });
 
 user.put("/games/:id/rating", async (req, res) => {
   const user = await User.findById(req.user.id);
 
-  res.json({});
+  res.status(204).end();
 });
 
 export default user;

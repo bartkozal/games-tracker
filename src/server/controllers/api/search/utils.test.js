@@ -1,4 +1,4 @@
-import { parseSearchResults, enrichUserCollection } from "./utils";
+import { parseSearchResults } from "./utils";
 import igdbResponseData from "igdbResponseData";
 
 test("parseSearchResults", () => {

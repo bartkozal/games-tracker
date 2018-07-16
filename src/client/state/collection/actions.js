@@ -1,6 +1,5 @@
 import { getUserGames, updateUserGame, updateUserGameRating } from "./api";
 import { resolveGames, resolveGameUpdate } from "./actionCreators";
-import { statusType } from "./types";
 
 export const fetchGames = () => (dispatch, getState) => {
   const { token } = getState().Auth.currentUser;
@@ -10,8 +9,7 @@ export const fetchGames = () => (dispatch, getState) => {
 
 export const updateGame = game => (dispatch, getState) => {
   const { token } = getState().Auth.currentUser;
-  const { id, platforms } = game;
-  const status = game.status || statusType.BACKLOG;
+  const { id, userPlatforms: platforms, status } = game;
 
   updateUserGame(id, { platforms, status }, token).then(() =>
     dispatch(resolveGameUpdate(game))

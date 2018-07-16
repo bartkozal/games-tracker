@@ -1,11 +1,10 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
-import { capitalize } from "lodash";
+import { capitalize, xor } from "lodash";
 import { Flex, Box } from "../atoms/FlexBox";
 import Image from "../atoms/Image";
 import Dropdown from "../molecules/Dropdown";
-// import ButtonGroup from "../molecules/ButtonGroup";
-import Button from "../atoms/Button";
+import ButtonGroup from "../molecules/ButtonGroup";
 import Rating from "../molecules/Rating";
 import Score from "../molecules/Score";
 import { updateGame, rateGame } from "../../state/collection/actions";
@@ -17,7 +16,16 @@ const mapDispatchToProps = {
 };
 
 const GameCard = ({ game, updateGame, rateGame }) => {
-  const { name, cover, platforms, status, rating, score, votes } = game;
+  const {
+    name,
+    cover,
+    platforms,
+    userPlatforms = [],
+    status,
+    rating,
+    score,
+    votes
+  } = game;
 
   return (
     <Fragment>
@@ -34,21 +42,17 @@ const GameCard = ({ game, updateGame, rateGame }) => {
 
       <div>{name}</div>
 
-      {platforms.map(platform => <Button type="outline">{platform}</Button>)}
-      {/* <ButtonGroup
-        buttons={platforms.map((platform => ({
+      <ButtonGroup
+        buttons={platforms.map(platform => ({
           caption: platform,
-          type: "outline",
+          type: userPlatforms.includes(platform) ? "primary" : "outline",
           callback: () =>
             updateGame({
               ...game,
-              platforms: {
-                ...game.platforms,
-                [platform]: !selected
-              }
+              userPlatforms: xor(userPlatforms, [platform])
             })
         }))}
-      /> */}
+      />
 
       <Dropdown
         toggle={capitalize(status) || "Add to collection"}

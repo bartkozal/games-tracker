@@ -8,7 +8,7 @@ export const user = new Schema({
       platforms: [String],
       status: {
         type: String,
-        enum: ["Wishlist", "Backlog", "Playing", "Completed"]
+        enum: ["wishlist", "backlog", "playing", "completed"]
       }
     }
   ]
