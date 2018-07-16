@@ -13,16 +13,28 @@ user.get("/games", async (req, res) => {
 });
 
 user.put("/games/:id", async (req, res) => {
-  const user = await User.findById(req.user.id);
+  const update = await User.update(
+    {
+      _id: req.user.id,
+      "games.game": req.params.id
+    },
+    {
+      "games.$.platforms": req.body.platforms,
+      "games.$.status": req.body.status
+    }
+  );
 
-  // TODO
-  await user
-    .set("games", {
-      game: req.params.id,
-      platforms: req.body.platforms,
-      status: req.body.status
-    })
-    .save();
+  if (!update.nModified) {
+    await User.findByIdAndUpdate(req.user.id, {
+      $push: {
+        games: {
+          game: req.params.id,
+          platforms: req.body.platforms,
+          status: req.body.status
+        }
+      }
+    });
+  }
 
   res.status(204).end();
 });
