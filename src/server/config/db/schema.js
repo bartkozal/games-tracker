@@ -5,7 +5,7 @@ export const user = new Schema({
   games: [
     {
       game: { type: Schema.Types.ObjectId, ref: "Game", required: true },
-      platforms: [{ type: Schema.Types.ObjectId, ref: "Platform" }],
+      platforms: [String],
       status: {
         type: String,
         enum: ["Wishlist", "Backlog", "Playing", "Completed"]
@@ -17,15 +17,11 @@ export const user = new Schema({
 export const game = new Schema({
   name: { type: String, unique: true, required: true },
   cover: { type: String, required: true },
-  platforms: [{ type: Schema.Types.ObjectId, ref: "Platform" }]
-});
-
-export const platform = new Schema({
-  slug: { type: String, required: true, unique: true }
+  platforms: [{ type: String, required: true }]
 });
 
 export const rating = new Schema({
   game: { type: Schema.Types.ObjectId, ref: "Game", required: true },
   user: { type: Schema.Types.ObjectId, ref: "User", required: true },
-  value: { type: Number, required: true }
+  value: { type: Number }
 });

@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { get } from "axios";
-import { parseSearchResults, enrichUserCollection } from "./utils";
+import { parseSearchResults } from "./utils";
 import Game from "../../../models/game";
 
 const search = Router();
@@ -20,10 +20,11 @@ search.get("/", async (req, res) => {
       "filter[platforms][any]": "6,14,3,48,9,49,12,130"
     }
   });
-  const searchResults = parseSearchResults(response.data);
-  const games = await Game.createFromSearchResults(searchResults);
+  const searchResults = await Game.createFromSearchResults(
+    parseSearchResults(response.data)
+  );
 
-  res.json(enrichUserCollection(games));
+  res.json(searchResults);
 });
 
 export default search;

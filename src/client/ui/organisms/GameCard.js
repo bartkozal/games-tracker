@@ -4,7 +4,8 @@ import { capitalize } from "lodash";
 import { Flex, Box } from "../atoms/FlexBox";
 import Image from "../atoms/Image";
 import Dropdown from "../molecules/Dropdown";
-import ButtonGroup from "../molecules/ButtonGroup";
+// import ButtonGroup from "../molecules/ButtonGroup";
+import Button from "../atoms/Button";
 import Rating from "../molecules/Rating";
 import Score from "../molecules/Score";
 import { updateGame, rateGame } from "../../state/collection/actions";
@@ -33,10 +34,11 @@ const GameCard = ({ game, updateGame, rateGame }) => {
 
       <div>{name}</div>
 
-      <ButtonGroup
-        buttons={Object.entries(platforms).map(([platform, selected]) => ({
+      {platforms.map(platform => <Button type="outline">{platform}</Button>)}
+      {/* <ButtonGroup
+        buttons={platforms.map((platform => ({
           caption: platform,
-          type: selected ? "primary" : "outline",
+          type: "outline",
           callback: () =>
             updateGame({
               ...game,
@@ -46,7 +48,7 @@ const GameCard = ({ game, updateGame, rateGame }) => {
               }
             })
         }))}
-      />
+      /> */}
 
       <Dropdown
         toggle={capitalize(status) || "Add to collection"}

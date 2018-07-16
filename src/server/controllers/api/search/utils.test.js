@@ -27,17 +27,3 @@ test("parseSearchResults", () => {
   expect(returnedValue).toHaveLength(3);
   expect(returnedValue).toEqual(expected);
 });
-
-test("enrichUserCollection", () => {
-  const returnedValue = enrichUserCollection(
-    parseSearchResults(igdbResponseData)
-  );
-
-  returnedValue.forEach(game => {
-    expect(game).toHaveProperty("platforms");
-    expect(game).toHaveProperty("status");
-    expect(game).toHaveProperty("rating");
-    expect(game).toHaveProperty("score");
-    expect(game).toHaveProperty("votes");
-  });
-});

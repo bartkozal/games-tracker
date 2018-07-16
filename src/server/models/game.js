@@ -1,11 +1,9 @@
 import mongoose from "mongoose";
 import { game as schema } from "../config/db/schema";
-import Platform from "./platform";
 
 schema.statics.createFromSearchResults = async function(searchResults) {
   const games = searchResults.map(async result => {
-    const { name, cover } = result;
-    const platforms = await Platform.mapSlug(result.platforms);
+    const { name, cover, platforms } = result;
     let game = await this.findOne({ name });
 
     if (!game) {
@@ -16,7 +14,7 @@ schema.statics.createFromSearchResults = async function(searchResults) {
       id: game.id,
       name,
       cover,
-      platforms: result.platforms
+      platforms
     };
   });
 
