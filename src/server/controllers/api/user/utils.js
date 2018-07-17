@@ -7,3 +7,9 @@ export const parseUserGames = userGames =>
     userPlatforms: userGame.platforms,
     status: userGame.status
   }));
+
+export const parseUserRatings = userRatings =>
+  userRatings.map(userRating => ({
+    id: userRating.game,
+    rating: userRating.value
+  }));

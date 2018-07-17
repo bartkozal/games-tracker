@@ -3,7 +3,7 @@ import { Router } from "express";
 const scores = Router();
 
 scores.get("/", async (req, res) => {
-  // TODO filters
+  // TODO
 });
 
 scores.get("/:id", async (req, res) => {

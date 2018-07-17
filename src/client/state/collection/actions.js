@@ -18,13 +18,20 @@ export const fetchGames = () => (dispatch, getState) => {
   getUserGames(token)
     .then(response => {
       const games = response.data;
+
       dispatch(resolveGames(games));
+
       return games;
     })
     .then(games => {
-      getUserRatings().then(response => resolveGameBulkUpdate(response.data));
-      getScores({ filter: games.map(game => game.id) }).then(response =>
-        resolveGameBulkUpdate(response.data)
+      const params = { id: games.map(game => game.id) };
+
+      getUserRatings(token).then(response =>
+        dispatch(resolveGameBulkUpdate(response.data))
+      );
+
+      getScores(params).then(response =>
+        dispatch(resolveGameBulkUpdate(response.data))
       );
     });
 };

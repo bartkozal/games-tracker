@@ -1,7 +1,7 @@
 import { Router } from "express";
 import User from "../../../models/user";
 import Rating from "../../../models/rating";
-import { parseUserGames } from "./utils";
+import { parseUserGames, parseUserRatings } from "./utils";
 
 const user = Router();
 
@@ -54,8 +54,16 @@ user.put("/games/:id/rating", async (req, res) => {
 });
 
 user.get("/ratings", async (req, res) => {
-  // TODO
-  // TODO filters
+  const idFilter = req.query.id
+    ? { game: { $in: req.query.id.split(",") } }
+    : {};
+  const ratings = await Rating.find({
+    user: req.user.id,
+    ...idFilter
+  });
+  const gameRatings = parseUserRatings(ratings);
+
+  res.json(gameRatings);
 });
 
 export default user;

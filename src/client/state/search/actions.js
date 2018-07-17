@@ -20,20 +20,20 @@ export const searchQuery = query => (dispatch, getState) => {
     .then(results => {
       const { userSignedIn, currentUser } = getState().Auth;
       const token = currentUser.token;
-      const data = {
-        filter: results.map(game => game.id)
+      const params = {
+        id: results.map(game => game.id)
       };
 
-      getScores(data).then(response =>
+      getScores(params).then(response =>
         dispatch(resolveGameBulkUpdate(response.data))
       );
 
       if (userSignedIn) {
-        getUserGames(token, data).then(response =>
+        getUserGames(token, params).then(response =>
           dispatch(resolveGameBulkUpdate(response.data))
         );
 
-        getUserRatings(token, data).then(response =>
+        getUserRatings(token, params).then(response =>
           dispatch(resolveGameBulkUpdate(response.data))
         );
       }
