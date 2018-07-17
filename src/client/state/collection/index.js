@@ -1,4 +1,8 @@
-import { GAME_UPDATE_RESOLVED, GAMES_RESOLVED } from "./actionTypes";
+import {
+  GAME_UPDATE_RESOLVED,
+  GAMES_RESOLVED,
+  GAME_BULK_UPDATE_RESOLVED
+} from "./actionTypes";
 
 const initialState = {
   games: []
@@ -16,8 +20,18 @@ export default (state = initialState, action) => {
         ...state,
         games: state.games.map(
           game =>
-            game.id === action.payload.game.id ? action.payload.game : game
+            game.id === action.payload.game.id
+              ? { ...game, ...action.payload.game }
+              : game
         )
+      };
+    case GAME_BULK_UPDATE_RESOLVED:
+      return {
+        ...state,
+        games: state.games.map(game => {
+          const updatedGame = action.payload.games.find(g => g.id === game.id);
+          return updatedGame ? { ...game, ...updatedGame } : game;
+        })
       };
     default:
       return state;

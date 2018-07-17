@@ -1,4 +1,8 @@
-import { resolveGameUpdate, resolveGames } from "./actionCreators";
+import {
+  resolveGameUpdate,
+  resolveGames,
+  resolveGameBulkUpdate
+} from "./actionCreators";
 import { statusType } from "./types";
 import reducer, { initialState } from ".";
 
@@ -31,6 +35,28 @@ describe("Collection", () => {
     expect(returnedState.games).toContainEqual({
       id: "foo",
       status: statusType.COMPLETED
+    });
+  });
+
+  test("GAME_BULK_UPDATE_RESOLVED", () => {
+    const action = resolveGameBulkUpdate([{ id: "foo", rating: 8 }]);
+    const returnedState = reducer(
+      {
+        ...initialState,
+        games: [
+          {
+            id: "foo",
+            status: statusType.BACKLOG
+          }
+        ]
+      },
+      action
+    );
+
+    expect(returnedState.games).toContainEqual({
+      id: "foo",
+      status: statusType.BACKLOG,
+      rating: 8
     });
   });
 });

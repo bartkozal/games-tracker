@@ -17,6 +17,7 @@ const mapDispatchToProps = {
 
 const GameCard = ({ game, updateGame, rateGame }) => {
   const {
+    id,
     name,
     cover,
     platforms,
@@ -34,7 +35,7 @@ const GameCard = ({ game, updateGame, rateGame }) => {
           <Score value={score} votes={votes} />
         </Box>
         <Box>
-          <Rating value={rating} onRate={rating => rateGame(game, rating)} />
+          <Rating value={rating} onRate={rating => rateGame(id, rating)} />
         </Box>
       </Flex>
 

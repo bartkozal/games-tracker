@@ -6,6 +6,7 @@ import { parseUserGames } from "./utils";
 const user = Router();
 
 user.get("/games", async (req, res) => {
+  // TODO filters
   const user = await User.findById(req.user.id).populate("games.game");
   const games = parseUserGames(user.games.toObject());
 
@@ -50,6 +51,11 @@ user.put("/games/:id/rating", async (req, res) => {
   );
 
   res.status(204).end();
+});
+
+user.get("/ratings", async (req, res) => {
+  // TODO
+  // TODO filters
 });
 
 export default user;

@@ -3,7 +3,10 @@ import {
   resolveResults,
   rejectResults
 } from "./actionCreators";
-import { resolveGameUpdate } from "../collection/actionCreators";
+import {
+  resolveGameUpdate,
+  resolveGameBulkUpdate
+} from "../collection/actionCreators";
 import { statusType } from "../collection/types";
 import reducer, { initialState } from "./";
 
@@ -73,5 +76,27 @@ describe("Search", () => {
         status: statusType.WISHLIST
       }
     ]);
+  });
+
+  test("GAME_BULK_UPDATE_RESOLVED", () => {
+    const action = resolveGameBulkUpdate([{ id: "foo", rating: 8 }]);
+    const returnedState = reducer(
+      {
+        ...initialState,
+        results: [
+          {
+            id: "foo",
+            status: statusType.BACKLOG
+          }
+        ]
+      },
+      action
+    );
+
+    expect(returnedState.results).toContainEqual({
+      id: "foo",
+      status: statusType.BACKLOG,
+      rating: 8
+    });
   });
 });
