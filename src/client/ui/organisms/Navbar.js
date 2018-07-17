@@ -13,7 +13,8 @@ import { Box, Flex } from "../atoms/FlexBox";
 import Avatar from "../molecules/Avatar";
 
 const mapStateToProps = ({ Auth }) => ({
-  currentUser: Auth.currentUser
+  currentUser: Auth.currentUser,
+  userSignedIn: Auth.userSignedIn
 });
 
 const mapDispatchToProps = {
@@ -27,7 +28,7 @@ class Navbar extends Component {
   }
 
   render() {
-    const { currentUser, signOut } = this.props;
+    const { userSignedIn, currentUser, signOut } = this.props;
 
     return (
       <Flex alignItems="center" justifyContent="space-between">
@@ -38,7 +39,7 @@ class Navbar extends Component {
         </Box>
 
         <Box>
-          {currentUser.email ? (
+          {userSignedIn ? (
             <Flex alignItems="center">
               <Box>
                 <Link to={PROFILE_PATH}>

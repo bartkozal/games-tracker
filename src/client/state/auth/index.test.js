@@ -7,7 +7,8 @@ describe("Auth", () => {
     const returnedState = reducer(initialState, action);
 
     expect(returnedState).toMatchObject({
-      currentUser: { email: "foo@example.com" }
+      currentUser: { email: "foo@example.com" },
+      userSignedIn: true
     });
   });
 
@@ -15,6 +16,9 @@ describe("Auth", () => {
     const action = signUserOut();
     const returnedState = reducer(initialState, action);
 
-    expect(returnedState).toMatchObject({ currentUser: {} });
+    expect(returnedState).toMatchObject({
+      currentUser: {},
+      userSignedIn: false
+    });
   });
 });

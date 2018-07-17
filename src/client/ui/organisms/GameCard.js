@@ -20,7 +20,7 @@ const GameCard = ({ game, updateGame, rateGame }) => {
     name,
     cover,
     platforms,
-    userPlatforms = [],
+    userPlatforms,
     status,
     rating,
     score,
@@ -45,7 +45,10 @@ const GameCard = ({ game, updateGame, rateGame }) => {
       <ButtonGroup
         buttons={platforms.map(platform => ({
           caption: platform,
-          type: userPlatforms.includes(platform) ? "primary" : "outline",
+          type:
+            userPlatforms && userPlatforms.includes(platform)
+              ? "primary"
+              : "outline",
           callback: () =>
             updateGame({
               ...game,
