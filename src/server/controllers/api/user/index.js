@@ -6,8 +6,7 @@ import { parseUserGames, parseUserRatings } from "./utils";
 const user = Router();
 
 user.get("/games", async (req, res) => {
-  // TODO filters
-  const user = await User.findById(req.user.id).populate("games.game");
+  const user = await User.findById(req.user.id).populate("games.gameId");
   const games = parseUserGames(user.games.toObject());
 
   res.json(games);
@@ -17,7 +16,7 @@ user.put("/games/:id", async (req, res) => {
   const update = await User.update(
     {
       _id: req.user.id,
-      "games.game": req.params.id
+      "games.gameId": req.params.id
     },
     {
       "games.$.platforms": req.body.platforms,
@@ -29,7 +28,7 @@ user.put("/games/:id", async (req, res) => {
     await User.findByIdAndUpdate(req.user.id, {
       $push: {
         games: {
-          game: req.params.id,
+          gameId: req.params.id,
           platforms: req.body.platforms,
           status: req.body.status
         }
@@ -43,8 +42,8 @@ user.put("/games/:id", async (req, res) => {
 user.put("/games/:id/rating", async (req, res) => {
   await Rating.update(
     {
-      user: req.user.id,
-      game: req.params.id
+      userId: req.user.id,
+      gameId: req.params.id
     },
     { value: req.body.rating },
     { upsert: true }
@@ -55,10 +54,10 @@ user.put("/games/:id/rating", async (req, res) => {
 
 user.get("/ratings", async (req, res) => {
   const idFilter = req.query.id
-    ? { game: { $in: req.query.id.split(",") } }
+    ? { gameId: { $in: req.query.id.split(",") } }
     : {};
   const ratings = await Rating.find({
-    user: req.user.id,
+    userId: req.user.id,
     ...idFilter
   });
   const gameRatings = parseUserRatings(ratings);

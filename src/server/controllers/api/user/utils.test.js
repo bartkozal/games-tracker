@@ -6,7 +6,7 @@ test("parseUserGames", () => {
       _id: "5b4d115e8101b98ff3b51e28",
       status: "backlog",
       platforms: ["MAC"],
-      game: {
+      gameId: {
         _id: "5b4cfdd36bce058728d62875",
         platforms: ["PC", "MAC", "X360", "LIN"],
         name: "The Witcher 2: Assassins of Kings",
@@ -34,15 +34,15 @@ test("parseUserRatings", () => {
   const userRatings = [
     {
       _id: "5b4d2b9acb03320e2cf5ec5f",
-      game: "5b4d2b815440719bb5295688",
-      user: "5b4d2b845440719bb5295691",
+      gameId: "5b4d2b815440719bb5295688",
+      userId: "5b4d2b845440719bb5295691",
       __v: 0,
       value: 7
     },
     {
       _id: "5b4d920fcb03320e2cf5ef78",
-      game: "5b4d9200134d4da11e157284",
-      user: "5b4d2b845440719bb5295691",
+      gameId: "5b4d9200134d4da11e157284",
+      userId: "5b4d2b845440719bb5295691",
       __v: 0,
       value: 3
     }

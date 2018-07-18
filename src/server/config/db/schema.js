@@ -4,7 +4,7 @@ export const user = new Schema({
   email: { type: String, required: true, unique: true },
   games: [
     {
-      game: { type: Schema.Types.ObjectId, ref: "Game", required: true },
+      gameId: { type: Schema.Types.ObjectId, ref: "Game", required: true },
       platforms: [String],
       status: {
         type: String,
@@ -21,7 +21,7 @@ export const game = new Schema({
 });
 
 export const rating = new Schema({
-  game: { type: Schema.Types.ObjectId, ref: "Game", required: true },
-  user: { type: Schema.Types.ObjectId, ref: "User", required: true },
+  gameId: { type: Schema.Types.ObjectId, ref: "Game", required: true },
+  userId: { type: Schema.Types.ObjectId, ref: "User", required: true },
   value: { type: Number }
 });

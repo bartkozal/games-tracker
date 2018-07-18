@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import { game as schema } from "../config/db/schema";
 
+// TODO improve
 schema.statics.createFromSearchResults = async function(searchResults) {
   const games = searchResults.map(async result => {
     const { name, cover, platforms } = result;
