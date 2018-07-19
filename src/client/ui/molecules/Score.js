@@ -1,6 +1,6 @@
 import React from "react";
 
-const Rating = ({ value, votes }) =>
+const Score = ({ value, votes }) =>
   votes ? (
     <span>
       <span role="img" aria-label="star">
@@ -10,4 +10,4 @@ const Rating = ({ value, votes }) =>
     </span>
   ) : null;
 
-export default Rating;
+export default Score;
