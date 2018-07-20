@@ -14,4 +14,7 @@ $ yarn start
 
 ## Deployment
 
-n/a
+```sh
+$ git remote add production dokku@gamestracker.co:app
+$ git push production master
+```
