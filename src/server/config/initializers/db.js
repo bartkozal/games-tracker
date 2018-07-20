@@ -5,7 +5,7 @@ mongoose.set("debug", true);
 export default async onSuccess => {
   try {
     await mongoose.connect(
-      process.env.DB_URL,
+      process.env.MONGO_URL,
       { useNewUrlParser: true }
     );
 
