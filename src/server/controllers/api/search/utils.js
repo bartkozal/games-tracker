@@ -7,7 +7,6 @@ const mapPlatformName = id => {
   const platformNames = {
     6: "PC",
     14: "MAC",
-    3: "LIN",
     48: "PS4",
     9: "PS3",
     49: "XONE",

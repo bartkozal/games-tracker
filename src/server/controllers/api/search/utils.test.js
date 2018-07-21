@@ -15,7 +15,7 @@ test("parseSearchResults", () => {
       name: "The Witcher 2: Assassins of Kings",
       cover:
         "https://images.igdb.com/igdb/image/upload/t_cover_big/mcou7xzxq0qnerehesrh.jpg",
-      platforms: ["PC", "MAC", "X360", "LIN"],
+      platforms: ["PC", "MAC", "X360"],
       igdbId: 478
     },
     {
