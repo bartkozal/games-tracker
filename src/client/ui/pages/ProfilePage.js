@@ -35,7 +35,7 @@ class ProfilePage extends Component {
         <Subtitle>Wishlist</Subtitle>
         <Flex wrap="wrap">
           {wishlist.map(game => (
-            <Box key={game.name} size="25%">
+            <Box key={game.id} size="25%">
               <GameCard game={game} />
             </Box>
           ))}
@@ -44,7 +44,7 @@ class ProfilePage extends Component {
         <Subtitle>Backlog</Subtitle>
         <Flex wrap="wrap">
           {backlog.map(game => (
-            <Box key={game.name} size="25%">
+            <Box key={game.id} size="25%">
               <GameCard game={game} />
             </Box>
           ))}
@@ -53,7 +53,7 @@ class ProfilePage extends Component {
         <Subtitle>Playing</Subtitle>
         <Flex wrap="wrap">
           {playing.map(game => (
-            <Box key={game.name} size="25%">
+            <Box key={game.id} size="25%">
               <GameCard game={game} />
             </Box>
           ))}
@@ -62,7 +62,7 @@ class ProfilePage extends Component {
         <Subtitle>Completed</Subtitle>
         <Flex wrap="wrap">
           {completed.map(game => (
-            <Box key={game.name} size="25%">
+            <Box key={game.id} size="25%">
               <GameCard game={game} />
             </Box>
           ))}

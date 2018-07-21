@@ -15,7 +15,8 @@ export const user = new Schema({
 });
 
 export const game = new Schema({
-  name: { type: String, unique: true, required: true },
+  igdbId: { type: Number, unique: true },
+  name: { type: String, required: true },
   cover: { type: String, required: true },
   platforms: [{ type: String, required: true }]
 });

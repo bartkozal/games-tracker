@@ -4,11 +4,11 @@ import { game as schema } from "../config/db/schema";
 // TODO improve
 schema.statics.createFromSearchResults = async function(searchResults) {
   const games = searchResults.map(async result => {
-    const { name, cover, platforms } = result;
-    let game = await this.findOne({ name });
+    const { name, cover, platforms, igdbId } = result;
+    let game = await this.findOne({ igdbId });
 
     if (!game) {
-      game = await this.create({ name, cover, platforms });
+      game = await this.create(result);
     }
 
     return {

@@ -8,19 +8,22 @@ test("parseSearchResults", () => {
       name: "The Witcher 3: Wild Hunt",
       cover:
         "https://images.igdb.com/igdb/image/upload/t_cover_big/tri1c6vbydeosoqajwt1.jpg",
-      platforms: ["PC", "PS4", "XONE"]
+      platforms: ["PC", "PS4", "XONE"],
+      igdbId: 1942
     },
     {
       name: "The Witcher 2: Assassins of Kings",
       cover:
         "https://images.igdb.com/igdb/image/upload/t_cover_big/mcou7xzxq0qnerehesrh.jpg",
-      platforms: ["PC", "MAC", "X360", "LIN"]
+      platforms: ["PC", "MAC", "X360", "LIN"],
+      igdbId: 478
     },
     {
       name: "The Witcher",
       cover:
         "https://images.igdb.com/igdb/image/upload/t_cover_big/nrkdzmkevbbevdvm9bxh.jpg",
-      platforms: ["PC", "MAC"]
+      platforms: ["PC", "MAC"],
+      igdbId: 80
     }
   ];
 
