@@ -16,5 +16,5 @@ $ yarn start
 
 ```sh
 $ git remote add production dokku@gamestracker.co:web
-$ git push production master
+$ git push production
 ```
