@@ -2,10 +2,6 @@
   "name": "games-tracker",
   "private": true,
   "version": "1.0.0",
-  "engines": {
-    "node": "9.10.1",
-    "yarn": "1.7.0"
-  },
   "scripts": {
     "analyze": "source-map-explorer build/static/js/bundle.*",
     "build": "razzle build",
