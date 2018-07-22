@@ -11,6 +11,7 @@ const mapStateToProps = ({ Collection }) => {
   const collection = groupBy(games, "status");
 
   return {
+    unassigned: collection.undefined || [],
     wishlist: collection.wishlist || [],
     backlog: collection.backlog || [],
     playing: collection.playing || [],
@@ -22,16 +23,29 @@ const mapDispatchToProps = {
   fetchGames
 };
 
-class ProfilePage extends Component {
+class CollectionPage extends Component {
   componentDidMount() {
     this.props.fetchGames();
   }
 
   render() {
-    const { wishlist, backlog, playing, completed } = this.props;
+    const { unassigned, wishlist, backlog, playing, completed } = this.props;
 
     return (
       <Fragment>
+        {!!unassigned.length && (
+          <Fragment>
+            <Subtitle>Unassigned</Subtitle>
+            <Flex wrap="wrap">
+              {unassigned.map(game => (
+                <Box key={game.id} size="25%">
+                  <GameCard game={game} />
+                </Box>
+              ))}
+            </Flex>
+          </Fragment>
+        )}
+
         <Subtitle>Wishlist</Subtitle>
         <Flex wrap="wrap">
           {wishlist.map(game => (
@@ -75,4 +89,4 @@ class ProfilePage extends Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProfilePage);
+)(CollectionPage);
