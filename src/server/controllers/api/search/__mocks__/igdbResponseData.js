@@ -10,7 +10,7 @@ export default [
   {
     id: 478,
     name: "The Witcher 2: Assassins of Kings",
-    platforms: [6, 14, 12, 3],
+    platforms: [6, 12, 3],
     cover: {
       cloudinary_id: "mcou7xzxq0qnerehesrh"
     }
@@ -18,7 +18,7 @@ export default [
   {
     id: 80,
     name: "The Witcher",
-    platforms: [6, 14, 0],
+    platforms: [6, 0],
     cover: {
       cloudinary_id: "nrkdzmkevbbevdvm9bxh"
     }

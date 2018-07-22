@@ -6,7 +6,6 @@ const getCover = (hash, size = "cover_big") =>
 const mapPlatformName = id => {
   const platformNames = {
     6: "PC",
-    14: "MAC",
     48: "PS4",
     9: "PS3",
     49: "XONE",

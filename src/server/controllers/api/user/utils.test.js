@@ -5,10 +5,10 @@ test("parseUserGames", () => {
     {
       _id: "5b4d115e8101b98ff3b51e28",
       status: "backlog",
-      platforms: ["MAC"],
+      platforms: ["PC"],
       gameId: {
         _id: "5b4cfdd36bce058728d62875",
-        platforms: ["PC", "MAC", "X360", "LIN"],
+        platforms: ["PC", "X360", "LIN"],
         name: "The Witcher 2: Assassins of Kings",
         cover:
           "https://images.igdb.com/igdb/image/upload/t_cover_big/mcou7xzxq0qnerehesrh.jpg"
@@ -21,8 +21,8 @@ test("parseUserGames", () => {
       name: "The Witcher 2: Assassins of Kings",
       cover:
         "https://images.igdb.com/igdb/image/upload/t_cover_big/mcou7xzxq0qnerehesrh.jpg",
-      platforms: ["PC", "MAC", "X360", "LIN"],
-      userPlatforms: ["MAC"],
+      platforms: ["PC", "X360", "LIN"],
+      userPlatforms: ["PC"],
       status: "backlog"
     }
   ];

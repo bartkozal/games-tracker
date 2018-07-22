@@ -16,7 +16,7 @@ search.get("/", async (req, res) => {
       fields: "name,platforms,cover.cloudinary_id",
       order: "popularity:desc",
       limit: 12,
-      "filter[platforms][any]": "6,14,48,9,49,12,130"
+      "filter[platforms][any]": "6,48,9,49,12,130"
     }
   });
   const searchResults = await Game.createFromSearchResults(
