@@ -1,4 +1,9 @@
 {
   "presets": ["razzle/babel"],
-  "plugins": ["lodash"]
+  "plugins": ["lodash"],
+  "env": {
+    "production": {
+      "plugins": [["react-remove-properties", { "properties": ["data-test"] }]]
+    }
+  }
 }
