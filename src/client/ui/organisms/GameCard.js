@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import { capitalize, xor } from "lodash";
+import { capitalize, xor, kebabCase } from "lodash";
 import { Flex, Box } from "../atoms/FlexBox";
 import Image from "../atoms/Image";
 import Dropdown from "../molecules/Dropdown";
@@ -29,7 +29,7 @@ const GameCard = ({ game, updateGame, rateGame }) => {
   } = game;
 
   return (
-    <Fragment>
+    <div data-test={`game-card-${kebabCase(name)}`}>
       <Flex alignItems="center" justifyContent="space-between">
         <Box>
           <Score value={score} votes={votes} />
@@ -95,7 +95,7 @@ const GameCard = ({ game, updateGame, rateGame }) => {
           }
         ]}
       />
-    </Fragment>
+    </div>
   );
 };
 
