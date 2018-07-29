@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "react-emotion";
+import { kebabCase } from "lodash";
 import { paddingVertical, paddingHorizontal } from "../utils";
 import {
   SPACING_SMALL,
@@ -25,7 +26,7 @@ const DropdownMenu = styled("div")({
   backgroundColor: DROPDOWN_ITEM
 });
 
-const DropdownItem = styled("button")({
+const StyledDropdownItem = styled("button")({
   ...paddingVertical(SPACING_SMALL),
   ...paddingHorizontal(SPACING_BASE),
   margin: 0,
@@ -38,6 +39,15 @@ const DropdownItem = styled("button")({
     cursor: "pointer"
   }
 });
+
+const DropdownItem = ({ onClick, children }) => (
+  <StyledDropdownItem
+    data-test={`dropdown-item-${kebabCase(children)}`}
+    onClick={onClick}
+  >
+    {children}
+  </StyledDropdownItem>
+);
 
 export default class Dropdown extends Component {
   menu = React.createRef();

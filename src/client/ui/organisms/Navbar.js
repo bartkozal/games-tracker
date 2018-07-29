@@ -33,7 +33,7 @@ class Navbar extends Component {
     return (
       <Flex alignItems="center" justifyContent="space-between">
         <Box>
-          <Link to={ROOT_PATH}>
+          <Link to={ROOT_PATH} data-test="link-home">
             <Title>Games Tracker</Title>
           </Link>
         </Box>
@@ -42,7 +42,7 @@ class Navbar extends Component {
           {userSignedIn ? (
             <Flex alignItems="center">
               <Box>
-                <Link to={PROFILE_PATH}>
+                <Link to={PROFILE_PATH} data-test="link-profile">
                   <Avatar email={currentUser.email} />
                 </Link>
               </Box>

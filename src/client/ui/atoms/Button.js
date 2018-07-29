@@ -1,4 +1,6 @@
+import React from "react";
 import styled from "react-emotion";
+import { kebabCase } from "lodash";
 import {
   SPACING_SMALL,
   COLOR_PRIMARY,
@@ -28,7 +30,7 @@ const getButtonColors = type => {
   }
 };
 
-const Button = styled("button")(
+const StyledButton = styled("button")(
   {
     border: "1px solid transparent",
     padding: 0,
@@ -41,6 +43,16 @@ const Button = styled("button")(
     padding: SPACING_SMALL,
     borderRadius: 4
   })
+);
+
+const Button = ({ children, type, onClick }) => (
+  <StyledButton
+    data-test={`button-${kebabCase(children)}`}
+    type={type}
+    onClick={onClick}
+  >
+    {children}
+  </StyledButton>
 );
 
 export default Button;
