@@ -19,8 +19,8 @@ const mapPlatformName = id => {
 export const parseSearchResults = response =>
   response
     .filter(({ platforms, cover }) => platforms && cover && cover.cloudinary_id)
-    .map(({ name, cover, platforms, id: igdbId }) => ({
-      igdbId,
+    .map(({ name, cover, platforms, id: igdb }) => ({
+      igdb,
       name,
       cover: getCover(cover.cloudinary_id),
       platforms: compact(platforms.map(mapPlatformName))

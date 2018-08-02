@@ -9,21 +9,21 @@ test("parseSearchResults", () => {
       cover:
         "https://images.igdb.com/igdb/image/upload/t_cover_big/tri1c6vbydeosoqajwt1.jpg",
       platforms: ["PC", "PS4", "XONE"],
-      igdbId: 1942
+      igdb: 1942
     },
     {
       name: "The Witcher 2: Assassins of Kings",
       cover:
         "https://images.igdb.com/igdb/image/upload/t_cover_big/mcou7xzxq0qnerehesrh.jpg",
       platforms: ["PC", "X360"],
-      igdbId: 478
+      igdb: 478
     },
     {
       name: "The Witcher",
       cover:
         "https://images.igdb.com/igdb/image/upload/t_cover_big/nrkdzmkevbbevdvm9bxh.jpg",
       platforms: ["PC"],
-      igdbId: 80
+      igdb: 80
     }
   ];
 
