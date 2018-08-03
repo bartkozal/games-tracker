@@ -1,14 +1,21 @@
-import db from "../config/db";
-import Platform from "./platform";
-import User from "./user";
+import BaseModel from "./BaseModel";
+import Platform from "./Platform";
 
-export default db.Model.extend({
-  tableName: "games",
-  hasTimestamps: true,
-  platforms() {
-    return this.belongsToMany(Platform);
-  },
-  users() {
-    return this.belongsToMany(User);
-  }
-});
+export default class Game extends BaseModel {
+  static tableName = "games";
+
+  static relationMappings = {
+    platforms: {
+      relation: BaseModel.ManyToManyRelation,
+      modelClass: Platform,
+      join: {
+        from: "games.id",
+        throguh: {
+          from: "games_platforms.game_id",
+          to: "games_platforms.platform_id"
+        },
+        to: "platforms.id"
+      }
+    }
+  };
+}

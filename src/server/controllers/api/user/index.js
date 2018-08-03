@@ -1,14 +1,14 @@
 import { Router } from "express";
 import User from "../../../models/user";
-import { parseUserGames } from "./utils";
 
 const user = Router();
 
 user.get("/games", async (req, res) => {
   const user = await User.findById(req.user.id).populate("games.gameId");
-  const games = parseUserGames(user.games.toObject());
+  // const games = parseUserGames(user.games.toObject());
 
-  res.json(games);
+  // res.json(games);
+  res.json({});
 });
 
 user.put("/games/:id", async (req, res) => {
