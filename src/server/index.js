@@ -1,13 +1,11 @@
 import express from "express";
 import morgan from "morgan";
 import bodyParser from "body-parser";
-import initDatabase from "./config/initializers/database";
 import initPassport from "./config/initializers/passport";
 import auth from "./controllers/auth";
 import api from "./controllers/api";
 import app from "./controllers/app";
 
-initDatabase();
 initPassport();
 
 const server = express();

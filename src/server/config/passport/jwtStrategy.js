@@ -8,7 +8,7 @@ export default new Strategy(
   },
   async (payload, onAuth) => {
     try {
-      const user = await User.fetchOne({ id: payload.id });
+      const user = await User.query().findOne({ id: payload.id });
       return onAuth(null, user);
     } catch (error) {
       return onAuth(error);

@@ -1,5 +1,5 @@
-import BaseModel from "./BaseModel";
+import Base from "./Base";
 
-export default class Platform extends BaseModel {
+export default class Platform extends Base {
   static tableName = "platforms";
 }

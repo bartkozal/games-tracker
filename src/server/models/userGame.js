@@ -1,12 +1,12 @@
-import BaseModel from "./BaseModel";
+import Base from "./Base";
 import Platform from "./Platform";
 
-export default class UserGame extends BaseModel {
+export default class UserGame extends Base {
   static tableName = "users_games";
 
   static relationMappings = {
     platforms: {
-      relation: BaseModel.ManyToManyRelation,
+      relation: Base.ManyToManyRelation,
       modelClass: Platform,
       join: {
         from: "users_games.id",

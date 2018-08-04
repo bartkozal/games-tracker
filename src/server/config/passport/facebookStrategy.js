@@ -12,13 +12,11 @@ export default new Strategy(
   async (_, __, profile, onAuth) => {
     try {
       const email = profile.emails[0].value;
-      let user = await User.query().findOne({ email });
+      let user = await User.query().findOne({ email: "foo@exmaple.com" });
 
-      console.log(user);
-
-      // if (!user) {
-      //   user = await User.save({ email });
-      // }
+      if (!user) {
+        user = await User.query().insert({ email });
+      }
 
       const token = jwt.sign({ id: user.id, email }, process.env.APP_SECRET);
 
