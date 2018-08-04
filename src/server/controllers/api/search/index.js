@@ -19,11 +19,10 @@ search.get("/", async (req, res) => {
       "filter[platforms][any]": "6,48,9,49,12,130"
     }
   });
-  const searchResults = await Game.createFromSearchResults(
-    parseSearchResults(response.data)
-  );
 
-  res.json(searchResults);
+  // parseSearchResults(response.data)
+
+  res.json({});
 });
 
 export default search;

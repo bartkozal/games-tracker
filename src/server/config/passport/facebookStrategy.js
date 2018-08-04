@@ -12,7 +12,7 @@ export default new Strategy(
   async (_, __, profile, onAuth) => {
     try {
       const email = profile.emails[0].value;
-      let user = await User.query().findOne({ email: "foo@exmaple.com" });
+      let user = await User.query().findOne({ email });
 
       if (!user) {
         user = await User.query().insert({ email });

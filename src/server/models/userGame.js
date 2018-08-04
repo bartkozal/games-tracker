@@ -10,7 +10,7 @@ export default class UserGame extends Base {
       modelClass: Platform,
       join: {
         from: "users_games.id",
-        throguh: {
+        through: {
           from: "users_games_platforms.user_game_id",
           to: "users_games_platforms.platform_id"
         },
