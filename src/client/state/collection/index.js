@@ -1,7 +1,7 @@
 import {
   GAME_UPDATE_RESOLVED,
   GAMES_RESOLVED,
-  GAME_BULK_UPDATE_RESOLVED
+  GAMES_BULK_UPDATE_RESOLVED
 } from "./actionTypes";
 
 const initialState = {
@@ -25,7 +25,7 @@ export default (state = initialState, action) => {
               : game
         )
       };
-    case GAME_BULK_UPDATE_RESOLVED:
+    case GAMES_BULK_UPDATE_RESOLVED:
       return {
         ...state,
         games: state.games.map(game => {

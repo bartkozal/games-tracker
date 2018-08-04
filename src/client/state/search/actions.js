@@ -4,37 +4,28 @@ import {
   resolveResults,
   rejectResults
 } from "./actionCreators";
-import { getScores, getUserGames, getUserRatings } from "../collection/api";
-import { resolveGameBulkUpdate } from "../collection/actionCreators";
+import { getScores, getUserGames } from "../collection/api";
+import { resolveGamesBulkUpdate } from "../collection/actionCreators";
 
 export const searchQuery = query => (dispatch, getState) => {
   dispatch(requestResults());
   getSearchResults(query)
     .then(response => {
       const results = response.data;
-
-      dispatch(resolveResults(results));
-
-      return results;
-    })
-    .then(results => {
       const { userSignedIn, currentUser } = getState().Auth;
-      const token = currentUser.token;
-      const params = {
+      const gamesIds = {
         id: results.map(game => game.id)
       };
 
-      getScores(params).then(response =>
-        dispatch(resolveGameBulkUpdate(response.data))
+      dispatch(resolveResults(results));
+
+      getScores(gamesIds).then(response =>
+        dispatch(resolveGamesBulkUpdate(response.data))
       );
 
       if (userSignedIn) {
-        getUserGames(token, params).then(response =>
-          dispatch(resolveGameBulkUpdate(response.data))
-        );
-
-        getUserRatings(token, params).then(response =>
-          dispatch(resolveGameBulkUpdate(response.data))
+        getUserGames(currentUser.token, gamesIds).then(response =>
+          dispatch(resolveGamesBulkUpdate(response.data))
         );
       }
     })

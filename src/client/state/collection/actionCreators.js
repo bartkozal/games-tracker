@@ -1,7 +1,7 @@
 import {
   GAMES_RESOLVED,
   GAME_UPDATE_RESOLVED,
-  GAME_BULK_UPDATE_RESOLVED
+  GAMES_BULK_UPDATE_RESOLVED
 } from "./actionTypes";
 
 export const resolveGames = games => ({
@@ -18,8 +18,8 @@ export const resolveGameUpdate = game => ({
   }
 });
 
-export const resolveGameBulkUpdate = games => ({
-  type: GAME_BULK_UPDATE_RESOLVED,
+export const resolveGamesBulkUpdate = games => ({
+  type: GAMES_BULK_UPDATE_RESOLVED,
   payload: {
     games
   }

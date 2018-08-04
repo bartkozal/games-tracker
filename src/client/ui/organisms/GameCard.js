@@ -7,15 +7,20 @@ import Dropdown from "../molecules/Dropdown";
 import ButtonGroup from "../molecules/ButtonGroup";
 import Rating from "../molecules/Rating";
 import Score from "../molecules/Score";
-import { updateGame, rateGame } from "../../state/collection/actions";
+import {
+  setGameStatus,
+  setGamePlatforms,
+  rateGame
+} from "../../state/collection/actions";
 import { statusType } from "../../state/collection/types";
 
 const mapDispatchToProps = {
-  updateGame,
+  setGameStatus,
+  setGamePlatforms,
   rateGame
 };
 
-const GameCard = ({ game, updateGame, rateGame }) => {
+const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
   const {
     id,
     name,
@@ -50,11 +55,7 @@ const GameCard = ({ game, updateGame, rateGame }) => {
             userPlatforms && userPlatforms.includes(platform)
               ? "primary"
               : "outline",
-          callback: () =>
-            updateGame({
-              ...game,
-              userPlatforms: xor(userPlatforms, [platform])
-            })
+          callback: () => setGamePlatforms(id, xor(userPlatforms, [platform]))
         }))}
       />
 
@@ -63,35 +64,19 @@ const GameCard = ({ game, updateGame, rateGame }) => {
         items={[
           {
             label: "Wishlist",
-            callback: () =>
-              updateGame({
-                ...game,
-                status: statusType.WISHLIST
-              })
+            callback: () => setGameStatus(id, statusType.WISHLIST)
           },
           {
             label: "Backlog",
-            callback: () =>
-              updateGame({
-                ...game,
-                status: statusType.BACKLOG
-              })
+            callback: () => setGameStatus(id, statusType.BACKLOG)
           },
           {
             label: "Playing",
-            callback: () =>
-              updateGame({
-                ...game,
-                status: statusType.PLAYING
-              })
+            callback: () => setGameStatus(id, statusType.PLAYING)
           },
           {
             label: "Completed",
-            callback: () =>
-              updateGame({
-                ...game,
-                status: statusType.COMPLETED
-              })
+            callback: () => setGameStatus(id, statusType.COMPLETED)
           }
         ]}
       />

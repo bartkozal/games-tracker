@@ -5,7 +5,7 @@ import {
 } from "./actionCreators";
 import {
   resolveGameUpdate,
-  resolveGameBulkUpdate
+  resolveGamesBulkUpdate
 } from "../collection/actionCreators";
 import { statusType } from "../collection/types";
 import reducer, { initialState } from "./";
@@ -78,8 +78,8 @@ describe("Search", () => {
     ]);
   });
 
-  test("GAME_BULK_UPDATE_RESOLVED", () => {
-    const action = resolveGameBulkUpdate([{ id: "foo", rating: 8 }]);
+  test("GAMES_BULK_UPDATE_RESOLVED", () => {
+    const action = resolveGamesBulkUpdate([{ id: "foo", rating: 8 }]);
     const returnedState = reducer(
       {
         ...initialState,

@@ -1,58 +1,47 @@
-import {
-  getUserGames,
-  updateUserGame,
-  updateUserGameRating,
-  getScore,
-  getUserRatings,
-  getScores
-} from "./api";
+import { getUserGames, updateUserGame, getScore, getScores } from "./api";
 import {
   resolveGames,
   resolveGameUpdate,
-  resolveGameBulkUpdate
+  resolveGamesBulkUpdate
 } from "./actionCreators";
 
 export const fetchGames = () => (dispatch, getState) => {
   const { token } = getState().Auth.currentUser;
 
-  getUserGames(token)
-    .then(response => {
-      const games = response.data;
+  getUserGames(token).then(response => {
+    const games = response.data;
+    const userGamesIds = { id: games.map(game => game.id) };
 
-      dispatch(resolveGames(games));
+    dispatch(resolveGames(games));
 
-      return games;
-    })
-    .then(games => {
-      const params = { id: games.map(game => game.id) };
-
-      getUserRatings(token).then(response =>
-        dispatch(resolveGameBulkUpdate(response.data))
-      );
-
-      getScores(params).then(response =>
-        dispatch(resolveGameBulkUpdate(response.data))
-      );
-    });
+    getScores(userGamesIds).then(response =>
+      dispatch(resolveGamesBulkUpdate(response.data))
+    );
+  });
 };
 
-export const updateGame = game => (dispatch, getState) => {
+export const setGameStatus = (id, status) => (dispatch, getState) => {
   const { token } = getState().Auth.currentUser;
-  const { id, userPlatforms: platforms, status } = game;
 
-  updateUserGame(id, token, { platforms, status }).then(() =>
-    dispatch(resolveGameUpdate(game))
+  updateUserGame(id, token, { status }).then(() =>
+    dispatch(resolveGameUpdate({ id, status }))
+  );
+};
+
+export const setGamePlatforms = (id, platforms) => (dispatch, getState) => {
+  const { token } = getState().Auth.currentUser;
+
+  updateUserGame(id, token, { platforms }).then(() =>
+    dispatch(resolveGameUpdate({ id, platforms }))
   );
 };
 
 export const rateGame = (id, rating) => (dispatch, getState) => {
   const { token } = getState().Auth.currentUser;
 
-  updateUserGameRating(id, token, { rating })
-    .then(() => {
-      dispatch(resolveGameUpdate({ id, rating }));
-    })
-    .then(ratedGame => {
-      getScore(id).then(response => dispatch(resolveGameUpdate(response.data)));
-    });
+  updateUserGame(id, token, { rating }).then(() => {
+    dispatch(resolveGameUpdate({ id, rating }));
+
+    getScore(id).then(response => dispatch(resolveGameUpdate(response.data)));
+  });
 };
