@@ -1,15 +1,9 @@
-import React from "react";
+import styled from "react-emotion";
 
-const Image = (src, alt, type, width, fullWidth) => (
-  <img
-    src={src}
-    alt={alt}
-    style={{
-      width,
-      borderRadius: type === "circle" ? "50%" : null,
-      maxWidth: fullWidth ? "100%" : null
-    }}
-  />
-);
+const Image = styled("img")(({ type, width, fullWidth }) => ({
+  width,
+  borderRadius: type === "circle" ? "50%" : null,
+  maxWidth: fullWidth ? "100%" : null
+}));
 
 export default Image;

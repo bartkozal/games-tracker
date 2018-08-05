@@ -1,14 +1,8 @@
-import React from "react";
+import styled from "react-emotion";
 import { marginVertical } from "../utils";
 
-const Subtitle = ({ children }) => (
-  <h2
-    style={{
-      ...marginVertical(0)
-    }}
-  >
-    {children}
-  </h2>
-);
+const Subtitle = styled("h2")({
+  ...marginVertical(0)
+});
 
 export default Subtitle;

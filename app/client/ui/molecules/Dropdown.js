@@ -1,57 +1,52 @@
 import React, { Component } from "react";
+import styled from "react-emotion";
 import { kebabCase } from "lodash";
 import { paddingVertical, paddingHorizontal } from "../utils";
 import {
   SPACING_SMALL,
   SPACING_BASE,
   COLOR_UI,
-  DROPDOWN_ITEM
-  // DROPDOWN_ITEM_HOVER TODO
+  DROPDOWN_ITEM,
+  DROPDOWN_ITEM_HOVER
 } from "../quarks";
 import Button from "../atoms/Button";
 
-const DropdownWrapper = ({ children }) => (
-  <div style={{ position: "relative" }}>{children}</div>
-);
+const DropdownWrapper = styled("div")({
+  position: "relative"
+});
 
-const DropdownMenu = ({ children }) => (
-  <div
-    style={{
-      ...paddingVertical(SPACING_SMALL),
-      display: "flex",
-      flexDirection: "column",
-      position: "absolute",
-      top: 34,
-      left: 0,
-      border: `1px solid ${COLOR_UI}`,
-      backgroundColor: DROPDOWN_ITEM
-    }}
-  >
-    {children}
-  </div>
-);
+const DropdownMenu = styled("div")({
+  ...paddingVertical(SPACING_SMALL),
+  display: "flex",
+  flexDirection: "column",
+  position: "absolute",
+  top: 34,
+  left: 0,
+  border: `1px solid ${COLOR_UI}`,
+  backgroundColor: DROPDOWN_ITEM
+});
+
+const StyledDropdownItem = styled("button")({
+  ...paddingVertical(SPACING_SMALL),
+  ...paddingHorizontal(SPACING_BASE),
+  margin: 0,
+  border: 0,
+  textAlign: "left",
+  backgroundColor: DROPDOWN_ITEM,
+  width: "100%",
+  ":hover": {
+    backgroundColor: DROPDOWN_ITEM_HOVER,
+    cursor: "pointer"
+  }
+});
 
 const DropdownItem = ({ onClick, children }) => (
-  <button
+  <StyledDropdownItem
     data-test={`dropdown-item-${kebabCase(children)}`}
     onClick={onClick}
-    style={{
-      ...paddingVertical(SPACING_SMALL),
-      ...paddingHorizontal(SPACING_BASE),
-      margin: 0,
-      border: 0,
-      textAlign: "left",
-      backgroundColor: DROPDOWN_ITEM,
-      width: "100%"
-      // TODO
-      // ":hover": {
-      //   backgroundColor: DROPDOWN_ITEM_HOVER,
-      //   cursor: "pointer"
-      // }
-    }}
   >
     {children}
-  </button>
+  </StyledDropdownItem>
 );
 
 export default class Dropdown extends Component {

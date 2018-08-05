@@ -1,32 +1,18 @@
-import React from "react";
+import styled from "react-emotion";
 
-export const Flex = ({
-  children,
-  wrap,
-  alignItems,
-  justifyContent,
-  direction
-}) => (
-  <div
-    style={{
-      display: "flex",
-      flexDirection: direction,
-      flexWrap: wrap,
-      alignItems,
-      justifyContent
-    }}
-  >
-    {children}
-  </div>
+export const Flex = styled("div")(
+  {
+    display: "flex"
+  },
+  ({ wrap, alignItems, justifyContent, direction }) => ({
+    flexDirection: direction,
+    flexWrap: wrap,
+    alignItems,
+    justifyContent
+  })
 );
 
-export const Box = ({ children, size, grow }) => (
-  <div
-    style={{
-      flexBasis: size,
-      flexGrow: grow
-    }}
-  >
-    {children}
-  </div>
-);
+export const Box = styled("div")(({ size, grow }) => ({
+  flexBasis: size,
+  flexGrow: grow
+}));

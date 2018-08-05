@@ -1,14 +1,8 @@
-import React from "react";
+import styled from "react-emotion";
 import { marginVertical } from "../utils";
 
-const Title = ({ children }) => (
-  <h1
-    style={{
-      ...marginVertical(0)
-    }}
-  >
-    {children}
-  </h1>
-);
+const Title = styled("h1")({
+  ...marginVertical(0)
+});
 
 export default Title;
