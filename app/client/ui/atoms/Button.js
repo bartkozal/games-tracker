@@ -8,8 +8,8 @@ import {
   COLOR_FACEBOOK
 } from "../quarks";
 
-const getButtonColors = type => {
-  switch (type) {
+const getButtonColors = modifier => {
+  switch (modifier) {
     case "facebook":
       return {
         backgroundColor: COLOR_FACEBOOK,
@@ -38,8 +38,8 @@ const StyledButton = styled("button")(
       cursor: "pointer"
     }
   },
-  ({ type }) => ({
-    ...getButtonColors(type),
+  ({ modifier }) => ({
+    ...getButtonColors(modifier),
     padding: SPACING_SMALL,
     borderRadius: 4
   })
@@ -47,8 +47,8 @@ const StyledButton = styled("button")(
 
 const Button = ({ children, type, onClick }) => (
   <StyledButton
-    data-test={`button-${kebabCase(children)}`}
-    type={type}
+    data-test={`button-${type}-${kebabCase(children)}`}
+    modifier={type}
     onClick={onClick}
   >
     {children}

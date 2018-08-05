@@ -5,10 +5,10 @@ import state from ".";
 
 const middlewares = [thunk];
 
-// TODO
-// if (process.env.NODE_ENV === "development") {
-middlewares.push(logger);
-// }
+// eslint-disable-next-line no-undef
+if (process.env.NODE_ENV === "development") {
+  middlewares.push(logger);
+}
 
 const store = createStore(state, applyMiddleware(...middlewares));
 
