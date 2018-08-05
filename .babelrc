@@ -14,6 +14,7 @@
     "react"
   ],
   "plugins": [
+    "lodash",
     "syntax-dynamic-import",
     "transform-object-rest-spread",
     [
@@ -22,5 +23,10 @@
         "spec": true
       }
     ]
-  ]
+  ],
+  "env": {
+    "production": {
+      "plugins": [["react-remove-properties", { "properties": ["data-test"] }]]
+    }
+  }
 }

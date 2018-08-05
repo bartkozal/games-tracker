@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/warnings"
+  ],
+  "plugins": ["cypress", "react", "import", "jest"],
+  "env": {
+    "cypress/globals": true,
+    "jest/globals": true
+  }
+}
