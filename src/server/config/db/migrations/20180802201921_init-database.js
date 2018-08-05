@@ -19,7 +19,12 @@ exports.up = knex =>
     .createTable("platforms", t => {
       t.increments("id").primary();
       t.timestamps();
-      t.string("slug").notNullable();
+      t.integer("igdb")
+        .unique()
+        .notNullable();
+      t.string("slug")
+        .unique()
+        .notNullable();
     })
     .createTable("games_platforms", t => {
       t.increments("id").primary();

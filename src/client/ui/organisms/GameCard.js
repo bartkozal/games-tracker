@@ -48,16 +48,17 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
 
       <div>{name}</div>
 
-      <ButtonGroup
+      {/* <ButtonGroup
         buttons={platforms.map(platform => ({
-          caption: platform,
+          caption: platform.slug,
+          type: "outline"
           type:
             userPlatforms && userPlatforms.includes(platform)
               ? "primary"
               : "outline",
           callback: () => setGamePlatforms(id, xor(userPlatforms, [platform]))
         }))}
-      />
+      /> */}
 
       <Dropdown
         toggle={capitalize(status) || "Add to collection"}

@@ -20,9 +20,18 @@ search.get("/", async (req, res) => {
     }
   });
 
-  // parseSearchResults(response.data)
+  const searchResults = await parseSearchResults(response.data);
+  const games = searchResults.map(async result => {
+    const game = await Game.query().findOne({ igdb: result.igdb });
+    return await Game.query().upsertGraph(
+      { ...game, ...result },
+      { relate: true, noUpdate: ["platforms"] }
+    );
+  });
 
-  res.json({});
+  console.log(Promise.all(games));
+
+  res.json([]);
 });
 
 export default search;
