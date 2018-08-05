@@ -1,24 +1,29 @@
-# README
+# Games Tracker [![Build Status](https://semaphoreci.com/api/v1/projects/4040781d-ddc7-46de-aa23-c39a472396e1/2049517/shields_badge.svg)](https://semaphoreci.com/games-tracker/games-tracker)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dependencies
 
-Things you may want to cover:
+- Ruby 2.5.1
+- Node 9.10.1
+- PostgreSQL 10.4
 
-* Ruby version
+## Development
 
-* System dependencies
+```sh
+$ brew install hivemind
+$ bundle install
+$ rails db:setup
+$ yarn install
+$ yarn start
+```
 
-* Configuration
+## Test
 
-* Database creation
+```sh
+$ rails test
+$ yarn test
+$ yarn cypress
+```
 
-* Database initialization
+## Deployment
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+> TODO
