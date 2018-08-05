@@ -29,5 +29,5 @@ export const searchQuery = query => (dispatch, getState) => {
         );
       }
     })
-    .catch(error => dispatch(rejectResults()));
+    .catch(() => dispatch(rejectResults()));
 };

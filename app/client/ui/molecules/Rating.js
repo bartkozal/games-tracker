@@ -2,7 +2,7 @@ import React from "react";
 import { range } from "lodash";
 import Dropdown from "./Dropdown";
 
-const Rating = ({ value, game, onRate }) => (
+const Rating = ({ value, onRate }) => (
   <span>
     <Dropdown
       toggle={value || "Rate"}
