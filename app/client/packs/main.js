@@ -1,11 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import PropTypes from "prop-types";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "../state/store";
+import App from "../App";
+import "modern-normalize/modern-normalize.css";
+import "../global.css";
 
-const Hello = props => <div>Hello {props.name}!</div>;
-
-Hello.propTypes = {
-  name: PropTypes.string
-};
-
-ReactDOM.render(<Hello name="World" />, document.getElementById("root"));
+ReactDOM.render(
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
+  document.getElementById("root")
+);

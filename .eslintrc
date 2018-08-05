@@ -1,12 +1,16 @@
 {
+  "env": {
+    "cypress/globals": true,
+    "jest/globals": true
+  },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:import/warnings"
   ],
+  "parser": "babel-eslint",
   "plugins": ["cypress", "react", "import", "jest"],
-  "env": {
-    "cypress/globals": true,
-    "jest/globals": true
+  "rules": {
+    "react/prop-types": 0
   }
 }

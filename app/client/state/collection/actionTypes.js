@@ -1,0 +1,4 @@
+export const GAMES_RESOLVED = "Collection/GAMES_RESOLVED";
+export const GAME_UPDATE_RESOLVED = "Collection/GAME_UPDATE_RESOLVED";
+export const GAMES_BULK_UPDATE_RESOLVED =
+  "Collection/GAMES_BULK_UPDATE_RESOLVED";
