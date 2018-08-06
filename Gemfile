@@ -10,6 +10,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'jwt'
+gem 'typhoeus'
 
 group :development, :test do
   gem 'byebug'
