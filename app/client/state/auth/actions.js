@@ -2,7 +2,7 @@ import cookies from "js-cookie";
 import { signUserIn, signUserOut } from "./actionCreators";
 
 export const setCurrentUser = () => dispatch => {
-  const currentUser = cookies.get("auth");
+  const currentUser = JSON.parse(decodeURIComponent(cookies.get("auth")));
 
   if (currentUser) {
     dispatch(signUserIn(currentUser));

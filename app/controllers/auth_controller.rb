@@ -1,7 +1,16 @@
 class AuthController < ApplicationController
   def create
-    User.find_or_create_by(email: auth_hash.info.email)
-    redirect_to '/'
+    user = User.find_or_create_by(email: auth_hash.info.email)
+
+    cookies[:auth] = {
+      value: JSON.generate({
+        token: user.token,
+        email: user.email
+      }),
+      expires: 14.days
+    }
+
+    redirect_to root_path
   end
 
   private
