@@ -1,9 +1,9 @@
 import { get } from "axios";
-import { API_SEARCH } from "../../routes/api";
+import { API_GAMES } from "../../routes/api";
 
 export const getSearchResults = (query: string) =>
-  get(API_SEARCH, {
+  get(API_GAMES, {
     params: {
-      q: query
+      search: query
     }
   });
