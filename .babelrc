@@ -27,6 +27,9 @@
   "env": {
     "production": {
       "plugins": [["react-remove-properties", { "properties": ["data-test"] }]]
+    },
+    "test": {
+      "presets": ["env", "react"]
     }
   }
 }

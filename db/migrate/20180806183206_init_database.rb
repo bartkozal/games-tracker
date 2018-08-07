@@ -18,7 +18,9 @@ class InitDatabase < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    create_join_table :users, :games do |t|
+    create_table :user_games do |t|
+      t.references :user, foreign_key: true
+      t.references :game, foreign_key: true
       t.integer :rating
       t.integer :status
       t.timestamps

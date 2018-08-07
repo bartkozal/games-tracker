@@ -28,7 +28,7 @@ class IGDB
     end
   end
 
-private
+  private
 
   def self.cover(hash, size = "cover_big")
     "https://images.igdb.com/igdb/image/upload/t_#{size}/#{hash}.jpg"

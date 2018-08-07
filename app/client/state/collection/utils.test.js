@@ -1,7 +1,7 @@
-import { paramsSerializer } from "./utils";
+import { filtersSerializer } from "./utils";
 
-test("paramsSerializer", () => {
+test("filtersSerializer", () => {
   const params = { id: ["1", "2", "3"] };
 
-  expect(paramsSerializer(params)).toEqual("id=1,2,3");
+  expect(filtersSerializer(params)).toEqual("filter[id]=1,2,3");
 });

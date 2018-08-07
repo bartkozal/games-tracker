@@ -23,7 +23,7 @@ export const fetchGames = () => (dispatch, getState) => {
 export const setGameStatus = (id, status) => (dispatch, getState) => {
   const { token } = getState().Auth.currentUser;
 
-  updateUserGame(id, token, { status }).then(() =>
+  updateUserGame(id, token, { game: { status } }).then(() =>
     dispatch(resolveGameUpdate({ id, status }))
   );
 };
@@ -31,7 +31,7 @@ export const setGameStatus = (id, status) => (dispatch, getState) => {
 export const setGamePlatforms = (id, platforms) => (dispatch, getState) => {
   const { token } = getState().Auth.currentUser;
 
-  updateUserGame(id, token, { platforms }).then(() =>
+  updateUserGame(id, token, { game: { platforms } }).then(() =>
     dispatch(resolveGameUpdate({ id, platforms }))
   );
 };
@@ -39,7 +39,7 @@ export const setGamePlatforms = (id, platforms) => (dispatch, getState) => {
 export const rateGame = (id, rating) => (dispatch, getState) => {
   const { token } = getState().Auth.currentUser;
 
-  updateUserGame(id, token, { rating }).then(() => {
+  updateUserGame(id, token, { game: { rating } }).then(() => {
     dispatch(resolveGameUpdate({ id, rating }));
 
     getScore(id).then(response => dispatch(resolveGameUpdate(response.data)));

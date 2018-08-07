@@ -4,6 +4,7 @@ class Api::GamesController < ApiController
     data = JSON.parse(response.body)
     games = Game.save_igdb_results(data)
 
+    # TODO
     render json: games.to_json(
       except: [:created_at, :updated_at, :igdb],
       include: {

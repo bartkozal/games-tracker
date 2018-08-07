@@ -30,15 +30,6 @@ ActiveRecord::Schema.define(version: 2018_08_06_183206) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "games_users", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "game_id", null: false
-    t.integer "rating"
-    t.integer "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "platforms", force: :cascade do |t|
     t.integer "igdb"
     t.string "slug"
@@ -53,10 +44,23 @@ ActiveRecord::Schema.define(version: 2018_08_06_183206) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_games", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "game_id"
+    t.integer "rating"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_user_games_on_game_id"
+    t.index ["user_id"], name: "index_user_games_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
   end
 
+  add_foreign_key "user_games", "games"
+  add_foreign_key "user_games", "users"
 end

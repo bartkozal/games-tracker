@@ -25,8 +25,8 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
     id,
     name,
     cover,
-    platforms,
-    userPlatforms,
+    // platforms,
+    // userPlatforms,
     status,
     rating,
     score,
@@ -48,7 +48,7 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
 
       <div>{name}</div>
 
-      <ButtonGroup
+      {/* <ButtonGroup
         buttons={platforms.map(platform => ({
           caption: platform.slug,
           type:
@@ -57,7 +57,7 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
               : "outline",
           callback: () => setGamePlatforms(id, xor(userPlatforms, [platform]))
         }))}
-      />
+      /> */}
 
       <Dropdown
         toggle={capitalize(status) || "Add to collection"}

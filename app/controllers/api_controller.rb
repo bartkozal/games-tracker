@@ -1,7 +1,8 @@
 class ApiController < ApplicationController
+  skip_before_action :verify_authenticity_token
   attr_reader :current_user
 
-protected
+  protected
 
   def authenticate
     if token
@@ -11,7 +12,7 @@ protected
     end
   end
 
-private
+  private
 
   def token
     request.headers["Authorization"]&.split(" ")&.last

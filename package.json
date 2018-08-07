@@ -6,7 +6,13 @@
     "cypress": "cypress open",
     "lint": "eslint app/client/",
     "start": "hivemind Procfile.dev",
-    "test": "jest"
+    "test": "jest --watch --env=jsdom"
+  },
+  "jest": {
+    "testURL": "http://localhost/",
+    "testMatch": [
+      "**/app/client/**/?(*.)+(test).js"
+    ]
   },
   "dependencies": {
     "@rails/webpacker": "3.5",
