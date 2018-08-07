@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     resources :scores, only: [:index, :show]
   end
 
-  get '/auth/:provider/callback', to: 'auth#create'
+  get "/auth/:provider/callback", to: "auth#create"
   root "client#show"
 end

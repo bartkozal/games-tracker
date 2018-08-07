@@ -14,6 +14,6 @@ class ApiController < ApplicationController
   private
 
   def token
-    request.headers['Authorization']&.split(' ')&.last
+    request.headers["Authorization"]&.split(" ")&.last
   end
 end

@@ -1,10 +1,10 @@
-require 'jwt'
+require "jwt"
 
 class User < ApplicationRecord
   has_many :games, through: :user_games
 
   def self.authenticate(token)
-    jwt = JWT.decode(token, Rails.application.credentials.jwt, 'HS256')
+    jwt = JWT.decode(token, Rails.application.credentials.jwt, "HS256")
     User.find(jwt.id)
   end
 
@@ -12,6 +12,6 @@ class User < ApplicationRecord
     JWT.encode({
       id: id,
       iat: Time.now.to_i
-    }, Rails.application.credentials.jwt, 'HS256')
+    }, Rails.application.credentials.jwt, "HS256")
   end
 end
