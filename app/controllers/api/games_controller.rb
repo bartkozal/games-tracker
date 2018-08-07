@@ -1,9 +1,16 @@
 class Api::GamesController < ApiController
   def index
-    # TODO
-    # response = IGDB.query(params[:search])
-    # games = Game.save_igdb_results(response.body)
+    response = IGDB.query(params[:search])
+    data = JSON.parse(response.body)
+    games = Game.save_igdb_results(data)
 
-    # render json: games
+    render json: games.to_json(
+      except: [:created_at, :updated_at, :igdb],
+      include: {
+        platforms: {
+          except: [:created_at, :updated_at, :igdb]
+        }
+      }
+    )
   end
 end

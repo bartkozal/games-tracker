@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2018_08_06_183206) do
   create_table "games_platforms", id: false, force: :cascade do |t|
     t.bigint "game_id", null: false
     t.bigint "platform_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "games_users", id: false, force: :cascade do |t|
@@ -47,6 +49,8 @@ ActiveRecord::Schema.define(version: 2018_08_06_183206) do
   create_table "platforms_user_games", id: false, force: :cascade do |t|
     t.bigint "user_game_id", null: false
     t.bigint "platform_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

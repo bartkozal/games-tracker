@@ -24,7 +24,12 @@ class InitDatabase < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    create_join_table :games, :platforms
-    create_join_table :user_games, :platforms
+    create_join_table :games, :platforms do |t|
+      t.timestamps
+    end
+
+    create_join_table :user_games, :platforms do |t|
+      t.timestamps
+    end
   end
 end

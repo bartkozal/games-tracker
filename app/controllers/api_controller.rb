@@ -1,7 +1,7 @@
 class ApiController < ApplicationController
   attr_reader :current_user
 
-  protected
+protected
 
   def authenticate
     if token
@@ -11,7 +11,7 @@ class ApiController < ApplicationController
     end
   end
 
-  private
+private
 
   def token
     request.headers["Authorization"]&.split(" ")&.last

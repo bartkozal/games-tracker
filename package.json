@@ -6,7 +6,7 @@
     "cypress": "cypress open",
     "lint": "eslint app/client/",
     "start": "hivemind Procfile.dev",
-    "test": "jest --watch"
+    "test": "jest"
   },
   "dependencies": {
     "@rails/webpacker": "3.5",

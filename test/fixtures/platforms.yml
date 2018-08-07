@@ -1,0 +1,29 @@
+pc:
+  id: 1
+  igdb: 6
+  slug: "PC"
+
+ps4:
+  id: 2
+  igdb: 48
+  slug: "PS4"
+
+ps3:
+  id: 3
+  igdb: 9
+  slug: "PS3"
+
+xone:
+  id: 4
+  igdb: 49
+  slug: "XONE"
+
+x360:
+  id: 5
+  igdb: 12
+  slug: "X360"
+
+nsw:
+  id: 6
+  igdb: 130
+  slug: "NSW"

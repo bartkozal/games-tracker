@@ -13,8 +13,32 @@ class IGDB
     )
   end
 
-  def self.parse(body)
-    # TODO
-    # body
+  def self.parse(data)
+    data.select do |game|
+      game["platforms"] && game["cover"] && game["cover"]["cloudinary_id"]
+    end.map do |game|
+      {
+        igdb: game["id"],
+        name: game["name"],
+        cover: cover(game["cover"]["cloudinary_id"]),
+        platforms: platforms(game["platforms"])
+      }
+    end.select do |game|
+      game[:platforms].size > 0
+    end
+  end
+
+private
+
+  def self.cover(hash, size = "cover_big")
+    "https://images.igdb.com/igdb/image/upload/t_#{size}/#{hash}.jpg"
+  end
+
+  def self.platforms(igdb_ids)
+    @@platforms ||= Platform.all
+
+    igdb_ids.map do |id|
+      @@platforms.find_by(igdb: id)
+    end.compact
   end
 end

@@ -13,7 +13,7 @@ class AuthController < ApplicationController
     redirect_to root_path
   end
 
-  private
+private
 
   def auth_hash
     request.env["omniauth.auth"]
