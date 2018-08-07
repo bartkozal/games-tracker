@@ -1,6 +1,8 @@
 require "jwt"
 
 class User < ApplicationRecord
+  validates :email, uniqueness: true, presence: true
+
   has_many :games, through: :user_games
 
   def self.authenticate(token)
