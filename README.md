@@ -3,7 +3,7 @@
 ## Dependencies
 
 - Ruby 2.5.1
-- Node 9.10.1
+- Node 9.11.1
 - PostgreSQL 10.4
 
 ## Development
