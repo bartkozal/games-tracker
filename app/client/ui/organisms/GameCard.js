@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { capitalize, xor, kebabCase } from "lodash";
+import { capitalize, xorBy, kebabCase } from "lodash";
 import { Flex, Box } from "../atoms/FlexBox";
 import Image from "../atoms/Image";
 import Dropdown from "../molecules/Dropdown";
@@ -25,8 +25,8 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
     id,
     name,
     cover,
-    // platforms,
-    // userPlatforms,
+    platforms,
+    userPlatforms,
     status,
     rating,
     score,
@@ -48,16 +48,18 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
 
       <div>{name}</div>
 
-      {/* <ButtonGroup
+      <ButtonGroup
         buttons={platforms.map(platform => ({
           caption: platform.slug,
-          type:
-            userPlatforms && userPlatforms.includes(platform)
-              ? "primary"
-              : "outline",
-          callback: () => setGamePlatforms(id, xor(userPlatforms, [platform]))
+          type: userPlatforms.find(
+            userPlatform => userPlatform.id === platform.id
+          )
+            ? "primary"
+            : "outline",
+          callback: () =>
+            setGamePlatforms(id, xorBy(userPlatforms, [platform], "id"))
         }))}
-      /> */}
+      />
 
       <Dropdown
         toggle={capitalize(status) || "Add to collection"}

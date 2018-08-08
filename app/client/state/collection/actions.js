@@ -30,9 +30,10 @@ export const setGameStatus = (id, status) => (dispatch, getState) => {
 
 export const setGamePlatforms = (id, platforms) => (dispatch, getState) => {
   const { token } = getState().Auth.currentUser;
+  const platformIds = platforms.map(({ id }) => id);
 
-  updateUserGame(id, token, { game: { platforms } }).then(() =>
-    dispatch(resolveGameUpdate({ id, platforms }))
+  updateUserGame(id, token, { game: { platforms: platformIds } }).then(() =>
+    dispatch(resolveGameUpdate({ id, userPlatforms: platforms }))
   );
 };
 

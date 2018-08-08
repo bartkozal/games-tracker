@@ -5,14 +5,26 @@ class Api::User::GamesController < Api::UserController
   end
 
   def update
-    game = UserGame.find_or_create_by(user: current_user, game_id: params[:id])
-    game.update(game_params)
+    user_game = UserGame.find_or_create_by(
+      user: current_user,
+      game_id: params[:id]
+    )
+
+    if platforms = user_game_params[:platforms]
+      user_game.platforms = platforms.map do |id|
+        Platform.find(id)
+      end
+      user_game.save
+    else
+      user_game.update(user_game_params)
+    end
+
     head 204
   end
 
   private
 
-  def game_params
-    params.require(:game).permit(:status, :rating)
+  def user_game_params
+    params.require(:game).permit(:status, :rating, platforms: [])
   end
 end
