@@ -1,8 +1,7 @@
 class Api::User::GamesController < Api::UserController
   def index
-    games = UserGame.where(user: current_user).includes(:game)
-    # TODO
-    render json: games.to_json(include: [:game])
+    query = apply_optional_filters({ user: current_user }, id: :game_id)
+    @user_games = UserGame.where(query).includes(:platforms, game: [:platforms])
   end
 
   def update
