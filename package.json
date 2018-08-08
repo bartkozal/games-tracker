@@ -6,7 +6,8 @@
     "cypress": "cypress open",
     "lint": "eslint app/client/",
     "start": "hivemind Procfile.dev",
-    "test": "jest --watch --env=jsdom"
+    "test": "jest --watch",
+    "test:ci": "jest --ci"
   },
   "jest": {
     "testURL": "http://localhost/",
