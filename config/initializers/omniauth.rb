@@ -1,5 +1,5 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :facebook,
-    Rails.application.credentials.facebook[:app_id],
-    Rails.application.credentials.facebook[:app_secret]
+    Rails.application.credentials[Rails.env.to_sym][:facebook][:app_id],
+    Rails.application.credentials[Rails.env.to_sym][:facebook][:app_secret]
 end

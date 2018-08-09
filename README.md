@@ -26,4 +26,4 @@ $ yarn cypress
 
 ## Deployment
 
-> TODO
+Master branch is auto-deployed to Heroku.
