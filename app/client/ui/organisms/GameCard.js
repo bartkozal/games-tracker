@@ -26,7 +26,7 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
     name,
     cover,
     platforms,
-    userPlatforms,
+    userPlatforms = [],
     status,
     rating,
     score,

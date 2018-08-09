@@ -4,7 +4,7 @@ class ApiController < ApplicationController
 
   protected
 
-  def authenticate
+  def authorize
     if token
       @current_user = User.authenticate(token)
     else

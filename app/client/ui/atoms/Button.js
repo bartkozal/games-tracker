@@ -22,7 +22,6 @@ const getButtonColors = modifier => {
         border: `1px solid ${COLOR_PRIMARY}`
       };
     case "primary":
-    default:
       return {
         backgroundColor: COLOR_PRIMARY,
         color: COLOR_TEXT_INVERTED
@@ -45,7 +44,7 @@ const StyledButton = styled("button")(
   })
 );
 
-const Button = ({ children, type, onClick }) => (
+const Button = ({ children, type = "primary", onClick }) => (
   <StyledButton
     data-test={`button-${type}-${kebabCase(children)}`}
     modifier={type}
