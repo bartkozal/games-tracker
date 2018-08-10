@@ -12,14 +12,14 @@ class ApiController < ApplicationController
     end
   end
 
-  def apply_optional_filters(query, filters)
-    filters.each do |filter, key|
+  def apply_filters(filters, conditions = {})
+    filters.each do |column, filter|
       if params[:filter] && values = params[:filter][filter]
-        query.merge!(Hash[key, values.split(',')])
+        conditions.merge!(Hash[column, values.split(",")])
       end
     end
 
-    query
+    conditions
   end
 
   private

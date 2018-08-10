@@ -1,7 +1,7 @@
 class Api::User::GamesController < Api::UserController
   def index
-    query = apply_optional_filters({ user: current_user }, id: :game_id)
-    @user_games = UserGame.where(query).includes(:platforms, game: [:platforms])
+    conditions = apply_filters({ game_id: :id }, { user: current_user })
+    @user_games = UserGame.where(conditions).includes(:platforms, game: [:platforms])
   end
 
   def update

@@ -4,7 +4,7 @@ import {
   resolveResults,
   rejectResults
 } from "./actionCreators";
-import { getScores, getUserGames } from "../collection/api";
+import { getRatings, getUserGames } from "../collection/api";
 import { resolveGamesBulkUpdate } from "../collection/actionCreators";
 
 export const searchQuery = query => (dispatch, getState) => {
@@ -19,7 +19,7 @@ export const searchQuery = query => (dispatch, getState) => {
 
       dispatch(resolveResults(results));
 
-      getScores(gamesIds).then(response =>
+      getRatings(gamesIds).then(response =>
         dispatch(resolveGamesBulkUpdate(response.data))
       );
 

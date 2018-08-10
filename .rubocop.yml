@@ -9,10 +9,13 @@ inherit_mode:
 
 AllCops:
   Exclude:
-    - 'bin/**/*'
+    - "bin/**/*"
 
 Style/FrozenStringLiteralComment:
   Enabled: false
 
 Bundler/OrderedGems:
+  Enabled: false
+
+Style/LambdaCall:
   Enabled: false

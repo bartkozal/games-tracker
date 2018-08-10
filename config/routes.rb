@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     end
 
     resources :games, only: [:index]
-    resources :scores, only: [:index, :show]
+    resources :ratings, only: [:index, :show]
   end
 
   get "/auth/:provider/callback", to: "auth#create"

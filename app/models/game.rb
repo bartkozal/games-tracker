@@ -11,4 +11,12 @@ class Game < ApplicationRecord
       saved_game.id
     end
   end
+
+  def self.rating(id:, average:, count:)
+    {
+      id: id.to_i,
+      score: average.to_f.round(1),
+      votes: count
+    }
+  end
 end

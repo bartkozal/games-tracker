@@ -1,4 +1,4 @@
-import { getUserGames, updateUserGame, getScore, getScores } from "./api";
+import { getUserGames, updateUserGame, getRating, getRatings } from "./api";
 import {
   resolveGames,
   resolveGameUpdate,
@@ -14,7 +14,7 @@ export const fetchGames = () => (dispatch, getState) => {
 
     dispatch(resolveGames(games));
 
-    getScores(userGamesIds).then(response =>
+    getRatings(userGamesIds).then(response =>
       dispatch(resolveGamesBulkUpdate(response.data))
     );
   });
@@ -43,6 +43,6 @@ export const rateGame = (id, rating) => (dispatch, getState) => {
   updateUserGame(id, token, { game: { rating } }).then(() => {
     dispatch(resolveGameUpdate({ id, rating }));
 
-    getScore(id).then(response => dispatch(resolveGameUpdate(response.data)));
+    getRating(id).then(response => dispatch(resolveGameUpdate(response.data)));
   });
 };
