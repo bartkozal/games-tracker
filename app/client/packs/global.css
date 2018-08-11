@@ -5,11 +5,19 @@
 }
 
 body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   font-family: "Lato", sans-serif;
   font-size: 100%;
   line-height: 1.15;
-  background-color: #161930;
   color: #849cce;
+  background-color: #161930;
+  background-image: radial-gradient(
+    circle at bottom right,
+    rgba(255, 0, 132, 0.05),
+    transparent
+  );
 }
 
 a {

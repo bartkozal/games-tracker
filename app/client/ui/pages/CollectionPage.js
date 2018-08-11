@@ -4,8 +4,7 @@ import { connect } from "react-redux";
 import { groupBy } from "lodash";
 import { Game } from "types";
 import { fetchGames } from "state/collection/actions";
-import { Flex, Box } from "ui/atoms/FlexBox";
-import GameCard from "ui/organisms/GameCard";
+import GameCardGrid from "ui/organisms/GameCardGrid";
 
 const mapStateToProps = ({ Collection }) => {
   const games = Collection.games;
@@ -37,51 +36,21 @@ class CollectionPage extends Component {
         {!!unassigned.length && (
           <Fragment>
             <div>Unassigned</div>
-            <Flex collapse>
-              {unassigned.map(game => (
-                <Box key={game.id} size="25%">
-                  <GameCard game={game} />
-                </Box>
-              ))}
-            </Flex>
+            <GameCardGrid collection={unassigned} />
           </Fragment>
         )}
 
         <div>Wishlist</div>
-        <Flex collapse>
-          {wishlist.map(game => (
-            <Box key={game.id} size="25%">
-              <GameCard game={game} />
-            </Box>
-          ))}
-        </Flex>
+        <GameCardGrid collection={wishlist} />
 
         <div>Backlog</div>
-        <Flex collapse>
-          {backlog.map(game => (
-            <Box key={game.id} size="25%">
-              <GameCard game={game} />
-            </Box>
-          ))}
-        </Flex>
+        <GameCardGrid collection={backlog} />
 
         <div>Playing</div>
-        <Flex collapse>
-          {playing.map(game => (
-            <Box key={game.id} size="25%">
-              <GameCard game={game} />
-            </Box>
-          ))}
-        </Flex>
+        <GameCardGrid collection={playing} />
 
         <div>Completed</div>
-        <Flex collapse>
-          {completed.map(game => (
-            <Box key={game.id} size="25%">
-              <GameCard game={game} />
-            </Box>
-          ))}
-        </Flex>
+        <GameCardGrid collection={completed} />
       </Fragment>
     );
   }
