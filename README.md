@@ -11,8 +11,8 @@
 ```sh
 $ brew install hivemind
 $ bundle install
-$ rails db:setup
 $ yarn install
+$ rails db:setup
 $ yarn start
 ```
 

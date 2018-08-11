@@ -9,12 +9,6 @@
     "test": "jest --watch",
     "test:ci": "jest --ci"
   },
-  "jest": {
-    "testURL": "http://localhost/",
-    "testMatch": [
-      "**/app/client/**/?(*.)+(test).js"
-    ]
-  },
   "dependencies": {
     "@rails/webpacker": "3.5",
     "axios": "^0.18.0",
