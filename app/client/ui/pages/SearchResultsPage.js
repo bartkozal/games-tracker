@@ -14,7 +14,7 @@ const SearchResultsPage = ({ results }) => (
   <Fragment>
     <SearchForm />
 
-    <Flex wrap="wrap">
+    <Flex collapse>
       {results.map(game => (
         <Box key={game.id} size="25%">
           <GameCard game={game} />

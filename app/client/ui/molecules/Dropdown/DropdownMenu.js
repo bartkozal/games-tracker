@@ -1,16 +1,14 @@
 import styled from "react-emotion";
-import { paddingVertical } from "ui/utils";
-import { SPACING_SMALL, COLOR_UI, DROPDOWN_ITEM } from "ui/quarks";
+import { SPACING_SMALL } from "ui/quarks";
 
 const DropdownMenu = styled("div")({
-  ...paddingVertical(SPACING_SMALL),
+  paddingTop: SPACING_SMALL,
+  paddingBottom: SPACING_SMALL,
   display: "flex",
   flexDirection: "column",
   position: "absolute",
   top: 34,
-  left: 0,
-  border: `1px solid ${COLOR_UI}`,
-  backgroundColor: DROPDOWN_ITEM
+  left: 0
 });
 
 export default DropdownMenu;

@@ -1,11 +1,13 @@
 import styled from "react-emotion";
-import { marginHorizontal, paddingHorizontal } from "ui/utils";
 import { CONTAINER_WIDTH, SPACING_BASE } from "ui/quarks";
 
 const Container = styled("div")({
-  ...marginHorizontal("auto"),
-  ...paddingHorizontal(SPACING_BASE),
-  maxWidth: CONTAINER_WIDTH
+  marginLeft: "auto",
+  marginRight: "auto",
+  paddingLeft: SPACING_BASE,
+  paddingRight: SPACING_BASE,
+  maxWidth: CONTAINER_WIDTH,
+  boxSizing: "content-box"
 });
 
 export default Container;

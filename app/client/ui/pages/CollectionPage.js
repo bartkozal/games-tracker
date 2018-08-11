@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { groupBy } from "lodash";
 import { Game } from "types";
 import { fetchGames } from "state/collection/actions";
-import Subtitle from "ui/atoms/Subtitle";
 import { Flex, Box } from "ui/atoms/FlexBox";
 import GameCard from "ui/organisms/GameCard";
 
@@ -37,8 +36,8 @@ class CollectionPage extends Component {
       <Fragment>
         {!!unassigned.length && (
           <Fragment>
-            <Subtitle>Unassigned</Subtitle>
-            <Flex wrap="wrap">
+            <div>Unassigned</div>
+            <Flex collapse>
               {unassigned.map(game => (
                 <Box key={game.id} size="25%">
                   <GameCard game={game} />
@@ -48,8 +47,8 @@ class CollectionPage extends Component {
           </Fragment>
         )}
 
-        <Subtitle>Wishlist</Subtitle>
-        <Flex wrap="wrap">
+        <div>Wishlist</div>
+        <Flex collapse>
           {wishlist.map(game => (
             <Box key={game.id} size="25%">
               <GameCard game={game} />
@@ -57,8 +56,8 @@ class CollectionPage extends Component {
           ))}
         </Flex>
 
-        <Subtitle>Backlog</Subtitle>
-        <Flex wrap="wrap">
+        <div>Backlog</div>
+        <Flex collapse>
           {backlog.map(game => (
             <Box key={game.id} size="25%">
               <GameCard game={game} />
@@ -66,8 +65,8 @@ class CollectionPage extends Component {
           ))}
         </Flex>
 
-        <Subtitle>Playing</Subtitle>
-        <Flex wrap="wrap">
+        <div>Playing</div>
+        <Flex collapse>
           {playing.map(game => (
             <Box key={game.id} size="25%">
               <GameCard game={game} />
@@ -75,8 +74,8 @@ class CollectionPage extends Component {
           ))}
         </Flex>
 
-        <Subtitle>Completed</Subtitle>
-        <Flex wrap="wrap">
+        <div>Completed</div>
+        <Flex collapse>
           {completed.map(game => (
             <Box key={game.id} size="25%">
               <GameCard game={game} />

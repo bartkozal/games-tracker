@@ -1,11 +1,11 @@
-import { COLOR_PRIMARY, COLOR_TEXT_INVERTED, COLOR_FACEBOOK } from "ui/quarks";
+import { COLOR_PRIMARY, COLOR_LIGHT, COLOR_FACEBOOK } from "ui/quarks";
 
 export const getButtonColors = modifier => {
   switch (modifier) {
-    case "facebook":
+    case "primary":
       return {
-        backgroundColor: COLOR_FACEBOOK,
-        color: COLOR_TEXT_INVERTED
+        backgroundColor: COLOR_PRIMARY,
+        color: COLOR_LIGHT
       };
     case "outline":
       return {
@@ -13,10 +13,10 @@ export const getButtonColors = modifier => {
         color: COLOR_PRIMARY,
         border: `1px solid ${COLOR_PRIMARY}`
       };
-    case "primary":
+    case "facebook":
       return {
-        backgroundColor: COLOR_PRIMARY,
-        color: COLOR_TEXT_INVERTED
+        backgroundColor: COLOR_FACEBOOK,
+        color: COLOR_LIGHT
       };
   }
 };

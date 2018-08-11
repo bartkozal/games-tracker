@@ -4,9 +4,9 @@ const Flex = styled("div")(
   {
     display: "flex"
   },
-  ({ wrap, alignItems, justifyContent, direction }) => ({
+  ({ collapse, alignItems, justifyContent, direction }) => ({
     flexDirection: direction,
-    flexWrap: wrap,
+    flexWrap: collapse ? "wrap" : null,
     alignItems,
     justifyContent
   })

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { ROOT_PATH, PROFILE_PATH, FACEBOOK_AUTH_PATH } from "routes/paths";
 import { setCurrentUser, signOut } from "state/auth/actions";
 import Button from "ui/atoms/Button";
-import Title from "ui/atoms/Title";
 import { Box, Flex } from "ui/atoms/FlexBox";
 import Avatar from "ui/molecules/Avatar";
 
@@ -40,7 +39,7 @@ class Navbar extends Component {
       <Flex alignItems="center" justifyContent="space-between">
         <Box>
           <Link to={ROOT_PATH} data-test="link-home">
-            <Title>Games Tracker</Title>
+            Games Tracker
           </Link>
         </Box>
 
