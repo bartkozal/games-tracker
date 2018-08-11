@@ -7,7 +7,7 @@ import {
   resolveGameUpdate,
   resolveGamesBulkUpdate
 } from "../collection/actionCreators";
-import { statusType } from "../collection/types";
+import { Status } from "../../types";
 import reducer, { initialState } from "./";
 
 describe("Search", () => {
@@ -47,7 +47,7 @@ describe("Search", () => {
   test("GAME_UPDATE_RESOLVED", () => {
     const action = resolveGameUpdate({
       id: "foo",
-      status: statusType.BACKLOG
+      status: Status.BACKLOG
     });
     const returnedState = reducer(
       {
@@ -59,7 +59,7 @@ describe("Search", () => {
           },
           {
             id: "bar",
-            status: statusType.WISHLIST
+            status: Status.WISHLIST
           }
         ]
       },
@@ -69,11 +69,11 @@ describe("Search", () => {
     expect(returnedState.results).toEqual([
       {
         id: "foo",
-        status: statusType.BACKLOG
+        status: Status.BACKLOG
       },
       {
         id: "bar",
-        status: statusType.WISHLIST
+        status: Status.WISHLIST
       }
     ]);
   });
@@ -86,7 +86,7 @@ describe("Search", () => {
         results: [
           {
             id: "foo",
-            status: statusType.BACKLOG
+            status: Status.BACKLOG
           }
         ]
       },
@@ -95,7 +95,7 @@ describe("Search", () => {
 
     expect(returnedState.results).toContainEqual({
       id: "foo",
-      status: statusType.BACKLOG,
+      status: Status.BACKLOG,
       rating: 8
     });
   });

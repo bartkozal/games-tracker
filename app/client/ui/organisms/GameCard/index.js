@@ -1,18 +1,19 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { capitalize, xorBy, kebabCase } from "lodash";
-import { Flex, Box } from "../atoms/FlexBox";
-import Image from "../atoms/Image";
-import Dropdown from "../molecules/Dropdown";
-import ButtonGroup from "../molecules/ButtonGroup";
-import Rating from "../molecules/Rating";
-import Score from "../molecules/Score";
+import { Flex, Box } from "../../atoms/FlexBox";
+import Image from "../../atoms/Image";
+import Dropdown from "../../molecules/Dropdown";
+import ButtonGroup from "../../molecules/ButtonGroup";
+import Rating from "../../molecules/Rating";
+import Score from "../../molecules/Score";
 import {
   setGameStatus,
   setGamePlatforms,
   rateGame
-} from "../../state/collection/actions";
-import { statusType } from "../../state/collection/types";
+} from "../../../state/collection/actions";
+import { Status } from "../../../types";
 
 const mapDispatchToProps = {
   setGameStatus,
@@ -66,24 +67,31 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
         items={[
           {
             label: "Wishlist",
-            callback: () => setGameStatus(id, statusType.WISHLIST)
+            callback: () => setGameStatus(id, Status.WISHLIST)
           },
           {
             label: "Backlog",
-            callback: () => setGameStatus(id, statusType.BACKLOG)
+            callback: () => setGameStatus(id, Status.BACKLOG)
           },
           {
             label: "Playing",
-            callback: () => setGameStatus(id, statusType.PLAYING)
+            callback: () => setGameStatus(id, Status.PLAYING)
           },
           {
             label: "Completed",
-            callback: () => setGameStatus(id, statusType.COMPLETED)
+            callback: () => setGameStatus(id, Status.COMPLETED)
           }
         ]}
       />
     </div>
   );
+};
+
+GameCard.propTypes = {
+  game: PropTypes.shape(),
+  setGameStatus: PropTypes.func,
+  setGamePlatforms: PropTypes.func,
+  rateGame: PropTypes.func
 };
 
 export default connect(

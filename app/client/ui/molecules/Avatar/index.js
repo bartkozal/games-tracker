@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { url } from "gravatar";
-import Image from "../atoms/Image";
+import Image from "../../atoms/Image";
 
 const AVATAR_SIZE = 48;
 
@@ -12,5 +13,10 @@ const Avatar = ({ email, size = AVATAR_SIZE * 2 }) => (
     alt="Avatar"
   />
 );
+
+Avatar.propTypes = {
+  email: PropTypes.string.isRequired,
+  size: PropTypes.number
+};
 
 export default Avatar;

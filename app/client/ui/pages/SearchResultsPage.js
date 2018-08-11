@@ -1,4 +1,6 @@
 import React, { Fragment } from "react";
+import PropTypes from "prop-types";
+import { Game } from "../../types";
 import { connect } from "react-redux";
 import { Flex, Box } from "../atoms/FlexBox";
 import GameCard from "../organisms/GameCard";
@@ -21,5 +23,9 @@ const SearchResultsPage = ({ results }) => (
     </Flex>
   </Fragment>
 );
+
+SearchResultsPage.propTypes = {
+  results: PropTypes.arrayOf(Game)
+};
 
 export default connect(mapStateToProps)(SearchResultsPage);

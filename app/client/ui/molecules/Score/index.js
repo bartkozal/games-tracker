@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Score = ({ value, votes }) =>
   votes ? (
@@ -9,5 +10,10 @@ const Score = ({ value, votes }) =>
       {value} / {votes}
     </span>
   ) : null;
+
+Score.propTypes = {
+  value: PropTypes.number,
+  votes: PropTypes.number
+};
 
 export default Score;

@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { range } from "lodash";
-import Dropdown from "./Dropdown";
+import Dropdown from "../Dropdown";
 
 const Rating = ({ value, onRate }) => (
   <span>
@@ -13,5 +14,10 @@ const Rating = ({ value, onRate }) => (
     />
   </span>
 );
+
+Rating.propTypes = {
+  value: PropTypes.number,
+  onRate: PropTypes.func.isRequired
+};
 
 export default Rating;

@@ -1,6 +1,6 @@
 import styled from "react-emotion";
 
-export const Flex = styled("div")(
+const Flex = styled("div")(
   {
     display: "flex"
   },
@@ -12,7 +12,4 @@ export const Flex = styled("div")(
   })
 );
 
-export const Box = styled("div")(({ size, grow }) => ({
-  flexBasis: size,
-  flexGrow: grow
-}));
+export default Flex;

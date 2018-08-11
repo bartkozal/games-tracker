@@ -1,5 +1,5 @@
 import styled from "react-emotion";
-import { marginVertical } from "../utils";
+import { marginVertical } from "../../utils";
 
 const Title = styled("h1")({
   ...marginVertical(0)

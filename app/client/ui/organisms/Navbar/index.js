@@ -1,16 +1,17 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { setCurrentUser, signOut } from "../../state/auth/actions";
+import { setCurrentUser, signOut } from "../../../state/auth/actions";
 import {
   ROOT_PATH,
   PROFILE_PATH,
   FACEBOOK_AUTH_PATH
-} from "../../routes/paths";
-import Button from "../atoms/Button";
-import Title from "../atoms/Title";
-import { Box, Flex } from "../atoms/FlexBox";
-import Avatar from "../molecules/Avatar";
+} from "../../../routes/paths";
+import Button from "../../atoms/Button";
+import Title from "../../atoms/Title";
+import { Box, Flex } from "../../atoms/FlexBox";
+import Avatar from "../../molecules/Avatar";
 
 const mapStateToProps = ({ Auth }) => ({
   currentUser: Auth.currentUser,
@@ -23,6 +24,15 @@ const mapDispatchToProps = {
 };
 
 class Navbar extends Component {
+  static propTypes = {
+    currentUser: PropTypes.shape({
+      email: PropTypes.string
+    }),
+    userSignedIn: PropTypes.bool,
+    setCurrentUser: PropTypes.func,
+    signOut: PropTypes.func
+  };
+
   componentDidMount() {
     this.props.setCurrentUser();
   }

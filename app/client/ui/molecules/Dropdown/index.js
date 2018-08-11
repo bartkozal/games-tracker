@@ -1,55 +1,21 @@
 import React, { Component } from "react";
-import styled from "react-emotion";
-import { kebabCase } from "lodash";
-import { paddingVertical, paddingHorizontal } from "../utils";
-import {
-  SPACING_SMALL,
-  SPACING_BASE,
-  COLOR_UI,
-  DROPDOWN_ITEM,
-  DROPDOWN_ITEM_HOVER
-} from "../quarks";
-import Button from "../atoms/Button";
-
-const DropdownWrapper = styled("div")({
-  position: "relative"
-});
-
-const DropdownMenu = styled("div")({
-  ...paddingVertical(SPACING_SMALL),
-  display: "flex",
-  flexDirection: "column",
-  position: "absolute",
-  top: 34,
-  left: 0,
-  border: `1px solid ${COLOR_UI}`,
-  backgroundColor: DROPDOWN_ITEM
-});
-
-const StyledDropdownItem = styled("button")({
-  ...paddingVertical(SPACING_SMALL),
-  ...paddingHorizontal(SPACING_BASE),
-  margin: 0,
-  border: 0,
-  textAlign: "left",
-  backgroundColor: DROPDOWN_ITEM,
-  width: "100%",
-  ":hover": {
-    backgroundColor: DROPDOWN_ITEM_HOVER,
-    cursor: "pointer"
-  }
-});
-
-const DropdownItem = ({ onClick, children }) => (
-  <StyledDropdownItem
-    data-test={`dropdown-item-${kebabCase(children)}`}
-    onClick={onClick}
-  >
-    {children}
-  </StyledDropdownItem>
-);
+import PropTypes from "prop-types";
+import DropdownWrapper from "./DropdownWrapper";
+import DropdownMenu from "./DropdownMenu";
+import DropdownItem from "./DropdownItem";
+import Button from "../../atoms/Button";
 
 export default class Dropdown extends Component {
+  static propTypes = {
+    toggle: PropTypes.node.isRequired,
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.node.isRequired,
+        callback: PropTypes.func.isRequired
+      })
+    ).isRequired
+  };
+
   menu = React.createRef();
 
   state = {

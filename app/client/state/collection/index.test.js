@@ -3,7 +3,7 @@ import {
   resolveGames,
   resolveGamesBulkUpdate
 } from "./actionCreators";
-import { statusType } from "./types";
+import { Status } from "../../types";
 import reducer, { initialState } from ".";
 
 describe("Collection", () => {
@@ -17,7 +17,7 @@ describe("Collection", () => {
   test("GAME_UPDATE_RESOLVED", () => {
     const action = resolveGameUpdate({
       id: "foo",
-      status: statusType.COMPLETED
+      status: Status.COMPLETED
     });
     const returnedState = reducer(
       {
@@ -25,7 +25,7 @@ describe("Collection", () => {
         games: [
           {
             id: "foo",
-            status: statusType.BACKLOG
+            status: Status.BACKLOG
           }
         ]
       },
@@ -34,7 +34,7 @@ describe("Collection", () => {
 
     expect(returnedState.games).toContainEqual({
       id: "foo",
-      status: statusType.COMPLETED
+      status: Status.COMPLETED
     });
   });
 
@@ -46,7 +46,7 @@ describe("Collection", () => {
         games: [
           {
             id: "foo",
-            status: statusType.BACKLOG
+            status: Status.BACKLOG
           }
         ]
       },
@@ -55,7 +55,7 @@ describe("Collection", () => {
 
     expect(returnedState.games).toContainEqual({
       id: "foo",
-      status: statusType.BACKLOG,
+      status: Status.BACKLOG,
       rating: 8
     });
   });

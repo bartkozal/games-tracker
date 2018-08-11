@@ -1,4 +1,6 @@
 import React, { Fragment, Component } from "react";
+import PropTypes from "prop-types";
+import { Game } from "../../types";
 import { connect } from "react-redux";
 import { groupBy } from "lodash";
 import { fetchGames } from "../../state/collection/actions";
@@ -85,6 +87,15 @@ class CollectionPage extends Component {
     );
   }
 }
+
+CollectionPage.propTypes = {
+  unassigned: PropTypes.arrayOf(Game),
+  wishlist: PropTypes.arrayOf(Game),
+  backlog: PropTypes.arrayOf(Game),
+  playing: PropTypes.arrayOf(Game),
+  completed: PropTypes.arrayOf(Game),
+  fetchGames: PropTypes.func
+};
 
 export default connect(
   mapStateToProps,
