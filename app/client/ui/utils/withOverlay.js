@@ -1,10 +1,10 @@
 import React from "react";
 
-const closeable = WrappedComponent => {
+const withOverlay = WrappedComponent => {
   return class extends React.Component {
     static displayName = `Closable(${WrappedComponent.name})`;
 
-    closeableRef = React.createRef();
+    clickableElementRef = React.createRef();
 
     state = {
       isOpen: false
@@ -36,7 +36,7 @@ const closeable = WrappedComponent => {
         <WrappedComponent
           open={this.open}
           close={this.close}
-          closeableRef={this.closeableRef}
+          clickableElement={this.clickableElementRef}
           isOpen={this.state.isOpen}
           {...this.props}
         />
@@ -45,4 +45,4 @@ const closeable = WrappedComponent => {
   };
 };
 
-export default closeable;
+export default withOverlay;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import closeable from "ui/utils/closeable";
+import withOverlay from "ui/utils/closeable";
 import Button from "ui/atoms/Button";
 import DropdownWrapper from "./DropdownWrapper";
 import DropdownMenu from "./DropdownMenu";
@@ -18,7 +18,7 @@ class Dropdown extends Component {
     open: PropTypes.func,
     close: PropTypes.func,
     isOpen: PropTypes.bool,
-    closeableRef: PropTypes.any
+    clickableElement: PropTypes.node
   };
 
   onItemClick = callback => {
@@ -27,13 +27,13 @@ class Dropdown extends Component {
   };
 
   render() {
-    const { open, isOpen, closeableRef, label, items } = this.props;
+    const { open, isOpen, clickableElement, label, items } = this.props;
     return (
       <DropdownWrapper>
         <Button onClick={open}>{label}</Button>
 
         {isOpen ? (
-          <DropdownMenu innerRef={closeableRef}>
+          <DropdownMenu innerRef={clickableElement}>
             {items.map(({ callback, label }) => (
               <DropdownItem
                 key={label}
@@ -49,4 +49,4 @@ class Dropdown extends Component {
   }
 }
 
-export default closeable(Dropdown);
+export default withOverlay(Dropdown);
