@@ -4,7 +4,7 @@ const withOverlay = WrappedComponent => {
   return class extends React.Component {
     static displayName = `Closable(${WrappedComponent.name})`;
 
-    clickableElementRef = React.createRef();
+    clickableElement = React.createRef();
 
     state = {
       isOpen: false
@@ -24,8 +24,8 @@ const withOverlay = WrappedComponent => {
 
     onDocumentClick = event => {
       if (
-        this.closeableRef.current &&
-        !this.closeableRef.current.contains(event.target)
+        this.clickableElement.current &&
+        !this.clickableElement.current.contains(event.target)
       ) {
         this.close();
       }
@@ -36,7 +36,7 @@ const withOverlay = WrappedComponent => {
         <WrappedComponent
           open={this.open}
           close={this.close}
-          clickableElement={this.clickableElementRef}
+          clickableElement={this.clickableElement}
           isOpen={this.state.isOpen}
           {...this.props}
         />

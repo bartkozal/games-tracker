@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import withOverlay from "ui/utils/closeable";
+import withOverlay from "ui/utils/withOverlay";
 import Button from "ui/atoms/Button";
 import DropdownWrapper from "./DropdownWrapper";
 import DropdownMenu from "./DropdownMenu";
@@ -18,7 +18,7 @@ class Dropdown extends Component {
     open: PropTypes.func,
     close: PropTypes.func,
     isOpen: PropTypes.bool,
-    clickableElement: PropTypes.node
+    clickableElement: PropTypes.any
   };
 
   onItemClick = callback => {
