@@ -9,8 +9,5 @@
     "plugin:import/warnings"
   ],
   "parser": "babel-eslint",
-  "plugins": ["cypress", "react", "import", "jest"],
-  "rules": {
-    "react/prop-types": 0
-  }
+  "plugins": ["cypress", "react", "import", "jest"]
 }
