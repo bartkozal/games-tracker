@@ -6,7 +6,7 @@ import Dropdown from "ui/molecules/Dropdown";
 const Rating = ({ value, onRate }) => (
   <span>
     <Dropdown
-      toggle={value || "Rate"}
+      label={value || "Rate"}
       items={range(1, 11).map(rating => ({
         label: rating,
         callback: () => onRate(rating)

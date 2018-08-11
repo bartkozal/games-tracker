@@ -63,7 +63,7 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
       />
 
       <Dropdown
-        toggle={capitalize(status) || "Add to collection"}
+        label={capitalize(status) || "Add to collection"}
         items={[
           {
             label: "Wishlist",

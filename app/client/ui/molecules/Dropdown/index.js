@@ -1,54 +1,39 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import closeable from "ui/utils/closeable";
 import Button from "ui/atoms/Button";
 import DropdownWrapper from "./DropdownWrapper";
 import DropdownMenu from "./DropdownMenu";
 import DropdownItem from "./DropdownItem";
 
-export default class Dropdown extends Component {
+class Dropdown extends Component {
   static propTypes = {
-    toggle: PropTypes.node.isRequired,
+    label: PropTypes.node.isRequired,
     items: PropTypes.arrayOf(
       PropTypes.shape({
         label: PropTypes.node.isRequired,
         callback: PropTypes.func.isRequired
       })
-    ).isRequired
-  };
-
-  menu = React.createRef();
-
-  state = {
-    isOpen: false
-  };
-
-  open = () => {
-    this.setState({ isOpen: true }, () => {
-      document.addEventListener("click", this.close);
-    });
-  };
-
-  close = event => {
-    if (this.menu.current && !this.menu.current.contains(event.target)) {
-      this.setState({ isOpen: false }, () => {
-        document.removeEventListener("click", this.close);
-      });
-    }
+    ).isRequired,
+    open: PropTypes.func,
+    close: PropTypes.func,
+    isOpen: PropTypes.bool,
+    closeableRef: PropTypes.any
   };
 
   onItemClick = callback => {
-    this.setState({ isOpen: false });
+    this.props.close();
     callback();
   };
 
   render() {
-    const { toggle, items } = this.props;
+    const { open, isOpen, closeableRef, label, items } = this.props;
     return (
       <DropdownWrapper>
-        <Button onClick={this.open}>{toggle}</Button>
+        <Button onClick={open}>{label}</Button>
 
-        {this.state.isOpen ? (
-          <DropdownMenu innerRef={this.menu}>
+        {isOpen ? (
+          <DropdownMenu innerRef={closeableRef}>
             {items.map(({ callback, label }) => (
               <DropdownItem
                 key={label}
@@ -63,3 +48,5 @@ export default class Dropdown extends Component {
     );
   }
 }
+
+export default closeable(Dropdown);
