@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Container from "../atoms/Container";
-import Navbar from "../organisms/Navbar";
+import Container from "ui/atoms/Container";
+import Navbar from "ui/organisms/Navbar";
 
 const Layout = ({ children }) => (
   <Container>

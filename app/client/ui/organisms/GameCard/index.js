@@ -2,18 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { capitalize, xorBy, kebabCase } from "lodash";
-import { Flex, Box } from "../../atoms/FlexBox";
-import Image from "../../atoms/Image";
-import Dropdown from "../../molecules/Dropdown";
-import ButtonGroup from "../../molecules/ButtonGroup";
-import Rating from "../../molecules/Rating";
-import Score from "../../molecules/Score";
+import { Status } from "types";
 import {
   setGameStatus,
   setGamePlatforms,
   rateGame
-} from "../../../state/collection/actions";
-import { Status } from "../../../types";
+} from "state/collection/actions";
+import { Flex, Box } from "ui/atoms/FlexBox";
+import Image from "ui/atoms/Image";
+import Dropdown from "ui/molecules/Dropdown";
+import ButtonGroup from "ui/molecules/ButtonGroup";
+import Rating from "ui/molecules/Rating";
+import Score from "ui/molecules/Score";
 
 const mapDispatchToProps = {
   setGameStatus,

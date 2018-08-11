@@ -5,7 +5,6 @@ import state from ".";
 
 const middlewares = [thunk];
 
-// eslint-disable-next-line no-undef
 if (process.env.NODE_ENV === "development") {
   const logger = createLogger({
     collapsed: true

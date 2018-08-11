@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { ROOT_PATH, PROFILE_PATH } from "./routes/paths";
-import Layout from "./ui/templates/Layout";
-import SearchResultsPage from "./ui/pages/SearchResultsPage";
-import CollectionPage from "./ui/pages/CollectionPage";
+import { ROOT_PATH, PROFILE_PATH } from "routes/paths";
+import Layout from "ui/templates/Layout";
+import SearchResultsPage from "ui/pages/SearchResultsPage";
+import CollectionPage from "ui/pages/CollectionPage";
 
 const App = () => (
   <Layout>

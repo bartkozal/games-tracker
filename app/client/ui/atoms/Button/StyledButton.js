@@ -1,6 +1,6 @@
 import styled from "react-emotion";
+import { SPACING_SMALL } from "ui/quarks";
 import { getButtonColors } from "./utils";
-import { SPACING_SMALL } from "../../quarks";
 
 const StyledButton = styled("button")(
   {

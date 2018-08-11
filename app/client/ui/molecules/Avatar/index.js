@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { url } from "gravatar";
-import Image from "../../atoms/Image";
+import Image from "ui/atoms/Image";
 
 const AVATAR_SIZE = 48;
 

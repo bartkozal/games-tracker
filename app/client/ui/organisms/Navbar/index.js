@@ -2,16 +2,12 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { setCurrentUser, signOut } from "../../../state/auth/actions";
-import {
-  ROOT_PATH,
-  PROFILE_PATH,
-  FACEBOOK_AUTH_PATH
-} from "../../../routes/paths";
-import Button from "../../atoms/Button";
-import Title from "../../atoms/Title";
-import { Box, Flex } from "../../atoms/FlexBox";
-import Avatar from "../../molecules/Avatar";
+import { ROOT_PATH, PROFILE_PATH, FACEBOOK_AUTH_PATH } from "routes/paths";
+import { setCurrentUser, signOut } from "state/auth/actions";
+import Button from "ui/atoms/Button";
+import Title from "ui/atoms/Title";
+import { Box, Flex } from "ui/atoms/FlexBox";
+import Avatar from "ui/molecules/Avatar";
 
 const mapStateToProps = ({ Auth }) => ({
   currentUser: Auth.currentUser,

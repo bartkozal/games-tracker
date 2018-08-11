@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import { Game } from "../../types";
 import { connect } from "react-redux";
-import { Flex, Box } from "../atoms/FlexBox";
-import GameCard from "../organisms/GameCard";
-import SearchForm from "../organisms/SearchForm";
+import { Game } from "types";
+import { Flex, Box } from "ui/atoms/FlexBox";
+import GameCard from "ui/organisms/GameCard";
+import SearchForm from "ui/organisms/SearchForm";
 
 const mapStateToProps = ({ Search }) => ({
   results: Search.results

@@ -1,12 +1,12 @@
 import React, { Fragment, Component } from "react";
 import PropTypes from "prop-types";
-import { Game } from "../../types";
 import { connect } from "react-redux";
 import { groupBy } from "lodash";
-import { fetchGames } from "../../state/collection/actions";
-import Subtitle from "../atoms/Subtitle";
-import { Flex, Box } from "../atoms/FlexBox";
-import GameCard from "../organisms/GameCard";
+import { Game } from "types";
+import { fetchGames } from "state/collection/actions";
+import Subtitle from "ui/atoms/Subtitle";
+import { Flex, Box } from "ui/atoms/FlexBox";
+import GameCard from "ui/organisms/GameCard";
 
 const mapStateToProps = ({ Collection }) => {
   const games = Collection.games;

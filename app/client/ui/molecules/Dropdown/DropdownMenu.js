@@ -1,6 +1,6 @@
 import styled from "react-emotion";
-import { paddingVertical } from "../../utils";
-import { SPACING_SMALL, COLOR_UI, DROPDOWN_ITEM } from "../../quarks";
+import { paddingVertical } from "ui/utils";
+import { SPACING_SMALL, COLOR_UI, DROPDOWN_ITEM } from "ui/quarks";
 
 const DropdownMenu = styled("div")({
   ...paddingVertical(SPACING_SMALL),

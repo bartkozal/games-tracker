@@ -1,8 +1,4 @@
-import {
-  COLOR_PRIMARY,
-  COLOR_TEXT_INVERTED,
-  COLOR_FACEBOOK
-} from "../../quarks";
+import { COLOR_PRIMARY, COLOR_TEXT_INVERTED, COLOR_FACEBOOK } from "ui/quarks";
 
 export const getButtonColors = modifier => {
   switch (modifier) {

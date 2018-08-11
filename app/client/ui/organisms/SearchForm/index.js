@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import SearchInput from "../../molecules/SearchInput";
-import { searchQuery } from "../../../state/search/actions";
+import { searchQuery } from "state/search/actions";
+import SearchInput from "ui/molecules/SearchInput";
 
 const mapDispatchToProps = {
   searchQuery

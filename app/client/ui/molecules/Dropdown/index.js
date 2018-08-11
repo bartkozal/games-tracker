@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import Button from "ui/atoms/Button";
 import DropdownWrapper from "./DropdownWrapper";
 import DropdownMenu from "./DropdownMenu";
 import DropdownItem from "./DropdownItem";
-import Button from "../../atoms/Button";
 
 export default class Dropdown extends Component {
   static propTypes = {

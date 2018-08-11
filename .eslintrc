@@ -1,7 +1,8 @@
 {
   "env": {
     "cypress/globals": true,
-    "jest/globals": true
+    "jest/globals": true,
+    "node": true
   },
   "extends": [
     "eslint:recommended",
