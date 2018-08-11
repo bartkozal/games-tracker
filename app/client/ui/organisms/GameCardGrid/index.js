@@ -5,7 +5,7 @@ import GameCard from "ui/organisms/GameCard";
 import GameCardGridArea from "./GameCardGridArea";
 import GameCardGridItem from "./GameCardGridItem";
 
-const GameCardGrid = ({ collection }) => (
+const GameCardGrid = ({ collection = [] }) => (
   <GameCardGridArea>
     {collection.map(game => (
       <GameCardGridItem perRow={5} key={game.id}>

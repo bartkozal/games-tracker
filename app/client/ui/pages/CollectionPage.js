@@ -11,11 +11,11 @@ const mapStateToProps = ({ Collection }) => {
   const collection = groupBy(games, "status");
 
   return {
-    unassigned: collection.undefined || [],
-    wishlist: collection.wishlist || [],
-    backlog: collection.backlog || [],
-    playing: collection.playing || [],
-    completed: collection.completed || []
+    unassigned: collection.null,
+    wishlist: collection.wishlist,
+    backlog: collection.backlog,
+    playing: collection.playing,
+    completed: collection.completed
   };
 };
 
@@ -33,7 +33,7 @@ class CollectionPage extends Component {
 
     return (
       <Fragment>
-        {!!unassigned.length && (
+        {!!unassigned && (
           <Fragment>
             <div>Unassigned</div>
             <GameCardGrid collection={unassigned} />
