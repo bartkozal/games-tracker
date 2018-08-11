@@ -12,7 +12,6 @@ gem "omniauth-facebook"
 gem "jwt"
 gem "typhoeus"
 gem "jbuilder", "~> 2.5"
-gem "skylight"
 
 group :development, :test do
   gem "byebug"
