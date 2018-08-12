@@ -1,8 +1,8 @@
 import React from "react";
 
-const withOverlay = WrappedComponent => {
+const withOverlay = Component => {
   return class extends React.Component {
-    static displayName = `Closable(${WrappedComponent.name})`;
+    static displayName = `withOverlay(${Component.name})`;
 
     clickableElement = React.createRef();
 
@@ -33,7 +33,7 @@ const withOverlay = WrappedComponent => {
 
     render() {
       return (
-        <WrappedComponent
+        <Component
           open={this.open}
           close={this.close}
           clickableElement={this.clickableElement}
