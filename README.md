@@ -26,4 +26,4 @@ $ yarn cypress
 
 ## Deployment
 
-Master branch is auto-deployed to Heroku.
+Master branch is auto-deployed to Heroku through Semaphore CI.
