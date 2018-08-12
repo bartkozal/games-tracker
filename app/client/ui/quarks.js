@@ -2,7 +2,7 @@ export const COLOR_PRIMARY = "#849CCE";
 export const COLOR_SECONDARY = "#394263";
 export const COLOR_ACCENT = "#F2C94C";
 export const COLOR_LIGHT = "#F2F2F2";
-export const COLOR_DARK = "#252D4D";
+export const COLOR_DARK = "rgba(37, 45, 77, 0.95)";
 export const COLOR_FACEBOOK = "#507CC0";
 
 export const FONT_SMALL = 12;
