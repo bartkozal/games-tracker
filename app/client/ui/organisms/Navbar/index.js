@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { ROOT_PATH, PROFILE_PATH, FACEBOOK_AUTH_PATH } from "routes/paths";
+import { PROFILE_PATH, FACEBOOK_AUTH_PATH } from "routes/paths";
 import { setCurrentUser, signOut } from "state/auth/actions";
 import Button from "ui/atoms/Button";
 import { Box, Flex } from "ui/atoms/FlexBox";
 import Avatar from "ui/molecules/Avatar";
+import Logo from "ui/atoms/Logo";
 
 const mapStateToProps = ({ Auth }) => ({
   currentUser: Auth.currentUser,
@@ -38,9 +39,7 @@ class Navbar extends Component {
     return (
       <Flex alignItems="center" justifyContent="space-between">
         <Box>
-          <Link to={ROOT_PATH} data-test="link-home">
-            Games Tracker
-          </Link>
+          <Logo />
         </Box>
 
         <Box>
