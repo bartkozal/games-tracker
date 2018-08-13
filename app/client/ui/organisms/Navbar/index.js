@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { PROFILE_PATH, FACEBOOK_AUTH_PATH } from "routes/paths";
+import { FACEBOOK_AUTH_PATH } from "routes/paths";
 import { setCurrentUser, signOut } from "state/auth/actions";
 import Button from "ui/atoms/Button";
 import { Box, Flex } from "ui/atoms/FlexBox";
-import Avatar from "ui/molecules/Avatar";
 import Logo from "ui/atoms/Logo";
+import Avatar from "ui/molecules/Avatar";
+import SearchForm from "ui/molecules/SearchForm";
 
 const mapStateToProps = ({ Auth }) => ({
   currentUser: Auth.currentUser,
@@ -43,12 +43,14 @@ class Navbar extends Component {
         </Box>
 
         <Box>
+          <SearchForm />
+        </Box>
+
+        <Box>
           {userSignedIn ? (
             <Flex alignItems="center">
               <Box>
-                <Link to={PROFILE_PATH} data-test="link-profile">
-                  <Avatar email={currentUser.email} />
-                </Link>
+                <Avatar email={currentUser.email} />
               </Box>
 
               <Box>

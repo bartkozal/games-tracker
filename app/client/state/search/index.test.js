@@ -1,7 +1,8 @@
 import {
   requestResults,
   resolveResults,
-  rejectResults
+  rejectResults,
+  clearResults
 } from "./actionCreators";
 import {
   resolveGameUpdate,
@@ -40,6 +41,18 @@ describe("Search", () => {
 
     expect(returnedState).toMatchObject({
       isSearching: false,
+      results: []
+    });
+  });
+
+  test("RESULTS_CLEARED", () => {
+    const action = clearResults();
+    const returnedState = reducer(
+      { ...initialState, results: [{ id: "foo" }] },
+      action
+    );
+
+    expect(returnedState).toMatchObject({
       results: []
     });
   });

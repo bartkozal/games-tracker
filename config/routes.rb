@@ -14,6 +14,5 @@ Rails.application.routes.draw do
 
   get "/auth/:provider/callback", to: "auth#create"
 
-  get "/me", to: "client#show"
   root "client#show"
 end

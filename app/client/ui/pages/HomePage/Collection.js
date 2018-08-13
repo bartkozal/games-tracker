@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { groupBy } from "lodash";
 import { Game } from "types";
 import { fetchGames } from "state/collection/actions";
-import GameCardGrid from "ui/organisms/GameCardGrid";
+import GameCardGrid from "ui/templates/GameCardGrid";
 
 const mapStateToProps = ({ Collection }) => {
   const games = Collection.games;
@@ -23,7 +23,7 @@ const mapDispatchToProps = {
   fetchGames
 };
 
-class CollectionPage extends Component {
+class Collection extends Component {
   componentDidMount() {
     this.props.fetchGames();
   }
@@ -56,7 +56,7 @@ class CollectionPage extends Component {
   }
 }
 
-CollectionPage.propTypes = {
+Collection.propTypes = {
   unassigned: PropTypes.arrayOf(Game),
   wishlist: PropTypes.arrayOf(Game),
   backlog: PropTypes.arrayOf(Game),
@@ -68,4 +68,4 @@ CollectionPage.propTypes = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CollectionPage);
+)(Collection);

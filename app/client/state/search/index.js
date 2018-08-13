@@ -1,7 +1,8 @@
 import {
   RESULTS_REQUESTED,
   RESULTS_RESOLVED,
-  RESULTS_REJECTED
+  RESULTS_REJECTED,
+  RESULTS_CLEARED
 } from "./actionTypes";
 import {
   GAME_UPDATE_RESOLVED,
@@ -30,6 +31,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isSearching: false,
+        results: []
+      };
+    case RESULTS_CLEARED:
+      return {
+        ...state,
         results: []
       };
     case GAME_UPDATE_RESOLVED:
