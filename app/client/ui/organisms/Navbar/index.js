@@ -8,6 +8,7 @@ import { Box, Flex } from "ui/atoms/FlexBox";
 import Logo from "ui/atoms/Logo";
 import Avatar from "ui/molecules/Avatar";
 import SearchForm from "ui/molecules/SearchForm";
+import StyledNavbar from "./StyledNavbar";
 
 const mapStateToProps = ({ Auth }) => ({
   currentUser: Auth.currentUser,
@@ -37,36 +38,38 @@ class Navbar extends Component {
     const { userSignedIn, currentUser, signOut } = this.props;
 
     return (
-      <Flex alignItems="center" justifyContent="space-between">
-        <Box>
-          <Logo />
-        </Box>
+      <StyledNavbar>
+        <Flex alignItems="center" justifyContent="space-between">
+          <Box>
+            <Logo />
+          </Box>
 
-        <Box>
-          <SearchForm />
-        </Box>
+          <Box>
+            <SearchForm />
+          </Box>
 
-        <Box>
-          {userSignedIn ? (
-            <Flex alignItems="center">
-              <Box>
-                <Avatar email={currentUser.email} />
-              </Box>
+          <Box>
+            {userSignedIn ? (
+              <Flex alignItems="center">
+                <Box>
+                  <Avatar email={currentUser.email} />
+                </Box>
 
-              <Box>
-                <Button onClick={signOut}>Sign out</Button>
-              </Box>
-            </Flex>
-          ) : (
-            <Button
-              type="facebook"
-              onClick={() => window.location.assign(FACEBOOK_AUTH_PATH)}
-            >
-              Sign in with Facebook
-            </Button>
-          )}
-        </Box>
-      </Flex>
+                <Box>
+                  <Button onClick={signOut}>Sign out</Button>
+                </Box>
+              </Flex>
+            ) : (
+              <Button
+                type="facebook"
+                onClick={() => window.location.assign(FACEBOOK_AUTH_PATH)}
+              >
+                Sign in with Facebook
+              </Button>
+            )}
+          </Box>
+        </Flex>
+      </StyledNavbar>
     );
   }
 }
