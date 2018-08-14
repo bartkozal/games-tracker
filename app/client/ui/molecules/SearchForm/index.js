@@ -41,8 +41,16 @@ class SearchForm extends Component {
     this.props.searchQuery(this.state.query);
   };
 
+  clearResults = () => {
+    this.setState({
+      query: ""
+    });
+
+    this.props.clearResults();
+  };
+
   render() {
-    const { haveResults, clearResults } = this.props;
+    const { haveResults } = this.props;
 
     return (
       <form onSubmit={this.searchGames}>
@@ -52,7 +60,7 @@ class SearchForm extends Component {
           type="text"
           data-test="search-input"
         />
-        {haveResults && <button onClick={clearResults}>Close</button>}
+        {haveResults && <button onClick={this.clearResults}>Close</button>}
       </form>
     );
   }
