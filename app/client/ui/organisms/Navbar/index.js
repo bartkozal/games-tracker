@@ -7,7 +7,7 @@ import Button from "ui/atoms/Button";
 import { Box, Flex } from "ui/atoms/FlexBox";
 import Logo from "ui/atoms/Logo";
 import Avatar from "ui/molecules/Avatar";
-import SearchForm from "ui/molecules/SearchForm";
+import SearchBar from "ui/molecules/SearchBar";
 import $Navbar from "./$Navbar";
 
 const mapStateToProps = ({ Auth }) => ({
@@ -45,7 +45,7 @@ class Navbar extends Component {
           </Box>
 
           <Box>
-            <SearchForm />
+            <SearchBar />
           </Box>
 
           <Box>

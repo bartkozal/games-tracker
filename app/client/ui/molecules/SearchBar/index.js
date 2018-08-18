@@ -14,7 +14,7 @@ const mapDispatchToProps = {
   clearResults
 };
 
-class SearchForm extends Component {
+class SearchBar extends Component {
   static propTypes = {
     haveResults: PropTypes.bool,
     searchQuery: PropTypes.func,
@@ -70,4 +70,4 @@ class SearchForm extends Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchForm);
+)(SearchBar);
