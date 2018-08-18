@@ -1,16 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
-import StyledButton from "./StyledButton";
+import $Button from "./$Button";
 
 const Button = ({ children, type = "primary", onClick }) => (
-  <StyledButton
+  <$Button
     data-test={`button-${type}-${kebabCase(children)}`}
     modifier={type}
     onClick={onClick}
   >
     {children}
-  </StyledButton>
+  </$Button>
 );
 
 Button.propTypes = {

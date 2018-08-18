@@ -2,7 +2,7 @@ import styled from "react-emotion";
 import { SPACING_SMALL } from "ui/quarks";
 import { getButtonColors } from "./utils";
 
-const StyledButton = styled("button")(
+const $Button = styled("button")(
   {
     border: "1px solid transparent",
     padding: 0,
@@ -17,4 +17,4 @@ const StyledButton = styled("button")(
   })
 );
 
-export default StyledButton;
+export default $Button;

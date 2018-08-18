@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Game } from "types";
-import GameCardGrid from "ui/templates/GameCardGrid";
+import GamesGrid from "ui/templates/GamesGrid";
 
 const mapStateToProps = ({ Search }) => ({
   results: Search.results
@@ -10,7 +10,7 @@ const mapStateToProps = ({ Search }) => ({
 
 const SearchResults = ({ results }) => (
   <Fragment>
-    <GameCardGrid collection={results} />
+    <GamesGrid of={results} />
   </Fragment>
 );
 

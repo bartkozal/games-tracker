@@ -1,7 +1,7 @@
 import styled from "react-emotion";
 import { SPACING_SMALL } from "ui/quarks";
 
-const DropdownMenu = styled("div")({
+const $DropdownMenu = styled("div")({
   paddingTop: SPACING_SMALL,
   paddingBottom: SPACING_SMALL,
   display: "flex",
@@ -11,4 +11,4 @@ const DropdownMenu = styled("div")({
   left: 0
 });
 
-export default DropdownMenu;
+export default $DropdownMenu;

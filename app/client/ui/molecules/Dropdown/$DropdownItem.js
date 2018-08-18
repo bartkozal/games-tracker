@@ -1,6 +1,6 @@
 import styled from "react-emotion";
 
-const StyledDropdownItem = styled("button")({
+const $DropdownItem = styled("button")({
   margin: 0,
   border: 0,
   textAlign: "left",
@@ -10,4 +10,4 @@ const StyledDropdownItem = styled("button")({
   }
 });
 
-export default StyledDropdownItem;
+export default $DropdownItem;

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { clearResults } from "state/search/actionCreators";
 import { searchQuery } from "state/search/actions";
-import StyledInput from "./StyledInput";
+import $SearchInput from "./$SearchInput";
 
 const mapStateToProps = ({ Search }) => ({
   haveResults: !!Search.results.length
@@ -55,7 +55,7 @@ class SearchForm extends Component {
 
     return (
       <form onSubmit={this.searchGames}>
-        <StyledInput
+        <$SearchInput
           onChange={this.updateQuery}
           value={this.state.query}
           type="text"

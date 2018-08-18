@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
-import StyledDropdownItem from "./StyledDropdownItem";
+import $DropdownItem from "./$DropdownItem";
 
 const DropdownItem = ({ onClick, children }) => (
-  <StyledDropdownItem
+  <$DropdownItem
     data-test={`dropdown-item-${kebabCase(children)}`}
     onClick={onClick}
   >
     {children}
-  </StyledDropdownItem>
+  </$DropdownItem>
 );
 
 DropdownItem.propTypes = {

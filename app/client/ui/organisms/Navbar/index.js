@@ -8,7 +8,7 @@ import { Box, Flex } from "ui/atoms/FlexBox";
 import Logo from "ui/atoms/Logo";
 import Avatar from "ui/molecules/Avatar";
 import SearchForm from "ui/molecules/SearchForm";
-import StyledNavbar from "./StyledNavbar";
+import $Navbar from "./$Navbar";
 
 const mapStateToProps = ({ Auth }) => ({
   currentUser: Auth.currentUser,
@@ -38,7 +38,7 @@ class Navbar extends Component {
     const { userSignedIn, currentUser, signOut } = this.props;
 
     return (
-      <StyledNavbar>
+      <$Navbar>
         <Flex alignItems="center" justifyContent="space-between">
           <Box>
             <Logo />
@@ -69,7 +69,7 @@ class Navbar extends Component {
             )}
           </Box>
         </Flex>
-      </StyledNavbar>
+      </$Navbar>
     );
   }
 }

@@ -1,8 +1,8 @@
 import styled from "react-emotion";
 import { FONT_BASE } from "ui/quarks";
 
-const StyledLayout = styled("div")({
+const $Layout = styled("div")({
   fontSize: FONT_BASE
 });
 
-export default StyledLayout;
+export default $Layout;

@@ -1,6 +1,6 @@
 import styled from "react-emotion";
 
-const Flex = styled("div")(
+const $Flex = styled("div")(
   {
     display: "flex"
   },
@@ -12,4 +12,4 @@ const Flex = styled("div")(
   })
 );
 
-export default Flex;
+export default $Flex;

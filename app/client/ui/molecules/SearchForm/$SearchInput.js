@@ -7,7 +7,7 @@ import {
   COLOR_PRIMARY
 } from "ui/quarks";
 
-const StyledInput = styled("input")({
+const $SearchInput = styled("input")({
   width: SPACING_BASE * 34,
   paddingTop: SPACING_SMALL,
   paddingBottom: SPACING_SMALL,
@@ -20,4 +20,4 @@ const StyledInput = styled("input")({
   fontSize: FONT_LARGE
 });
 
-export default StyledInput;
+export default $SearchInput;

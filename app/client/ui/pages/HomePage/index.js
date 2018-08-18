@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import SearchResults from "./SearchResults";
-import Collection from "./Collection";
+import GamesCollection from "./GamesCollection";
 
 const mapStateToProps = ({ Auth, Search }) => ({
   userSignedIn: Auth.userSignedIn,
@@ -11,7 +11,11 @@ const mapStateToProps = ({ Auth, Search }) => ({
 
 const HomePage = ({ userSignedIn, haveSearchResults }) => (
   <Fragment>
-    {haveSearchResults ? <SearchResults /> : userSignedIn && <Collection />}
+    {haveSearchResults ? (
+      <SearchResults />
+    ) : (
+      userSignedIn && <GamesCollection />
+    )}
   </Fragment>
 );
 

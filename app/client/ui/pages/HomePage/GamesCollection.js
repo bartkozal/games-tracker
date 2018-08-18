@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { groupBy } from "lodash";
 import { Game } from "types";
 import { fetchGames } from "state/collection/actions";
-import GameCardGrid from "ui/templates/GameCardGrid";
+import GamesGrid from "ui/templates/GamesGrid";
 
 const mapStateToProps = ({ Collection }) => {
   const games = Collection.games;
@@ -23,7 +23,7 @@ const mapDispatchToProps = {
   fetchGames
 };
 
-class Collection extends Component {
+class GamesCollection extends Component {
   componentDidMount() {
     this.props.fetchGames();
   }
@@ -36,27 +36,27 @@ class Collection extends Component {
         {!!unassigned && (
           <Fragment>
             <div>Unassigned</div>
-            <GameCardGrid collection={unassigned} />
+            <GamesGrid of={unassigned} />
           </Fragment>
         )}
 
         <div>Wishlist</div>
-        <GameCardGrid collection={wishlist} />
+        <GamesGrid of={wishlist} />
 
         <div>Backlog</div>
-        <GameCardGrid collection={backlog} />
+        <GamesGrid of={backlog} />
 
         <div>Playing</div>
-        <GameCardGrid collection={playing} />
+        <GamesGrid of={playing} />
 
         <div>Completed</div>
-        <GameCardGrid collection={completed} />
+        <GamesGrid of={completed} />
       </Fragment>
     );
   }
 }
 
-Collection.propTypes = {
+GamesCollection.propTypes = {
   unassigned: PropTypes.arrayOf(Game),
   wishlist: PropTypes.arrayOf(Game),
   backlog: PropTypes.arrayOf(Game),
@@ -68,4 +68,4 @@ Collection.propTypes = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Collection);
+)(GamesCollection);

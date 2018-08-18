@@ -2,16 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import Container from "ui/atoms/Container";
 import Navbar from "ui/organisms/Navbar";
-import StyledLayout from "./StyledLayout";
+import $Layout from "./$Layout";
 
 const Layout = ({ children }) => (
-  <StyledLayout>
+  <$Layout>
     <Container>
       <Navbar />
 
       {children}
     </Container>
-  </StyledLayout>
+  </$Layout>
 );
 
 Layout.propTypes = {

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import withOverlay from "ui/utils/withOverlay";
+import withOverlay from "ui/decorators/withOverlay";
 import Button from "ui/atoms/Button";
-import DropdownWrapper from "./DropdownWrapper";
-import DropdownMenu from "./DropdownMenu";
+import $Dropdown from "./$Dropdown";
+import $DropdownMenu from "./$DropdownMenu";
 import DropdownItem from "./DropdownItem";
 
 class Dropdown extends Component {
@@ -29,11 +29,11 @@ class Dropdown extends Component {
   render() {
     const { open, isOpen, clickableElement, label, items } = this.props;
     return (
-      <DropdownWrapper>
+      <$Dropdown>
         <Button onClick={open}>{label}</Button>
 
         {isOpen ? (
-          <DropdownMenu innerRef={clickableElement}>
+          <$DropdownMenu innerRef={clickableElement}>
             {items.map(({ callback, label }) => (
               <DropdownItem
                 key={label}
@@ -42,9 +42,9 @@ class Dropdown extends Component {
                 {label}
               </DropdownItem>
             ))}
-          </DropdownMenu>
+          </$DropdownMenu>
         ) : null}
-      </DropdownWrapper>
+      </$Dropdown>
     );
   }
 }
