@@ -9,11 +9,13 @@ import {
   rateGame
 } from "state/collection/actions";
 import { Flex, Box } from "ui/atoms/FlexBox";
-import Image from "ui/atoms/Image";
 import Dropdown from "ui/molecules/Dropdown";
 import ButtonGroup from "ui/molecules/ButtonGroup";
 import Rating from "ui/molecules/Rating";
 import Score from "ui/molecules/Score";
+import GameCover from "./GameCover";
+import $GameCard from "./$GameCard";
+import $GameRating from "./$GameRating";
 
 const mapDispatchToProps = {
   setGameStatus,
@@ -35,17 +37,19 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
   } = game;
 
   return (
-    <div data-test={`game-card-${kebabCase(name)}`}>
-      <Flex alignItems="center" justifyContent="space-between">
-        <Box>
-          <Score value={score} votes={votes} />
-        </Box>
-        <Box>
-          <Rating value={rating} onRate={rating => rateGame(id, rating)} />
-        </Box>
-      </Flex>
+    <$GameCard data-test={`game-card-${kebabCase(name)}`}>
+      <GameCover src={cover} />
 
-      <Image src={cover} alt={name} fullWidth />
+      <$GameRating>
+        <Flex alignItems="center" justifyContent="space-between">
+          <Box>
+            <Score value={score} votes={votes} />
+          </Box>
+          <Box>
+            <Rating value={rating} onRate={rating => rateGame(id, rating)} />
+          </Box>
+        </Flex>
+      </$GameRating>
 
       <div>{name}</div>
 
@@ -83,7 +87,7 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
           }
         ]}
       />
-    </div>
+    </$GameCard>
   );
 };
 
