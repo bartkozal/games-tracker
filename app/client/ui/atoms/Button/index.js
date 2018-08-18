@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import $Button from "./$Button";
 
-const Button = ({ children, type = "primary", onClick }) => (
+const Button = ({ children, type = "primary", size = "base", onClick }) => (
   <$Button
     data-test={`button-${type}-${kebabCase(children)}`}
+    size={size}
     modifier={type}
     onClick={onClick}
   >
@@ -15,6 +16,7 @@ const Button = ({ children, type = "primary", onClick }) => (
 
 Button.propTypes = {
   type: PropTypes.oneOf(["primary", "outline", "facebook"]),
+  size: PropTypes.oneOf(["base", "small"]),
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired
 };

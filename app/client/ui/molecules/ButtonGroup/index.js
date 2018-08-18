@@ -5,7 +5,7 @@ import Button from "ui/atoms/Button";
 const ButtonGroup = ({ buttons }) => (
   <div>
     {buttons.map(({ caption, type, callback }) => (
-      <Button key={caption} type={type} onClick={callback}>
+      <Button key={caption} type={type} size="small" onClick={callback}>
         {caption}
       </Button>
     ))}
