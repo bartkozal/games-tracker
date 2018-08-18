@@ -1,5 +1,9 @@
 @import "modern-normalize";
 
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
 *:focus {
   outline: 0;
 }

@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { clearResults } from "state/search/actionCreators";
 import { searchQuery } from "state/search/actions";
+import Icon from "ui/atoms/Icon";
+import $SearchForm from "./$SearchForm";
 import $SearchInput from "./$SearchInput";
+import $SearchIcon from "./$SearchIcon";
 
 const mapStateToProps = ({ Search }) => ({
   haveResults: !!Search.results.length
@@ -54,15 +57,21 @@ class SearchBar extends Component {
     const { haveResults } = this.props;
 
     return (
-      <form onSubmit={this.searchGames}>
+      <$SearchForm onSubmit={this.searchGames}>
         <$SearchInput
           onChange={this.updateQuery}
           value={this.state.query}
           type="text"
           data-test="search-input"
         />
-        {haveResults && <button onClick={this.clearResults}>Close</button>}
-      </form>
+        <$SearchIcon>
+          {haveResults ? (
+            <button onClick={this.clearResults}>x</button>
+          ) : (
+            <Icon type="search" onClick={this.searchGames} />
+          )}
+        </$SearchIcon>
+      </$SearchForm>
     );
   }
 }

@@ -14,7 +14,7 @@ const Button = ({ children, type = "primary", onClick }) => (
 );
 
 Button.propTypes = {
-  type: PropTypes.string,
+  type: PropTypes.oneOf(["primary", "outline", "facebook"]),
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired
 };

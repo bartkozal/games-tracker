@@ -8,6 +8,8 @@ import { Box, Flex } from "ui/atoms/FlexBox";
 import Logo from "ui/atoms/Logo";
 import Avatar from "ui/molecules/Avatar";
 import SearchBar from "ui/molecules/SearchBar";
+import Icon from "ui/atoms/Icon";
+import { COLOR_LIGHT, SPACING_SMALL } from "ui/quarks";
 import $Navbar from "./$Navbar";
 
 const mapStateToProps = ({ Auth }) => ({
@@ -64,6 +66,11 @@ class Navbar extends Component {
                 type="facebook"
                 onClick={() => window.location.assign(FACEBOOK_AUTH_PATH)}
               >
+                <Icon
+                  type="facebook"
+                  color={COLOR_LIGHT}
+                  spacing={SPACING_SMALL}
+                />
                 Sign in with Facebook
               </Button>
             )}

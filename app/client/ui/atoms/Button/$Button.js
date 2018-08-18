@@ -4,11 +4,13 @@ import { getButtonColors } from "./utils";
 
 const $Button = styled("button")(
   {
-    border: "1px solid transparent",
+    display: "inline-flex",
+    alignItems: "center",
     paddingTop: SPACING_SMALL,
     paddingBottom: SPACING_SMALL,
     paddingRight: SPACING_BASE,
     paddingLeft: SPACING_BASE,
+    border: "1px solid transparent",
     borderRadius: 4,
 
     ":hover": {

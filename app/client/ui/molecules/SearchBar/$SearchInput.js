@@ -11,7 +11,7 @@ const $SearchInput = styled("input")({
   width: SPACING_BASE * 34,
   paddingTop: SPACING_SMALL,
   paddingBottom: SPACING_SMALL,
-  paddingRight: SPACING_BASE,
+  paddingRight: SPACING_BASE * 2 + 24,
   paddingLeft: SPACING_BASE,
   borderRadius: 8,
   border: 0,
