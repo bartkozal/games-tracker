@@ -1,16 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Container from "ui/atoms/Container";
 import Navbar from "ui/organisms/Navbar";
+import Footer from "ui/organisms/Footer";
 import $Layout from "./$Layout";
+import $Container from "./$Container";
+import $StickyFooter from "./$StickyFooter";
 
 const Layout = ({ children }) => (
   <$Layout>
-    <Container>
+    <$Container>
       <Navbar />
 
       {children}
-    </Container>
+
+      <$StickyFooter>
+        <Footer />
+      </$StickyFooter>
+    </$Container>
   </$Layout>
 );
 
