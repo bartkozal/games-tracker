@@ -15,3 +15,5 @@ export const SPACING_BASE = 16;
 export const SPACING_SMALL = SPACING_BASE / 2;
 
 export const CONTAINER_WIDTH = SPACING_BASE * 74;
+
+export const Z_INDEX_DROPDOWN = 1;

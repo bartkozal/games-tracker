@@ -2,7 +2,6 @@ import {
   COLOR_PRIMARY,
   COLOR_LIGHT,
   COLOR_FACEBOOK,
-  FONT_BASE,
   FONT_SMALL,
   SPACING_SMALL,
   SPACING_BASE
@@ -29,15 +28,24 @@ export const getButtonColors = modifier => {
   }
 };
 
+const baseButtonPadding = {
+  paddingTop: SPACING_SMALL,
+  paddingBottom: SPACING_SMALL,
+  paddingRight: SPACING_BASE,
+  paddingLeft: SPACING_BASE
+};
+
 export const getButtonSize = size => {
   switch (size) {
     case "base":
       return {
-        paddingTop: SPACING_SMALL,
-        paddingBottom: SPACING_SMALL,
-        paddingRight: SPACING_BASE,
-        paddingLeft: SPACING_BASE,
-        fontSize: FONT_BASE
+        ...baseButtonPadding
+      };
+    case "block":
+      return {
+        ...baseButtonPadding,
+        width: "100%",
+        justifyContent: "center"
       };
     case "small":
       return {

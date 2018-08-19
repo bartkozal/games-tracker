@@ -14,6 +14,8 @@ import Dropdown from "ui/molecules/Dropdown";
 import ButtonGroup from "ui/molecules/ButtonGroup";
 import Rating from "ui/molecules/Rating";
 import Score from "ui/molecules/Score";
+import Icon from "ui/atoms/Icon";
+import { COLOR_LIGHT } from "ui/quarks";
 import GameCover from "./GameCover";
 import $GameCard from "./$GameCard";
 import $GameRating from "./$GameRating";
@@ -71,11 +73,26 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
         />
 
         <Dropdown
-          toggle={openDropdown => (
-            <Button onClick={openDropdown}>
-              {capitalize(status) || "Add to collection"}
-            </Button>
-          )}
+          toggle={openDropdown =>
+            status ? (
+              <Button
+                onClick={openDropdown}
+                size="block"
+                rightIcon={<Icon type="chevron" color={COLOR_LIGHT} />}
+              >
+                {capitalize(status)}
+              </Button>
+            ) : (
+              <Button
+                onClick={openDropdown}
+                type="outline"
+                size="block"
+                rightIcon={<Icon type="chevron" />}
+              >
+                Add to collection
+              </Button>
+            )
+          }
           items={[
             {
               label: "Wishlist",

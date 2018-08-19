@@ -3,6 +3,7 @@ import { getButtonColors, getButtonSize } from "./utils";
 
 const $Button = styled("button")(
   {
+    position: "relative",
     display: "inline-flex",
     alignItems: "center",
     border: "1px solid transparent",
