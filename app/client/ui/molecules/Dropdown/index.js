@@ -32,7 +32,7 @@ class Dropdown extends Component {
       <$Dropdown>
         {toggle(open)}
 
-        {isOpen ? (
+        {isOpen && (
           <$DropdownMenu innerRef={clickableElement}>
             {items.map(({ callback, label }) => (
               <DropdownItem
@@ -43,7 +43,7 @@ class Dropdown extends Component {
               </DropdownItem>
             ))}
           </$DropdownMenu>
-        ) : null}
+        )}
       </$Dropdown>
     );
   }

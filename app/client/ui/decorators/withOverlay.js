@@ -5,6 +5,7 @@ const withOverlay = Component => {
     static displayName = `withOverlay(${Component.name})`;
 
     clickableElement = React.createRef();
+    innerComponent = React.createRef();
 
     state = {
       isOpen: false
@@ -12,21 +13,23 @@ const withOverlay = Component => {
 
     open = () => {
       this.setState({ isOpen: true }, () => {
-        document.addEventListener("click", this.onDocumentClick);
+        document.addEventListener("click", this.onOverlayClick);
       });
     };
 
     close = () => {
       this.setState({ isOpen: false }, () => {
-        document.removeEventListener("click", this.onDocumentClick);
+        document.removeEventListener("click", this.onOverlayClick);
       });
     };
 
-    onDocumentClick = event => {
+    onOverlayClick = event => {
       if (
         this.clickableElement.current &&
         !this.clickableElement.current.contains(event.target)
       ) {
+        this.innerComponent.current.onOverlayClick &&
+          this.innerComponent.current.onOverlayClick();
         this.close();
       }
     };
@@ -34,6 +37,7 @@ const withOverlay = Component => {
     render() {
       return (
         <Component
+          ref={this.innerComponent}
           open={this.open}
           close={this.close}
           clickableElement={this.clickableElement}
