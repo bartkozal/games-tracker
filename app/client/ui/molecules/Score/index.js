@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Icon from "ui/atoms/Icon";
-import { random } from "lodash";
 import { Flex, Box } from "ui/atoms/FlexBox";
 import { COLOR_LIGHT, SPACING_SMALL } from "ui/quarks";
 import $Score from "./$Score";
