@@ -2,28 +2,33 @@ import React from "react";
 import PropTypes from "prop-types";
 import { COLOR_PRIMARY } from "ui/quarks";
 import $Icon from "./$Icon";
-import { getSvg } from "./utils";
+import { getIconSVG } from "./utils";
 
-const Icon = ({ type, color = COLOR_PRIMARY, spacing, onClick }) => {
-  const SVG = getSvg(type);
+const Icon = ({
+  type,
+  color = COLOR_PRIMARY,
+  size,
+  before,
+  after,
+  onClick
+}) => {
+  const SVG = getIconSVG(type);
+  const sizeProps = size ? { width: size, height: size } : {};
+  const colorProps = color ? { fill: color } : {};
 
   return (
-    <$Icon spacing={spacing} onClick={onClick}>
-      <SVG fill={color} />
+    <$Icon before={before} after={after} onClick={onClick}>
+      <SVG {...colorProps} {...sizeProps} />
     </$Icon>
   );
 };
 
 Icon.propTypes = {
-  type: PropTypes.oneOf([
-    "facebook",
-    "search",
-    "star-empty",
-    "star-full",
-    "user"
-  ]),
+  type: PropTypes.oneOf(["facebook", "search", "star", "user"]),
   color: PropTypes.string,
-  spacing: PropTypes.number,
+  before: PropTypes.number,
+  after: PropTypes.number,
+  size: PropTypes.number,
   onClick: PropTypes.func
 };
 

@@ -1,19 +1,16 @@
 import Facebook from "./facebook.svg";
 import Search from "./search.svg";
-import StarEmpty from "./star-empty.svg";
-import StarFull from "./star-full.svg";
+import Star from "./star.svg";
 import User from "./user.svg";
 
-export const getSvg = name => {
+export const getIconSVG = name => {
   switch (name) {
     case "facebook":
       return Facebook;
     case "search":
       return Search;
-    case "star-empty":
-      return StarEmpty;
-    case "star-full":
-      return StarFull;
+    case "star":
+      return Star;
     case "user":
       return User;
   }

@@ -77,7 +77,7 @@ class Navbar extends Component {
                 <Icon
                   type="facebook"
                   color={COLOR_LIGHT}
-                  spacing={SPACING_SMALL}
+                  after={SPACING_SMALL}
                 />
                 Sign in with Facebook
               </Button>

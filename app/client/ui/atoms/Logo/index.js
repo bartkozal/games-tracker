@@ -6,7 +6,7 @@ const Logo = ({ onClick }) => (
   <SVG
     onClick={onClick}
     style={{
-      cursor: onClick ? "pointer" : "normal"
+      cursor: onClick ? "pointer" : "default"
     }}
   />
 );

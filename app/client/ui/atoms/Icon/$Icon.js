@@ -4,9 +4,10 @@ const $Icon = styled("div")(
   {
     display: "inline-flex"
   },
-  ({ spacing, onClick }) => ({
-    marginRight: spacing,
-    cursor: onClick ? "pointer" : "normal"
+  ({ before, after, onClick }) => ({
+    marginLeft: before,
+    marginRight: after,
+    cursor: onClick ? "pointer" : "default"
   })
 );
 

@@ -63,7 +63,7 @@ class SearchBar extends Component {
         />
         <$SearchIcon>
           {haveSearchResults ? (
-            <Icon type="star-full" onClick={this.clearResults} />
+            <Icon type="star" onClick={this.clearResults} />
           ) : (
             <Icon type="search" onClick={this.searchGames} />
           )}
