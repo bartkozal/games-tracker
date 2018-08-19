@@ -1,15 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "ui/atoms/Button";
+import $ButtonGroup from "./$ButtonGroup";
 
 const ButtonGroup = ({ buttons }) => (
-  <div>
+  <$ButtonGroup>
     {buttons.map(({ caption, type, callback }) => (
       <Button key={caption} type={type} size="small" onClick={callback}>
         {caption}
       </Button>
     ))}
-  </div>
+  </$ButtonGroup>
 );
 
 ButtonGroup.propTypes = {

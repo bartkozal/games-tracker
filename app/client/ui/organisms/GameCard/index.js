@@ -16,6 +16,8 @@ import Score from "ui/molecules/Score";
 import GameCover from "./GameCover";
 import $GameCard from "./$GameCard";
 import $GameRating from "./$GameRating";
+import $GameContent from "./$GameContent";
+import $GameTitle from "./$GameTitle";
 
 const mapDispatchToProps = {
   setGameStatus,
@@ -51,42 +53,44 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
         </Flex>
       </$GameRating>
 
-      <div>{name}</div>
+      <$GameContent>
+        <$GameTitle>{name}</$GameTitle>
 
-      <ButtonGroup
-        buttons={platforms.map(platform => ({
-          caption: platform.slug,
-          type: userPlatforms.find(
-            userPlatform => userPlatform.id === platform.id
-          )
-            ? "primary"
-            : "outline",
-          callback: () =>
-            setGamePlatforms(id, xorBy(userPlatforms, [platform], "id"))
-        }))}
-      />
+        <ButtonGroup
+          buttons={platforms.map(platform => ({
+            caption: platform.slug,
+            type: userPlatforms.find(
+              userPlatform => userPlatform.id === platform.id
+            )
+              ? "primary"
+              : "outline",
+            callback: () =>
+              setGamePlatforms(id, xorBy(userPlatforms, [platform], "id"))
+          }))}
+        />
 
-      <Dropdown
-        label={capitalize(status) || "Add to collection"}
-        items={[
-          {
-            label: "Wishlist",
-            callback: () => setGameStatus(id, Status.WISHLIST)
-          },
-          {
-            label: "Backlog",
-            callback: () => setGameStatus(id, Status.BACKLOG)
-          },
-          {
-            label: "Playing",
-            callback: () => setGameStatus(id, Status.PLAYING)
-          },
-          {
-            label: "Completed",
-            callback: () => setGameStatus(id, Status.COMPLETED)
-          }
-        ]}
-      />
+        <Dropdown
+          label={capitalize(status) || "Add to collection"}
+          items={[
+            {
+              label: "Wishlist",
+              callback: () => setGameStatus(id, Status.WISHLIST)
+            },
+            {
+              label: "Backlog",
+              callback: () => setGameStatus(id, Status.BACKLOG)
+            },
+            {
+              label: "Playing",
+              callback: () => setGameStatus(id, Status.PLAYING)
+            },
+            {
+              label: "Completed",
+              callback: () => setGameStatus(id, Status.COMPLETED)
+            }
+          ]}
+        />
+      </$GameContent>
     </$GameCard>
   );
 };
