@@ -2,7 +2,8 @@ import {
   requestResults,
   resolveResults,
   rejectResults,
-  clearResults
+  clearResults,
+  updateQuery
 } from "./actionCreators";
 import {
   resolveGameUpdate,
@@ -48,12 +49,22 @@ describe("Search", () => {
   test("RESULTS_CLEARED", () => {
     const action = clearResults();
     const returnedState = reducer(
-      { ...initialState, results: [{ id: "foo" }] },
+      { ...initialState, results: [{ id: "foo" }], query: "foo" },
       action
     );
 
     expect(returnedState).toMatchObject({
-      results: []
+      results: [],
+      query: ""
+    });
+  });
+
+  test("QUERY_UPDATED", () => {
+    const action = updateQuery("foo");
+    const returnedState = reducer(initialState, action);
+
+    expect(returnedState).toMatchObject({
+      query: "foo"
     });
   });
 

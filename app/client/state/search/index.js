@@ -2,7 +2,8 @@ import {
   RESULTS_REQUESTED,
   RESULTS_RESOLVED,
   RESULTS_REJECTED,
-  RESULTS_CLEARED
+  RESULTS_CLEARED,
+  QUERY_UPDATED
 } from "./actionTypes";
 import {
   GAME_UPDATE_RESOLVED,
@@ -11,7 +12,8 @@ import {
 
 export const initialState = {
   isSearching: false,
-  results: []
+  results: [],
+  query: ""
 };
 
 export default (state = initialState, action) => {
@@ -19,7 +21,8 @@ export default (state = initialState, action) => {
     case RESULTS_REQUESTED:
       return {
         ...state,
-        isSearching: true
+        isSearching: true,
+        results: []
       };
     case RESULTS_RESOLVED:
       return {
@@ -36,7 +39,13 @@ export default (state = initialState, action) => {
     case RESULTS_CLEARED:
       return {
         ...state,
-        results: []
+        results: [],
+        query: ""
+      };
+    case QUERY_UPDATED:
+      return {
+        ...state,
+        query: action.payload.query
       };
     case GAME_UPDATE_RESOLVED:
       return {

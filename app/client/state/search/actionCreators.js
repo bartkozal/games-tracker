@@ -2,7 +2,8 @@ import {
   RESULTS_REQUESTED,
   RESULTS_RESOLVED,
   RESULTS_REJECTED,
-  RESULTS_CLEARED
+  RESULTS_CLEARED,
+  QUERY_UPDATED
 } from "./actionTypes";
 
 export const requestResults = () => ({
@@ -22,4 +23,11 @@ export const rejectResults = () => ({
 
 export const clearResults = () => ({
   type: RESULTS_CLEARED
+});
+
+export const updateQuery = query => ({
+  type: QUERY_UPDATED,
+  payload: {
+    query
+  }
 });

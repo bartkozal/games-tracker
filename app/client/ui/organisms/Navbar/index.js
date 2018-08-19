@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { FACEBOOK_AUTH_PATH } from "routes/paths";
 import { setCurrentUser, signOut } from "state/auth/actions";
+import { clearSearchResults } from "state/search/actions";
 import Button from "ui/atoms/Button";
 import { Box, Flex } from "ui/atoms/FlexBox";
 import Logo from "ui/atoms/Logo";
@@ -18,6 +19,7 @@ const mapStateToProps = ({ Auth }) => ({
 });
 
 const mapDispatchToProps = {
+  clearSearchResults,
   setCurrentUser,
   signOut
 };
@@ -29,7 +31,8 @@ class Navbar extends Component {
     }),
     userSignedIn: PropTypes.bool,
     setCurrentUser: PropTypes.func,
-    signOut: PropTypes.func
+    signOut: PropTypes.func,
+    clearSearchResults: PropTypes.func
   };
 
   componentDidMount() {
@@ -37,13 +40,18 @@ class Navbar extends Component {
   }
 
   render() {
-    const { userSignedIn, currentUser, signOut } = this.props;
+    const {
+      userSignedIn,
+      currentUser,
+      signOut,
+      clearSearchResults
+    } = this.props;
 
     return (
       <$Navbar>
         <Flex alignItems="center" justifyContent="space-between">
           <Box>
-            <Logo />
+            <Logo onClick={clearSearchResults} />
           </Box>
 
           <Box>

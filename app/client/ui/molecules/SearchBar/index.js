@@ -1,72 +1,69 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { clearResults } from "state/search/actionCreators";
-import { searchQuery } from "state/search/actions";
+import {
+  searchQuery,
+  updateQuery,
+  clearSearchResults
+} from "state/search/actions";
 import Icon from "ui/atoms/Icon";
 import $SearchForm from "./$SearchForm";
 import $SearchInput from "./$SearchInput";
 import $SearchIcon from "./$SearchIcon";
 
 const mapStateToProps = ({ Search }) => ({
-  haveResults: !!Search.results.length
+  haveSearchResults: !!Search.results.length,
+  query: Search.query
 });
 
 const mapDispatchToProps = {
   searchQuery,
-  clearResults
+  updateQuery,
+  clearSearchResults
 };
 
 class SearchBar extends Component {
   static propTypes = {
-    haveResults: PropTypes.bool,
+    query: PropTypes.string,
     searchQuery: PropTypes.func,
-    clearResults: PropTypes.func
-  };
-
-  state = {
-    query: ""
+    haveSearchResults: PropTypes.bool,
+    clearSearchResults: PropTypes.func,
+    updateQuery: PropTypes.func
   };
 
   updateQuery = event => {
     const { value } = event.target;
 
-    this.setState({
-      query: value
-    });
+    this.props.updateQuery(value);
 
     if (!value.length) {
-      this.props.clearResults();
+      this.props.clearSearchResults();
     }
   };
 
   searchGames = event => {
     event.preventDefault();
-    this.props.searchQuery(this.state.query);
+    this.props.searchQuery(this.props.query);
   };
 
   clearResults = () => {
-    this.setState({
-      query: ""
-    });
-
-    this.props.clearResults();
+    this.props.clearSearchResults();
   };
 
   render() {
-    const { haveResults } = this.props;
+    const { query, haveSearchResults } = this.props;
 
     return (
       <$SearchForm onSubmit={this.searchGames}>
         <$SearchInput
           onChange={this.updateQuery}
-          value={this.state.query}
+          value={query}
           type="text"
           data-test="search-input"
         />
         <$SearchIcon>
-          {haveResults ? (
-            <button onClick={this.clearResults}>x</button>
+          {haveSearchResults ? (
+            <Icon type="star-full" onClick={this.clearResults} />
           ) : (
             <Icon type="search" onClick={this.searchGames} />
           )}

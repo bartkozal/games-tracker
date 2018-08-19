@@ -31,3 +31,6 @@ export const searchQuery = query => (dispatch, getState) => {
     })
     .catch(() => dispatch(rejectResults()));
 };
+
+export { clearResults as clearSearchResults } from "./actionCreators";
+export { updateQuery } from "./actionCreators";
