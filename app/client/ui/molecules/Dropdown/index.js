@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import withOverlay from "ui/decorators/withOverlay";
-import Button from "ui/atoms/Button";
 import $Dropdown from "./$Dropdown";
 import $DropdownMenu from "./$DropdownMenu";
 import DropdownItem from "./DropdownItem";
 
 class Dropdown extends Component {
   static propTypes = {
-    label: PropTypes.node.isRequired,
+    toggle: PropTypes.func.isRequired,
     items: PropTypes.arrayOf(
       PropTypes.shape({
         label: PropTypes.node.isRequired,
@@ -27,10 +26,11 @@ class Dropdown extends Component {
   };
 
   render() {
-    const { open, isOpen, clickableElement, label, items } = this.props;
+    const { open, isOpen, clickableElement, items, toggle } = this.props;
+
     return (
       <$Dropdown>
-        <Button onClick={open}>{label}</Button>
+        {toggle(open)}
 
         {isOpen ? (
           <$DropdownMenu innerRef={clickableElement}>

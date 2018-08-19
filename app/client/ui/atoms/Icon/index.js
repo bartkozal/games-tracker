@@ -24,7 +24,7 @@ const Icon = ({
 };
 
 Icon.propTypes = {
-  type: PropTypes.oneOf(["facebook", "search", "star", "user"]),
+  type: PropTypes.oneOf(["facebook", "search", "star", "user", "chevron"]),
   color: PropTypes.string,
   before: PropTypes.number,
   after: PropTypes.number,

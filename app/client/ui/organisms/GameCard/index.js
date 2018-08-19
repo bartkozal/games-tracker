@@ -9,6 +9,7 @@ import {
   rateGame
 } from "state/collection/actions";
 import { Flex, Box } from "ui/atoms/FlexBox";
+import Button from "ui/atoms/Button";
 import Dropdown from "ui/molecules/Dropdown";
 import ButtonGroup from "ui/molecules/ButtonGroup";
 import Rating from "ui/molecules/Rating";
@@ -70,7 +71,11 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
         />
 
         <Dropdown
-          label={capitalize(status) || "Add to collection"}
+          toggle={openDropdown => (
+            <Button onClick={openDropdown}>
+              {capitalize(status) || "Add to collection"}
+            </Button>
+          )}
           items={[
             {
               label: "Wishlist",

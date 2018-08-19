@@ -7,7 +7,7 @@ const $Icon = styled("div")(
   ({ before, after, onClick }) => ({
     marginLeft: before,
     marginRight: after,
-    cursor: onClick ? "pointer" : "default"
+    cursor: onClick ? "pointer" : "inherit"
   })
 );
 

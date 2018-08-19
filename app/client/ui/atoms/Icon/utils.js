@@ -2,6 +2,7 @@ import Facebook from "./facebook.svg";
 import Search from "./search.svg";
 import Star from "./star.svg";
 import User from "./user.svg";
+import Chevron from "./chevron.svg";
 
 export const getIconSVG = name => {
   switch (name) {
@@ -13,5 +14,7 @@ export const getIconSVG = name => {
       return Star;
     case "user":
       return User;
+    case "chevron":
+      return Chevron;
   }
 };

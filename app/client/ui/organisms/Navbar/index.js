@@ -9,9 +9,11 @@ import { Box, Flex } from "ui/atoms/FlexBox";
 import Logo from "ui/atoms/Logo";
 import Avatar from "ui/molecules/Avatar";
 import SearchBar from "ui/molecules/SearchBar";
+import Dropdown from "ui/molecules/Dropdown";
 import Icon from "ui/atoms/Icon";
 import { COLOR_LIGHT, SPACING_SMALL } from "ui/quarks";
 import $Navbar from "./$Navbar";
+import $NavbarToggle from "./$NavbarToggle";
 
 const mapStateToProps = ({ Auth }) => ({
   currentUser: Auth.currentUser,
@@ -60,15 +62,20 @@ class Navbar extends Component {
 
           <Box>
             {userSignedIn ? (
-              <Flex alignItems="center">
-                <Box>
-                  <Avatar email={currentUser.email} />
-                </Box>
-
-                <Box>
-                  <Button onClick={signOut}>Sign out</Button>
-                </Box>
-              </Flex>
+              <Dropdown
+                toggle={openDropdown => (
+                  <$NavbarToggle onClick={openDropdown}>
+                    <Avatar email={currentUser.email} />
+                    <Icon type="chevron" before={SPACING_SMALL} />
+                  </$NavbarToggle>
+                )}
+                items={[
+                  {
+                    label: "Sign out",
+                    callback: () => signOut()
+                  }
+                ]}
+              />
             ) : (
               <Button
                 type="facebook"
