@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
 export const Status = {
+  UNASSIGNED: "unassigned",
   WISHLIST: "wishlist",
   BACKLOG: "backlog",
   PLAYING: "playing",
@@ -19,6 +20,7 @@ export const Game = PropTypes.shape({
   platforms: PropTypes.arrayOf(Platform).isRequired,
   userPlatforms: PropTypes.arrayOf(Platform),
   status: PropTypes.oneOf([
+    Status.UNASSIGNED,
     Status.WISHLIST,
     Status.BACKLOG,
     Status.PLAYING,

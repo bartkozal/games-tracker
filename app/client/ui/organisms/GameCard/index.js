@@ -74,7 +74,7 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
 
         <Dropdown
           toggle={openDropdown =>
-            status ? (
+            status && status !== Status.UNASSIGNED ? (
               <Button
                 onClick={openDropdown}
                 size="block"
