@@ -23,6 +23,14 @@ class Rating extends PureComponent {
     value: 0
   };
 
+  componentDidUpdate({ value: prevValue }) {
+    const { value } = this.props;
+
+    if (prevValue !== value) {
+      this.setRatingValue(value);
+    }
+  }
+
   state = {
     value: this.props.value
   };
