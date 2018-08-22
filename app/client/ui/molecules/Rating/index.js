@@ -27,13 +27,7 @@ class Rating extends PureComponent {
     value: this.props.value
   };
 
-  onOverlayClick = () => {
-    this.setState({
-      value: this.props.value
-    });
-  };
-
-  preview = nextValue => {
+  setRatingValue = nextValue => {
     this.setState({
       value: nextValue
     });
@@ -42,10 +36,7 @@ class Rating extends PureComponent {
   rate = nextValue => {
     const { onRate, close } = this.props;
 
-    this.setState({
-      value: nextValue
-    });
-
+    this.setRatingValue(nextValue);
     onRate(nextValue);
     close();
   };
@@ -71,14 +62,17 @@ class Rating extends PureComponent {
         </$RatingToggle>
 
         {isOpen && (
-          <$RatingMenu innerRef={clickableElement}>
+          <$RatingMenu
+            innerRef={clickableElement}
+            onMouseLeave={() => this.setRatingValue(this.props.value)}
+          >
             {times(10, n => (
               <Icon
                 key={n}
                 type="star"
                 color={n < value ? COLOR_ACCENT : COLOR_PRIMARY}
                 onClick={() => this.rate(n + 1)}
-                onMouseEnter={() => this.preview(n + 1)}
+                onMouseEnter={() => this.setRatingValue(n + 1)}
               />
             ))}
           </$RatingMenu>
