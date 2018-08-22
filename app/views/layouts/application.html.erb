@@ -3,11 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Games Tracker</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <title>Games Tracker</title>
+
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <%= stylesheet_pack_tag 'global' %>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51355575-12"></script>
     <% if Rails.env.production? %>
       <script>
@@ -21,5 +24,6 @@
 
   <body>
     <%= yield %>
+    <%= render "env" %>
   </body>
 </html>
