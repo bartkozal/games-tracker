@@ -5,7 +5,7 @@ json.array! @user_games do |user_game|
     json.(platform, :id, :slug)
   end
   json.rating user_game.rating
-  json.status user_game.status || "unassigned"
+  json.status user_game.status
   json.userPlatforms user_game.platforms do |platform|
     json.(platform, :id, :slug)
   end

@@ -36,7 +36,7 @@ class GamesCollection extends Component {
           Status.PLAYING,
           Status.COMPLETED
         ].map(status => ({
-          tab: capitalize(status),
+          tab: capitalize(status) || "Unassigned",
           content: <GamesGrid of={collection[status]} />,
           default: status === Status.PLAYING,
           hidden: status === Status.UNASSIGNED && !collection[status]

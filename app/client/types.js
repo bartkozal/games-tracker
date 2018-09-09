@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 export const Status = {
-  UNASSIGNED: "unassigned",
+  UNASSIGNED: null,
   WISHLIST: "wishlist",
   BACKLOG: "backlog",
   PLAYING: "playing",
