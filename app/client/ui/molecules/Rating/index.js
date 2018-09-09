@@ -5,7 +5,6 @@ import { Flex, Box } from "ui/atoms/FlexBox";
 import Icon from "ui/atoms/Icon";
 import { COLOR_ACCENT, SPACING_SMALL, COLOR_PRIMARY } from "ui/quarks";
 import withOverlay from "ui/decorators/withOverlay";
-import Button from "ui/atoms/Button";
 import $Rating from "./$Rating";
 import $RatingToggle from "./$RatingToggle";
 import $RatingMenu from "./$RatingMenu";
@@ -84,9 +83,7 @@ class Rating extends PureComponent {
                 onMouseEnter={() => this.setRatingValue(n + 1)}
               />
             ))}
-            {!!initialValue && (
-              <Button onClick={() => this.rate(null)}>✕</Button>
-            )}
+            {!!initialValue && <div onClick={() => this.rate(null)}>✕</div>}
           </$RatingMenu>
         )}
       </$Rating>

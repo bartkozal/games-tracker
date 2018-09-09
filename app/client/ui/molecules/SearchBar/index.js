@@ -7,7 +7,6 @@ import {
   clearSearchResults
 } from "state/search/actions";
 import Icon from "ui/atoms/Icon";
-import Button from "ui/atoms/Button";
 import $SearchForm from "./$SearchForm";
 import $SearchInput from "./$SearchInput";
 import $SearchIcon from "./$SearchIcon";
@@ -64,7 +63,7 @@ class SearchBar extends Component {
         />
         <$SearchIcon>
           {haveSearchResults ? (
-            <Button onClick={this.clearResults}>✕</Button>
+            <div onClick={this.clearResults}>✕</div>
           ) : (
             <Icon type="search" onClick={this.searchGames} />
           )}
