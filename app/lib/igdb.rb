@@ -5,7 +5,6 @@ class IGDB
       params: {
         search: query,
         fields: "name,platforms,cover.cloudinary_id",
-        order: "popularity:desc",
         limit: 12,
         "filter[platforms][any]": "6,48,9,49,12,130"
       },
