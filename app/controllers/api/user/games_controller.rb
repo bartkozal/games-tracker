@@ -10,13 +10,14 @@ class Api::User::GamesController < Api::UserController
       game_id: params[:id]
     )
 
-    if platforms = user_game_params[:platforms]
-      user_game.platforms = platforms.map do |id|
-        Platform.find(id)
+    user_game.transaction do
+      if platforms = user_game_params[:platforms]
+        user_game.update(platforms: Platform.where(id: platforms))
+      else
+        user_game.update(user_game_params)
       end
-      user_game.save
-    else
-      user_game.update(user_game_params)
+
+      user_game.destroy_if_no_attributes
     end
 
     head 204
