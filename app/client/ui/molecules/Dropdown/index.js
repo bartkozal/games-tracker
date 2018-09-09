@@ -34,7 +34,7 @@ class Dropdown extends Component {
 
         {isOpen && (
           <$DropdownMenu innerRef={clickableElement}>
-            {items.map(({ callback, label }) => (
+            {items.filter(Boolean).map(({ callback, label }) => (
               <DropdownItem
                 key={label}
                 onClick={() => this.onItemClick(callback)}

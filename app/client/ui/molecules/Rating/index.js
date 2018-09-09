@@ -5,6 +5,7 @@ import { Flex, Box } from "ui/atoms/FlexBox";
 import Icon from "ui/atoms/Icon";
 import { COLOR_ACCENT, SPACING_SMALL, COLOR_PRIMARY } from "ui/quarks";
 import withOverlay from "ui/decorators/withOverlay";
+import Button from "ui/atoms/Button";
 import $Rating from "./$Rating";
 import $RatingToggle from "./$RatingToggle";
 import $RatingMenu from "./$RatingMenu";
@@ -50,7 +51,7 @@ class Rating extends PureComponent {
   };
 
   render() {
-    const { open, isOpen, clickableElement } = this.props;
+    const { open, isOpen, clickableElement, value: initialValue } = this.props;
     const { value } = this.state;
 
     return (
@@ -72,7 +73,7 @@ class Rating extends PureComponent {
         {isOpen && (
           <$RatingMenu
             innerRef={clickableElement}
-            onMouseLeave={() => this.setRatingValue(this.props.value)}
+            onMouseLeave={() => this.setRatingValue(initialValue)}
           >
             {times(10, n => (
               <Icon
@@ -83,6 +84,9 @@ class Rating extends PureComponent {
                 onMouseEnter={() => this.setRatingValue(n + 1)}
               />
             ))}
+            {!!initialValue && (
+              <Button onClick={() => this.rate(null)}>✕</Button>
+            )}
           </$RatingMenu>
         )}
       </$Rating>

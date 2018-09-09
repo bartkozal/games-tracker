@@ -41,6 +41,8 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
     votes
   } = game;
 
+  const isInCollection = status && status !== Status.UNASSIGNED;
+
   return (
     <$GameCard data-test={`game-card-${kebabCase(name)}`}>
       <GameCover src={cover} />
@@ -74,7 +76,7 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
 
         <Dropdown
           toggle={openDropdown =>
-            status && status !== Status.UNASSIGNED ? (
+            isInCollection ? (
               <Button
                 onClick={openDropdown}
                 size="block"
@@ -109,7 +111,13 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
             {
               label: "Completed",
               callback: () => setGameStatus(id, Status.COMPLETED)
-            }
+            },
+            isInCollection
+              ? {
+                  label: "✕",
+                  callback: () => setGameStatus(id, null)
+                }
+              : null
           ]}
         />
       </$GameContent>
