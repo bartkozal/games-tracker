@@ -1,6 +1,8 @@
 require "test_helper"
 
 class IgdbTest < ActiveSupport::TestCase
+  fixtures :platforms
+
   test ".parse" do
     results = [
       {
