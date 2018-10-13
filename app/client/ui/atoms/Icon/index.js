@@ -11,7 +11,8 @@ const Icon = ({
   before,
   after,
   onClick,
-  onMouseEnter
+  onMouseEnter,
+  onMouseLeave
 }) => {
   const SVG = getIconSVG(type);
   const sizeProps = size ? { width: size, height: size } : {};
@@ -23,6 +24,7 @@ const Icon = ({
       after={after}
       onClick={onClick}
       onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       <SVG {...colorProps} {...sizeProps} />
     </$Icon>
@@ -30,13 +32,22 @@ const Icon = ({
 };
 
 Icon.propTypes = {
-  type: PropTypes.oneOf(["facebook", "search", "star", "user", "chevron"]),
+  type: PropTypes.oneOf([
+    "cancel",
+    "chevron",
+    "facebook",
+    "search",
+    "star",
+    "unstar",
+    "user"
+  ]),
   color: PropTypes.string,
   before: PropTypes.number,
   after: PropTypes.number,
   size: PropTypes.number,
   onClick: PropTypes.func,
-  onMouseEnter: PropTypes.func
+  onMouseEnter: PropTypes.func,
+  onMouseLeave: PropTypes.func
 };
 
 export default Icon;

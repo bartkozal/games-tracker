@@ -11,7 +11,6 @@ const $RatingMenu = styled("div")({
   bottom: -SPACING_BASE,
   right: SPACING_BASE * -5,
   display: "flex",
-  padding: SPACING_BASE,
   backgroundColor: COLOR_DARK,
   borderRadius: 12,
   transform: "translateY(100%)",
@@ -32,8 +31,20 @@ const $RatingMenu = styled("div")({
     content: "''"
   },
 
-  "* + *": {
-    marginLeft: SPACING_SMALL
+  "> div": {
+    paddingTop: SPACING_BASE,
+    paddingBottom: SPACING_BASE,
+    paddingLeft: SPACING_SMALL / 2,
+    paddingRight: SPACING_SMALL / 2,
+
+    ":first-child": {
+      paddingLeft: SPACING_BASE,
+      paddingRight: SPACING_SMALL
+    },
+
+    ":last-child": {
+      paddingRight: SPACING_BASE
+    }
   }
 });
 
