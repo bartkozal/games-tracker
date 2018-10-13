@@ -17,7 +17,8 @@ const $SearchInput = styled("input")({
   border: 0,
   backgroundColor: COLOR_SECONDARY,
   color: COLOR_PRIMARY,
-  fontSize: FONT_LARGE
+  fontSize: FONT_LARGE,
+  lineHeight: 1.5
 });
 
 export default $SearchInput;

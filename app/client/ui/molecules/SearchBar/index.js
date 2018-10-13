@@ -63,7 +63,7 @@ class SearchBar extends Component {
         />
         <$SearchIcon>
           {haveSearchResults ? (
-            <div onClick={this.clearResults}>✕</div>
+            <Icon type="cancel" onClick={this.clearResults} />
           ) : (
             <Icon type="search" onClick={this.searchGames} />
           )}
