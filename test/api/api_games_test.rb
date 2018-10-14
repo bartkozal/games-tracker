@@ -16,5 +16,7 @@ class ApiGamesTest < ActionDispatch::IntegrationTest
         assert_equal ["id", "slug"], platform.keys
       end
     end
+
+    assert_equal 3, Game.count
   end
 end
