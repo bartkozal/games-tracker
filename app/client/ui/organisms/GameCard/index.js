@@ -111,14 +111,18 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
             {
               label: "Completed",
               callback: () => setGameStatus(id, Status.COMPLETED)
-            },
-            isInCollection
-              ? {
-                  label: "✕",
-                  callback: () => setGameStatus(id, null)
-                }
-              : null
+            }
           ]}
+          destructiveItems={
+            isInCollection
+              ? [
+                  {
+                    label: "Remove from collection",
+                    callback: () => setGameStatus(id, null)
+                  }
+                ]
+              : []
+          }
         />
       </$GameContent>
     </$GameCard>

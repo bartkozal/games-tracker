@@ -8,6 +8,7 @@ import {
 } from "ui/quarks";
 
 const $SearchInput = styled("input")({
+  ...FONT_LARGE,
   width: SPACING_BASE * 34,
   paddingTop: SPACING_SMALL,
   paddingBottom: SPACING_SMALL,
@@ -17,7 +18,6 @@ const $SearchInput = styled("input")({
   border: 0,
   backgroundColor: COLOR_SECONDARY,
   color: COLOR_PRIMARY,
-  fontSize: FONT_LARGE,
   lineHeight: 1.5
 });
 

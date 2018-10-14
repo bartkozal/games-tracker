@@ -9,11 +9,11 @@ import {
 
 const $TabItem = styled("div")(
   {
+    ...FONT_LEAD,
     padding: SPACING_SMALL,
     marginLeft: SPACING_BASE,
     marginRight: SPACING_BASE,
     borderRadius: 4,
-    fontSize: FONT_LEAD,
     cursor: "pointer"
   },
   ({ isActive }) => ({

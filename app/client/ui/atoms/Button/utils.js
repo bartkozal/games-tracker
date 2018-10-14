@@ -49,13 +49,13 @@ export const getButtonSize = size => {
       };
     case "small":
       return {
+        ...FONT_SMALL,
         width: SPACING_BASE * 3,
         paddingTop: SPACING_SMALL / 2,
         paddingBottom: SPACING_SMALL / 2,
         paddingLeft: 0,
         paddingRight: 0,
         justifyContent: "center",
-        fontSize: FONT_SMALL,
         textTransform: "uppercase"
       };
   }

@@ -7,15 +7,26 @@ export const COLOR_DARK = "rgba(37, 45, 77, 0.95)";
 export const COLOR_FACEBOOK = "#507CC0";
 export const COLOR_BODY = "#161930";
 
-export const FONT_SMALL = 12;
-export const FONT_BASE = 14;
-export const FONT_LEAD = 16;
-export const FONT_LARGE = 24;
-export const FONT_HUGE = 72;
-
-export const FONT_NORMAL = 400;
-export const FONT_SEMIBOLD = 500;
-export const FONT_BOLD = 700;
+export const FONT_SMALL = {
+  fontSize: 12,
+  fontWeight: 700
+};
+export const FONT_BASE = {
+  fontSize: 14,
+  fontWeight: 500
+};
+export const FONT_LEAD = {
+  fontSize: 16,
+  fontWeight: 700
+};
+export const FONT_LARGE = {
+  fontSize: 24,
+  fontWeight: 700
+};
+export const FONT_HUGE = {
+  fontSize: 72,
+  fontWeight: 700
+};
 
 export const SPACING_BASE = 16;
 export const SPACING_SMALL = SPACING_BASE / 2;
