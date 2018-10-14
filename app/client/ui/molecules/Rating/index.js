@@ -61,7 +61,11 @@ class Rating extends PureComponent {
 
     return (
       <$Rating>
-        <RatingToggle onClick={open} rating={value} />
+        <RatingToggle
+          onClick={open}
+          rating={value}
+          isMouseOverUnrate={isMouseOverUnrate}
+        />
 
         {isOpen && (
           <$RatingMenu innerRef={clickableElement}>

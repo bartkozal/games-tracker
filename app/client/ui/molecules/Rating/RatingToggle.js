@@ -6,23 +6,19 @@ import Icon from "ui/atoms/Icon";
 import $RatingToggleUnrate from "./$RatingToggleUnrate";
 import $RatingToggle from "./$RatingToggle";
 
-const RatingToggle = ({ onClick, rating }) => {
+const RatingToggle = ({ onClick, rating, isMouseOverUnrate }) => {
   return (
     <$RatingToggle onClick={onClick}>
-      {rating !== null ? (
+      {rating ? (
         <Flex alignItems="center">
-          <Box>
-            {rating !== 0 ? (
-              rating
-            ) : (
-              <$RatingToggleUnrate>Unrate?</$RatingToggleUnrate>
-            )}
-          </Box>
+          <Box>{rating}</Box>
 
           <Box>
             <Icon type="star" color={COLOR_ACCENT} before={SPACING_SMALL} />
           </Box>
         </Flex>
+      ) : isMouseOverUnrate ? (
+        <$RatingToggleUnrate>Unrate?</$RatingToggleUnrate>
       ) : (
         "Rate"
       )}
@@ -31,8 +27,9 @@ const RatingToggle = ({ onClick, rating }) => {
 };
 
 RatingToggle.propTypes = {
-  rating: PropTypes.number,
-  onClick: PropTypes.func.isRequired
+  rating: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired,
+  isMouseOverUnrate: PropTypes.bool.isRequired
 };
 
 export default RatingToggle;

@@ -38,8 +38,7 @@ const $RatingMenu = styled("div")({
     paddingRight: SPACING_SMALL / 2,
 
     ":first-child": {
-      paddingLeft: SPACING_BASE,
-      paddingRight: SPACING_SMALL
+      paddingLeft: SPACING_BASE
     },
 
     ":last-child": {

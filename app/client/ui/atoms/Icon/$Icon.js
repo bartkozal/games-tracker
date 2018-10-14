@@ -5,8 +5,8 @@ const $Icon = styled("div")(
     display: "inline-flex"
   },
   ({ before, after, onClick }) => ({
-    marginLeft: before,
-    marginRight: after,
+    paddingLeft: before,
+    paddingRight: after,
     cursor: onClick ? "pointer" : "inherit"
   })
 );
