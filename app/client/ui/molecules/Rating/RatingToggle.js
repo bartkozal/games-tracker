@@ -17,7 +17,7 @@ const RatingToggle = ({ onClick, rating, isMouseOverUnrate }) => {
             <Icon type="star" color={COLOR_ACCENT} before={SPACING_SMALL} />
           </Box>
         </Flex>
-      ) : isMouseOverUnrate ? (
+      ) : isMouseOverUnrate && rating !== null ? (
         <$RatingToggleUnrate>Unrate?</$RatingToggleUnrate>
       ) : (
         "Rate"
