@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  # www to non-www redirect
-  match "(*any)",
-    to: redirect(subdomain: ""), via: :all, constraints: { subdomain: "www" }
-
   namespace :api, defaults: { format: :json } do
     namespace :user do
       resources :games, only: [:index, :update]
@@ -15,4 +11,8 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback", to: "auth#create"
 
   root "client#show"
+
+  # www to non-www redirect
+  match "(*any)",
+    to: redirect(subdomain: ""), via: :all, constraints: { subdomain: "www" }
 end
