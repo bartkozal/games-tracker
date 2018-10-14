@@ -10,9 +10,9 @@ Rails.application.routes.draw do
 
   get "/auth/:provider/callback", to: "auth#create"
 
-  root "client#show"
-
   # www to non-www redirect
   match "(*any)",
     to: redirect(subdomain: ""), via: :all, constraints: { subdomain: "www" }
+
+  root "client#show"
 end
