@@ -1,0 +1,12 @@
+bkzl_origins:
+  user: bkzl
+  game: origins
+  platforms: ps4
+  rating: 8
+  status: "completed"
+
+bkzl_odyssey:
+  user: bkzl
+  game: odyssey
+  platforms: ps4
+  status: "wishlist"

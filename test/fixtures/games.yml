@@ -1,0 +1,11 @@
+origins:
+  igdb: 28540
+  name: "Assassin's Creed: Origins"
+  cover: "https://images.igdb.com/igdb/image/upload/t_cover_big/l2dza03yjs6j5u6uuak2.jpg"
+  platforms: pc, ps4, xone
+
+odyssey:
+  igdb: 103054
+  name: "Assassin's Creed: Odyssey"
+  cover: "https://images.igdb.com/igdb/image/upload/t_cover_big/f9jvrf3nwdgdil287sla.jpg"
+  platforms: pc, ps4, xone
