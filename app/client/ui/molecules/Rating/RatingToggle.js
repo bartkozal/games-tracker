@@ -27,9 +27,9 @@ const RatingToggle = ({ onClick, rating, isMouseOverUnrate }) => {
 };
 
 RatingToggle.propTypes = {
-  rating: PropTypes.number.isRequired,
+  rating: PropTypes.number,
   onClick: PropTypes.func.isRequired,
-  isMouseOverUnrate: PropTypes.bool.isRequired
+  isMouseOverUnrate: PropTypes.bool
 };
 
 export default RatingToggle;
