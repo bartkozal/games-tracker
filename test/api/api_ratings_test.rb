@@ -3,7 +3,7 @@ require "test_helper"
 class ApiRatingsTest < ActionDispatch::IntegrationTest
   include ApiTestHelper
 
-  fixtures :user_games
+  # fixtures :user_games
 
   test "GET /api/ratings (filter[id])" do
     skip
