@@ -8,8 +8,11 @@ class ApiGamesTest < ActionDispatch::IntegrationTest
     stub_response(%r(api-endpoint.igdb.com/games), 200, igdb_games_response_body)
 
     get api_games_path(search: "witcher")
+    response_body = JSON.parse(@response.body)
 
-    JSON.parse(@response.body).each do |game|
+    assert_not_empty response_body
+
+    response_body.each do |game|
       assert_equal ["id", "name", "cover", "platforms"], game.keys
 
       game["platforms"].each do |platform|
