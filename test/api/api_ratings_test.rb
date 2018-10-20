@@ -3,25 +3,21 @@ require "test_helper"
 class ApiRatingsTest < ActionDispatch::IntegrationTest
   include ApiTestHelper
 
-  # fixtures :user_games
-
   test "GET /api/ratings (filter[id])" do
-    skip
+    user_game = create(:user_game, rating: 8)
 
-    # TODO replace fixtures with factory bot
-
-    get api_ratings_path("filter[id]": Game.first.id)
+    get api_ratings_path("filter[id]": user_game.game.id)
     response_body = JSON.parse(@response.body)
 
     assert_not_empty response_body
 
-    response_body.each do |rating|
-      assert_equal ["id", "score", "votes"], rating.keys
-    end
+    assert_equal ["id", "score", "votes"], response_body.first.keys
+    assert_equal 8.0, response_body.first["score"]
+    assert_equal 1, response_body.first["votes"]
   end
 
   test "GET /api/rating/:id" do
-    # TODO remove - it's game id not rating it
+    # TODO remove - it's game id not rating id
 
     skip
     # get api_rating_path(Game.first.id)

@@ -15,6 +15,8 @@ gem "jbuilder", "~> 2.5"
 
 group :development, :test do
   gem "byebug"
+  gem "factory_bot_rails"
+  gem "faker"
 end
 
 group :development do
