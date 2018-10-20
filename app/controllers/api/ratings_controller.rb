@@ -12,17 +12,4 @@ class Api::RatingsController < ApiController
       })
     end
   end
-
-  def show
-    game_id = params[:id]
-    user_game = UserGame.where(game_id: game_id)
-    average = user_game.average(:rating)
-    count = user_game.count(:rating)
-
-    @rating = Game.rating({
-      id: game_id,
-      average: average,
-      count: count
-    })
-  end
 end

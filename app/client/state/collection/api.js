@@ -1,13 +1,6 @@
 import { get, put } from "axios";
-import {
-  API_RATING,
-  API_RATINGS,
-  API_USER_GAMES,
-  API_USER_GAME
-} from "../../routes/api";
+import { API_RATINGS, API_USER_GAMES, API_USER_GAME } from "../../routes/api";
 import { setAuthToken, filtersSerializer } from "./utils";
-
-export const getRating = id => get(API_RATING.replace(":id", id));
 
 export const getRatings = params =>
   get(API_RATINGS, { params, paramsSerializer: filtersSerializer });
