@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   end
 
   get "/auth/:provider/callback", to: "auth#create"
+  get "/auth/cypress/", to: "auth#cypress"
   root "client#show"
 end

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { kebabCase } from "lodash";
+import { kebabCase, isArray, isString } from "lodash";
 import $Button from "./$Button";
 import $ButtonRightIcon from "./$ButtonRightIcon";
 
@@ -12,7 +12,9 @@ const Button = ({
   onClick
 }) => (
   <$Button
-    data-cy={`button-${type}-${kebabCase(children)}`}
+    data-cy={`button-${type}-${kebabCase(
+      isArray(children) ? children.find(child => isString(child)) : children
+    )}`}
     size={size}
     modifier={type}
     onClick={onClick}

@@ -13,6 +13,16 @@ class AuthController < ApplicationController
     redirect_to root_path
   end
 
+  def cypress
+    raise ActionController::RoutingError, "Not Found" unless Rails.env.cypress?
+
+    user = User.find_or_create_by(email: params[:email])
+    render json: {
+      token: user.token,
+      email: user.email
+    }
+  end
+
   private
 
   def auth_hash

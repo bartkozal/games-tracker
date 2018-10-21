@@ -7,6 +7,7 @@ const AVATAR_SIZE = 48;
 
 const Avatar = ({ email, size = AVATAR_SIZE * 2, onClick }) => (
   <Image
+    data-cy="avatar"
     type="circle"
     width={AVATAR_SIZE}
     src={url(email, { size })}
