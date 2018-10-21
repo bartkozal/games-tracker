@@ -1,6 +1,5 @@
-<% if Rails.env.development? %>
+<% unless Rails.env.production? %>
   <%= stylesheet_pack_tag 'env' %>
 
-  <div class="env">dev</div>
+  <div class="env"><%= Rails.env %></div>
 <% end %>
-

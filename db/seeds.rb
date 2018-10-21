@@ -6,3 +6,5 @@ Platform.create([
   { igdb: 12, slug: "X360" },
   { igdb: 130, slug: "NSW" }
 ])
+
+User.create(email: "bkzl@me.com")

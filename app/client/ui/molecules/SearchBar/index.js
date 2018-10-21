@@ -59,7 +59,7 @@ class SearchBar extends Component {
           onChange={this.updateQuery}
           value={query}
           type="text"
-          data-test="search-input"
+          data-cy="search-input"
         />
         <$SearchIcon>
           {haveSearchResults ? (

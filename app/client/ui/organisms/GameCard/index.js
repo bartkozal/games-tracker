@@ -44,7 +44,7 @@ const GameCard = ({ game, setGameStatus, setGamePlatforms, rateGame }) => {
   const isInCollection = status && status !== Status.UNASSIGNED;
 
   return (
-    <$GameCard data-test={`game-card-${kebabCase(name)}`}>
+    <$GameCard data-cy={`game-card-${kebabCase(name)}`}>
       <GameCover src={cover} />
 
       <$GameRating>

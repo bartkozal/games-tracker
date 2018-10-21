@@ -12,16 +12,15 @@
 $ brew install hivemind
 $ bundle install
 $ yarn install
-$ rails db:setup
+$ yarn setup
 $ yarn start
 ```
 
 ## Test
 
 ```sh
-$ rails test
 $ yarn test
-$ yarn cypress
+$ yarn test:cypress
 ```
 
 ## Deployment

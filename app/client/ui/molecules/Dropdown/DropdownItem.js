@@ -5,7 +5,7 @@ import $DropdownItem from "./$DropdownItem";
 
 const DropdownItem = ({ onClick, children, destructive }) => (
   <$DropdownItem
-    data-test={`dropdown-item-${kebabCase(children)}`}
+    data-cy={`dropdown-item-${kebabCase(children)}`}
     onClick={onClick}
     destructive={destructive}
   >

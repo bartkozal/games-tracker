@@ -11,5 +11,9 @@ test:
   <<: *default
   database: games_tracker_test
 
+cypress:
+  <<: *default
+  database: games_tracker_cypress
+
 production:
   url: <%= ENV['DATABASE_URL'] %>

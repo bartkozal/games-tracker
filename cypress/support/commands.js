@@ -1,15 +1,5 @@
-Cypress.Commands.add("getId", id => cy.get(`[data-test="${id}"]`));
+Cypress.Commands.add("getNode", testId => cy.get(`[data-cy="${testId}"]`));
 
-Cypress.Commands.add("findId", { prevSubject: true }, (subject, id) =>
-  subject.find(`[data-test="${id}"]`)
+Cypress.Commands.add("findNode", { prevSubject: true }, (subject, testId) =>
+  subject.find(`[data-cy="${testId}"]`)
 );
-
-Cypress.Commands.add("signIn", () => {
-  cy.fixture("authCookie").then(authCookie => {
-    cy.setCookie("auth", encodeURIComponent(JSON.stringify(authCookie)));
-  });
-});
-
-Cypress.Commands.add("signOut", () => {
-  cy.clearCookies();
-});

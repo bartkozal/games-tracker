@@ -12,7 +12,7 @@ const Button = ({
   onClick
 }) => (
   <$Button
-    data-test={`button-${type}-${kebabCase(children)}`}
+    data-cy={`button-${type}-${kebabCase(children)}`}
     size={size}
     modifier={type}
     onClick={onClick}
