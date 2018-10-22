@@ -71,6 +71,7 @@ class Rating extends PureComponent {
           <$RatingMenu innerRef={clickableElement}>
             {!!initialValue && (
               <Icon
+                testId="rating-unstar"
                 color={isMouseOverUnrate ? COLOR_DESTRUCTIVE : COLOR_ACCENT}
                 type="unstar"
                 onClick={() => this.rate(null)}
@@ -86,6 +87,7 @@ class Rating extends PureComponent {
             )}
             {times(10, n => (
               <Icon
+                testId={`rating-star-${n + 1}`}
                 key={n}
                 type="star"
                 color={n < value ? COLOR_ACCENT : COLOR_PRIMARY}

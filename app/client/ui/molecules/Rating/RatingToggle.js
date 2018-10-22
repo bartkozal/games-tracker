@@ -8,7 +8,7 @@ import $RatingToggle from "./$RatingToggle";
 
 const RatingToggle = ({ onClick, rating, isMouseOverUnrate }) => {
   return (
-    <$RatingToggle onClick={onClick}>
+    <$RatingToggle onClick={onClick} data-cy="rating-toggle">
       {rating ? (
         <Flex alignItems="center">
           <Box>{rating}</Box>

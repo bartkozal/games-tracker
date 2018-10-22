@@ -12,7 +12,8 @@ const Icon = ({
   after,
   onClick,
   onMouseEnter,
-  onMouseLeave
+  onMouseLeave,
+  testId
 }) => {
   const SVG = getIconSVG(type);
   const sizeProps = size ? { width: size, height: size } : {};
@@ -20,6 +21,7 @@ const Icon = ({
 
   return (
     <$Icon
+      data-cy={testId}
       before={before}
       after={after}
       onClick={onClick}
@@ -47,7 +49,8 @@ Icon.propTypes = {
   size: PropTypes.number,
   onClick: PropTypes.func,
   onMouseEnter: PropTypes.func,
-  onMouseLeave: PropTypes.func
+  onMouseLeave: PropTypes.func,
+  testId: PropTypes.string
 };
 
 export default Icon;

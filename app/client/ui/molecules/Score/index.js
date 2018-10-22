@@ -19,8 +19,8 @@ const Score = ({ value, votes }) => {
       </Box>
       <Box>
         <$Score>
-          <$ScoreValue>{value.toFixed(1)}</$ScoreValue>
-          <$ScoreVotes>
+          <$ScoreValue data-cy="score-value">{value.toFixed(1)}</$ScoreValue>
+          <$ScoreVotes data-cy="score-votes">
             ( <Icon type="user" size={10} after={2} color={COLOR_LIGHT} />
             {votes} )
           </$ScoreVotes>
