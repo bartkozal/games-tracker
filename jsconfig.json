@@ -5,5 +5,5 @@
       "*": ["./app/client/*"]
     }
   },
-  "exclude": ["node_modules"]
+  "include": ["app/client"]
 }
