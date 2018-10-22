@@ -38,6 +38,7 @@ class Tabs extends Component {
             ({ tab, hidden }) =>
               !hidden && (
                 <$TabItem
+                  data-cy={`tab-${tab.toLowerCase()}`}
                   key={tab}
                   onClick={() => this.activate(tab)}
                   isActive={activeTab === tab}

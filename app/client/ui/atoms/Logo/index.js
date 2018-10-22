@@ -4,6 +4,7 @@ import SVG from "./logo.svg";
 
 const Logo = ({ onClick }) => (
   <SVG
+    data-cy="logo"
     onClick={onClick}
     style={{
       cursor: onClick ? "pointer" : "inherit"

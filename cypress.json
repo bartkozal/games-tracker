@@ -2,5 +2,7 @@
   "baseUrl": "http://localhost:4000",
   "pluginsFile": false,
   "fixturesFolder": false,
-  "video": false
+  "video": false,
+  "viewportWidth": 1280,
+  "viewportHeight": 800
 }

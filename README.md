@@ -20,7 +20,6 @@ $ yarn start
 
 ```sh
 $ yarn test
-$ yarn test:cypress
 ```
 
 ## Deployment

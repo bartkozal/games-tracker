@@ -5,7 +5,7 @@ describe("Authentication", () => {
   });
 
   it("allows to log out", () => {
-    cy.signIn("bkzl@me.com");
+    cy.signIn();
     cy.getNode("avatar").click();
     cy.getNode("dropdown-item-sign-out").click();
     cy.getNode("avatar").should("not.exist");

@@ -4,7 +4,7 @@ Cypress.Commands.add("findNode", { prevSubject: true }, (subject, testId) =>
   subject.find(`[data-cy="${testId}"]`)
 );
 
-Cypress.Commands.add("signIn", email => {
+Cypress.Commands.add("signIn", (email = `user-${Date.now()}@example.com`) => {
   cy.request(`/auth/cypress?email=${email}`).then(response => {
     cy.setCookie("auth", JSON.stringify(response.body));
   });

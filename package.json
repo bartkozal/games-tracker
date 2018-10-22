@@ -6,7 +6,7 @@
     "lint": "eslint app/client/",
     "setup": "bundle exec rails db:setup",
     "start": "hivemind Procfile.dev",
-    "test": "yarn test:api && yarn test:client:ci",
+    "test": "yarn test:api && yarn test:client:ci && yarn cypress:ci",
     "test:api": "bundle exec rails test",
     "test:client": "jest --watch",
     "test:client:ci": "jest --ci",
