@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Game } from "types";
@@ -8,11 +8,7 @@ const mapStateToProps = ({ Search }) => ({
   results: Search.results
 });
 
-const SearchResults = ({ results }) => (
-  <Fragment>
-    <GamesGrid of={results} />
-  </Fragment>
-);
+const SearchResults = ({ results }) => <GamesGrid of={results} />;
 
 SearchResults.propTypes = {
   results: PropTypes.arrayOf(Game)

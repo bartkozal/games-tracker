@@ -1,5 +1,7 @@
 import styled from "react-emotion";
-import { CONTAINER_WIDTH, SPACING_BASE } from "ui/quarks";
+import { SPACING_BASE } from "ui/quarks";
+
+const CONTAINER_WIDTH = SPACING_BASE * 74;
 
 const Container = styled("div")({
   boxSizing: "content-box",

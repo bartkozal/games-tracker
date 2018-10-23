@@ -1,4 +1,7 @@
 @import "modern-normalize";
+@import "../ui/foundations/colors";
+@import "../ui/foundations/spacing";
+@import "../ui/foundations/typography";
 
 *,
 *::after,
@@ -16,16 +19,12 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  font-family: "Lato", sans-serif;
   font-size: 100%;
-  line-height: 1.15;
-  background-color: #161930;
-  background-image: radial-gradient(
-    circle at bottom right,
-    rgba(255, 0, 132, 0.05),
-    transparent
-  );
-  color: #849cce;
+  font-family: var(--font-stack);
+  line-height: var(--font-leading);
+  background-color: var(--color-body);
+  background-image: var(--gradient-body);
+  color: var(--color-primary);
 }
 
 a {

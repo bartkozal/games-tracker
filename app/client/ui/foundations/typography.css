@@ -1,0 +1,49 @@
+:root {
+  --font-stack: "Lato", sans-serif;
+  --font-leading: 1.15;
+
+  --text-small: {
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  --text-base: {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  --text-lead: {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  --text-large: {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  --text-huge: {
+    font-size: 72px;
+    font-weight: 700;
+  }
+}
+
+.text-small {
+  @apply --text-small;
+}
+
+.text-base {
+  @apply --text-base;
+}
+
+.text-lead {
+  @apply --text-lead;
+}
+
+.text-large {
+  @apply --text-large;
+}
+
+.text-huge {
+  @apply --text-huge;
+}

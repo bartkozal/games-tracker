@@ -1,0 +1,91 @@
+@import "./units";
+
+.spacing-base {
+  padding: var(--unit-base);
+}
+
+.spacing-base-top {
+  padding-top: var(--unit-base);
+}
+
+.spacing-base-right {
+  padding-right: var(--unit-base);
+}
+
+.spacing-base-bottom {
+  padding-bottom: var(--unit-base);
+}
+
+.spacing-base-left {
+  padding-left: var(--unit-base);
+}
+
+.spacing-base-vertical {
+  padding-top: var(--unit-base);
+  padding-bottom: var(--unit-base);
+}
+
+.spacing-base-horizontal {
+  padding-right: var(--unit-base);
+  padding-left: var(--unit-base);
+}
+
+.spacing-small {
+  padding: var(--unit-small);
+}
+
+.spacing-small-top {
+  padding-top: var(--unit-small);
+}
+
+.spacing-small-right {
+  padding-right: var(--unit-small);
+}
+
+.spacing-small-bottom {
+  padding-bottom: var(--unit-small);
+}
+
+.spacing-small-left {
+  padding-left: var(--unit-small);
+}
+
+.spacing-small-vertical {
+  padding-top: var(--unit-small);
+  padding-bottom: var(--unit-small);
+}
+
+.spacing-small-horizontal {
+  padding-right: var(--unit-small);
+  padding-left: var(--unit-small);
+}
+
+.spacing-mini {
+  padding: var(--unit-mini);
+}
+
+.spacing-mini-top {
+  padding-top: var(--unit-mini);
+}
+
+.spacing-mini-right {
+  padding-right: var(--unit-mini);
+}
+
+.spacing-mini-bottom {
+  padding-bottom: var(--unit-mini);
+}
+
+.spacing-mini-left {
+  padding-left: var(--unit-mini);
+}
+
+.spacing-mini-vertical {
+  padding-top: var(--unit-mini);
+  padding-bottom: var(--unit-mini);
+}
+
+.spacing-mini-horizontal {
+  padding-right: var(--unit-mini);
+  padding-left: var(--unit-mini);
+}

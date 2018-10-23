@@ -1,5 +1,7 @@
 <% unless Rails.env.production? %>
   <%= stylesheet_pack_tag 'env' %>
 
-  <div class="env"><%= Rails.env %></div>
+  <div class="env text-small spacing-mini-vertical spacing-small-horizontal">
+    <%= Rails.env %>
+  </div>
 <% end %>
