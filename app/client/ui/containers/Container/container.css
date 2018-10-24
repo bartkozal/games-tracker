@@ -1,0 +1,10 @@
+@import "../../foundations/units.css";
+
+.container {
+  box-sizing: content-box;
+  max-width: calc(var(--unit-base) * 74);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--unit-base);
+  padding-right: var(--unit-base);
+}
