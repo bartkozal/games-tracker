@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
+// @flow
+import * as React from "react";
 
-const StickyFooter = ({ children }) => (
+type Props = {
+  children: React.Node
+};
+
+const StickyFooter = ({ children }: Props) => (
   <div className="sticky-footer">{children}</div>
 );
-
-StickyFooter.propTypes = {
-  children: PropTypes.node.isRequired
-};
 
 export default StickyFooter;

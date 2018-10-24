@@ -1,4 +1,5 @@
-import React from "react";
+// @flow
+import * as React from "react";
 import { Route, Switch } from "react-router-dom";
 import { ROOT_PATH } from "routes/paths";
 import HomePage from "ui/pages/HomePage";

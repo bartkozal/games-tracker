@@ -1,10 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
+// @flow
+import * as React from "react";
 import { StickyFooter, StickyFooterWrapper } from "ui/containers/StickyFooter";
 import Container from "ui/containers/Container";
 
+type Props = {
+  children: React.Node
+};
+
 // TODO
-const Layout = ({ children }) => (
+const Layout = ({ children }: Props) => (
   <StickyFooterWrapper>
     <Container>
       Navbar
@@ -16,9 +20,5 @@ const Layout = ({ children }) => (
     </StickyFooter>
   </StickyFooterWrapper>
 );
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired
-};
 
 export default Layout;

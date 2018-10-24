@@ -1,27 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
+// @flow
+import * as React from "react";
 import { connect } from "react-redux";
-// import SearchResults from "./SearchResults";
-// import GamesCollection from "./GamesCollection";
+import SearchResults from "./SearchResults";
+import GamesCollection from "./GamesCollection";
 
 const mapStateToProps = ({ Auth, Search }) => ({
   userSignedIn: Auth.userSignedIn,
   haveSearchResults: !!Search.results.length
 });
 
-// TODO
-const HomePage = ({ userSignedIn, haveSearchResults }) => (
-  <div>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto excepturi eum
-    laborum voluptate voluptates sit aspernatur qui! Enim laboriosam laborum
-    soluta numquam nemo illo sequi! Hic odit nemo asperiores dolores?
-  </div>
-);
-// haveSearchResults ? <SearchResults /> : userSignedIn && <GamesCollection />;
-
-HomePage.propTypes = {
-  userSignedIn: PropTypes.bool,
-  haveSearchResults: PropTypes.bool
+type Props = {
+  userSignedIn: boolean,
+  haveSearchResults: boolean
 };
+
+const HomePage = ({ userSignedIn, haveSearchResults }: Props) =>
+  haveSearchResults ? <SearchResults /> : userSignedIn && <GamesCollection />;
 
 export default connect(mapStateToProps)(HomePage);

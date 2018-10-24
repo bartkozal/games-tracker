@@ -1,4 +1,5 @@
 {
+  "flow.useNPMPackagedFlow": true,
   "ruby.format": "rubocop",
   "ruby.lint": {
     "rubocop": true

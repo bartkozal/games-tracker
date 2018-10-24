@@ -7,8 +7,9 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:import/warnings"
+    "plugin:import/warnings",
+    "plugin:flowtype/recommended"
   ],
   "parser": "babel-eslint",
-  "plugins": ["cypress", "react", "import", "jest"]
+  "plugins": ["cypress", "react", "import", "jest", "flowtype"]
 }
