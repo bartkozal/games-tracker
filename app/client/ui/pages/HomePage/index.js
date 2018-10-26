@@ -1,8 +1,8 @@
 // @flow
 import * as React from "react";
 import { connect } from "react-redux";
-import SearchResults from "./SearchResults";
-import GamesCollection from "./GamesCollection";
+// import SearchResults from "./SearchResults";
+// import GamesCollection from "./GamesCollection";
 
 const mapStateToProps = ({ Auth, Search }) => ({
   userSignedIn: Auth.userSignedIn,
@@ -14,7 +14,8 @@ type Props = {
   haveSearchResults: boolean
 };
 
-const HomePage = ({ userSignedIn, haveSearchResults }: Props) =>
-  haveSearchResults ? <SearchResults /> : userSignedIn && <GamesCollection />;
+// TODO
+const HomePage = ({ userSignedIn, haveSearchResults }: Props) => null;
+// haveSearchResults ? <SearchResults /> : userSignedIn && <GamesCollection />;
 
 export default connect(mapStateToProps)(HomePage);

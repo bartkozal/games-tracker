@@ -2,6 +2,7 @@
 import * as React from "react";
 import { StickyFooter, StickyFooterWrapper } from "ui/containers/StickyFooter";
 import Container from "ui/containers/Container";
+import Footer from "ui/components/Footer";
 
 type Props = {
   children: React.Node
@@ -16,7 +17,9 @@ const Layout = ({ children }: Props) => (
     </Container>
 
     <StickyFooter>
-      <Container>Footer</Container>
+      <Container>
+        <Footer />
+      </Container>
     </StickyFooter>
   </StickyFooterWrapper>
 );

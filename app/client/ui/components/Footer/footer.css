@@ -1,0 +1,18 @@
+@import "../../foundations/typography";
+@import "../../foundations/units";
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--unit-base);
+  padding-bottom: var(--unit-base);
+  list-style-type: none;
+  @apply --text-small;
+}
+
+.footer > li + li::before {
+  display: inline;
+  padding-right: var(--unit-small);
+  padding-left: var(--unit-small);
+  content: "||";
+}
