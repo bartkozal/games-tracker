@@ -11,5 +11,8 @@
     "plugin:flowtype/recommended"
   ],
   "parser": "babel-eslint",
-  "plugins": ["cypress", "react", "import", "jest", "flowtype"]
+  "plugins": ["cypress", "react", "import", "jest", "flowtype"],
+  "rules": {
+    "flowtype/space-after-type-colon": [2, "always", { "allowLineBreak": true }]
+  }
 }

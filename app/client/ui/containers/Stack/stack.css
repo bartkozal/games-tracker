@@ -1,0 +1,49 @@
+@import "../../foundations/padding";
+
+.flex {
+  display: flex;
+}
+
+.flex-direction-row {
+  flex-direction: row;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.flex-distribute-start {
+  justify-content: flex-start;
+}
+
+.flex-distribute-center {
+  justify-content: center;
+}
+
+.flex-distribute-end {
+  justify-content: flex-end;
+}
+
+.flex-distribute-space-between {
+  justify-content: space-between;
+}
+
+.flex-distribute-space-around {
+  justify-content: space-around;
+}
+
+.flex-distribute-space-evenly {
+  justify-content: space-evenly;
+}
+
+.flex-align-start {
+  align-items: flex-start;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-align-end {
+  align-items: flex-end;
+}
