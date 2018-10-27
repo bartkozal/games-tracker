@@ -1,4 +1,4 @@
-@import "./units";
+@import "./unit";
 
 .padding-base {
   padding: var(--unit-base);

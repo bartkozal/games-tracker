@@ -1,5 +1,5 @@
-@import "../../foundations/units";
-@import "../../foundations/colors";
+@import "../../foundations/unit";
+@import "../../foundations/color";
 
 .search-bar {
   position: relative;

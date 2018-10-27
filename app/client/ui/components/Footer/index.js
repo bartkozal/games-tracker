@@ -5,7 +5,7 @@ import "./footer.css";
 const Footer = () => (
   <ul className="footer text-small">
     <li>Games Tracker API is powered by IGDB</li>
-    <li>Privacy Policy</li>
+    {/* <li>Privacy Policy</li> */}
   </ul>
 );
 

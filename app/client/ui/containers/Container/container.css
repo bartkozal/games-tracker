@@ -1,4 +1,4 @@
-@import "../../foundations/units.css";
+@import "../../foundations/unit";
 
 .container {
   box-sizing: content-box;

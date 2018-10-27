@@ -1,0 +1,28 @@
+@import "../../foundations/unit";
+@import "../../foundations/color";
+
+.button {
+  position: relative;
+  padding-top: var(--unit-small);
+  padding-bottom: var(--unit-small);
+  padding-right: var(--unit-base);
+  padding-left: var(--unit-base);
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button-facebook {
+  color: var(--color-light);
+  background-color: var(--color-facebook);
+}
+
+.button-facebook-icon {
+  fill: var(--color-light);
+  margin-right: var(--unit-small);
+}
