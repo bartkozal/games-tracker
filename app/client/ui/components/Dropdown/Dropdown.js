@@ -22,6 +22,8 @@ type DropdownMenuProps = {
 
 type DropdownMenuItemProps = {
   onClick: Function,
+  onMouseEnter: Function,
+  onMouseLeave: Function,
   children: React.Node,
   className: string
 };
@@ -51,6 +53,8 @@ class Dropdown extends React.Component<Props, State> {
 
   DropdownMenuItem = ({
     onClick,
+    onMouseEnter,
+    onMouseLeave,
     children,
     className
   }: DropdownMenuItemProps) => (
@@ -61,6 +65,8 @@ class Dropdown extends React.Component<Props, State> {
         this.close();
         onClick(event);
       }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {children}
     </button>

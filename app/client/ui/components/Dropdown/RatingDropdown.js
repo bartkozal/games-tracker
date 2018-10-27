@@ -1,8 +1,11 @@
 // @flow
 import * as React from "react";
 import { connect } from "react-redux";
+import { range } from "lodash";
 import { rateGame } from "state/collection/actions";
 import Rating from "ui/components/Rating";
+import StarIcon from "ui/foundations/icon/star.svg";
+import UnstarIcon from "ui/foundations/icon/unstar.svg";
 import Dropdown from "./Dropdown";
 
 const mapDispatchToProps = {
@@ -15,22 +18,71 @@ type Props = {
   rateGame: Function
 };
 
-class RatingDropdown extends React.Component<Props> {
+type State = {
+  valuePreview: number
+};
+
+class RatingDropdown extends React.Component<Props, State> {
+  static defaultProps = {
+    value: 0
+  };
+
+  state = {
+    valuePreview: this.props.value
+  };
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.value !== this.props.value) {
+      this.setValuePreview(this.props.value);
+    }
+  }
+
+  setValuePreview = value => {
+    this.setState({ valuePreview: value });
+  };
+
   render() {
-    const { gameId, value } = this.props;
+    const { gameId, value, rateGame } = this.props;
+    const { valuePreview } = this.state;
 
     return (
       <Dropdown>
         {({ DropdownToggle, DropdownMenu, DropdownMenuItem }) => (
+          // TODO refactor using <>
           <React.Fragment>
             <DropdownToggle>
-              <Rating value={value} />
+              <Rating value={valuePreview} />
             </DropdownToggle>
 
-            <DropdownMenu>
-              <DropdownMenuItem onClick={rating => rateGame(gameId, rating)}>
-                star
-              </DropdownMenuItem>
+            <DropdownMenu className="dropdown-menu-rating">
+              {value ? (
+                <DropdownMenuItem
+                  onClick={() => rateGame(gameId, null)}
+                  onMouseEnter={() => this.setValuePreview(-1)}
+                  onMouseLeave={() => this.setValuePreview(value)}
+                >
+                  <UnstarIcon
+                    className={
+                      value === -1 ? "icon-destructive" : "icon-accent"
+                    }
+                  />
+                </DropdownMenuItem>
+              ) : null}
+
+              {range(1, 11).map(rating => (
+                <DropdownMenuItem
+                  key={rating}
+                  onClick={() => rateGame(gameId, rating)}
+                  onMouseEnter={() => this.setValuePreview(rating)}
+                  onMouseLeave={() => this.setValuePreview(value)}
+                >
+                  <StarIcon
+                    className={
+                      rating - 1 < valuePreview ? "icon-accent" : "icon-primary"
+                    }
+                  />
+                </DropdownMenuItem>
+              ))}
             </DropdownMenu>
           </React.Fragment>
         )}

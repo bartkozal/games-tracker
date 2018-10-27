@@ -2,6 +2,7 @@
 @import "../../foundations/unit.css";
 
 .rating {
+  height: 27px;
   display: flex;
   align-items: center;
   color: var(--color-accent);

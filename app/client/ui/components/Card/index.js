@@ -36,7 +36,7 @@ const Card = ({ game, setGamePlatforms }: Props) => (
     <div className="card-rating">
       <Stack align="center" distribute="space-between">
         <Score value={game.score} votes={game.votes} />
-        <RatingDropdown value={game.rating} />
+        <RatingDropdown gameId={game.id} value={game.rating} />
       </Stack>
     </div>
 

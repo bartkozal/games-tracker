@@ -1,6 +1,7 @@
 @import "modern-normalize";
 @import "./ui/foundations/color.css";
 @import "./ui/foundations/cursor.css";
+@import "./ui/foundations/icon.css";
 @import "./ui/foundations/padding.css";
 @import "./ui/foundations/typography.css";
 
