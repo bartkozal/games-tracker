@@ -1,0 +1,18 @@
+@import "../../foundations/color.css";
+@import "../../foundations/unit.css";
+
+.rating {
+  display: flex;
+  align-items: center;
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+
+.rating-star-icon {
+  fill: var(--color-accent);
+  margin-left: var(--unit-base);
+}
+
+.rating-unrate {
+  color: var(--color-destructive);
+}

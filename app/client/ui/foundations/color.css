@@ -13,11 +13,3 @@
     transparent
   );
 }
-
-.color-accent {
-  color: var(--color-accent);
-}
-
-.color-destructive {
-  color: var(--color-destructive);
-}

@@ -7,6 +7,7 @@ import Stack from "ui/containers/Stack";
 import Grid from "ui/containers/Grid";
 import Score from "ui/components/Score";
 import { SmallButton, SmallOutlineButton } from "ui/components/Button";
+import { RatingDropdown } from "ui/components/Dropdown";
 import cypressify from "ui/utils/cypressify";
 import type { Game, Platform } from "types";
 import "./card.css";
@@ -19,7 +20,6 @@ type Props = {
   game: Game,
   setGamePlatforms: Function
   // setGameStatus: Function,
-  // rateGame: Function
 };
 
 // import { Status } from "constants";
@@ -36,8 +36,7 @@ const Card = ({ game, setGamePlatforms }: Props) => (
     <div className="card-rating">
       <Stack align="center" distribute="space-between">
         <Score value={game.score} votes={game.votes} />
-        RatingDropdown
-        {/* <Rating value={rating} onRate={rating => rateGame(id, rating)} /> */}
+        <RatingDropdown value={game.rating} />
       </Stack>
     </div>
 

@@ -3,6 +3,8 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { isEmpty, groupBy } from "lodash";
 import { fetchGames } from "state/collection/actions";
+import Grid from "ui/containers/Grid";
+import Card from "ui/components/Card";
 import { type Game } from "types";
 
 const mapStateToProps = ({ Collection }) => ({
@@ -49,7 +51,11 @@ class GamesCollection extends React.Component<Props> {
     //   }))}
     // />
 
-    return <div>GamesCollection</div>;
+    return (
+      <Grid of={collection[null]} perRow={5}>
+        {game => <Card game={game} />}
+      </Grid>
+    );
   }
 }
 
