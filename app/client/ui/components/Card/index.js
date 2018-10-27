@@ -3,6 +3,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { setGamePlatforms } from "state/collection/actions";
 import Stack from "ui/containers/Stack";
+import Score from "ui/components/Score";
 import cypressify from "ui/utils/cypressify";
 import { type Game } from "types";
 import "./card.css";
@@ -33,8 +34,7 @@ const Card = ({ game, setGamePlatforms }: Props) => {
 
       <div className="card-rating">
         <Stack align="center" distribute="space-between">
-          Score
-          {/* <Score value={score} votes={votes} /> */}
+          <Score value={game.score} votes={game.votes} />
           RatingDropdown
           {/* <Rating value={rating} onRate={rating => rateGame(id, rating)} /> */}
         </Stack>

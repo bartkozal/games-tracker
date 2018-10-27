@@ -1,0 +1,31 @@
+@import "../../foundations/color.css";
+@import "../../foundations/unit.css";
+
+.score {
+  position: relative;
+}
+
+.score-value {
+  color: var(--color-light);
+}
+
+.score-votes {
+  position: absolute;
+  bottom: calc(var(--unit-spacing) * -1);
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color-light);
+  white-space: nowrap;
+}
+
+.score-star-icon {
+  fill: var(--color-light);
+  margin-right: var(--unit-base);
+}
+
+.score-user-icon {
+  fill: var(--color-light);
+  width: 10px;
+  height: 10px;
+  margin-right: 2px;
+}

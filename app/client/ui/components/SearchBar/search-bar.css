@@ -26,6 +26,6 @@
   right: var(--unit-spacing);
 }
 
-.search-bar-submit > svg {
+.search-bar-submit {
   fill: var(--color-primary);
 }
