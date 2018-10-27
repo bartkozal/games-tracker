@@ -1,32 +1,18 @@
-import PropTypes from "prop-types";
+// @flow
 
-export const Status = {
-  UNASSIGNED: null,
-  WISHLIST: "wishlist",
-  BACKLOG: "backlog",
-  PLAYING: "playing",
-  COMPLETED: "completed"
+export type Platform = {
+  id: number,
+  slug: string
 };
 
-export const Platform = PropTypes.shape({
-  id: PropTypes.number.isRequired,
-  slug: PropTypes.string.isRequired
-});
-
-export const Game = PropTypes.shape({
-  id: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
-  cover: PropTypes.string.isRequired,
-  platforms: PropTypes.arrayOf(Platform).isRequired,
-  userPlatforms: PropTypes.arrayOf(Platform),
-  status: PropTypes.oneOf([
-    Status.UNASSIGNED,
-    Status.WISHLIST,
-    Status.BACKLOG,
-    Status.PLAYING,
-    Status.COMPLETED
-  ]),
-  rating: PropTypes.number,
-  score: PropTypes.number,
-  votes: PropTypes.number
-});
+export type Game = {
+  id: number,
+  name: string,
+  cover: string,
+  platforms: Platform[],
+  userPlatforms?: Platform[],
+  status?: "wishlist" | "backlog" | "playing" | "completed",
+  rating?: number,
+  score?: number,
+  votes?: number
+};

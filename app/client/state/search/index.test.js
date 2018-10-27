@@ -1,3 +1,4 @@
+import { Status } from "constants";
 import {
   requestResults,
   resolveResults,
@@ -9,7 +10,6 @@ import {
   resolveGameUpdate,
   resolveGamesBulkUpdate
 } from "../collection/actionCreators";
-import { Status } from "../../types";
 import reducer, { initialState } from "./";
 
 describe("Search", () => {

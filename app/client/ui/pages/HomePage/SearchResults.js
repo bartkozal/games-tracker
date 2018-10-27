@@ -1,17 +1,22 @@
+// @flow
 import React from "react";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Game } from "types";
-import GamesGrid from "ui/templates/GamesGrid";
+import { type Game } from "types";
+import Grid from "ui/containers/Grid";
 
 const mapStateToProps = ({ Search }) => ({
-  results: Search.results
+  searchResults: Search.results
 });
 
-const SearchResults = ({ results }) => <GamesGrid of={results} />;
-
-SearchResults.propTypes = {
-  results: PropTypes.arrayOf(Game)
+type Props = {
+  searchResults: Game[]
 };
+
+const SearchResults = ({ searchResults }: Props) => (
+  <Grid of={searchResults} perRow={5}>
+    {(game: Game) => <div>{game.name}</div>}
+    {/* <GameCard game={game} /> */}
+  </Grid>
+);
 
 export default connect(mapStateToProps)(SearchResults);

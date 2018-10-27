@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { capitalize, xorBy, kebabCase } from "lodash";
-import { Status } from "types";
+import { Status } from "constants";
 import {
   setGameStatus,
   setGamePlatforms,

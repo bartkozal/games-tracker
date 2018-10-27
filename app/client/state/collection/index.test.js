@@ -1,9 +1,9 @@
+import { Status } from "constants";
 import {
   resolveGameUpdate,
   resolveGames,
   resolveGamesBulkUpdate
 } from "./actionCreators";
-import { Status } from "../../types";
 import reducer, { initialState } from ".";
 
 describe("Collection", () => {
