@@ -2,15 +2,16 @@
 import * as React from "react";
 import { FACEBOOK_AUTH_PATH } from "routes/paths";
 import FacebookIcon from "ui/foundations/icon/facebook.svg";
+import Button from "./Button";
 
 const FacebookButton = () => (
-  <button
-    className="button button-facebook"
+  <Button
+    className="button-facebook"
     onClick={() => window.location.assign(FACEBOOK_AUTH_PATH)}
   >
     <FacebookIcon className="button-facebook-icon" />
     Sign in with Facebook
-  </button>
+  </Button>
 );
 
 export default FacebookButton;

@@ -11,11 +11,12 @@ type GridItem = {
 type Props = {
   of: GridItem[],
   perRow: 3 | 4 | 5,
+  padding?: "small",
   children: Function
 };
 
-const Grid = ({ of: items, perRow, children }: Props) => (
-  <div className="grid">
+const Grid = ({ of: items, perRow, padding, children }: Props) => (
+  <div className={cx("grid", [padding ? `grid-${padding}` : null])}>
     {items.map(item => (
       <div
         className={cx("grid-item", `grid-item-${ordinalify(perRow)}`)}

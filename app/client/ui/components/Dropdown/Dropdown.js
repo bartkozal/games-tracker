@@ -34,7 +34,9 @@ class Dropdown extends React.Component<Props, State> {
   dropdownMenu = React.createRef();
 
   DropdownToggle = ({ children }: DropdownToggleProps) => (
-    <div onClick={() => this.open()}>{children}</div>
+    <div className="cursor-pointer" onClick={() => this.open()}>
+      {children}
+    </div>
   );
 
   DropdownMenu = ({ children, className }: DropdownMenuProps) => {

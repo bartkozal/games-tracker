@@ -11,25 +11,6 @@
   border-radius: var(--card-border-radius);
 }
 
-.card-title {
-  height: 42px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: var(--unit-spacing);
-  overflow: hidden;
-  text-align: center;
-  color: var(--color-light);
-}
-
-.card-rating {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: var(--unit-spacing);
-}
-
 .card-cover {
   position: relative;
   height: calc(var(--unit-base) * 42);
@@ -52,4 +33,42 @@
   border-top-left-radius: var(--card-border-radius);
   border-top-right-radius: var(--card-border-radius);
   content: "";
+}
+
+.card-rating {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--unit-spacing);
+}
+
+.card-title {
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--unit-spacing);
+  overflow: hidden;
+  text-align: center;
+  color: var(--color-light);
+}
+
+.card-platforms {
+  height: 62px;
+  max-width: calc(var(--unit-base) * 21);
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: var(--unit-spacing);
+}
+
+.card-platforms > .grid {
+  margin-left: calc(var(--unit-base) / -2);
+  margin-right: calc(var(--unit-base) / -2);
+}
+
+.card-platforms > .grid > .grid-item {
+  margin-bottom: var(--unit-base);
+  margin-left: calc(var(--unit-base) / 2);
+  margin-right: calc(var(--unit-base) / 2);
 }
