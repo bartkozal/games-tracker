@@ -6,8 +6,8 @@ import {
   updateQuery,
   clearSearchResults
 } from "state/search/actions";
-import CancelIcon from "ui/foundations/icons/cancel.svg";
-import SearchIcon from "ui/foundations/icons/search.svg";
+import CancelIcon from "ui/foundations/icon/cancel.svg";
+import SearchIcon from "ui/foundations/icon/search.svg";
 import "./search-bar.css";
 
 const mapStateToProps = ({ Search }) => ({

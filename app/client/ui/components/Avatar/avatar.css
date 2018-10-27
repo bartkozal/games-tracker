@@ -1,0 +1,6 @@
+@import "../../foundations/unit.css";
+
+.avatar {
+  width: calc(var(--unit-base) * 6);
+  border-radius: 50%;
+}

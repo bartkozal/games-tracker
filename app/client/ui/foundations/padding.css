@@ -1,91 +1,61 @@
-@import "./unit";
+@import "./unit.css";
 
 .padding-base {
-  padding: var(--unit-base);
+  padding: var(--unit-spacing);
 }
 
 .padding-top {
-  padding-top: var(--unit-base);
+  padding-top: var(--unit-spacing);
 }
 
 .padding-right {
-  padding-right: var(--unit-base);
+  padding-right: var(--unit-spacing);
 }
 
 .padding-bottom {
-  padding-bottom: var(--unit-base);
+  padding-bottom: var(--unit-spacing);
 }
 
 .padding-left {
-  padding-left: var(--unit-base);
+  padding-left: var(--unit-spacing);
 }
 
 .padding-vertical {
+  padding-top: var(--unit-spacing);
+  padding-bottom: var(--unit-spacing);
+}
+
+.padding-horizontal {
+  padding-right: var(--unit-spacing);
+  padding-left: var(--unit-spacing);
+}
+
+.padding-small {
+  padding: var(--unit-base);
+}
+
+.padding-small-top {
+  padding-top: var(--unit-base);
+}
+
+.padding-small-right {
+  padding-right: var(--unit-base);
+}
+
+.padding-small-bottom {
+  padding-bottom: var(--unit-base);
+}
+
+.padding-small-left {
+  padding-left: var(--unit-base);
+}
+
+.padding-small-vertical {
   padding-top: var(--unit-base);
   padding-bottom: var(--unit-base);
 }
 
-.padding-horizontal {
+.padding-small-horizontal {
   padding-right: var(--unit-base);
   padding-left: var(--unit-base);
-}
-
-.padding-small {
-  padding: var(--unit-small);
-}
-
-.padding-small-top {
-  padding-top: var(--unit-small);
-}
-
-.padding-small-right {
-  padding-right: var(--unit-small);
-}
-
-.padding-small-bottom {
-  padding-bottom: var(--unit-small);
-}
-
-.padding-small-left {
-  padding-left: var(--unit-small);
-}
-
-.padding-small-vertical {
-  padding-top: var(--unit-small);
-  padding-bottom: var(--unit-small);
-}
-
-.padding-small-horizontal {
-  padding-right: var(--unit-small);
-  padding-left: var(--unit-small);
-}
-
-.padding-mini {
-  padding: var(--unit-mini);
-}
-
-.padding-mini-top {
-  padding-top: var(--unit-mini);
-}
-
-.padding-mini-right {
-  padding-right: var(--unit-mini);
-}
-
-.padding-mini-bottom {
-  padding-bottom: var(--unit-mini);
-}
-
-.padding-mini-left {
-  padding-left: var(--unit-mini);
-}
-
-.padding-mini-vertical {
-  padding-top: var(--unit-mini);
-  padding-bottom: var(--unit-mini);
-}
-
-.padding-mini-horizontal {
-  padding-right: var(--unit-mini);
-  padding-left: var(--unit-mini);
 }

@@ -1,5 +1,4 @@
 :root {
-  --unit-base: 16px;
-  --unit-small: 8px;
-  --unit-mini: 4px;
+  --unit-spacing: 16px;
+  --unit-base: 8px;
 }

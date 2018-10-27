@@ -1,17 +1,17 @@
-@import "../../foundations/unit";
-@import "../../foundations/color";
+@import "../../foundations/unit.css";
+@import "../../foundations/color.css";
 
 .search-bar {
   position: relative;
 }
 
 .search-bar-input {
-  width: calc(var(--unit-base) * 34);
-  padding-top: var(--unit-small);
-  padding-bottom: var(--unit-small);
-  padding-right: calc(var(--unit-base) * 2 + 24);
-  padding-left: var(--unit-base);
-  border-radius: 8px;
+  width: calc(var(--unit-base) * 68);
+  padding-top: var(--unit-base);
+  padding-bottom: var(--unit-base);
+  padding-right: calc(var(--unit-spacing) * 2 + 24);
+  padding-left: var(--unit-spacing);
+  border-radius: var(--unit-base);
   border: 0;
   background-color: var(--color-secondary);
   color: var(--color-primary);
@@ -23,7 +23,7 @@
   display: flex;
   top: 50%;
   transform: translateY(-50%);
-  right: var(--unit-base);
+  right: var(--unit-spacing);
 }
 
 .search-bar-submit > svg {

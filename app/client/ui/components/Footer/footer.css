@@ -1,16 +1,16 @@
-@import "../../foundations/unit";
+@import "../../foundations/unit.css";
 
 .footer {
   display: flex;
   justify-content: center;
-  padding-top: var(--unit-base);
-  padding-bottom: var(--unit-base);
+  padding-top: var(--unit-spacing);
+  padding-bottom: var(--unit-spacing);
   list-style-type: none;
 }
 
 .footer > li + li::before {
   display: inline;
-  padding-right: var(--unit-small);
-  padding-left: var(--unit-small);
-  content: "||";
+  padding-right: var(--unit-base);
+  padding-left: var(--unit-base);
+  content: "|";
 }

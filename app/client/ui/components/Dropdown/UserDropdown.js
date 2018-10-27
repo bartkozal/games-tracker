@@ -1,48 +1,38 @@
 // @flow
 import * as React from "react";
+import { connect } from "react-redux";
+import { signOut } from "state/auth/actions";
+import Avatar from "ui/components/Avatar";
+import Dropdown from "./Dropdown";
+import ChevronIcon from "../../foundations/icon/chevron.svg";
 
-// TODO
-const UserDropdown = () => <div>UserDropdown</div>;
+const mapDispatchToProps = {
+  signOut
+};
 
-export default UserDropdown;
+type Props = {
+  signOut: Function
+};
 
-/* <Dropdown
-toggle={openDropdown => (
-  <$NavbarToggle onClick={openDropdown}>
-    <Avatar email={currentUser.email} />
-    <Icon type="chevron" before={SPACING_SMALL} />
-  </$NavbarToggle>
-)}
-items={[
-  {
-    label: "Sign out",
-    callback: () => signOut()
-  }
-]}
-/> */
+const UserDropdown = ({ signOut }: Props) => (
+  <Dropdown>
+    {({ DropdownToggle, DropdownMenu, DropdownMenuItem }) => (
+      // TODO refactor to use <>
+      <React.Fragment>
+        <DropdownToggle>
+          <Avatar />
+          <ChevronIcon className="dropdown-toggle-chevron" />
+        </DropdownToggle>
 
-// import styled from "react-emotion";
+        <DropdownMenu className="dropdown-menu-vertical">
+          <DropdownMenuItem onClick={signOut}>Sign out</DropdownMenuItem>
+        </DropdownMenu>
+      </React.Fragment>
+    )}
+  </Dropdown>
+);
 
-// const $NavbarToggle = styled("div")({ cursor: "pointer" });
-
-// export default $NavbarToggle;
-
-// componentDidMount() {
-//   this.props.setCurrentUser();
-// }
-
-// import { setCurrentUser, signOut } from "state/auth/actions";
-
-// const mapStateToProps = ({ Auth }) => ({
-//   currentUser: Auth.currentUser,
-// });
-
-// type Props = {
-//   currentUser: {
-//     email: string
-//   },
-//   userSignedIn: boolean,
-//   setCurrentUser: Function,
-//   signOut: Function,
-//   clearSearchResults: Function
-// };
+export default connect(
+  null,
+  mapDispatchToProps
+)(UserDropdown);

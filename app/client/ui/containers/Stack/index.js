@@ -27,14 +27,7 @@ type Props = {
     | "small-bottom"
     | "small-left"
     | "small-vertical"
-    | "small-horizontal"
-    | "mini"
-    | "mini-top"
-    | "mini-right"
-    | "mini-bottom"
-    | "mini-left"
-    | "mini-vertical"
-    | "mini-horizontal",
+    | "small-horizontal",
   children: React.Node
 };
 

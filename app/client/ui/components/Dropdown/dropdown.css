@@ -1,0 +1,56 @@
+@import "../../foundations/unit.css";
+@import "../../foundations/color.css";
+@import "../../foundations/z-index.css";
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle-chevron {
+  margin-left: var(--unit-base);
+}
+
+.dropdown-menu {
+  position: absolute;
+  bottom: calc(var(--unit-base) * -1);
+  padding: var(--unit-base);
+  transform: translateY(100%);
+  background-color: var(--color-dark);
+  border-radius: calc(var(--unit-base) / 2);
+  z-index: var(--z-index-dropdown);
+}
+
+.dropdown-menu-item {
+  cursor: pointer;
+}
+
+.dropdown-menu-vertical {
+  width: calc(var(--unit-base) * 24);
+  display: flex;
+  flex-direction: column;
+  right: 0;
+}
+
+.dropdown-menu-vertical > .dropdown-menu-item {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: calc(var(--unit-base) / 2);
+  padding: var(--unit-base);
+  text-align: center;
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.dropdown-menu-vertical > .dropdown-menu-item:hover {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+}
+
+.dropdown-menu-vertical > .dropdown-menu-item-destructive {
+  margin-top: var(--unit-base);
+}
+
+.dropdown-menu-vertical > .dropdown-menu-item-destructive:hover {
+  background-color: var(--color-destructive);
+}

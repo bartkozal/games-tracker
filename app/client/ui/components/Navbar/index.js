@@ -2,6 +2,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { clearSearchResults } from "state/search/actions";
+import { setCurrentUser } from "state/auth/actions";
 import Logo from "ui/components/Logo";
 import SearchBar from "ui/components/SearchBar";
 import { UserDropdown } from "ui/components/Dropdown";
@@ -14,23 +15,35 @@ const mapStateToProps = ({ Auth }) => ({
 });
 
 const mapDispatchToProps = {
+  setCurrentUser,
   clearSearchResults
 };
 
 type Props = {
+  setCurrentUser: Function,
   userSignedIn: boolean,
   clearSearchResults: Function
 };
 
-const Navbar = ({ userSignedIn, clearSearchResults }: Props) => (
-  <div className="navbar">
-    <Stack align="center" distribute="space-between">
-      <Logo onClick={clearSearchResults} />
-      <SearchBar />
-      {userSignedIn ? <UserDropdown /> : <FacebookButton />}
-    </Stack>
-  </div>
-);
+class Navbar extends React.Component<Props> {
+  componentDidMount() {
+    this.props.setCurrentUser();
+  }
+
+  render() {
+    const { clearSearchResults, userSignedIn } = this.props;
+
+    return (
+      <div className="navbar">
+        <Stack align="center" distribute="space-between">
+          <Logo onClick={clearSearchResults} />
+          <SearchBar />
+          {userSignedIn ? <UserDropdown /> : <FacebookButton />}
+        </Stack>
+      </div>
+    );
+  }
+}
 
 export default connect(
   mapStateToProps,
