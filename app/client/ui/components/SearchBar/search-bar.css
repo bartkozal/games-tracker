@@ -1,0 +1,31 @@
+@import "../../foundations/units";
+@import "../../foundations/colors";
+
+.search-bar {
+  position: relative;
+}
+
+.search-bar-input {
+  width: calc(var(--unit-base) * 34);
+  padding-top: var(--unit-small);
+  padding-bottom: var(--unit-small);
+  padding-right: calc(var(--unit-base) * 2 + 24);
+  padding-left: var(--unit-base);
+  border-radius: 8px;
+  border: 0;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  line-height: 1.5;
+}
+
+.search-bar-submit {
+  position: absolute;
+  display: flex;
+  top: 50%;
+  transform: translateY(-50%);
+  right: var(--unit-base);
+}
+
+.search-bar-submit > svg {
+  fill: var(--color-primary);
+}
