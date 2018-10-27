@@ -1,0 +1,55 @@
+@import "../../foundations/color.css";
+@import "../../foundations/unit.css";
+
+:root {
+  --card-border-radius: calc(var(--unit-base) * 1.5);
+}
+
+.card {
+  position: relative;
+  background-color: var(--color-secondary);
+  border-radius: var(--card-border-radius);
+}
+
+.card-title {
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--unit-spacing);
+  overflow: hidden;
+  text-align: center;
+  color: var(--color-light);
+}
+
+.card-rating {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--unit-spacing);
+}
+
+.card-cover {
+  position: relative;
+  height: calc(var(--unit-base) * 42);
+  border-top-left-radius: var(--card-border-radius);
+  border-top-right-radius: var(--card-border-radius);
+  background-size: cover;
+  background-position: center;
+}
+
+.card-cover::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 36.35%
+  );
+  border-top-left-radius: var(--card-border-radius);
+  border-top-right-radius: var(--card-border-radius);
+  content: "";
+}
