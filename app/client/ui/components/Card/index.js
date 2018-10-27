@@ -44,7 +44,7 @@ const Card = ({ game, setGamePlatforms }: Props) => (
     <div className="padding-base">
       <div className="card-title text-lead">{game.name}</div>
       <div className="card-platforms">
-        <Grid of={game.platforms} perRow={3} padding="small">
+        <Grid of={game.platforms} perRow={3}>
           {(platform: Platform) => {
             const togglePlatform = () =>
               setGamePlatforms(
