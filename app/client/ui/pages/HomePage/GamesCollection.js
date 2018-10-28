@@ -5,7 +5,7 @@ import { isEmpty, groupBy } from "lodash";
 import { fetchGames } from "state/collection/actions";
 import Grid from "ui/containers/Grid";
 import Card from "ui/components/Card";
-import { type Game } from "types";
+import type { Game } from "types";
 
 const mapStateToProps = ({ Collection }) => ({
   collection: groupBy(Collection.games, "status")
@@ -52,7 +52,7 @@ class GamesCollection extends React.Component<Props> {
     // />
 
     return (
-      <Grid of={collection[null]} perRow={5}>
+      <Grid of={collection["backlog"]} perRow={5}>
         {game => <Card game={game} />}
       </Grid>
     );

@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { connect } from "react-redux";
-import { type Game } from "types";
+import type { Game } from "types";
 import Grid from "ui/containers/Grid";
 import Card from "ui/components/Card";
 

@@ -1,6 +1,8 @@
 @import "../../foundations/unit.css";
 @import "../../foundations/color.css";
 
+/* TODO refactor to button props */
+
 .button {
   position: relative;
   padding-top: var(--unit-base);
@@ -45,10 +47,19 @@
   margin-right: var(--unit-base);
 }
 
-/*
-const $ButtonRightIcon = styled("div")({
-  position: "absolute",
-  top: "50%",
-  right: SPACING_BASE,
-  transform: "translateY(-60%)"
-}); */
+.button-dropdown {
+  width: 100%;
+  justify-content: center;
+}
+
+.button-dropdown-icon {
+  fill: var(--color-light);
+  position: absolute;
+  top: 50%;
+  right: var(--unit-spacing);
+  transform: translateY(-60%);
+}
+
+.button-dropdown-outline-icon {
+  fill: var(--color-primary);
+}

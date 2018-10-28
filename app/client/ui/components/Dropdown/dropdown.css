@@ -2,6 +2,8 @@
 @import "../../foundations/color.css";
 @import "../../foundations/z-index.css";
 
+/* TODO refactor to dropdown menu props */
+
 .dropdown {
   position: relative;
 }

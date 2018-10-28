@@ -1,3 +1,4 @@
+// @flow
 import "./dropdown.css";
 
 export { default as CollectionDropdown } from "./CollectionDropdown";

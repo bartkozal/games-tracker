@@ -5,8 +5,8 @@ import cypressify from "ui/utils/cypressify";
 
 type Props = {
   children: React.Node,
-  onClick: Function,
-  className: string
+  onClick?: Function,
+  className?: string
 };
 
 const Button = ({ children, onClick, className }: Props) => (

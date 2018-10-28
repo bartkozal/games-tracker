@@ -1,4 +1,5 @@
 // @flow
+export type Status = null | "wishlist" | "backlog" | "playing" | "completed";
 
 export type Platform = {
   id: number,
@@ -11,7 +12,7 @@ export type Game = {
   cover: string,
   platforms: Platform[],
   userPlatforms?: Platform[],
-  status?: "wishlist" | "backlog" | "playing" | "completed",
+  status?: Status,
   rating?: number,
   score?: number,
   votes?: number

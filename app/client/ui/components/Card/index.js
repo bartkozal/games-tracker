@@ -7,7 +7,7 @@ import Stack from "ui/containers/Stack";
 import Grid from "ui/containers/Grid";
 import Score from "ui/components/Score";
 import { SmallButton, SmallOutlineButton } from "ui/components/Button";
-import { RatingDropdown } from "ui/components/Dropdown";
+import { RatingDropdown, CollectionDropdown } from "ui/components/Dropdown";
 import cypressify from "ui/utils/cypressify";
 import type { Game, Platform } from "types";
 import "./card.css";
@@ -19,15 +19,10 @@ const mapDispatchToProps = {
 type Props = {
   game: Game,
   setGamePlatforms: Function
-  // setGameStatus: Function,
 };
 
-// import { Status } from "constants";
-
-// const isInCollection = status && status !== Status.UNASSIGNED;
-
 const Card = ({ game, setGamePlatforms }: Props) => (
-  <div className="card" data-cy={`game-card-${cypressify(game.name)}`}>
+  <div className="card" data-cy={`card-${cypressify(game.name)}`}>
     <div
       className="card-cover"
       style={{ backgroundImage: `url(${game.cover})` }}
@@ -69,57 +64,8 @@ const Card = ({ game, setGamePlatforms }: Props) => (
           }}
         </Grid>
       </div>
-      CollectionDropdown
-      {/* <Dropdown
-      toggle={openDropdown =>
-        isInCollection ? (
-          <Button
-            onClick={openDropdown}
-            size="block"
-            rightIcon={<Icon type="chevron" color={COLOR_LIGHT} />}
-          >
-            {capitalize(status)}
-          </Button>
-        ) : (
-          <Button
-            onClick={openDropdown}
-            type="outline"
-            size="block"
-            rightIcon={<Icon type="chevron" />}
-          >
-            Add to collection
-          </Button>
-        )
-      }
-      items={[
-        {
-          label: "Wishlist",
-          callback: () => setGameStatus(id, Status.WISHLIST)
-        },
-        {
-          label: "Backlog",
-          callback: () => setGameStatus(id, Status.BACKLOG)
-        },
-        {
-          label: "Playing",
-          callback: () => setGameStatus(id, Status.PLAYING)
-        },
-        {
-          label: "Completed",
-          callback: () => setGameStatus(id, Status.COMPLETED)
-        }
-      ]}
-      destructiveItems={
-        isInCollection
-          ? [
-              {
-                label: "Remove from collection",
-                callback: () => setGameStatus(id, null)
-              }
-            ]
-          : []
-      }
-    /> */}
+
+      <CollectionDropdown gameId={game.id} status={game.status} />
     </div>
   </div>
 );
