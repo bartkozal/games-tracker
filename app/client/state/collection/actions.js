@@ -44,7 +44,7 @@ export const rateGame = (id, rating) => (dispatch, getState) => {
     dispatch(resolveGameUpdate({ id, rating }));
 
     getRatings({ id: [id] }).then(response =>
-      dispatch(resolveGameUpdate(response.data[0]))
+      dispatch(resolveGameUpdate(response.data))
     );
   });
 };

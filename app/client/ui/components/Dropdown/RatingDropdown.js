@@ -47,7 +47,7 @@ class RatingDropdown extends React.Component<Props, State> {
 
     return (
       <Dropdown>
-        {({ DropdownToggle, DropdownMenu, DropdownMenuItem }) => (
+        {(DropdownToggle, DropdownMenu, DropdownMenuItem) => (
           // TODO refactor using <>
           <React.Fragment>
             <DropdownToggle>

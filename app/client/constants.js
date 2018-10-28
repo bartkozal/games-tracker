@@ -1,7 +1,7 @@
 // @flow
 
 export const Status = {
-  UNASSIGNED: null,
+  UNASSIGNED: "unassigned",
   WISHLIST: "wishlist",
   BACKLOG: "backlog",
   PLAYING: "playing",

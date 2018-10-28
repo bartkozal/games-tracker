@@ -5,10 +5,15 @@ import { isEmpty, groupBy } from "lodash";
 import { fetchGames } from "state/collection/actions";
 import Grid from "ui/containers/Grid";
 import Card from "ui/components/Card";
+import Tabs from "ui/components/Tabs";
 import type { Game } from "types";
+import { Status } from "../../../constants";
 
 const mapStateToProps = ({ Collection }) => ({
-  collection: groupBy(Collection.games, "status")
+  collection: groupBy(
+    Collection.games,
+    game => game.status || Status.UNASSIGNED
+  )
 });
 
 const mapDispatchToProps = {
@@ -36,25 +41,32 @@ class GamesCollection extends React.Component<Props> {
 
     if (isEmpty(collection)) return null;
 
-    // <Tabs
-    //   items={[
-    //     Status.UNASSIGNED,
-    //     Status.WISHLIST,
-    //     Status.BACKLOG,
-    //     Status.PLAYING,
-    //     Status.COMPLETED
-    //   ].map(status => ({
-    //     tab: capitalize(status) || "Unassigned",
-    //     content: <GamesGrid of={collection[status]} />,
-    //     default: status === Status.PLAYING,
-    //     hidden: status === Status.UNASSIGNED && !collection[status]
-    //   }))}
-    // />
-
     return (
-      <Grid of={collection["backlog"]} perRow={5}>
-        {game => <Card game={game} />}
-      </Grid>
+      <Tabs defaultTab={Status.PLAYING}>
+        {TabItem =>
+          [
+            Status.UNASSIGNED,
+            Status.WISHLIST,
+            Status.BACKLOG,
+            Status.PLAYING,
+            Status.COMPLETED
+          ].map(label => (
+            <TabItem
+              key={label}
+              label={label}
+              hidden={
+                label === Status.UNASSIGNED && !collection[Status.UNASSIGNED]
+              }
+            >
+              {collection[label] ? (
+                <Grid of={collection[label]} perRow={5}>
+                  {game => <Card game={game} />}
+                </Grid>
+              ) : null}
+            </TabItem>
+          ))
+        }
+      </Tabs>
     );
   }
 }

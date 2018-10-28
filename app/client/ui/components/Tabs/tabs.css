@@ -1,41 +1,22 @@
-/* import styled from "react-emotion";
-import { SPACING_BASE } from "ui/quarks";
+@import "../../foundations/unit.css";
+@import "../../foundations/color.css";
 
-const $Tabs = styled("div")({
-  display: "flex",
-  justifyContent: "center",
-  marginBottom: SPACING_BASE * 3
-});
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: calc(var(--unit-spacing) * 3);
+  text-transform: capitalize;
+}
 
-export default $Tabs; */
+.tab-item {
+  padding: var(--unit-base);
+  margin-left: var(--unit-spacing);
+  margin-right: var(--unit-spacing);
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-/*
-import styled from "react-emotion";
-import {
-  FONT_LEAD,
-  COLOR_ACCENT,
-  COLOR_BODY,
-  SPACING_SMALL,
-  SPACING_BASE
-} from "ui/quarks";
-
-const $TabItem = styled("div")(
-  {
-    ...FONT_LEAD,
-    padding: SPACING_SMALL,
-    marginLeft: SPACING_BASE,
-    marginRight: SPACING_BASE,
-    borderRadius: 4,
-    cursor: "pointer"
-  },
-  ({ isActive }) => ({
-    ...(isActive
-      ? {
-          backgroundColor: COLOR_ACCENT,
-          color: COLOR_BODY
-        }
-      : null)
-  })
-);
-
-export default $TabItem; */
+.tab-item-active {
+  background-color: var(--color-accent);
+  color: var(--color-body);
+}

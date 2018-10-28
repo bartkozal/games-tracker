@@ -16,7 +16,7 @@ type Props = {
 
 const UserDropdown = ({ signOut }: Props) => (
   <Dropdown>
-    {({ DropdownToggle, DropdownMenu, DropdownMenuItem }) => (
+    {(DropdownToggle, DropdownMenu, DropdownMenuItem) => (
       // TODO refactor to use <>
       <React.Fragment>
         <DropdownToggle>

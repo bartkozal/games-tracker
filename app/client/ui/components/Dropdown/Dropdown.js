@@ -97,11 +97,11 @@ class Dropdown extends React.Component<Props, State> {
   render() {
     return (
       <div className="dropdown">
-        {this.props.children({
-          DropdownToggle: this.DropdownToggle,
-          DropdownMenu: this.DropdownMenu,
-          DropdownMenuItem: this.DropdownMenuItem
-        })}
+        {this.props.children(
+          this.DropdownToggle,
+          this.DropdownMenu,
+          this.DropdownMenuItem
+        )}
       </div>
     );
   }

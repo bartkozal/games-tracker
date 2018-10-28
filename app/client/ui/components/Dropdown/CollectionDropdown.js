@@ -20,7 +20,7 @@ type Props = {
 
 const CollectionDropdown = ({ gameId, status, setGameStatus }: Props) => (
   <Dropdown>
-    {({ DropdownToggle, DropdownMenu, DropdownMenuItem }) => (
+    {(DropdownToggle, DropdownMenu, DropdownMenuItem) => (
       <React.Fragment>
         <DropdownToggle>
           {status ? (
@@ -58,7 +58,7 @@ const CollectionDropdown = ({ gameId, status, setGameStatus }: Props) => (
           {status ? (
             <DropdownMenuItem
               className="dropdown-menu-item-destructive"
-              onClick={() => setGameStatus(gameId, Status.UNASSIGNED)}
+              onClick={() => setGameStatus(gameId, null)}
             >
               Remove from collection
             </DropdownMenuItem>

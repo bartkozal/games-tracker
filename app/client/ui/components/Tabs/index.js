@@ -1,58 +1,67 @@
-// import React, { Component, Fragment } from "react";
-// import PropTypes from "prop-types";
-// import $Tabs from "./$Tabs";
-// import $TabItem from "./$TabItem";
+// @flow
+import * as React from "react";
+import cx from "classnames";
+import cypressify from "ui/utils/cypressify";
+import "./tabs.css";
 
-// class Tabs extends Component {
-//   static propTypes = {
-//     items: PropTypes.arrayOf(
-//       PropTypes.shape({
-//         tab: PropTypes.string.isRequired,
-//         content: PropTypes.node.isRequired,
-//         hidden: PropTypes.bool,
-//         default: PropTypes.bool
-//       })
-//     )
-//   };
+type Props = {
+  children: Function,
+  defaultTab: string
+};
 
-//   state = {
-//     activeTab: (
-//       this.props.items.find(item => item.default) || this.props.items[0]
-//     ).tab
-//   };
+type State = {
+  activeTab: ?string
+};
 
-//   activate = tab => {
-//     this.setState({
-//       activeTab: tab
-//     });
-//   };
+type TabItemProps = {
+  label: string,
+  hidden: boolean
+};
 
-//   render() {
-//     const { items } = this.props;
-//     const { activeTab } = this.state;
+type TabContentProps = {
+  children: React.Node
+};
 
-//     return (
-//       <Fragment>
-//         <$Tabs>
-//           {items.map(
-//             ({ tab, hidden }) =>
-//               !hidden && (
-//                 <$TabItem
-//                   data-cy={`tab-${tab.toLowerCase()}`}
-//                   key={tab}
-//                   onClick={() => this.activate(tab)}
-//                   isActive={activeTab === tab}
-//                 >
-//                   {tab}
-//                 </$TabItem>
-//               )
-//           )}
-//         </$Tabs>
+class Tabs extends React.Component<Props, State> {
+  state = {
+    activeTab: this.props.defaultTab
+  };
 
-//         {items.find(({ tab }) => tab === activeTab).content}
-//       </Fragment>
-//     );
-//   }
-// }
+  TabItem = ({ label, hidden }: TabItemProps) => {
+    if (hidden) return null;
 
-// export default Tabs;
+    return (
+      <div
+        cy-data={`tab-${cypressify(label)}`}
+        className={cx("tab-item", {
+          "tab-item-active": label === this.state.activeTab
+        })}
+        onClick={() => this.setActiveTab(label)}
+      >
+        {label}
+      </div>
+    );
+  };
+
+  TabContent = ({ children }: TabContentProps) => <div>{children}</div>;
+
+  setActiveTab = (label: string) => {
+    this.setState({ activeTab: label });
+  };
+
+  render() {
+    return (
+      <React.Fragment>
+        <div className="tabs text-lead">
+          {this.props.children(this.TabItem)}
+        </div>
+
+        {this.props
+          .children(this.TabContent)
+          .find(tab => tab.props.label === this.state.activeTab)}
+      </React.Fragment>
+    );
+  }
+}
+
+export default Tabs;
