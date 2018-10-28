@@ -8,7 +8,7 @@ type Props = {
 };
 
 const DropdownButton = ({ children }: Props) => (
-  <Button className="button-dropdown">
+  <Button className="button-dropdown" testId={String(children)}>
     {children}
     <ChevronIcon className="button-dropdown-icon" />
   </Button>

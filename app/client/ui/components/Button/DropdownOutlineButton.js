@@ -8,7 +8,7 @@ type Props = {
 };
 
 const DropdownOutlineButton = ({ children }: Props) => (
-  <Button className="button-dropdown button-outline">
+  <Button className="button-dropdown button-outline" testId={String(children)}>
     {children}
     <ChevronIcon className="button-dropdown-icon button-dropdown-outline-icon" />
   </Button>

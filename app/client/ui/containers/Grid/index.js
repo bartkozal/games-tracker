@@ -2,7 +2,7 @@
 import * as React from "react";
 import cx from "classnames";
 import "./grid.css";
-import ordinalify from "ui/utils/ordinalify";
+import ordinalWord from "ui/utils/ordinalWord";
 
 type GridItem = {
   id: number
@@ -18,7 +18,7 @@ const Grid = ({ of: items, perRow, children }: Props) => (
   <div className="grid">
     {items.map(item => (
       <div
-        className={cx("grid-item", `grid-item-${ordinalify(perRow)}`)}
+        className={cx("grid-item", `grid-item-${ordinalWord(perRow)}`)}
         key={item.id}
       >
         {children(item)}

@@ -51,7 +51,7 @@ class SearchBar extends React.Component<Props> {
     return (
       <form onSubmit={this.searchGames} className="search-bar">
         <input
-          data-cy="search-input"
+          data-cy="search-bar-input"
           type="text"
           onChange={this.updateQuery}
           value={query}

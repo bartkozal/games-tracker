@@ -8,7 +8,7 @@ import Grid from "ui/containers/Grid";
 import Score from "ui/components/Score";
 import { SmallButton, SmallOutlineButton } from "ui/components/Button";
 import { RatingDropdown, CollectionDropdown } from "ui/components/Dropdown";
-import cypressify from "ui/utils/cypressify";
+import formatTestId from "ui/utils/formatTestId";
 import type { Game, Platform } from "types";
 import "./card.css";
 
@@ -22,7 +22,7 @@ type Props = {
 };
 
 const Card = ({ game, setGamePlatforms }: Props) => (
-  <div className="card" data-cy={`card-${cypressify(game.name)}`}>
+  <div className="card" data-cy={formatTestId("card", game.name)}>
     <div
       className="card-cover"
       style={{ backgroundImage: `url(${game.cover})` }}

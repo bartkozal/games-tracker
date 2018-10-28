@@ -1,17 +1,18 @@
 // @flow
 import * as React from "react";
 import cx from "classnames";
-import cypressify from "ui/utils/cypressify";
+import formatTestId from "ui/utils/formatTestId";
 
 type Props = {
   children: React.Node,
   onClick?: Function,
-  className?: string
+  className?: string,
+  testId?: string
 };
 
-const Button = ({ children, onClick, className }: Props) => (
+const Button = ({ children, onClick, className, testId }: Props) => (
   <button
-    data-cy={`button-${cypressify(children)}`}
+    data-cy={formatTestId("button", testId || String(children))}
     className={cx("button", className)}
     onClick={onClick}
   >

@@ -8,7 +8,11 @@ type Props = {
 };
 
 const SmallButton = ({ children, onClick }: Props) => (
-  <Button className="text-small button-small" onClick={onClick}>
+  <Button
+    className="text-small button-small"
+    onClick={onClick}
+    testId={`small-${String(children)}`}
+  >
     {children}
   </Button>
 );

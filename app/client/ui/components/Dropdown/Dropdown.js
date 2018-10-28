@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import cx from "classnames";
-import cypressify from "ui/utils/cypressify";
+import formatTestId from "ui/utils/formatTestId";
 
 type Props = {
   children: Function
@@ -12,20 +12,22 @@ type State = {
 };
 
 type DropdownToggleProps = {
-  children: React.Node
+  children: React.Node,
+  testId?: string
 };
 
 type DropdownMenuProps = {
   children: React.Node,
-  className: string
+  className?: string
 };
 
 type DropdownMenuItemProps = {
   onClick: Function,
-  onMouseEnter: Function,
-  onMouseLeave: Function,
+  onMouseEnter?: Function,
+  onMouseLeave?: Function,
   children: React.Node,
-  className: string
+  className?: string,
+  testId?: string
 };
 
 class Dropdown extends React.Component<Props, State> {
@@ -35,8 +37,12 @@ class Dropdown extends React.Component<Props, State> {
 
   dropdownMenu = React.createRef();
 
-  DropdownToggle = ({ children }: DropdownToggleProps) => (
-    <div className="cursor-pointer" onClick={() => this.open()}>
+  DropdownToggle = ({ children, testId }: DropdownToggleProps) => (
+    <div
+      data-cy={formatTestId("dropdown", testId)}
+      className="cursor-pointer"
+      onClick={() => this.open()}
+    >
       {children}
     </div>
   );
@@ -56,10 +62,11 @@ class Dropdown extends React.Component<Props, State> {
     onMouseEnter,
     onMouseLeave,
     children,
-    className
+    className,
+    testId
   }: DropdownMenuItemProps) => (
     <button
-      data-cy={`dropdown-menu-item-${cypressify(children)}`}
+      data-cy={formatTestId("dropdown-item", testId || String(children))}
       className={cx("dropdown-menu-item", className)}
       onClick={event => {
         this.close();

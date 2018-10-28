@@ -8,7 +8,11 @@ type Props = {
 };
 
 const SmallOutlineButton = ({ children, onClick }: Props) => (
-  <Button className="text-small button-small button-outline" onClick={onClick}>
+  <Button
+    className="text-small button-small button-outline"
+    onClick={onClick}
+    testId={`small-outline-${String(children)}`}
+  >
     {children}
   </Button>
 );

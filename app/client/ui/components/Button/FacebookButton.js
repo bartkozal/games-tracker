@@ -8,6 +8,7 @@ const FacebookButton = () => (
   <Button
     className="button-facebook"
     onClick={() => window.location.assign(FACEBOOK_AUTH_PATH)}
+    testId="facebook"
   >
     <FacebookIcon className="button-facebook-icon" />
     Sign in with Facebook

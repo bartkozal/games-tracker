@@ -19,7 +19,6 @@ const Avatar = ({ currentUserEmail, onClick }: Props) => {
 
   return (
     <img
-      data-cy="avatar"
       src={url(currentUserEmail, { size: 96 })}
       alt="Avatar"
       className={cx("avatar", { "cursor-pointer": onClick })}

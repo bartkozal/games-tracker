@@ -1,14 +1,14 @@
 describe("Authentication", () => {
   it("allows to sign in with Facebook", () => {
     cy.visit("/");
-    cy.getNode("button-facebook-sign-in-with-facebook");
+    cy.getBy("button-facebook");
   });
 
   it("allows to log out", () => {
     cy.signIn();
-    cy.getNode("avatar").click();
-    cy.getNode("dropdown-item-sign-out").click();
-    cy.getNode("avatar").should("not.exist");
-    cy.getNode("button-facebook-sign-in-with-facebook").should("exist");
+    cy.getBy("dropdown-user").click();
+    cy.getBy("dropdown-item-sign-out").click();
+    cy.getBy("dropdown-user").should("not.exist");
+    cy.getBy("button-facebook").should("exist");
   });
 });

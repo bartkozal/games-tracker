@@ -19,7 +19,7 @@ const UserDropdown = ({ signOut }: Props) => (
     {(DropdownToggle, DropdownMenu, DropdownMenuItem) => (
       // TODO refactor to use <>
       <React.Fragment>
-        <DropdownToggle>
+        <DropdownToggle testId="user">
           <Avatar />
           <ChevronIcon className="dropdown-toggle-chevron" />
         </DropdownToggle>

@@ -22,7 +22,7 @@ const CollectionDropdown = ({ gameId, status, setGameStatus }: Props) => (
   <Dropdown>
     {(DropdownToggle, DropdownMenu, DropdownMenuItem) => (
       <React.Fragment>
-        <DropdownToggle>
+        <DropdownToggle testId="collection">
           {status ? (
             <DropdownButton>{capitalize(status)}</DropdownButton>
           ) : (

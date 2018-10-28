@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import cx from "classnames";
-import cypressify from "ui/utils/cypressify";
+import formatTestId from "ui/utils/formatTestId";
 import "./tabs.css";
 
 type Props = {
@@ -32,7 +32,7 @@ class Tabs extends React.Component<Props, State> {
 
     return (
       <div
-        cy-data={`tab-${cypressify(label)}`}
+        data-cy={formatTestId("tab", label)}
         className={cx("tab-item", {
           "tab-item-active": label === this.state.activeTab
         })}

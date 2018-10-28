@@ -50,7 +50,7 @@ class RatingDropdown extends React.Component<Props, State> {
         {(DropdownToggle, DropdownMenu, DropdownMenuItem) => (
           // TODO refactor using <>
           <React.Fragment>
-            <DropdownToggle>
+            <DropdownToggle testId="rating">
               <Rating value={valuePreview} />
             </DropdownToggle>
 
@@ -60,6 +60,7 @@ class RatingDropdown extends React.Component<Props, State> {
                   onClick={() => rateGame(gameId, null)}
                   onMouseEnter={() => this.setValuePreview(-1)}
                   onMouseLeave={() => this.setValuePreview(value)}
+                  testId="unrate"
                 >
                   <UnstarIcon
                     className={
@@ -75,6 +76,7 @@ class RatingDropdown extends React.Component<Props, State> {
                   onClick={() => rateGame(gameId, rating)}
                   onMouseEnter={() => this.setValuePreview(rating)}
                   onMouseLeave={() => this.setValuePreview(value)}
+                  testId={`rate-${rating}`}
                 >
                   <StarIcon
                     className={

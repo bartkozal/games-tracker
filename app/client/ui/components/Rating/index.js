@@ -9,7 +9,7 @@ type Props = {
 };
 
 const Rating = ({ value }: Props) => (
-  <div className="rating text-lead" data-cy="rating-toggle">
+  <div className="rating text-lead">
     {value > 0 ? (
       <Stack align="center">
         {value}
