@@ -1,6 +1,6 @@
-Cypress.Commands.add("getBy", testId => cy.get(`[data-cy="${testId}"]`));
+Cypress.Commands.add("getId", testId => cy.get(`[data-cy="${testId}"]`));
 
-Cypress.Commands.add("findBy", { prevSubject: true }, (subject, testId) =>
+Cypress.Commands.add("findId", { prevSubject: true }, (subject, testId) =>
   subject.find(`[data-cy="${testId}"]`)
 );
 
