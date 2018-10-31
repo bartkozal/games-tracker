@@ -8,7 +8,7 @@ class Api::RatingsController < ApiController
       Game.rating({
         id: game_id,
         count: count,
-        average:averages[game_id]
+        average: averages[game_id]
       })
     end
   end

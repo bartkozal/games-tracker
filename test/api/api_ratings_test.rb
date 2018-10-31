@@ -9,9 +9,9 @@ class ApiRatingsTest < ActionDispatch::IntegrationTest
 
     assert_not_empty response_body
 
-    assert_equal ["id", "score", "votes"], response_body.keys
-    assert_equal 8.0, response_body["score"]
-    assert_equal 1, response_body["votes"]
+    assert_equal ["id", "score", "votes"], response_body.first.keys
+    assert_equal 8.0, response_body.first["score"]
+    assert_equal 1, response_body.first["votes"]
   end
 
   test "GET /api/ratings (filter[id]) for games" do
