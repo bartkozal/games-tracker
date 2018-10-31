@@ -1,6 +1,8 @@
 // @flow
 import * as React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { ROOT_PATH } from "routes/paths";
 import { clearSearchResults } from "state/search/actions";
 import { setCurrentUser } from "state/auth/actions";
 import Logo from "ui/components/Logo";
@@ -36,7 +38,9 @@ class Navbar extends React.Component<Props> {
     return (
       <div className="navbar">
         <Stack align="center" distribute="space-between">
-          <Logo onClick={clearSearchResults} />
+          <Link to={ROOT_PATH}>
+            <Logo onClick={clearSearchResults} />
+          </Link>
           <SearchBar />
           {userSignedIn ? <UserDropdown /> : <FacebookButton />}
         </Stack>

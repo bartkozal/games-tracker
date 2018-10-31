@@ -1,6 +1,8 @@
 // @flow
 import * as React from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import { ROOT_PATH } from "routes/paths";
 import {
   searchQuery,
   updateQuery,
@@ -26,7 +28,10 @@ type Props = {
   searchQuery: Function,
   haveSearchResults: boolean,
   clearSearchResults: Function,
-  updateQuery: Function
+  updateQuery: Function,
+  history: {
+    push: Function
+  }
 };
 
 class SearchBar extends React.Component<Props> {
@@ -43,6 +48,7 @@ class SearchBar extends React.Component<Props> {
   searchGames = event => {
     event.preventDefault();
     this.props.searchQuery(this.props.query);
+    this.props.history.push(ROOT_PATH);
   };
 
   render() {
@@ -73,4 +79,4 @@ class SearchBar extends React.Component<Props> {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchBar);
+)(withRouter(SearchBar));

@@ -1,0 +1,12 @@
+@import "../../foundations/unit.css";
+
+.static-page {
+  padding-left: var(--unit-spacing);
+  padding-right: var(--unit-spacing);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.static-page a {
+  text-decoration: underline;
+}
