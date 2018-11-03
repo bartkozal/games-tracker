@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { isEmpty, groupBy } from "lodash";
 import { fetchGames } from "state/collection/actions";
 import Grid from "ui/containers/Grid";
-import Card from "ui/components/Card";
+import { CollectionCard } from "ui/components/Card";
 import Tabs from "ui/components/Tabs";
 import type { Game } from "types";
 import { Status } from "../../../constants";
@@ -59,8 +59,8 @@ class GamesCollection extends React.Component<Props> {
               }
             >
               {collection[label] ? (
-                <Grid of={collection[label]} perRow={5}>
-                  {game => <Card game={game} />}
+                <Grid of={collection[label]} perRow={3}>
+                  {game => <CollectionCard game={game} />}
                 </Grid>
               ) : null}
             </TabItem>
