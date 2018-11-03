@@ -9,15 +9,15 @@
 }
 
 .dropdown-toggle-chevron {
-  margin-left: var(--unit-base);
+  margin-left: var(--unit-small);
 }
 
 .dropdown-menu {
   position: absolute;
-  bottom: calc(var(--unit-base) * -1);
+  bottom: calc(var(--unit-small) * -1);
   transform: translateY(100%);
   background-color: var(--color-dark);
-  border-radius: calc(var(--unit-base) / 2);
+  border-radius: calc(var(--unit-small) / 2);
   z-index: var(--z-index-dropdown);
 }
 
@@ -30,8 +30,8 @@
 }
 
 .dropdown-menu-vertical {
-  width: calc(var(--unit-base) * 24);
-  padding: var(--unit-base);
+  width: calc(var(--unit-small) * 24);
+  padding: var(--unit-small);
   display: flex;
   flex-direction: column;
   right: 0;
@@ -39,8 +39,8 @@
 
 .dropdown-menu-vertical > .dropdown-menu-item {
   width: 100%;
-  border-radius: calc(var(--unit-base) / 2);
-  padding: var(--unit-base);
+  border-radius: calc(var(--unit-small) / 2);
+  padding: var(--unit-small);
   text-align: center;
 }
 
@@ -50,7 +50,7 @@
 }
 
 .dropdown-menu-vertical > .dropdown-menu-item-destructive {
-  margin-top: var(--unit-base);
+  margin-top: var(--unit-small);
 }
 
 .dropdown-menu-vertical > .dropdown-menu-item-destructive:hover {
@@ -58,10 +58,10 @@
 }
 
 .dropdown-menu-rating {
-  right: calc(var(--unit-spacing) * -5);
+  right: calc(var(--unit-base) * -5);
   display: flex;
   border-radius: 12px;
-  bottom: calc(var(--unit-spacing) * -1);
+  bottom: calc(var(--unit-base) * -1);
 }
 
 .dropdown-menu-rating::after {
@@ -71,7 +71,7 @@
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: var(--unit-spacing);
+  border-width: var(--unit-base);
   border-top-width: 0;
   border-color: transparent;
   border-bottom-color: var(--color-dark);
@@ -80,16 +80,16 @@
 }
 
 .dropdown-menu-rating > .dropdown-menu-item {
-  padding-top: var(--unit-spacing);
-  padding-bottom: var(--unit-spacing);
-  padding-left: calc(var(--unit-spacing) / 4);
-  padding-right: calc(var(--unit-spacing) / 4);
+  padding-top: var(--unit-base);
+  padding-bottom: var(--unit-base);
+  padding-left: calc(var(--unit-base) / 4);
+  padding-right: calc(var(--unit-base) / 4);
 }
 
 .dropdown-menu-rating > .dropdown-menu-item:first-child {
-  padding-left: var(--unit-spacing);
+  padding-left: var(--unit-base);
 }
 
 .dropdown-menu-rating > .dropdown-menu-item:last-child {
-  padding-right: var(--unit-spacing);
+  padding-right: var(--unit-base);
 }

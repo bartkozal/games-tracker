@@ -4,14 +4,14 @@
 .tabs {
   display: flex;
   justify-content: center;
-  margin-bottom: calc(var(--unit-spacing) * 3);
+  margin-bottom: calc(var(--unit-base) * 3);
   text-transform: capitalize;
 }
 
 .tab-item {
-  padding: var(--unit-base);
-  margin-left: var(--unit-spacing);
-  margin-right: var(--unit-spacing);
+  padding: var(--unit-small);
+  margin-left: var(--unit-base);
+  margin-right: var(--unit-base);
   border-radius: 4px;
   cursor: pointer;
 }

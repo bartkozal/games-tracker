@@ -11,7 +11,7 @@
 
 .score-votes {
   position: absolute;
-  bottom: calc(var(--unit-spacing) * -1);
+  bottom: calc(var(--unit-base) * -1);
   left: 50%;
   transform: translateX(-50%);
   color: var(--color-light);

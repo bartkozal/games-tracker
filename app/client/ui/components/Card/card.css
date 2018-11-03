@@ -2,7 +2,7 @@
 @import "../../foundations/unit.css";
 
 :root {
-  --card-border-radius: calc(var(--unit-base) * 1.5);
+  --card-border-radius: calc(var(--unit-small) * 1.5);
 }
 
 .card {
@@ -13,7 +13,7 @@
 
 .card-cover {
   position: relative;
-  height: calc(var(--unit-base) * 42);
+  height: calc(var(--unit-small) * 42);
   border-top-left-radius: var(--card-border-radius);
   border-top-right-radius: var(--card-border-radius);
   background-size: cover;
@@ -40,7 +40,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: var(--unit-spacing);
+  padding: var(--unit-base);
 }
 
 .card-title {
@@ -48,7 +48,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: var(--unit-spacing);
+  margin-bottom: var(--unit-base);
   overflow: hidden;
   text-align: center;
   color: var(--color-light);
@@ -56,19 +56,19 @@
 
 .card-platforms {
   height: 62px;
-  max-width: calc(var(--unit-base) * 21);
+  max-width: calc(var(--unit-small) * 21);
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: var(--unit-spacing);
+  margin-bottom: var(--unit-base);
 }
 
 .card-platforms > .grid {
-  margin-left: calc(var(--unit-base) / -2);
-  margin-right: calc(var(--unit-base) / -2);
+  margin-left: calc(var(--unit-small) / -2);
+  margin-right: calc(var(--unit-small) / -2);
 }
 
 .card-platforms > .grid > .grid-item {
-  margin-bottom: var(--unit-base);
-  margin-left: calc(var(--unit-base) / 2);
-  margin-right: calc(var(--unit-base) / 2);
+  margin-bottom: var(--unit-small);
+  margin-left: calc(var(--unit-small) / 2);
+  margin-right: calc(var(--unit-small) / 2);
 }
