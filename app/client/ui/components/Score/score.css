@@ -2,25 +2,23 @@
 @import "../../foundations/unit.css";
 
 .score {
-  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .score-value {
   color: var(--color-light);
+  margin-right: var(--unit-small);
 }
 
 .score-votes {
-  position: absolute;
-  bottom: calc(var(--unit-base) * -1);
-  left: 50%;
-  transform: translateX(-50%);
   color: var(--color-light);
-  white-space: nowrap;
+  margin-top: 2px;
 }
 
 .score-star-icon {
   fill: var(--color-light);
-  margin-right: var(--unit-base);
+  margin-right: var(--unit-small);
 }
 
 .score-user-icon {
