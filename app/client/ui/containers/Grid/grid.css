@@ -7,10 +7,21 @@
   margin-right: calc(var(--unit-small) * -1);
 }
 
-.grid-item {
+.grid > .grid-item {
   margin-bottom: var(--unit-base);
   margin-left: var(--unit-small);
   margin-right: var(--unit-small);
+}
+
+.grid-small {
+  margin-left: calc(var(--unit-small) * -2);
+  margin-right: calc(var(--unit-small) * -2);
+}
+
+.grid-small > .grid-item {
+  margin-bottom: var(--unit-small);
+  margin-left: calc(var(--unit-small) / 2);
+  margin-right: calc(var(--unit-small) / 2);
 }
 
 .grid-item-third {

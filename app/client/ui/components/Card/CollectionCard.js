@@ -6,7 +6,7 @@ import { setGamePlatforms } from "state/collection/actions";
 import Stack from "ui/containers/Stack";
 import Grid from "ui/containers/Grid";
 import Score from "ui/components/Score";
-import { SmallButton, SmallOutlineButton } from "ui/components/Button";
+import { SmallButton, SmallInactiveButton } from "ui/components/Button";
 import { RatingDropdown, CollectionDropdown } from "ui/components/Dropdown";
 import formatTestId from "ui/utils/formatTestId";
 import type { Game, Platform } from "types";
@@ -57,9 +57,9 @@ const CollectionCard = ({ game, setGamePlatforms }: Props) => (
                 {platform.slug}
               </SmallButton>
             ) : (
-              <SmallOutlineButton onClick={togglePlatform}>
+              <SmallInactiveButton onClick={togglePlatform}>
                 {platform.slug}
-              </SmallOutlineButton>
+              </SmallInactiveButton>
             );
           }}
         </Grid>

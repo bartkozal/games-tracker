@@ -44,8 +44,8 @@ describe("Collection", () => {
   });
 
   it("allows to add platform", () => {
-    cy.getId("button-small-outline-pc").click();
-    cy.getId("button-small-outline-pc").should("not.exist");
+    cy.getId("button-small-inactive-pc").click();
+    cy.getId("button-small-inactive-pc").should("not.exist");
     cy.getId("button-small-pc").should("exist");
   });
 
@@ -65,7 +65,7 @@ describe("Collection", () => {
   it("allows to remove platform", () => {
     cy.getId("button-small-pc").click();
     cy.getId("button-small-pc").should("not.exist");
-    cy.getId("button-small-outline-pc").should("exist");
+    cy.getId("button-small-inactive-pc").should("exist");
   });
 
   after(() => {
