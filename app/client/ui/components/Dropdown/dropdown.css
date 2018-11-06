@@ -1,15 +1,30 @@
 @import "../../foundations/unit.css";
 @import "../../foundations/color.css";
 @import "../../foundations/z-index.css";
+@import "../Card/card.css";
 
 /* TODO refactor to dropdown menu props */
-
 .dropdown {
   position: relative;
 }
 
 .dropdown-toggle-chevron {
   margin-left: var(--unit-small);
+}
+
+.dropdown-narrow-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--unit-base);
+  height: var(--card-collection-cover-height);
+  background-color: var(--color-primary);
+  border-top-right-radius: var(--card-border-radius);
+  border-bottom-right-radius: var(--card-border-radius);
+}
+
+.dropdown-narrow-toggle-chevron {
+  fill: var(--color-secondary);
 }
 
 .dropdown-menu {

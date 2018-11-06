@@ -3,6 +3,9 @@
 
 :root {
   --card-border-radius: calc(var(--unit-small) * 1.5);
+  --card-search-cover-height: calc(var(--unit-base) * 21);
+  --card-collection-cover-width: calc(var(--unit-small) * 11);
+  --card-collection-cover-height: calc(var(--unit-small) * 15);
 }
 
 .card {
@@ -13,11 +16,35 @@
 
 .card-cover {
   position: relative;
-  height: calc(var(--unit-small) * 42);
-  border-top-left-radius: var(--card-border-radius);
-  border-top-right-radius: var(--card-border-radius);
   background-size: cover;
   background-position: center;
+}
+
+.card-search .card-cover {
+  height: var(--card-search-cover-height);
+  border-top-left-radius: var(--card-border-radius);
+  border-top-right-radius: var(--card-border-radius);
+}
+
+.card-search .card-cover::before {
+  border-top-left-radius: var(--card-border-radius);
+  border-top-right-radius: var(--card-border-radius);
+}
+
+.card-collection > .flex > div > .flex {
+  height: var(--card-collection-cover-height);
+}
+
+.card-collection .card-cover {
+  height: var(--card-collection-cover-height);
+  width: var(--card-collection-cover-width);
+  border-top-left-radius: var(--card-border-radius);
+  border-bottom-left-radius: var(--card-border-radius);
+}
+
+.card-collection .card-cover::before {
+  border-top-left-radius: var(--card-border-radius);
+  border-bottom-right-radius: var(--card-border-radius);
 }
 
 .card-cover::before {
@@ -30,12 +57,10 @@
     rgba(0, 0, 0, 0.7) 0%,
     rgba(0, 0, 0, 0) 36.35%
   );
-  border-top-left-radius: var(--card-border-radius);
-  border-top-right-radius: var(--card-border-radius);
   content: "";
 }
 
-.card-rating {
+.card-search .card-rating {
   position: absolute;
   top: 0;
   left: 0;

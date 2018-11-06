@@ -22,7 +22,7 @@ type Props = {
 };
 
 const SearchCard = ({ game, setGamePlatforms }: Props) => (
-  <div className="card" data-cy={formatTestId("card", game.name)}>
+  <div className="card card-search" data-cy={formatTestId("card", game.name)}>
     <div
       className="card-cover"
       style={{ backgroundImage: `url(${game.cover})` }}
