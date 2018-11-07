@@ -27,6 +27,13 @@ const SearchCard = ({ game, setGamePlatforms }: Props) => (
       className="card-cover"
       style={{ backgroundImage: `url(${game.cover})` }}
     >
+      <div className="card-rating">
+        <Stack align="center" distribute="space-between">
+          <Score value={game.score} votes={game.votes} />
+          <RatingDropdown gameId={game.id} value={game.rating} />
+        </Stack>
+      </div>
+
       <div className="card-platforms">
         <Grid of={game.platforms} perRow={3} padding="small">
           {(platform: Platform) => {
@@ -54,13 +61,6 @@ const SearchCard = ({ game, setGamePlatforms }: Props) => (
           }}
         </Grid>
       </div>
-    </div>
-
-    <div className="card-rating">
-      <Stack align="center" distribute="space-between">
-        <Score value={game.score} votes={game.votes} />
-        <RatingDropdown gameId={game.id} value={game.rating} />
-      </Stack>
     </div>
 
     <div className="padding-base">

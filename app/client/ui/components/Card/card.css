@@ -38,6 +38,7 @@
 .card-collection .card-cover {
   height: var(--card-collection-cover-height);
   width: var(--card-collection-cover-width);
+  padding: var(--unit-small);
   border-top-left-radius: var(--card-border-radius);
   border-bottom-left-radius: var(--card-border-radius);
 }

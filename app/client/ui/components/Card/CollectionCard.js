@@ -4,6 +4,7 @@ import Stack from "ui/containers/Stack";
 import Score from "ui/components/Score";
 import {
   RatingDropdown,
+  PlatformsDropdown,
   CollectionNarrowDropdown
 } from "ui/components/Dropdown";
 import formatTestId from "ui/utils/formatTestId";
@@ -23,7 +24,9 @@ const CollectionCard = ({ game }: Props) => (
       <div
         className="card-cover"
         style={{ backgroundImage: `url(${game.cover})` }}
-      />
+      >
+        <PlatformsDropdown />
+      </div>
 
       <Stack direction="column" distribute="space-between" padding="base">
         <div className="card-title text-lead">{game.name}</div>
