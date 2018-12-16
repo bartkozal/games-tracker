@@ -35,6 +35,10 @@
   height: var(--card-collection-cover-height);
 }
 
+.card-collection > .flex > div:nth-of-type(2) {
+  flex-grow: 1;
+}
+
 .card-collection .card-cover {
   height: var(--card-collection-cover-height);
   width: var(--card-collection-cover-width);
