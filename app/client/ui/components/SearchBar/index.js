@@ -64,7 +64,7 @@ class SearchBar extends React.Component<Props> {
           className="search-bar-input text-large"
         />
 
-        <div className="search-bar-submit">
+        <div className="search-bar-submit cursor-pointer">
           {haveSearchResults ? (
             <CancelIcon onClick={clearSearchResults} />
           ) : (

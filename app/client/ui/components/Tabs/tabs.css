@@ -12,7 +12,7 @@
   padding: var(--unit-small);
   margin-left: var(--unit-base);
   margin-right: var(--unit-base);
-  border-radius: 4px;
+  border-radius: calc(var(--unit-small) / 2);
   cursor: pointer;
 }
 

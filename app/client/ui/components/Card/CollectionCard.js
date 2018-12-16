@@ -25,7 +25,7 @@ const CollectionCard = ({ game }: Props) => (
         className="card-cover"
         style={{ backgroundImage: `url(${game.cover})` }}
       >
-        <PlatformsDropdown />
+        <PlatformsDropdown game={game} />
       </div>
 
       <Stack direction="column" distribute="space-between" padding="base">

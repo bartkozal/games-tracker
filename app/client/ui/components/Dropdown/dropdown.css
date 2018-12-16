@@ -108,3 +108,40 @@
 .dropdown-menu-rating > .dropdown-menu-item:last-child {
   padding-right: var(--unit-base);
 }
+
+.dropdown-platforms-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-platforms-menu {
+  display: inline-flex;
+  bottom: calc(var(--unit-small) / -2);
+  padding: calc(var(--unit-small) / 2);
+  flex-direction: column;
+}
+
+.dropdown-platforms-menu > button {
+  width: calc(var(--unit-small) * 5);
+  padding-top: calc(var(--unit-small) / 2);
+  padding-bottom: calc(var(--unit-small) / 2);
+  border-radius: calc(var(--unit-small) / 2);
+  background-color: var(--color-secondary);
+}
+
+.dropdown-platforms-menu > button.checked {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+.dropdown-platforms-menu > button + button {
+  margin-top: calc(var(--unit-small) / 2);
+}
+
+.dropdown-platforms-toggle-gamepad {
+  fill: var(--color-primary);
+}
+
+.dropdown-platforms-toggle-chevron {
+  margin-left: calc(var(--unit-small) / 2);
+}

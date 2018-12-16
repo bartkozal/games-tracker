@@ -94,7 +94,7 @@
 .card-platforms > .flex {
   padding: calc(var(--unit-base) / 4);
   background-color: var(--color-dark);
-  border-radius: 4px;
+  border-radius: calc(var(--unit-small) / 2);
 }
 
 .card-platforms > .flex > div + div {

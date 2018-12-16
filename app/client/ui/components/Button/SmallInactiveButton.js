@@ -1,17 +1,19 @@
 // @flow
 import * as React from "react";
 import Button from "./Button";
+import formatTestId from "ui/utils/formatTestId";
 
 type Props = {
   children: React.Node,
-  onClick: Function
+  onClick?: Function,
+  testId?: string
 };
 
-const SmallInactiveButton = ({ children, onClick }: Props) => (
+const SmallInactiveButton = ({ children, onClick, testId }: Props) => (
   <Button
     className="text-small button-small button-inactive"
     onClick={onClick}
-    testId={`small-inactive-${String(children)}`}
+    testId={formatTestId("small-inactive", testId || String(children))}
   >
     {children}
   </Button>
