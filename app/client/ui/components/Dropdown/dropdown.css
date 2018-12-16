@@ -117,6 +117,7 @@
 .dropdown-platforms-menu {
   display: inline-flex;
   bottom: calc(var(--unit-small) / -2);
+  left: calc(var(--unit-small) / -2);
   padding: calc(var(--unit-small) / 2);
   flex-direction: column;
 }
