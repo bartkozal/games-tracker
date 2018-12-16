@@ -18,8 +18,22 @@ $ yarn start
 
 ## Test
 
+To start api tests run:
+
 ```sh
-$ yarn test
+$ yarn test:api
+```
+
+To start client tests run:
+
+```sh
+$ yarn test:client
+```
+
+To start end-to-end tests run:
+
+```sh
+$ yarn cypress
 ```
 
 ## Deployment

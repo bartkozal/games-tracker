@@ -44,9 +44,12 @@ describe("Collection", () => {
   });
 
   it("allows to add platform", () => {
-    cy.getId("button-small-inactive-pc").click();
-    cy.getId("button-small-inactive-pc").should("not.exist");
-    cy.getId("button-small-pc").should("exist");
+    cy.getId("button-small-inactive-platforms").click();
+    cy.getId("dropdown-item-pc").should("not.have.class", "checked");
+    cy.getId("dropdown-item-pc").click();
+    cy.getId("button-small-pc").click();
+    cy.getId("dropdown-item-pc").should("have.class", "checked");
+    cy.getId("dropdown-item-ps-4").click();
   });
 
   it("shows unassigned collection", () => {
@@ -63,9 +66,13 @@ describe("Collection", () => {
   });
 
   it("allows to remove platform", () => {
-    cy.getId("button-small-pc").click();
-    cy.getId("button-small-pc").should("not.exist");
-    cy.getId("button-small-inactive-pc").should("exist");
+    cy.getId("button-small-2").click();
+    cy.getId("dropdown-item-pc").should("have.class", "checked");
+    cy.getId("dropdown-item-pc").click();
+    cy.getId("button-small-ps-4").click();
+    cy.getId("dropdown-item-pc").should("not.have.class", "checked");
+    cy.getId("dropdown-item-ps-4").click();
+    cy.getId("button-small-inactive-platforms").should("exist");
   });
 
   after(() => {
