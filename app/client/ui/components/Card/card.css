@@ -81,19 +81,18 @@
 }
 
 .card-platforms {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: var(--unit-small);
-  padding-left: var(--unit-base);
-  padding-right: var(--unit-base);
+  height: calc(100% - var(--unit-small));
+  display: inline-flex;
+  align-items: flex-end;
+  margin-left: var(--unit-small);
 }
 
-.card-platforms > .grid {
-  justify-content: center;
-  max-width: 100%;
+.card-platforms > .flex {
+  padding: calc(var(--unit-base) / 4);
+  background-color: var(--color-dark);
+  border-radius: 4px;
+}
+
+.card-platforms > .flex > div + div {
+  margin-top: calc(var(--unit-base) / 4);
 }

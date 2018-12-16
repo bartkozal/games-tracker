@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { xorBy } from "lodash";
 import { setGamePlatforms } from "state/collection/actions";
 import Stack from "ui/containers/Stack";
-import Grid from "ui/containers/Grid";
 import Score from "ui/components/Score";
 import { SmallButton, SmallInactiveButton } from "ui/components/Button";
 import { RatingDropdown, CollectionDropdown } from "ui/components/Dropdown";
@@ -35,14 +34,13 @@ const SearchCard = ({ game, setGamePlatforms }: Props) => (
       </div>
 
       <div className="card-platforms">
-        <Grid of={game.platforms} perRow={3} padding="small">
-          {(platform: Platform) => {
+        <Stack direction="column">
+          {game.platforms.map((platform: Platform) => {
             const togglePlatform = () =>
               setGamePlatforms(
                 game.id,
                 xorBy(game.userPlatforms, [platform], "id")
               );
-            // TODO refactor using optional chaining
             const isPlatformChecked =
               game.userPlatforms &&
               game.userPlatforms.find(
@@ -50,16 +48,16 @@ const SearchCard = ({ game, setGamePlatforms }: Props) => (
               );
 
             return isPlatformChecked ? (
-              <SmallButton onClick={togglePlatform}>
+              <SmallButton onClick={togglePlatform} key={platform.id}>
                 {platform.slug}
               </SmallButton>
             ) : (
-              <SmallInactiveButton onClick={togglePlatform}>
+              <SmallInactiveButton onClick={togglePlatform} key={platform.id}>
                 {platform.slug}
               </SmallInactiveButton>
             );
-          }}
-        </Grid>
+          })}
+        </Stack>
       </div>
     </div>
 

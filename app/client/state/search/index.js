@@ -50,11 +50,10 @@ export default (state = initialState, action) => {
     case GAME_UPDATE_RESOLVED:
       return {
         ...state,
-        results: state.results.map(
-          game =>
-            game.id === action.payload.game.id
-              ? { ...game, ...action.payload.game }
-              : game
+        results: state.results.map(game =>
+          game.id === action.payload.game.id
+            ? { ...game, ...action.payload.game }
+            : game
         )
       };
     case GAMES_BULK_UPDATE_RESOLVED:
