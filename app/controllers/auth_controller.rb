@@ -14,7 +14,7 @@ class AuthController < ApplicationController
   end
 
   def cypress
-    raise ActionController::RoutingError, "Not Found" unless Rails.env.cypress?
+    raise ActionController::RoutingError, "Not Found" if Rails.env.production?
 
     user = User.find_or_create_by(email: params[:email])
     render json: {
