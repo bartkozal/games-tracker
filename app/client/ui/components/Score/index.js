@@ -1,8 +1,8 @@
 // @flow
 import * as React from "react";
 import Stack from "ui/containers/Stack";
-import StarIcon from "ui/foundations/icon/star.svg";
-import UserIcon from "ui/foundations/icon/user.svg";
+import StarIcon from "ui/styles/icon/star.svg";
+import UserIcon from "ui/styles/icon/user.svg";
 import "./score.css";
 
 type Props = {

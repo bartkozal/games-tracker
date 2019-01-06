@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 import { range } from "lodash";
 import { rateGame } from "state/collection/actions";
 import Rating from "ui/components/Rating";
-import StarIcon from "ui/foundations/icon/star.svg";
-import UnstarIcon from "ui/foundations/icon/unstar.svg";
+import StarIcon from "ui/styles/icon/star.svg";
+import UnstarIcon from "ui/styles/icon/unstar.svg";
 import Dropdown from "./Dropdown";
 
 const mapDispatchToProps = {

@@ -5,8 +5,8 @@ import { xorBy } from "lodash";
 import cx from "classnames";
 import { setGamePlatforms } from "state/collection/actions";
 import { SmallButton, SmallInactiveButton } from "ui/components/Button";
-import GamepadIcon from "ui/foundations/icon/gamepad.svg";
-import ChevronIcon from "ui/foundations/icon/chevron.svg";
+import GamepadIcon from "ui/styles/icon/gamepad.svg";
+import ChevronIcon from "ui/styles/icon/chevron.svg";
 import Dropdown from "./Dropdown";
 import type { Game, Platform } from "types";
 

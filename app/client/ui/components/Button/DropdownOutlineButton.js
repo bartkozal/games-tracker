@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import ChevronIcon from "ui/foundations/icon/chevron.svg";
+import ChevronIcon from "ui/styles/icon/chevron.svg";
 import Button from "./Button";
 
 type Props = {

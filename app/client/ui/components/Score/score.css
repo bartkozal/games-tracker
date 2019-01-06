@@ -1,5 +1,5 @@
-@import "../../foundations/color.css";
-@import "../../foundations/unit.css";
+@import "../../styles/color.css";
+@import "../../styles/unit.css";
 
 .score {
   display: flex;

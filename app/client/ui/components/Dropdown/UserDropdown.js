@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { signOut } from "state/auth/actions";
 import Avatar from "ui/components/Avatar";
 import Dropdown from "./Dropdown";
-import ChevronIcon from "../../foundations/icon/chevron.svg";
+import ChevronIcon from "../../styles/icon/chevron.svg";
 
 const mapDispatchToProps = {
   signOut

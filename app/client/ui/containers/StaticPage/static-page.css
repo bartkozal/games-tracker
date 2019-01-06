@@ -1,4 +1,4 @@
-@import "../../foundations/unit.css";
+@import "../../styles/unit.css";
 
 .static-page {
   padding-left: var(--unit-base);

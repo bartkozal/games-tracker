@@ -1,4 +1,4 @@
-@import "../../foundations/unit.css";
+@import "../../styles/unit.css";
 
 .avatar {
   width: calc(var(--unit-small) * 6);

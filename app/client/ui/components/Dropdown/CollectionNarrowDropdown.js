@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Status } from "../../../constants";
 import type { Status as StatusType } from "types";
 import { setGameStatus } from "state/collection/actions";
-import ChevronIcon from "ui/foundations/icon/chevron.svg";
+import ChevronIcon from "ui/styles/icon/chevron.svg";
 import Dropdown from "./Dropdown";
 
 const mapDispatchToProps = {
