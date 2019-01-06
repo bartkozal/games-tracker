@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 import { ROOT_PATH } from "routes/paths";
 import { clearSearchResults } from "state/search/actions";
 import { setCurrentUser } from "state/auth/actions";
-import Logo from "ui/components/Logo";
-import SearchBar from "ui/components/SearchBar";
-import { UserDropdown } from "ui/components/Dropdown";
-import { FacebookButton } from "ui/components/Button";
-import Stack from "ui/containers/Stack";
+import Logo from "../Logo";
+import SearchBar from "../SearchBar";
+import { UserDropdown } from "../Dropdown";
+import { FacebookButton } from "../Button";
+import Stack from "../Stack";
 import "./navbar.css";
 
 const mapStateToProps = ({ Auth }) => ({

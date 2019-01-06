@@ -1,9 +1,9 @@
 // @flow
 import * as React from "react";
-import { StickyFooter, StickyFooterWrapper } from "ui/containers/StickyFooter";
-import Container from "ui/containers/Container";
-import Footer from "ui/components/Footer";
-import Navbar from "ui/components/Navbar";
+import { StickyFooter, StickyFooterWrapper } from "../StickyFooter";
+import Container from "../Container";
+import Footer from "../Footer";
+import Navbar from "../Navbar";
 
 type Props = {
   children: React.Node

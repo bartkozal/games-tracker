@@ -3,7 +3,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { isEmpty, groupBy } from "lodash";
 import { fetchGames } from "state/collection/actions";
-import Grid from "ui/containers/Grid";
+import Grid from "ui/components/Grid";
 import { CollectionCard } from "ui/components/Card";
 import Tabs from "ui/components/Tabs";
 import type { Game } from "types";

@@ -2,7 +2,7 @@
 import * as React from "react";
 import { API_STATIC_PAGES } from "routes/api";
 import { get } from "axios";
-import StaticPage from "ui/containers/StaticPage";
+import StaticPage from "ui/components/StaticPage";
 
 type State = {
   content: string

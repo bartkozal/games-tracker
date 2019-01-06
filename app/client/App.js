@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import { ROOT_PATH, PRiVACY_POLICY_PATH } from "routes/paths";
 import HomePage from "ui/pages/HomePage";
 import PrivacyPolicyPage from "ui/pages/PrivacyPolicyPage";
-import Layout from "ui/containers/Layout";
+import Layout from "ui/components/Layout";
 import "./global.css";
 
 const App = () => (

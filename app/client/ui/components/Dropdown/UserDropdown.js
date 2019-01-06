@@ -2,7 +2,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { signOut } from "state/auth/actions";
-import Avatar from "ui/components/Avatar";
+import Avatar from "../Avatar";
 import Dropdown from "./Dropdown";
 import ChevronIcon from "../../styles/icon/chevron.svg";
 

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { xorBy } from "lodash";
 import cx from "classnames";
 import { setGamePlatforms } from "state/collection/actions";
-import { SmallButton, SmallInactiveButton } from "ui/components/Button";
+import { SmallButton, SmallInactiveButton } from "../Button";
 import GamepadIcon from "ui/styles/icon/gamepad.svg";
 import ChevronIcon from "ui/styles/icon/chevron.svg";
 import Dropdown from "./Dropdown";

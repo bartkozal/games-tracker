@@ -2,7 +2,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import type { Game } from "types";
-import Grid from "ui/containers/Grid";
+import Grid from "ui/components/Grid";
 import { SearchCard } from "ui/components/Card";
 
 const mapStateToProps = ({ Search }) => ({

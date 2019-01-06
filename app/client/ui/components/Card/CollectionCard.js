@@ -1,12 +1,12 @@
 // @flow
 import * as React from "react";
-import Stack from "ui/containers/Stack";
-import Score from "ui/components/Score";
+import Stack from "../Stack";
+import Score from "../Score";
 import {
   RatingDropdown,
   PlatformsDropdown,
   CollectionNarrowDropdown
-} from "ui/components/Dropdown";
+} from "../Dropdown";
 import formatTestId from "ui/utils/formatTestId";
 import type { Game } from "types";
 import "./card.css";

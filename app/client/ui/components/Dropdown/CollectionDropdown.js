@@ -5,7 +5,7 @@ import { capitalize } from "lodash";
 import { Status } from "../../../constants";
 import type { Status as StatusType } from "types";
 import { setGameStatus } from "state/collection/actions";
-import { DropdownButton, DropdownOutlineButton } from "ui/components/Button";
+import { DropdownButton, DropdownOutlineButton } from "../Button";
 import Dropdown from "./Dropdown";
 
 const mapDispatchToProps = {

@@ -1,5 +1,4 @@
 // @flow
-
 export const Status = {
   UNASSIGNED: "unassigned",
   WISHLIST: "wishlist",
