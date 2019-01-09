@@ -1,11 +1,25 @@
 @import "modern-normalize";
-@import "./ui/styles/color";
-@import "./ui/styles/cursor";
-@import "./ui/styles/icon";
-@import "./ui/styles/padding";
-@import "./ui/styles/typography";
-@import "./ui/styles/unit";
-@import "./ui/styles/z-index";
+
+:root {
+  --color-primary: #849cce;
+  --color-secondary: #394263;
+  --color-accent: #f2c94c;
+  --color-destructive: #d56262;
+  --color-light: #f2f2f2;
+  --color-dark: rgba(37, 45, 77, 0.95);
+  --color-facebook: #507cc0;
+  --color-body: #161930;
+  --gradient-body: radial-gradient(
+    circle at bottom right,
+    rgba(255, 0, 132, 0.05),
+    transparent
+  );
+  --font-stack: "Lato", sans-serif;
+  --font-leading: 1.15;
+  --unit-base: 16px;
+  --unit-small: 8px;
+  --z-index-dropdown: 1;
+}
 
 *,
 *::after,
@@ -36,4 +50,105 @@ a {
 img {
   box-sizing: content-box;
   vertical-align: middle;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.icon-primary {
+  fill: var(--color-primary);
+}
+
+.icon-accent {
+  fill: var(--color-accent);
+}
+
+.icon-destructive {
+  fill: var(--color-destructive);
+}
+
+.padding-base {
+  padding: var(--unit-base);
+}
+
+.padding-top {
+  padding-top: var(--unit-base);
+}
+
+.padding-right {
+  padding-right: var(--unit-base);
+}
+
+.padding-bottom {
+  padding-bottom: var(--unit-base);
+}
+
+.padding-left {
+  padding-left: var(--unit-base);
+}
+
+.padding-vertical {
+  padding-top: var(--unit-base);
+  padding-bottom: var(--unit-base);
+}
+
+.padding-horizontal {
+  padding-right: var(--unit-base);
+  padding-left: var(--unit-base);
+}
+
+.padding-small {
+  padding: var(--unit-small);
+}
+
+.padding-small-top {
+  padding-top: var(--unit-small);
+}
+
+.padding-small-right {
+  padding-right: var(--unit-small);
+}
+
+.padding-small-bottom {
+  padding-bottom: var(--unit-small);
+}
+
+.padding-small-left {
+  padding-left: var(--unit-small);
+}
+
+.padding-small-vertical {
+  padding-top: var(--unit-small);
+  padding-bottom: var(--unit-small);
+}
+
+.padding-small-horizontal {
+  padding-right: var(--unit-small);
+  padding-left: var(--unit-small);
+}
+
+.text-small {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.text-base {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.text-lead {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.text-large {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.text-huge {
+  font-size: 72px;
+  font-weight: 700;
 }
