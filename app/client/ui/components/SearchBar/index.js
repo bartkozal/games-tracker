@@ -10,7 +10,7 @@ import {
 } from "state/search/actions";
 import CancelIcon from "ui/styles/icon/cancel.svg";
 import SearchIcon from "ui/styles/icon/search.svg";
-import "./search-bar.css";
+import "./search-bar.scss";
 
 const mapStateToProps = ({ Search }) => ({
   haveSearchResults: !!Search.results.length,
@@ -64,7 +64,7 @@ class SearchBar extends React.Component<Props> {
           className="search-bar-input text-large"
         />
 
-        <div className="search-bar-submit cursor-pointer">
+        <div className="search-bar-submit">
           {haveSearchResults ? (
             <CancelIcon onClick={clearSearchResults} />
           ) : (

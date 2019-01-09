@@ -1,9 +1,11 @@
 @import "modern-normalize";
-@import "./ui/styles/color.css";
-@import "./ui/styles/cursor.css";
-@import "./ui/styles/icon.css";
-@import "./ui/styles/padding.css";
-@import "./ui/styles/typography.css";
+@import "./ui/styles/color";
+@import "./ui/styles/cursor";
+@import "./ui/styles/icon";
+@import "./ui/styles/padding";
+@import "./ui/styles/typography";
+@import "./ui/styles/unit";
+@import "./ui/styles/z-index";
 
 *,
 *::after,

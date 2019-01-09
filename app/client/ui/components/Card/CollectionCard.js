@@ -9,7 +9,7 @@ import {
 } from "../Dropdown";
 import formatTestId from "ui/utils/formatTestId";
 import type { Game } from "types";
-import "./card.css";
+import "./card";
 
 type Props = {
   game: Game

@@ -3,7 +3,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import cx from "classnames";
 import { url } from "gravatar";
-import "./avatar.css";
+import "./avatar.scss";
 
 const mapStateToProps = ({ Auth }) => ({
   currentUserEmail: Auth.currentUser.email

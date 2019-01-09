@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import cx from "classnames";
-import "./grid.css";
+import "./grid";
 import ordinalWord from "ui/utils/ordinalWord";
 
 type GridItem = {

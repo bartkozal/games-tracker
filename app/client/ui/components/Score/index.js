@@ -3,7 +3,7 @@ import * as React from "react";
 import Stack from "../Stack";
 import StarIcon from "ui/styles/icon/star.svg";
 import UserIcon from "ui/styles/icon/user.svg";
-import "./score.css";
+import "./score.scss";
 
 type Props = {
   value?: number,

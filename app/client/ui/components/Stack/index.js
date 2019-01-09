@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import cx from "classnames";
-import "./stack.css";
+import "./stack.scss";
 
 type Props = {
   direction?: "row" | "column",

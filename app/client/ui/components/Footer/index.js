@@ -2,7 +2,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import { PRiVACY_POLICY_PATH } from "routes/paths";
-import "./footer.css";
+import "./footer.scss";
 
 const Footer = () => (
   <ul className="footer text-small" data-cy="footer">

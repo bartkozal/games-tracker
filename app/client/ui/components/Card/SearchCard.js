@@ -9,7 +9,7 @@ import { SmallButton, SmallInactiveButton } from "../Button";
 import { RatingDropdown, CollectionDropdown } from "../Dropdown";
 import formatTestId from "ui/utils/formatTestId";
 import type { Game, Platform } from "types";
-import "./card.css";
+import "./card";
 
 const mapDispatchToProps = {
   setGamePlatforms

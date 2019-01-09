@@ -1,5 +1,5 @@
 // @flow
-import "./dropdown.css";
+import "./dropdown.scss";
 
 export { default as CollectionDropdown } from "./CollectionDropdown";
 export {

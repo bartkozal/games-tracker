@@ -2,7 +2,7 @@
 import * as React from "react";
 import Stack from "../Stack";
 import StarIcon from "ui/styles/icon/star.svg";
-import "./rating.css";
+import "./rating.scss";
 
 type Props = {
   value: number

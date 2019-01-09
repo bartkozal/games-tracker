@@ -2,7 +2,7 @@
 import * as React from "react";
 import cx from "classnames";
 import formatTestId from "ui/utils/formatTestId";
-import "./tabs.css";
+import "./tabs.scss";
 
 type Props = {
   children: Function,

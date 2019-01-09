@@ -1,5 +1,5 @@
 // @flow
-import "./button.css";
+import "./button.scss";
 
 export { default as FacebookButton } from "./FacebookButton";
 export { default as SmallButton } from "./SmallButton";
