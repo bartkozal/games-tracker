@@ -97,3 +97,7 @@
 .card-platforms > .flex > div + div {
   margin-top: calc(var(--unit-base) / 4);
 }
+
+.card-content {
+  padding: var(--unit-base);
+}

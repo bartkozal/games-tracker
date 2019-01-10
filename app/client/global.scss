@@ -68,66 +68,6 @@ img {
   fill: var(--color-destructive);
 }
 
-.padding-base {
-  padding: var(--unit-base);
-}
-
-.padding-top {
-  padding-top: var(--unit-base);
-}
-
-.padding-right {
-  padding-right: var(--unit-base);
-}
-
-.padding-bottom {
-  padding-bottom: var(--unit-base);
-}
-
-.padding-left {
-  padding-left: var(--unit-base);
-}
-
-.padding-vertical {
-  padding-top: var(--unit-base);
-  padding-bottom: var(--unit-base);
-}
-
-.padding-horizontal {
-  padding-right: var(--unit-base);
-  padding-left: var(--unit-base);
-}
-
-.padding-small {
-  padding: var(--unit-small);
-}
-
-.padding-small-top {
-  padding-top: var(--unit-small);
-}
-
-.padding-small-right {
-  padding-right: var(--unit-small);
-}
-
-.padding-small-bottom {
-  padding-bottom: var(--unit-small);
-}
-
-.padding-small-left {
-  padding-left: var(--unit-small);
-}
-
-.padding-small-vertical {
-  padding-top: var(--unit-small);
-  padding-bottom: var(--unit-small);
-}
-
-.padding-small-horizontal {
-  padding-right: var(--unit-small);
-  padding-left: var(--unit-small);
-}
-
 .text-small {
   font-size: 12px;
   font-weight: 700;

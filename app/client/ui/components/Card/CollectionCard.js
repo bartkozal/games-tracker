@@ -28,7 +28,11 @@ const CollectionCard = ({ game }: Props) => (
         <PlatformsDropdown game={game} />
       </div>
 
-      <Stack direction="column" distribute="space-between" padding="base">
+      <Stack
+        direction="column"
+        distribute="space-between"
+        className="card-content"
+      >
         <div className="card-title text-lead">{game.name}</div>
         <Stack align="center" distribute="space-between">
           <Score value={game.score} votes={game.votes} />

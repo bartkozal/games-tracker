@@ -61,7 +61,7 @@ const SearchCard = ({ game, setGamePlatforms }: Props) => (
       </div>
     </div>
 
-    <div className="padding-base">
+    <div className="card-content">
       <div className="card-title text-lead">{game.name}</div>
       <CollectionDropdown gameId={game.id} status={game.status} />
     </div>

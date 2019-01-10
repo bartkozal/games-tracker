@@ -13,32 +13,27 @@ type Props = {
     | "space-around"
     | "space-evenly",
   align?: "start" | "center" | "end",
-  padding?:
-    | "base"
-    | "top"
-    | "right"
-    | "bottom"
-    | "left"
-    | "vertical"
-    | "horizontal"
-    | "small"
-    | "small-top"
-    | "small-right"
-    | "small-bottom"
-    | "small-left"
-    | "small-vertical"
-    | "small-horizontal",
+  className?: string,
   children: React.Node
 };
 
-const Stack = ({ direction, distribute, align, padding, children }: Props) => (
+const Stack = ({
+  direction,
+  distribute,
+  align,
+  className,
+  children
+}: Props) => (
   <div
-    className={cx("flex", [
-      direction ? `flex-direction-${direction}` : null,
-      distribute ? `flex-distribute-${distribute}` : null,
-      align ? `flex-align-${align}` : null,
-      padding ? `padding-${padding}` : null
-    ])}
+    className={cx(
+      "flex",
+      [
+        direction ? `flex-direction-${direction}` : null,
+        distribute ? `flex-distribute-${distribute}` : null,
+        align ? `flex-align-${align}` : null
+      ],
+      className
+    )}
   >
     {React.Children.map(children, child => (
       <div>{child}</div>
