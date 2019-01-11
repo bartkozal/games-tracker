@@ -29,10 +29,6 @@
   border-bottom-right-radius: $unit-medium;
 }
 
-.dropdown-narrow-toggle-chevron {
-  fill: $color-secondary;
-}
-
 .dropdown-menu {
   position: absolute;
   bottom: -$unit-base;
@@ -144,10 +140,6 @@
 
 .dropdown-platforms-menu > button + button {
   margin-top: $unit-small;
-}
-
-.dropdown-platforms-toggle-gamepad {
-  fill: $color-primary;
 }
 
 .dropdown-platforms-toggle-chevron {

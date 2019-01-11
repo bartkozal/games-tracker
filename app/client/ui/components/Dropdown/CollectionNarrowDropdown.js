@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Status } from "../../../constants";
 import type { Status as StatusType } from "types";
 import { setGameStatus } from "state/collection/actions";
-import ChevronIcon from "ui/styles/icon/chevron.svg";
+import Icon from "ui/components/Icon";
 import Dropdown from "./Dropdown";
 
 const mapDispatchToProps = {
@@ -22,7 +22,7 @@ const CollectionNarrowDropdown = ({ gameId, status, setGameStatus }: Props) => (
     {(DropdownToggle, DropdownMenu, DropdownMenuItem) => (
       <React.Fragment>
         <DropdownToggle testId="collection" className="dropdown-narrow-toggle">
-          <ChevronIcon className="dropdown-narrow-toggle-chevron" />
+          <Icon name="chevron" color="secondary" />
         </DropdownToggle>
 
         <DropdownMenu className="dropdown-menu-vertical">

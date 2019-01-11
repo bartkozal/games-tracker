@@ -8,8 +8,7 @@ import {
   updateQuery,
   clearSearchResults
 } from "state/search/actions";
-import CancelIcon from "ui/styles/icon/cancel.svg";
-import SearchIcon from "ui/styles/icon/search.svg";
+import Icon from "ui/components/Icon";
 import "./search-bar.scss";
 
 const mapStateToProps = ({ Search }) => ({
@@ -66,9 +65,9 @@ class SearchBar extends React.Component<Props> {
 
         <div className="search-bar-submit">
           {haveSearchResults ? (
-            <CancelIcon onClick={clearSearchResults} />
+            <Icon name="cancel" onClick={clearSearchResults} />
           ) : (
-            <SearchIcon onClick={this.searchGames} />
+            <Icon name="search" onClick={this.searchGames} />
           )}
         </div>
       </form>

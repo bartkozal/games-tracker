@@ -48,7 +48,6 @@
 }
 
 .button-facebook-icon {
-  fill: $color-light;
   margin-right: $unit-base;
 }
 
@@ -58,13 +57,8 @@
 }
 
 .button-dropdown-icon {
-  fill: $color-light;
   position: absolute;
   top: 50%;
   right: $unit-spacing;
   transform: translateY(-60%);
-}
-
-.button-dropdown-outline-icon {
-  fill: $color-primary;
 }

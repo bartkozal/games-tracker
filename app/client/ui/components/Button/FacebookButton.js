@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { FACEBOOK_AUTH_PATH } from "routes/paths";
-import FacebookIcon from "ui/styles/icon/facebook.svg";
+import Icon from "ui/components/Icon";
 import Button from "./Button";
 
 const FacebookButton = () => (
@@ -10,7 +10,7 @@ const FacebookButton = () => (
     onClick={() => window.location.assign(FACEBOOK_AUTH_PATH)}
     testId="facebook"
   >
-    <FacebookIcon className="button-facebook-icon" />
+    <Icon name="facebook" color="light" className="button-facebook-icon" />
     Sign in with Facebook
   </Button>
 );

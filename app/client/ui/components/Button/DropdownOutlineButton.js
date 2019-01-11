@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import ChevronIcon from "ui/styles/icon/chevron.svg";
+import Icon from "ui/components/Icon";
 import Button from "./Button";
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 const DropdownOutlineButton = ({ children }: Props) => (
   <Button className="button-dropdown button-outline" testId={String(children)}>
     {children}
-    <ChevronIcon className="button-dropdown-icon button-dropdown-outline-icon" />
+    <Icon name="chevron" color="primary" className="button-dropdown-icon" />
   </Button>
 );
 

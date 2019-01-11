@@ -1,8 +1,7 @@
 // @flow
 import * as React from "react";
 import Stack from "../Stack";
-import StarIcon from "ui/styles/icon/star.svg";
-import UserIcon from "ui/styles/icon/user.svg";
+import Icon from "ui/components/Icon";
 import "./score.scss";
 
 type Props = {
@@ -15,14 +14,15 @@ const Score = ({ value, votes }: Props) => {
 
   return (
     <Stack align="center">
-      <StarIcon className="score-star-icon" />
+      <Icon name="star" color="light" className="score-star-icon" />
       <div className="score">
         <div className="score-value" data-cy="score-value">
           {/* TODO refactor to use chaining operator */}
           {value && value.toFixed(1)}
         </div>
         <div className="score-votes" data-cy="score-votes">
-          ( <UserIcon className="score-user-icon" /> {votes} )
+          ( <Icon name="star" color="light" className="score-user-icon" />{" "}
+          {votes} )
         </div>
       </div>
     </Stack>

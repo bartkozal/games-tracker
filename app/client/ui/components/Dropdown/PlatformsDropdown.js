@@ -5,8 +5,7 @@ import { xorBy } from "lodash";
 import cx from "classnames";
 import { setGamePlatforms } from "state/collection/actions";
 import { SmallButton, SmallInactiveButton } from "../Button";
-import GamepadIcon from "ui/styles/icon/gamepad.svg";
-import ChevronIcon from "ui/styles/icon/chevron.svg";
+import Icon from "ui/components/Icon";
 import Dropdown from "./Dropdown";
 import type { Game, Platform } from "types";
 
@@ -30,7 +29,7 @@ const renderDropdownToggle = (userPlatforms: Platform[]) => {
 
   return (
     <SmallInactiveButton testId="platforms">
-      <GamepadIcon className="dropdown-platforms-toggle-gamepad" />
+      <Icon name="gamepad" color="primary" />
     </SmallInactiveButton>
   );
 };
@@ -45,7 +44,7 @@ const PlatformsDropdown = ({ game, setGamePlatforms }: Props) => (
           testId="platforms"
         >
           {renderDropdownToggle(game.userPlatforms || [])}
-          <ChevronIcon className="dropdown-platforms-toggle-chevron" />
+          <Icon name="chevron" className="dropdown-platforms-toggle-chevron" />
         </DropdownToggle>
 
         <DropdownMenu className="dropdown-platforms-menu">

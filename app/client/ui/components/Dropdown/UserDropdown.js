@@ -2,9 +2,9 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { signOut } from "state/auth/actions";
+import Icon from "ui/components/Icon";
 import Avatar from "../Avatar";
 import Dropdown from "./Dropdown";
-import ChevronIcon from "../../styles/icon/chevron.svg";
 
 const mapDispatchToProps = {
   signOut
@@ -21,7 +21,7 @@ const UserDropdown = ({ signOut }: Props) => (
       <React.Fragment>
         <DropdownToggle testId="user">
           <Avatar />
-          <ChevronIcon className="dropdown-toggle-chevron" />
+          <Icon name="chevron" className="dropdown-toggle-chevron" />
         </DropdownToggle>
 
         <DropdownMenu className="dropdown-menu-vertical">

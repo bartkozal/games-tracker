@@ -3,9 +3,8 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { range } from "lodash";
 import { rateGame } from "state/collection/actions";
+import Icon from "ui/components/Icon";
 import Rating from "../Rating";
-import StarIcon from "ui/styles/icon/star.svg";
-import UnstarIcon from "ui/styles/icon/unstar.svg";
 import Dropdown from "./Dropdown";
 
 const mapDispatchToProps = {
@@ -62,10 +61,9 @@ class RatingDropdown extends React.Component<Props, State> {
                   onMouseLeave={() => this.setValuePreview(value)}
                   testId="unrate"
                 >
-                  <UnstarIcon
-                    className={
-                      value === -1 ? "icon-destructive" : "icon-accent"
-                    }
+                  <Icon
+                    name="unstar"
+                    color={value === -1 ? "destructive" : "accent"}
                   />
                 </DropdownMenuItem>
               ) : null}
@@ -78,10 +76,9 @@ class RatingDropdown extends React.Component<Props, State> {
                   onMouseLeave={() => this.setValuePreview(value)}
                   testId={`rate-${rating}`}
                 >
-                  <StarIcon
-                    className={
-                      rating - 1 < valuePreview ? "icon-accent" : "icon-primary"
-                    }
+                  <Icon
+                    name="star"
+                    color={rating - 1 < valuePreview ? "accent" : "primary"}
                   />
                 </DropdownMenuItem>
               ))}
