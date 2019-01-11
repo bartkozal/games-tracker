@@ -1,4 +1,7 @@
+@import "../../../styles";
+
 .tabs {
+  @include text-lead;
   display: flex;
   justify-content: center;
   margin-bottom: calc(var(--unit-base) * 3);

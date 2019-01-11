@@ -65,7 +65,7 @@ const PlatformsDropdown = ({ game, setGamePlatforms }: Props) => (
             return (
               <DropdownMenuItem
                 key={platform.id}
-                className={cx("text-small", { checked: isPlatformChecked })}
+                className={cx({ checked: isPlatformChecked })}
                 onClick={togglePlatform}
               >
                 {platform.slug}

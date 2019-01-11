@@ -52,9 +52,7 @@ class Tabs extends React.Component<Props, State> {
   render() {
     return (
       <React.Fragment>
-        <div className="tabs text-lead">
-          {this.props.children(this.TabItem)}
-        </div>
+        <div className="tabs">{this.props.children(this.TabItem)}</div>
 
         {this.props
           .children(this.TabContent)

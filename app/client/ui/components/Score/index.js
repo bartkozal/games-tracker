@@ -17,11 +17,11 @@ const Score = ({ value, votes }: Props) => {
     <Stack align="center">
       <StarIcon className="score-star-icon" />
       <div className="score">
-        <div className="score-value text-lead" data-cy="score-value">
+        <div className="score-value" data-cy="score-value">
           {/* TODO refactor to use chaining operator */}
           {value && value.toFixed(1)}
         </div>
-        <div className="score-votes text-small" data-cy="score-votes">
+        <div className="score-votes" data-cy="score-votes">
           ( <UserIcon className="score-user-icon" /> {votes} )
         </div>
       </div>

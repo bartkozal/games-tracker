@@ -9,7 +9,7 @@ type Props = {
 };
 
 const Rating = ({ value }: Props) => (
-  <div className="rating text-lead">
+  <div className="rating">
     {value > 0 ? (
       <Stack align="center">
         {value}

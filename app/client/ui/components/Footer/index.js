@@ -5,7 +5,7 @@ import { PRiVACY_POLICY_PATH } from "routes/paths";
 import "./footer.scss";
 
 const Footer = () => (
-  <ul className="footer text-small" data-cy="footer">
+  <ul className="footer" data-cy="footer">
     <li>Games Tracker API is powered by IGDB</li>
     <li>
       <Link to={PRiVACY_POLICY_PATH}>Privacy Policy</Link>

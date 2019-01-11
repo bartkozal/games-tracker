@@ -1,14 +1,18 @@
+@import "../../../styles";
+
 .score {
   display: flex;
   align-items: center;
 }
 
 .score-value {
+  @include text-lead;
   color: var(--color-light);
   margin-right: var(--unit-small);
 }
 
 .score-votes {
+  @include text-small;
   color: var(--color-light);
   margin-top: 2px;
 }

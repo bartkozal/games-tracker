@@ -1,4 +1,7 @@
+@import "../../../styles";
+
 .rating {
+  @include text-lead;
   height: 27px;
   display: flex;
   align-items: center;

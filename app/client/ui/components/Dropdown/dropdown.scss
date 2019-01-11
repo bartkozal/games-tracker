@@ -1,4 +1,7 @@
+@import "../../../styles";
+
 /* TODO refactor to dropdown menu props */
+
 .dropdown {
   position: relative;
 }
@@ -118,6 +121,7 @@
 }
 
 .dropdown-platforms-menu > button {
+  @include text-small;
   width: calc(var(--unit-small) * 5);
   padding-top: calc(var(--unit-small) / 2);
   padding-bottom: calc(var(--unit-small) / 2);

@@ -1,4 +1,7 @@
+@import "../../../styles";
+
 .footer {
+  @include text-small;
   display: flex;
   justify-content: center;
   padding-top: var(--unit-base);

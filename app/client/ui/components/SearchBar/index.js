@@ -61,7 +61,7 @@ class SearchBar extends React.Component<Props> {
           type="text"
           onChange={this.updateQuery}
           value={query}
-          className="search-bar-input text-large"
+          className="search-bar-input"
         />
 
         <div className="search-bar-submit">

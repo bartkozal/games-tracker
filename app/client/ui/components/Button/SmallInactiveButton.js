@@ -11,7 +11,7 @@ type Props = {
 
 const SmallInactiveButton = ({ children, onClick, testId }: Props) => (
   <Button
-    className="text-small button-small button-inactive"
+    className="button-small button-inactive"
     onClick={onClick}
     testId={formatTestId("small-inactive", testId || String(children))}
   >

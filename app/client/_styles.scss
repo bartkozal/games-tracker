@@ -1,0 +1,24 @@
+@mixin text-small {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@mixin text-base {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@mixin text-lead {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@mixin text-large {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+@mixin text-huge {
+  font-size: 72px;
+  font-weight: 700;
+}

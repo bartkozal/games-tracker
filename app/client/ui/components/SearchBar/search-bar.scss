@@ -1,8 +1,11 @@
+@import "../../../styles";
+
 .search-bar {
   position: relative;
 }
 
 .search-bar-input {
+  @include text-large;
   width: calc(var(--unit-small) * 68);
   padding-top: var(--unit-small);
   padding-bottom: var(--unit-small);
