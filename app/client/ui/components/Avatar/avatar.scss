@@ -1,4 +1,6 @@
+@import "styles";
+
 .avatar {
-  width: calc(var(--unit-small) * 6);
+  width: $unit-base * 6;
   border-radius: 50%;
 }

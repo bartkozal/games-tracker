@@ -1,6 +1,8 @@
+@import "styles";
+
 .static-page {
-  padding-left: var(--unit-base);
-  padding-right: var(--unit-base);
+  padding-left: $unit-spacing;
+  padding-right: $unit-spacing;
   font-size: 16px;
   line-height: 1.5;
 }

@@ -4,14 +4,14 @@
   @include text-small;
   display: flex;
   justify-content: center;
-  padding-top: var(--unit-base);
-  padding-bottom: var(--unit-base);
+  padding-top: $unit-spacing;
+  padding-bottom: $unit-spacing;
   list-style-type: none;
 }
 
 .footer > li + li::before {
   display: inline;
-  padding-right: var(--unit-small);
-  padding-left: var(--unit-small);
+  padding-right: $unit-base;
+  padding-left: $unit-base;
   content: "|";
 }

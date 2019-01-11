@@ -1,27 +1,6 @@
 @import "~modern-normalize";
 @import "styles";
 
-:root {
-  --color-primary: #849cce;
-  --color-secondary: #394263;
-  --color-accent: #f2c94c;
-  --color-destructive: #d56262;
-  --color-light: #f2f2f2;
-  --color-dark: rgba(37, 45, 77, 0.95);
-  --color-facebook: #507cc0;
-  --color-body: #161930;
-  --gradient-body: radial-gradient(
-    circle at bottom right,
-    rgba(255, 0, 132, 0.05),
-    transparent
-  );
-  --font-stack: "Lato", sans-serif;
-  --font-leading: 1.15;
-  --unit-base: 16px;
-  --unit-small: 8px;
-  --z-index-dropdown: 1;
-}
-
 *,
 *::after,
 *::before {
@@ -36,12 +15,11 @@ body {
   @include text-base;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 100%;
-  font-family: var(--font-stack);
-  line-height: var(--font-leading);
-  background-color: var(--color-body);
-  background-image: var(--gradient-body);
-  color: var(--color-primary);
+  font-family: $font-stack;
+  line-height: $font-leading;
+  background-color: $color-body;
+  background-image: $gradient-body;
+  color: $color-primary;
 }
 
 a {
@@ -59,13 +37,13 @@ img {
 }
 
 .icon-primary {
-  fill: var(--color-primary);
+  fill: $color-primary;
 }
 
 .icon-accent {
-  fill: var(--color-accent);
+  fill: $color-accent;
 }
 
 .icon-destructive {
-  fill: var(--color-destructive);
+  fill: $color-destructive;
 }

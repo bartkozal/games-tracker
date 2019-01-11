@@ -4,19 +4,19 @@
   @include text-lead;
   display: flex;
   justify-content: center;
-  margin-bottom: calc(var(--unit-base) * 3);
+  margin-bottom: $unit-base * 6;
   text-transform: capitalize;
 }
 
 .tab-item {
-  padding: var(--unit-small);
-  margin-left: var(--unit-base);
-  margin-right: var(--unit-base);
-  border-radius: calc(var(--unit-small) / 2);
+  padding: $unit-base;
+  margin-left: $unit-spacing;
+  margin-right: $unit-spacing;
+  border-radius: $unit-small;
   cursor: pointer;
 }
 
 .tab-item-active {
-  background-color: var(--color-accent);
-  color: var(--color-body);
+  background-color: $color-accent;
+  color: $color-body;
 }

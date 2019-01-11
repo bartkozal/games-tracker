@@ -1,9 +1,11 @@
+@import "styles";
+
 .container {
   box-sizing: content-box;
-  max-width: calc(var(--unit-base) * 74);
+  max-width: $unit-base * 148;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--unit-base);
-  padding-right: var(--unit-base);
+  padding-left: $unit-spacing;
+  padding-right: $unit-spacing;
 }

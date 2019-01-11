@@ -5,15 +5,15 @@
   height: 27px;
   display: flex;
   align-items: center;
-  color: var(--color-accent);
+  color: $color-accent;
   text-transform: uppercase;
 }
 
 .rating-star-icon {
-  fill: var(--color-accent);
-  margin-left: var(--unit-small);
+  fill: $color-accent;
+  margin-left: $unit-base;
 }
 
 .rating-unrate {
-  color: var(--color-destructive);
+  color: $color-destructive;
 }

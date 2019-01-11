@@ -6,32 +6,40 @@
   position: relative;
 }
 
+.dropdown-narrow {
+  height: 100%;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
 .dropdown-toggle-chevron {
-  margin-left: var(--unit-small);
+  margin-left: $unit-base;
 }
 
 .dropdown-narrow-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--unit-base);
-  height: var(--card-collection-cover-height);
-  background-color: var(--color-primary);
-  border-top-right-radius: var(--card-border-radius);
-  border-bottom-right-radius: var(--card-border-radius);
+  width: $unit-spacing;
+  height: 100%;
+  background-color: $color-primary;
+  border-top-right-radius: $unit-medium;
+  border-bottom-right-radius: $unit-medium;
 }
 
 .dropdown-narrow-toggle-chevron {
-  fill: var(--color-secondary);
+  fill: $color-secondary;
 }
 
 .dropdown-menu {
   position: absolute;
-  bottom: calc(var(--unit-small) * -1);
+  bottom: -$unit-base;
   transform: translateY(100%);
-  background-color: var(--color-dark);
-  border-radius: calc(var(--unit-small) / 2);
-  z-index: var(--z-index-dropdown);
+  background-color: $color-dark;
+  border-radius: $unit-small;
+  z-index: $z-index-dropdown;
 }
 
 .dropdown-menu-item {
@@ -39,12 +47,12 @@
   margin: 0;
   border: 0;
   background-color: transparent;
-  color: var(--color-primary);
+  color: $color-primary;
 }
 
 .dropdown-menu-vertical {
-  width: calc(var(--unit-small) * 24);
-  padding: var(--unit-small);
+  width: $unit-base * 24;
+  padding: $unit-base;
   display: flex;
   flex-direction: column;
   right: 0;
@@ -52,29 +60,29 @@
 
 .dropdown-menu-vertical > .dropdown-menu-item {
   width: 100%;
-  border-radius: calc(var(--unit-small) / 2);
-  padding: var(--unit-small);
+  border-radius: $unit-small;
+  padding: $unit-base;
   text-align: center;
 }
 
 .dropdown-menu-vertical > .dropdown-menu-item:hover {
-  background-color: var(--color-accent);
-  color: var(--color-dark);
+  background-color: $color-accent;
+  color: $color-dark;
 }
 
 .dropdown-menu-vertical > .dropdown-menu-item-destructive {
-  margin-top: var(--unit-small);
+  margin-top: $unit-base;
 }
 
 .dropdown-menu-vertical > .dropdown-menu-item-destructive:hover {
-  background-color: var(--color-destructive);
+  background-color: $color-destructive;
 }
 
 .dropdown-menu-rating {
-  right: calc(var(--unit-base) * -5);
+  right: -$unit-spacing * 5;
   display: flex;
   border-radius: 12px;
-  bottom: calc(var(--unit-base) * -1);
+  bottom: -$unit-spacing;
 }
 
 .dropdown-menu-rating::after {
@@ -84,27 +92,27 @@
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: var(--unit-base);
+  border-width: $unit-spacing;
   border-top-width: 0;
   border-color: transparent;
-  border-bottom-color: var(--color-dark);
+  border-bottom-color: $color-dark;
   transform: translateY(-100%);
   content: "";
 }
 
 .dropdown-menu-rating > .dropdown-menu-item {
-  padding-top: var(--unit-base);
-  padding-bottom: var(--unit-base);
-  padding-left: calc(var(--unit-base) / 4);
-  padding-right: calc(var(--unit-base) / 4);
+  padding-top: $unit-spacing;
+  padding-bottom: $unit-spacing;
+  padding-left: $unit-small;
+  padding-right: $unit-small;
 }
 
 .dropdown-menu-rating > .dropdown-menu-item:first-child {
-  padding-left: var(--unit-base);
+  padding-left: $unit-spacing;
 }
 
 .dropdown-menu-rating > .dropdown-menu-item:last-child {
-  padding-right: var(--unit-base);
+  padding-right: $unit-spacing;
 }
 
 .dropdown-platforms-toggle {
@@ -114,34 +122,34 @@
 
 .dropdown-platforms-menu {
   display: inline-flex;
-  bottom: calc(var(--unit-small) / -2);
-  left: calc(var(--unit-small) / -2);
-  padding: calc(var(--unit-small) / 2);
+  bottom: -$unit-small;
+  left: -$unit-small;
+  padding: $unit-small;
   flex-direction: column;
 }
 
 .dropdown-platforms-menu > button {
   @include text-small;
-  width: calc(var(--unit-small) * 5);
-  padding-top: calc(var(--unit-small) / 2);
-  padding-bottom: calc(var(--unit-small) / 2);
-  border-radius: calc(var(--unit-small) / 2);
-  background-color: var(--color-secondary);
+  width: $unit-base * 5;
+  padding-top: $unit-small;
+  padding-bottom: $unit-small;
+  border-radius: $unit-small;
+  background-color: $color-secondary;
 }
 
 .dropdown-platforms-menu > button.checked {
-  background-color: var(--color-primary);
-  color: var(--color-light);
+  background-color: $color-primary;
+  color: $color-light;
 }
 
 .dropdown-platforms-menu > button + button {
-  margin-top: calc(var(--unit-small) / 2);
+  margin-top: $unit-small;
 }
 
 .dropdown-platforms-toggle-gamepad {
-  fill: var(--color-primary);
+  fill: $color-primary;
 }
 
 .dropdown-platforms-toggle-chevron {
-  margin-left: calc(var(--unit-small) / 2);
+  margin-left: $unit-small;
 }

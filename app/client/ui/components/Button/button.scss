@@ -4,16 +4,16 @@
 
 .button {
   position: relative;
-  padding-top: var(--unit-small);
-  padding-bottom: var(--unit-small);
-  padding-right: var(--unit-base);
-  padding-left: var(--unit-base);
+  padding-top: $unit-base;
+  padding-bottom: $unit-base;
+  padding-right: $unit-spacing;
+  padding-left: $unit-spacing;
   display: inline-flex;
   align-items: center;
   border: 1px solid transparent;
-  border-radius: calc(var(--unit-small) / 2);
-  color: var(--color-light);
-  background-color: var(--color-primary);
+  border-radius: $unit-small;
+  color: $color-light;
+  background-color: $color-primary;
 }
 
 .button:hover {
@@ -22,9 +22,9 @@
 
 .button-small {
   @include text-small;
-  width: calc(var(--unit-small) * 5);
-  padding-top: calc(var(--unit-small) / 2);
-  padding-bottom: calc(var(--unit-small) / 2);
+  width: $unit-base * 5;
+  padding-top: $unit-small;
+  padding-bottom: $unit-small;
   padding-left: 0;
   padding-right: 0;
   justify-content: center;
@@ -32,24 +32,24 @@
 }
 
 .button-inactive {
-  background-color: var(--color-secondary);
-  color: var(--color-primary);
+  background-color: $color-secondary;
+  color: $color-primary;
 }
 
 .button-outline {
   background-color: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
+  color: $color-primary;
+  border: 1px solid $color-primary;
 }
 
 .button-facebook {
-  color: var(--color-light);
-  background-color: var(--color-facebook);
+  color: $color-light;
+  background-color: $color-facebook;
 }
 
 .button-facebook-icon {
-  fill: var(--color-light);
-  margin-right: var(--unit-small);
+  fill: $color-light;
+  margin-right: $unit-base;
 }
 
 .button-dropdown {
@@ -58,13 +58,13 @@
 }
 
 .button-dropdown-icon {
-  fill: var(--color-light);
+  fill: $color-light;
   position: absolute;
   top: 50%;
-  right: var(--unit-base);
+  right: $unit-spacing;
   transform: translateY(-60%);
 }
 
 .button-dropdown-outline-icon {
-  fill: var(--color-primary);
+  fill: $color-primary;
 }

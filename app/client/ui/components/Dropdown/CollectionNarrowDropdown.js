@@ -18,13 +18,11 @@ type Props = {
 };
 
 const CollectionNarrowDropdown = ({ gameId, status, setGameStatus }: Props) => (
-  <Dropdown>
+  <Dropdown className="dropdown-narrow">
     {(DropdownToggle, DropdownMenu, DropdownMenuItem) => (
       <React.Fragment>
-        <DropdownToggle testId="collection">
-          <div className="dropdown-narrow-toggle">
-            <ChevronIcon className="dropdown-narrow-toggle-chevron" />
-          </div>
+        <DropdownToggle testId="collection" className="dropdown-narrow-toggle">
+          <ChevronIcon className="dropdown-narrow-toggle-chevron" />
         </DropdownToggle>
 
         <DropdownMenu className="dropdown-menu-vertical">

@@ -1,3 +1,28 @@
+$color-primary: #849cce;
+$color-secondary: #394263;
+$color-accent: #f2c94c;
+$color-destructive: #d56262;
+$color-light: #f2f2f2;
+$color-dark: rgba(37, 45, 77, 0.95);
+$color-facebook: #507cc0;
+$color-body: #161930;
+
+$gradient-body: radial-gradient(
+  circle at bottom right,
+  rgba(255, 0, 132, 0.05),
+  transparent
+);
+
+$font-stack: "Lato", sans-serif;
+$font-leading: 1.15;
+
+$unit-base: 8px;
+$unit-spacing: 16px;
+$unit-small: 4px;
+$unit-medium: 12px;
+
+$z-index-dropdown: 1;
+
 @mixin text-small {
   font-size: 12px;
   font-weight: 700;

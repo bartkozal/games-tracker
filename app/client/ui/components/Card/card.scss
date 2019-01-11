@@ -1,16 +1,13 @@
 @import "styles";
 
-:root {
-  --card-border-radius: calc(var(--unit-small) * 1.5);
-  --card-search-cover-height: calc(var(--unit-base) * 21);
-  --card-collection-cover-width: calc(var(--unit-small) * 11);
-  --card-collection-cover-height: calc(var(--unit-small) * 15);
-}
+$card-search-cover-height: $unit-base * 42;
+$card-collection-cover-width: $unit-base * 11;
+$card-collection-cover-height: $unit-base * 15;
 
 .card {
   position: relative;
-  background-color: var(--color-secondary);
-  border-radius: var(--card-border-radius);
+  background-color: $color-secondary;
+  border-radius: $unit-medium;
 }
 
 .card-cover {
@@ -20,18 +17,18 @@
 }
 
 .card-search .card-cover {
-  height: var(--card-search-cover-height);
-  border-top-left-radius: var(--card-border-radius);
-  border-top-right-radius: var(--card-border-radius);
+  height: $card-search-cover-height;
+  border-top-left-radius: $unit-medium;
+  border-top-right-radius: $unit-medium;
 }
 
 .card-search .card-cover::before {
-  border-top-left-radius: var(--card-border-radius);
-  border-top-right-radius: var(--card-border-radius);
+  border-top-left-radius: $unit-medium;
+  border-top-right-radius: $unit-medium;
 }
 
 .card-collection > .flex > div > .flex {
-  height: var(--card-collection-cover-height);
+  height: $card-collection-cover-height;
 }
 
 .card-collection > .flex > div:nth-of-type(2) {
@@ -39,16 +36,16 @@
 }
 
 .card-collection .card-cover {
-  height: var(--card-collection-cover-height);
-  width: var(--card-collection-cover-width);
-  padding: var(--unit-small);
-  border-top-left-radius: var(--card-border-radius);
-  border-bottom-left-radius: var(--card-border-radius);
+  height: $card-collection-cover-height;
+  width: $card-collection-cover-width;
+  padding: $unit-base;
+  border-top-left-radius: $unit-medium;
+  border-bottom-left-radius: $unit-medium;
 }
 
 .card-collection .card-cover::before {
-  border-top-left-radius: var(--card-border-radius);
-  border-bottom-right-radius: var(--card-border-radius);
+  border-top-left-radius: $unit-medium;
+  border-bottom-right-radius: $unit-medium;
 }
 
 .card-cover::before {
@@ -69,7 +66,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: var(--unit-base);
+  padding: $unit-spacing;
 }
 
 .card-title {
@@ -78,29 +75,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: var(--unit-base);
+  margin-bottom: $unit-spacing;
   overflow: hidden;
   text-align: center;
-  color: var(--color-light);
+  color: $color-light;
 }
 
 .card-platforms {
-  height: calc(100% - var(--unit-small));
+  height: calc(100% - #{$unit-base});
   display: inline-flex;
   align-items: flex-end;
-  margin-left: var(--unit-small);
+  margin-left: $unit-base;
 }
 
 .card-platforms > .flex {
-  padding: calc(var(--unit-base) / 4);
-  background-color: var(--color-dark);
-  border-radius: calc(var(--unit-small) / 2);
+  padding: $unit-small;
+  background-color: $color-dark;
+  border-radius: $unit-small;
 }
 
 .card-platforms > .flex > div + div {
-  margin-top: calc(var(--unit-base) / 4);
+  margin-top: $unit-small;
 }
 
 .card-content {
-  padding: var(--unit-base);
+  padding: $unit-spacing;
 }

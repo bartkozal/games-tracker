@@ -4,7 +4,8 @@ import cx from "classnames";
 import formatTestId from "ui/utils/formatTestId";
 
 type Props = {
-  children: Function
+  children: Function,
+  className?: string
 };
 
 type State = {
@@ -41,7 +42,7 @@ class Dropdown extends React.Component<Props, State> {
   DropdownToggle = ({ children, className, testId }: DropdownToggleProps) => (
     <div
       data-cy={formatTestId("dropdown", testId)}
-      className={cx("cursor-pointer", className)}
+      className={cx("dropdown-toggle", className)}
       onClick={() => this.open()}
     >
       {children}
@@ -104,7 +105,7 @@ class Dropdown extends React.Component<Props, State> {
 
   render() {
     return (
-      <div className="dropdown">
+      <div className={cx("dropdown", this.props.className)}>
         {this.props.children(
           this.DropdownToggle,
           this.DropdownMenu,

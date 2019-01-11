@@ -7,23 +7,23 @@
 
 .score-value {
   @include text-lead;
-  color: var(--color-light);
-  margin-right: var(--unit-small);
+  color: $color-light;
+  margin-right: $unit-base;
 }
 
 .score-votes {
   @include text-small;
-  color: var(--color-light);
+  color: $color-light;
   margin-top: 2px;
 }
 
 .score-star-icon {
-  fill: var(--color-light);
-  margin-right: var(--unit-small);
+  fill: $color-light;
+  margin-right: $unit-base;
 }
 
 .score-user-icon {
-  fill: var(--color-light);
+  fill: $color-light;
   width: 10px;
   height: 10px;
   margin-right: 2px;
