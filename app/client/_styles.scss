@@ -23,6 +23,10 @@ $unit-medium: 12px;
 
 $z-index-dropdown: 1;
 
+$breakpoint-laptop: 1024px - 1px;
+$breakpoint-tablet: 768px - 1px;
+$breakpoint-mobile: 425px - 1px;
+
 @mixin text-small {
   font-size: 12px;
   font-weight: 700;

@@ -21,7 +21,7 @@ const Score = ({ value, votes }: Props) => {
           {value && value.toFixed(1)}
         </div>
         <div className="score-votes" data-cy="score-votes">
-          ( <Icon name="star" color="light" className="score-user-icon" />{" "}
+          ( <Icon name="user" color="light" className="score-user-icon" />{" "}
           {votes} )
         </div>
       </div>

@@ -59,8 +59,10 @@ class GamesCollection extends React.Component<Props> {
               }
             >
               {collection[label] ? (
-                <Grid of={collection[label]} perRow={3}>
-                  {game => <CollectionCard game={game} />}
+                <Grid columns={3}>
+                  {collection[label].map(game => (
+                    <CollectionCard game={game} key={game.id} />
+                  ))}
                 </Grid>
               ) : null}
             </TabItem>

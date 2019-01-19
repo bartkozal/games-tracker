@@ -2,11 +2,14 @@
 
 .search-bar {
   position: relative;
+  flex-basis: $unit-base * 68;
+  margin-left: $unit-spacing;
+  margin-right: $unit-spacing;
 }
 
 .search-bar-input {
   @include text-large;
-  width: $unit-base * 68;
+  width: 100%;
   padding-top: $unit-base;
   padding-bottom: $unit-base;
   padding-right: $unit-base * 7;

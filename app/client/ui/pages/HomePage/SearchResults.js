@@ -14,8 +14,10 @@ type Props = {
 };
 
 const SearchResults = ({ searchResults }: Props) => (
-  <Grid of={searchResults} perRow={5}>
-    {(game: Game) => <SearchCard game={game} />}
+  <Grid columns={5}>
+    {searchResults.map((game: Game) => (
+      <SearchCard game={game} key={game.id} />
+    ))}
   </Grid>
 );
 

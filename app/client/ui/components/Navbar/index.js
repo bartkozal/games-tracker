@@ -37,13 +37,11 @@ class Navbar extends React.Component<Props> {
 
     return (
       <div className="navbar">
-        <Stack align="center" distribute="space-between">
-          <Link to={ROOT_PATH}>
-            <Logo onClick={clearSearchResults} />
-          </Link>
-          <SearchBar />
-          {userSignedIn ? <UserDropdown /> : <FacebookButton />}
-        </Stack>
+        <Link to={ROOT_PATH}>
+          <Logo onClick={clearSearchResults} />
+        </Link>
+        <SearchBar />
+        {userSignedIn ? <UserDropdown /> : <FacebookButton />}
       </div>
     );
   }
