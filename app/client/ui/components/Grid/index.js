@@ -3,7 +3,7 @@
 // @flow
 import * as React from "react";
 import cx from "classnames";
-import "./grid";
+import "./grid.scss";
 
 type Props = {
   columns: 3 | 5,

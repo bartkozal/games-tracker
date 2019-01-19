@@ -7,3 +7,17 @@
   margin-top: $unit-spacing * 4;
   margin-bottom: $unit-spacing * 5;
 }
+
+@media (max-width: $breakpoint-laptop) {
+  .navbar {
+    margin-top: $unit-spacing * 3;
+    margin-bottom: $unit-spacing * 4;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .navbar {
+    margin-top: $unit-spacing * 3;
+    margin-bottom: $unit-spacing * 3;
+  }
+}

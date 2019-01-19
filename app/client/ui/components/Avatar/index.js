@@ -21,7 +21,7 @@ const Avatar = ({ currentUserEmail, onClick }: Props) => {
     <img
       src={url(currentUserEmail, { size: 96 })}
       alt="Avatar"
-      className={cx("avatar", { "cursor-pointer": onClick })}
+      className={cx("avatar", { "avatar-clickable": onClick })}
       onClick={onClick}
     />
   );

@@ -2,17 +2,16 @@
 import * as React from "react";
 import cx from "classnames";
 import Svg from "./logo.svg";
+import "./logo.scss";
 
 type Props = {
   onClick?: Function
 };
 
 const Logo = ({ onClick }: Props) => (
-  <Svg
-    data-cy="logo"
-    onClick={onClick}
-    className={cx({ "cursor-pointer": onClick })}
-  />
+  <div className={cx("logo", { "logo-clickable": onClick })}>
+    <Svg data-cy="logo" onClick={onClick} />
+  </div>
 );
 
 export default Logo;

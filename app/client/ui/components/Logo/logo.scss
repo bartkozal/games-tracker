@@ -1,0 +1,11 @@
+@import "styles";
+
+@media (max-width: $breakpoint-tablet) {
+  .logo {
+    display: none;
+  }
+}
+
+.logo-clickable {
+  cursor: pointer;
+}
