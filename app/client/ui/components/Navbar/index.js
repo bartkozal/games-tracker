@@ -9,7 +9,6 @@ import Logo from "../Logo";
 import SearchBar from "../SearchBar";
 import { UserDropdown } from "../Dropdown";
 import { FacebookButton } from "../Button";
-import Stack from "../Stack";
 import "./navbar.scss";
 
 const mapStateToProps = ({ Auth }) => ({
