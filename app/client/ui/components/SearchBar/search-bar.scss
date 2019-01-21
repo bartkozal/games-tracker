@@ -7,6 +7,12 @@
   margin-right: $unit-spacing;
 }
 
+@media (max-width: $breakpoint-tablet) {
+  .search-bar {
+    margin-left: 0;
+  }
+}
+
 .search-bar-input {
   @include text-large;
   width: 100%;
