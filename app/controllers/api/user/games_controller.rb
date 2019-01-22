@@ -3,7 +3,7 @@ class Api::User::GamesController < Api::UserController
     conditions = apply_filters({ game_id: :id }, { user: current_user })
     @user_games = UserGame.where(conditions)
       .includes(:platforms, game: [:platforms])
-      .order(updated_at: :desc)
+      .order(updated_at: :desc, status_updated_at: :desc)
   end
 
   def update
