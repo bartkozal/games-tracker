@@ -7,7 +7,7 @@ class AuthController < ApplicationController
         token: user.token,
         email: user.email
       }),
-      expires: 14.days
+      expires: 30.years
     }
 
     redirect_to root_path
