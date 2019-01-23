@@ -6,9 +6,14 @@ class Game < ApplicationRecord
   has_and_belongs_to_many :platforms
 
   def self.save_igdb_results(results)
-    IGDB.parse(results).map do |game|
-      saved_game = self.create_with(game).find_or_create_by(igdb: game[:igdb])
-      saved_game.id
+    IGDB.parse(results).map do |game_attributes|
+      game = find_or_initialize_by(igdb: game_attributes[:igdb])
+      if game.new_record?
+        game.save
+      else
+        game.update(game_attributes)
+      end
+      game.id
     end
   end
 
