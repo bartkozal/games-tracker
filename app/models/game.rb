@@ -7,11 +7,11 @@ class Game < ApplicationRecord
 
   def self.save_igdb_results(results)
     IGDB.parse(results).map do |game_attributes|
-      game = find_or_initialize_by(igdb: game_attributes[:igdb])
-      if game.new_record?
-        game.save
-      else
+      if game = find_by(igdb: game_attributes[:igdb])
         game.update(game_attributes)
+      else
+        game = new(game_attributes)
+        game.save
       end
       game.id
     end
