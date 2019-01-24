@@ -13,8 +13,6 @@
 
 body {
   @include text-base;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   font-family: $font-stack;
   line-height: $font-leading;
   background-color: $color-body;
