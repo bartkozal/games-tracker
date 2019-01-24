@@ -6,7 +6,7 @@ type Props = {
 };
 
 const StickyFooterWrapper = ({ children }: Props) => (
-  <div className="sticky-footer-wrapper">{children}</div>
+  <div className="has-sticky-footer">{children}</div>
 );
 
 export default StickyFooterWrapper;
