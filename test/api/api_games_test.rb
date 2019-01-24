@@ -13,7 +13,7 @@ class ApiGamesTest < ActionDispatch::IntegrationTest
     assert_not_empty response_body
 
     response_body.each do |game|
-      assert_equal ["id", "name", "cover", "platforms"], game.keys
+      assert_equal ["id", "name", "url", "cover", "platforms"], game.keys
 
       game["platforms"].each do |platform|
         assert_equal ["id", "slug"], platform.keys

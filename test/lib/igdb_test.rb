@@ -7,6 +7,7 @@ class IgdbTest < ActiveSupport::TestCase
     expected = [
       {
         name: "The Witcher 3: Wild Hunt",
+        url: "https://www.igdb.com/games/the-witcher-3-wild-hunt",
         cover:
           "https://images.igdb.com/igdb/image/upload/t_cover_big/tri1c6vbydeosoqajwt1.jpg",
         platforms: [
@@ -18,6 +19,7 @@ class IgdbTest < ActiveSupport::TestCase
       },
       {
         name: "The Witcher 2: Assassins of Kings",
+        url: "https://www.igdb.com/games/the-witcher-2-assassins-of-kings",
         cover:
           "https://images.igdb.com/igdb/image/upload/t_cover_big/mcou7xzxq0qnerehesrh.jpg",
         platforms:  [
@@ -28,6 +30,7 @@ class IgdbTest < ActiveSupport::TestCase
       },
       {
         name: "The Witcher",
+        url: "https://www.igdb.com/games/the-witcher",
         cover:
           "https://images.igdb.com/igdb/image/upload/t_cover_big/nrkdzmkevbbevdvm9bxh.jpg",
         platforms: [

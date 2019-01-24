@@ -7,6 +7,7 @@ import {
   PlatformsDropdown,
   CollectionNarrowDropdown
 } from "../Dropdown";
+import CardTitle from "./CardTitle";
 import formatTestId from "ui/utils/formatTestId";
 import type { Game } from "types";
 import "./card";
@@ -33,7 +34,7 @@ const CollectionCard = ({ game }: Props) => (
         distribute="space-between"
         className="card-content"
       >
-        <div className="card-title">{game.name}</div>
+        <CardTitle url={game.url} name={game.name} />
         <Stack align="center" distribute="space-between">
           <Score value={game.score} votes={game.votes} />
           <RatingDropdown gameId={game.id} value={game.rating} />

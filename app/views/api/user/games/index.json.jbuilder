@@ -1,6 +1,6 @@
 json.array! @user_games do |user_game|
   game = user_game.game
-  json.(game, :id, :name, :cover)
+  json.(game, :id, :name, :url, :cover)
   json.platforms game.platforms do |platform|
     json.(platform, :id, :slug)
   end

@@ -10,7 +10,7 @@ class ApiUserGamesTest < ActionDispatch::IntegrationTest
 
     assert_not_empty response_body
 
-    assert_equal ["id", "name", "cover", "platforms", "rating", "status", "userPlatforms"], response_body.first.keys
+    assert_equal ["id", "name", "url", "cover", "platforms", "rating", "status", "userPlatforms"], response_body.first.keys
     assert_equal ["id", "slug"], response_body.first["platforms"].first.keys
     assert_equal "backlog", response_body.first["status"]
     assert_equal 8.0, response_body.first["rating"]

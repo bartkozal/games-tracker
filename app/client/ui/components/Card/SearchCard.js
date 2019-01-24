@@ -7,6 +7,7 @@ import Stack from "../Stack";
 import Score from "../Score";
 import { SmallButton, SmallInactiveButton } from "../Button";
 import { RatingDropdown, CollectionDropdown } from "../Dropdown";
+import CardTitle from "./CardTitle";
 import formatTestId from "ui/utils/formatTestId";
 import type { Game, Platform } from "types";
 import "./card";
@@ -62,7 +63,7 @@ const SearchCard = ({ game, setGamePlatforms }: Props) => (
     </div>
 
     <div className="card-content">
-      <div className="card-title">{game.name}</div>
+      <CardTitle url={game.url} name={game.name} />
       <CollectionDropdown gameId={game.id} status={game.status} />
     </div>
   </div>

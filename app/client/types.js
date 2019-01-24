@@ -8,6 +8,7 @@ export type Platform = {
 
 export type Game = {
   id: number,
+  url: string,
   name: string,
   cover: string,
   platforms: Platform[],

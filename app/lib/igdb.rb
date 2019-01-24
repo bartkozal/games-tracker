@@ -4,7 +4,7 @@ class IGDB
       "https://api-endpoint.igdb.com/games/",
       params: {
         search: query,
-        fields: "name,platforms,cover.cloudinary_id",
+        fields: "name,platforms,cover.cloudinary_id,url",
         limit: 12,
         "filter[platforms][any]": "6,48,9,49,12,130"
       },
@@ -14,11 +14,12 @@ class IGDB
 
   def self.parse(data)
     data.select do |game|
-      game["platforms"] && game["cover"] && game["cover"]["cloudinary_id"]
+      game["platforms"] && game["cover"] && game["cover"]["cloudinary_id"] && game["url"]
     end.map do |game|
       {
         igdb: game["id"],
         name: game["name"],
+        url: game["url"],
         cover: cover(game["cover"]["cloudinary_id"]),
         platforms: platforms(game["platforms"])
       }

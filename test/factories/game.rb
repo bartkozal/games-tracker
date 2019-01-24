@@ -5,6 +5,7 @@ FactoryBot.define do
     end
 
     igdb { rand(9999..999999) }
+    url { Faker::Internet.url }
     name { Faker::Esport.game }
     cover { Faker::Placeholdit.image("249x374", "jpg") }
 
