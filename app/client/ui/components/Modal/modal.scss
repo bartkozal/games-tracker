@@ -17,18 +17,21 @@
   align-items: center;
   justify-content: space-between;
   width: $unit-base * 40;
-  padding: $unit-base $unit-spacing;
+  padding: $unit-spacing;
+  padding-right: $unit-spacing * 2;
   background-color: $color-dark;
   border-radius: 6px;
 
   p {
     margin-top: 0;
-    margin-bottom: 0;
   }
 }
 
 .modal-close {
+  position: absolute;
   cursor: pointer;
   line-height: 1;
   font-size: 24px;
+  top: $unit-base;
+  right: $unit-base;
 }
