@@ -1,9 +1,8 @@
 import { MODAL_OPENED, MODAL_CLOSED } from "./actionTypes";
-import { notAuthorized } from "ui/components/Modal";
 
 export const initialState = {
-  isModalOpen: true,
-  modalContent: notAuthorized
+  isModalOpen: false,
+  modalContent: null
 };
 
 export default (state = initialState, action) => {
