@@ -26,7 +26,7 @@ describe("Authorization", () => {
 
     it("shows authorization alert on platforms dropdown click", () => {
       cy.getId("card-the-witcher-3-wild-hunt")
-        .findId("button-small-inactive-platforms")
+        .findId("button-small-inactive-pc")
         .click()
         .getId("modal")
         .contains("Please sign in to use this feature.")

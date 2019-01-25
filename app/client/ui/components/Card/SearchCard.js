@@ -3,6 +3,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { xorBy } from "lodash";
 import { setGamePlatforms } from "state/collection/actions";
+import { openModal } from "state/ui/actionCreators";
 import Stack from "../Stack";
 import Score from "../Score";
 import { SmallButton, SmallInactiveButton } from "../Button";
@@ -10,18 +11,31 @@ import { RatingDropdown, CollectionDropdown } from "../Dropdown";
 import CardTitle from "./CardTitle";
 import formatTestId from "ui/utils/formatTestId";
 import type { Game, Platform } from "types";
+import { notAuthorized } from "../Modal";
 import "./card";
 
+const mapStateToProps = ({ Auth }) => ({
+  userSignedIn: Auth.userSignedIn
+});
+
 const mapDispatchToProps = {
-  setGamePlatforms
+  setGamePlatforms,
+  openModal
 };
 
 type Props = {
   game: Game,
-  setGamePlatforms: Function
+  setGamePlatforms: Function,
+  openModal: Function,
+  userSignedIn: boolean
 };
 
-const SearchCard = ({ game, setGamePlatforms }: Props) => (
+const SearchCard = ({
+  game,
+  setGamePlatforms,
+  openModal,
+  userSignedIn
+}: Props) => (
   <div className="card card-search" data-cy={formatTestId("card", game.name)}>
     <div
       className="card-cover"
@@ -37,11 +51,13 @@ const SearchCard = ({ game, setGamePlatforms }: Props) => (
       <div className="card-platforms">
         <Stack direction="column">
           {game.platforms.map((platform: Platform) => {
-            const togglePlatform = () =>
-              setGamePlatforms(
-                game.id,
-                xorBy(game.userPlatforms, [platform], "id")
-              );
+            const handleClick = () =>
+              userSignedIn
+                ? setGamePlatforms(
+                    game.id,
+                    xorBy(game.userPlatforms, [platform], "id")
+                  )
+                : openModal(notAuthorized);
             const isPlatformChecked =
               game.userPlatforms &&
               game.userPlatforms.find(
@@ -49,11 +65,11 @@ const SearchCard = ({ game, setGamePlatforms }: Props) => (
               );
 
             return isPlatformChecked ? (
-              <SmallButton onClick={togglePlatform} key={platform.id}>
+              <SmallButton onClick={handleClick} key={platform.id}>
                 {platform.slug}
               </SmallButton>
             ) : (
-              <SmallInactiveButton onClick={togglePlatform} key={platform.id}>
+              <SmallInactiveButton onClick={handleClick} key={platform.id}>
                 {platform.slug}
               </SmallInactiveButton>
             );
@@ -70,6 +86,6 @@ const SearchCard = ({ game, setGamePlatforms }: Props) => (
 );
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(SearchCard);

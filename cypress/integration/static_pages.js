@@ -1,9 +1,11 @@
 describe("Static pages", () => {
   it("allows to visit privacy policy", () => {
-    cy.visit("/");
-    cy.getId("footer")
+    cy.visit("/")
+      .getId("footer")
       .contains("Privacy Policy")
-      .click();
-    cy.get("h1:contains('Privacy Policy')").should("exist");
+      .click()
+      .get("h1")
+      .contains("Privacy Policy")
+      .should("exist");
   });
 });

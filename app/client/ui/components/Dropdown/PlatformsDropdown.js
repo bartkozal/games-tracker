@@ -37,8 +37,7 @@ const renderDropdownToggle = (userPlatforms: Platform[]) => {
 const PlatformsDropdown = ({ game, setGamePlatforms }: Props) => (
   <Dropdown>
     {(DropdownToggle, DropdownMenu, DropdownMenuItem) => (
-      // TODO refactor to use <>
-      <React.Fragment>
+      <>
         <DropdownToggle
           className="dropdown-platforms-toggle"
           testId="platforms"
@@ -72,7 +71,7 @@ const PlatformsDropdown = ({ game, setGamePlatforms }: Props) => (
             );
           })}
         </DropdownMenu>
-      </React.Fragment>
+      </>
     )}
   </Dropdown>
 );
