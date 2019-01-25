@@ -3,19 +3,28 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { xorBy } from "lodash";
 import cx from "classnames";
+import { openModal } from "state/ui/actionCreators";
 import { setGamePlatforms } from "state/collection/actions";
 import { SmallButton, SmallInactiveButton } from "../Button";
 import Icon from "ui/components/Icon";
+import { notAuthorized } from "../Modal";
 import Dropdown from "./Dropdown";
 import type { Game, Platform } from "types";
 
+const mapStateToProps = ({ Auth }) => ({
+  userSignedIn: Auth.userSignedIn
+});
+
 const mapDispatchToProps = {
-  setGamePlatforms
+  setGamePlatforms,
+  openModal
 };
 
 type Props = {
   game: Game,
-  setGamePlatforms: Function
+  setGamePlatforms: Function,
+  userSignedIn: boolean,
+  openModal: Function
 };
 
 const renderDropdownToggle = (userPlatforms: Platform[]) => {
@@ -34,14 +43,19 @@ const renderDropdownToggle = (userPlatforms: Platform[]) => {
   );
 };
 
-const PlatformsDropdown = ({ game, setGamePlatforms }: Props) => (
+const PlatformsDropdown = ({
+  game,
+  setGamePlatforms,
+  userSignedIn,
+  openModal
+}: Props) => (
   <Dropdown>
     {(DropdownToggle, DropdownMenu, DropdownMenuItem) => (
-      // TODO refactor to use <>
-      <React.Fragment>
+      <>
         <DropdownToggle
           className="dropdown-platforms-toggle"
           testId="platforms"
+          onClick={userSignedIn ? null : () => openModal(notAuthorized)}
         >
           {renderDropdownToggle(game.userPlatforms || [])}
           <Icon name="chevron" className="dropdown-platforms-toggle-chevron" />
@@ -72,12 +86,12 @@ const PlatformsDropdown = ({ game, setGamePlatforms }: Props) => (
             );
           })}
         </DropdownMenu>
-      </React.Fragment>
+      </>
     )}
   </Dropdown>
 );
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(PlatformsDropdown);

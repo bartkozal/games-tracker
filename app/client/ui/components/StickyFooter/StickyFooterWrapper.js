@@ -1,12 +1,21 @@
 // @flow
 import * as React from "react";
+import cx from "classnames";
+import { connect } from "react-redux";
 
 type Props = {
+  showBackdrop: boolean,
   children: React.Node
 };
 
-const StickyFooterWrapper = ({ children }: Props) => (
-  <div className="has-sticky-footer">{children}</div>
+const mapStateToProps = ({ UI }) => ({
+  showBackdrop: UI.isModalOpen
+});
+
+const StickyFooterWrapper = ({ showBackdrop, children }: Props) => (
+  <div className={cx("has-sticky-footer", { "has-backdrop": showBackdrop })}>
+    {children}
+  </div>
 );
 
-export default StickyFooterWrapper;
+export default connect(mapStateToProps)(StickyFooterWrapper);

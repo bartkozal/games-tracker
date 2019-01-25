@@ -2,19 +2,28 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { range } from "lodash";
+import { openModal } from "state/ui/actionCreators";
 import { rateGame } from "state/collection/actions";
 import Icon from "ui/components/Icon";
 import Rating from "../Rating";
+import { notAuthorized } from "../Modal";
 import Dropdown from "./Dropdown";
 
+const mapStateToProps = ({ Auth }) => ({
+  userSignedIn: Auth.userSignedIn
+});
+
 const mapDispatchToProps = {
-  rateGame
+  rateGame,
+  openModal
 };
 
 type Props = {
   gameId: number,
   value: number,
-  rateGame: Function
+  rateGame: Function,
+  userSignedIn: boolean,
+  openModal: Function
 };
 
 type State = {
@@ -41,15 +50,17 @@ class RatingDropdown extends React.Component<Props, State> {
   };
 
   render() {
-    const { gameId, value, rateGame } = this.props;
+    const { gameId, value, rateGame, userSignedIn, openModal } = this.props;
     const { valuePreview } = this.state;
 
     return (
       <Dropdown>
         {(DropdownToggle, DropdownMenu, DropdownMenuItem) => (
-          // TODO refactor using <>
-          <React.Fragment>
-            <DropdownToggle testId="rating">
+          <>
+            <DropdownToggle
+              testId="rating"
+              onClick={userSignedIn ? null : () => openModal(notAuthorized)}
+            >
               <Rating value={valuePreview} />
             </DropdownToggle>
 
@@ -83,7 +94,7 @@ class RatingDropdown extends React.Component<Props, State> {
                 </DropdownMenuItem>
               ))}
             </DropdownMenu>
-          </React.Fragment>
+          </>
         )}
       </Dropdown>
     );
@@ -91,6 +102,6 @@ class RatingDropdown extends React.Component<Props, State> {
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(RatingDropdown);

@@ -17,8 +17,7 @@ type Props = {
 const UserDropdown = ({ signOut }: Props) => (
   <Dropdown>
     {(DropdownToggle, DropdownMenu, DropdownMenuItem) => (
-      // TODO refactor to use <>
-      <React.Fragment>
+      <>
         <DropdownToggle testId="user">
           <Avatar />
           <Icon name="chevron" className="dropdown-toggle-chevron" />
@@ -27,7 +26,7 @@ const UserDropdown = ({ signOut }: Props) => (
         <DropdownMenu className="dropdown-menu-vertical">
           <DropdownMenuItem onClick={signOut}>Sign out</DropdownMenuItem>
         </DropdownMenu>
-      </React.Fragment>
+      </>
     )}
   </Dropdown>
 );

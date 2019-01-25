@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search MODAL_CLOSED 1`] = `
+Object {
+  "isModalOpen": false,
+  "modalContent": null,
+}
+`;
+
+exports[`Search MODAL_OPENED 1`] = `
+Object {
+  "isModalOpen": true,
+  "modalContent": <p>
+    Modal content
+  </p>,
+}
+`;

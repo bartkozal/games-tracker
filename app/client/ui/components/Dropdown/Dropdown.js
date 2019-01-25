@@ -15,7 +15,8 @@ type State = {
 type DropdownToggleProps = {
   children: React.Node,
   className?: string,
-  testId?: string
+  testId?: string,
+  onClick?: Function
 };
 
 type DropdownMenuProps = {
@@ -39,11 +40,18 @@ class Dropdown extends React.Component<Props, State> {
 
   dropdownMenu = React.createRef();
 
-  DropdownToggle = ({ children, className, testId }: DropdownToggleProps) => (
+  DropdownToggle = ({
+    children,
+    className,
+    testId,
+    onClick
+  }: DropdownToggleProps) => (
     <div
       data-cy={formatTestId("dropdown", testId)}
       className={cx("dropdown-toggle", className)}
-      onClick={() => this.open()}
+      onClick={() => {
+        onClick ? onClick() : this.open();
+      }}
     >
       {children}
     </div>

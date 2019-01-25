@@ -51,13 +51,13 @@ class Tabs extends React.Component<Props, State> {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <div className="tabs">{this.props.children(this.TabItem)}</div>
 
         {this.props
           .children(this.TabContent)
           .find(tab => tab.props.label === this.state.activeTab)}
-      </React.Fragment>
+      </>
     );
   }
 }

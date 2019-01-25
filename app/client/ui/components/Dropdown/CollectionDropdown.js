@@ -4,25 +4,43 @@ import { connect } from "react-redux";
 import { capitalize } from "lodash";
 import { Status } from "../../../constants";
 import type { Status as StatusType } from "types";
+import { openModal } from "state/ui/actionCreators";
 import { setGameStatus } from "state/collection/actions";
 import { DropdownButton, DropdownOutlineButton } from "../Button";
+import { notAuthorized } from "../Modal";
 import Dropdown from "./Dropdown";
 
+const mapStateToProps = ({ Auth }) => ({
+  userSignedIn: Auth.userSignedIn
+});
+
 const mapDispatchToProps = {
-  setGameStatus
+  setGameStatus,
+  openModal
 };
 
 type Props = {
   gameId: number,
   status: StatusType,
-  setGameStatus: Function
+  setGameStatus: Function,
+  userSignedIn: boolean,
+  openModal: Function
 };
 
-const CollectionDropdown = ({ gameId, status, setGameStatus }: Props) => (
+const CollectionDropdown = ({
+  gameId,
+  status,
+  setGameStatus,
+  userSignedIn,
+  openModal
+}: Props) => (
   <Dropdown>
     {(DropdownToggle, DropdownMenu, DropdownMenuItem) => (
-      <React.Fragment>
-        <DropdownToggle testId="collection">
+      <>
+        <DropdownToggle
+          testId="collection"
+          onClick={userSignedIn ? null : () => openModal(notAuthorized)}
+        >
           {status ? (
             <DropdownButton>{capitalize(status)}</DropdownButton>
           ) : (
@@ -64,12 +82,12 @@ const CollectionDropdown = ({ gameId, status, setGameStatus }: Props) => (
             </DropdownMenuItem>
           ) : null}
         </DropdownMenu>
-      </React.Fragment>
+      </>
     )}
   </Dropdown>
 );
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(CollectionDropdown);

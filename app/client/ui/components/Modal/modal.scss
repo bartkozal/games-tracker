@@ -1,0 +1,34 @@
+@import "styles";
+
+.has-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: $unit-base * 40;
+  padding: $unit-base $unit-spacing;
+  background-color: $color-dark;
+  border-radius: 6px;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.modal-close {
+  cursor: pointer;
+  line-height: 1;
+  font-size: 24px;
+}
