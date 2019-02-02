@@ -1,0 +1,35 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.5-node-browsers
+        environment:
+          PG_HOST: localhost
+          PG_USER: db
+          RAILS_ENV: test
+          RAILS_MASTER_KEY: c728b7366d6f4a0e1747c679e2039a69
+          DATABASE_URL: "postgres://db@localhost:5432/games_tracker_test"
+      - image: circleci/postgres:9.4
+        environment:
+          POSTGRES_USER: db
+          POSTGRES_DB: games_tracker_test
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run:
+          name: Install ruby dependencies
+          command: bundle install --jobs 4
+      - run:
+          name: Install node dependencies
+          command: yarn install
+      - run:
+          name: Set up database
+          command: yarn setup
+      - run:
+          name: Run node linters
+          command: yarn lint
+      - run:
+          name: Run tests
+          command: yarn test
