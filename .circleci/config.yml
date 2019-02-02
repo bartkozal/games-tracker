@@ -7,7 +7,6 @@ jobs:
           PG_HOST: localhost
           PG_USER: db
           RAILS_ENV: test
-          RAILS_MASTER_KEY: c728b7366d6f4a0e1747c679e2039a69
           DATABASE_URL: "postgres://db@localhost:5432/games_tracker_test"
       - image: circleci/postgres:9.4
         environment:
@@ -33,3 +32,24 @@ jobs:
       - run:
           name: Run tests
           command: yarn test
+  deploy:
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - checkout
+      - run:
+          name: Deploy to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
