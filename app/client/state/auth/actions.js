@@ -1,5 +1,7 @@
 import cookies from "js-cookie";
 import { signUserIn, signUserOut } from "./actionCreators";
+import { closeModal } from "../ui/actionCreators";
+import { deleteUser } from "./api";
 
 export const setCurrentUser = () => dispatch => {
   const currentUser =
@@ -8,6 +10,16 @@ export const setCurrentUser = () => dispatch => {
   if (currentUser) {
     dispatch(signUserIn(currentUser));
   }
+};
+
+export const removeCurrentUser = () => (dispatch, getState) => {
+  const { token } = getState().Auth.currentUser;
+
+  deleteUser(token).then(() => {
+    cookies.remove("auth");
+    dispatch(closeModal());
+    dispatch(signUserOut());
+  });
 };
 
 export const signOut = () => dispatch => {

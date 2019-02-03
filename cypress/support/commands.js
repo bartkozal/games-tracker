@@ -12,5 +12,8 @@ Cypress.Commands.add("signIn", (email = `user-${Date.now()}@example.com`) => {
 });
 
 Cypress.Commands.add("signOut", () => {
-  cy.clearCookie("auth");
+  cy.getId("dropdown-user")
+    .click()
+    .getId("dropdown-item-sign-out")
+    .click();
 });

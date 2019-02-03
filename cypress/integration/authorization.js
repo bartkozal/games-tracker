@@ -9,7 +9,7 @@ describe("Authorization", () => {
         .findId("dropdown-collection")
         .click()
         .getId("modal")
-        .contains("Please sign in to use this feature.")
+        .contains("You have to be signed in to use this feature.")
         .getId("modal-close")
         .click();
     });
@@ -19,7 +19,7 @@ describe("Authorization", () => {
         .findId("dropdown-rating")
         .click()
         .getId("modal")
-        .contains("Please sign in to use this feature.")
+        .contains("You have to be signed in to use this feature.")
         .getId("modal-close")
         .click();
     });
@@ -29,7 +29,7 @@ describe("Authorization", () => {
         .findId("button-small-inactive-pc")
         .click()
         .getId("modal")
-        .contains("Please sign in to use this feature.")
+        .contains("You have to be signed in to use this feature.")
         .getId("modal-close")
         .click();
     });

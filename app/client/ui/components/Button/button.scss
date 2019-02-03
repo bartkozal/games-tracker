@@ -43,6 +43,10 @@
   border: 1px solid $color-primary;
 }
 
+.button-destructive {
+  background-color: $color-destructive;
+}
+
 .button-facebook {
   color: $color-light;
   background-color: $color-facebook;

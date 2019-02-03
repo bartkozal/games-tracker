@@ -2,7 +2,9 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { closeModal } from "state/ui/actionCreators";
-import { FacebookButton } from "../Button";
+import { removeCurrentUser } from "state/auth/actions";
+import { DestructiveButton, FacebookButton } from "../Button";
+import store from "state/store";
 import "./modal.scss";
 
 type Props = {
@@ -24,6 +26,18 @@ export const notAuthorized = (
   <div>
     <p>You have to be signed in to use this feature.</p>
     <FacebookButton />
+  </div>
+);
+
+export const removeAccount = (
+  <div>
+    <p>
+      You are about to delete your account. Once you do this, there is no going
+      back.
+    </p>
+    <DestructiveButton onClick={() => store.dispatch(removeCurrentUser())}>
+      Destroy my account
+    </DestructiveButton>
   </div>
 );
 

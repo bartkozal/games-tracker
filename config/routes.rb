@@ -4,6 +4,8 @@ Rails.application.routes.draw do
       resources :games, only: [:index, :update]
     end
 
+    delete :user, to: "user#destroy"
+
     resources :games, only: [:index]
     resources :ratings, only: [:index, :show]
     resources :static_pages, only: [:show], defaults: { format: :html }
