@@ -9,7 +9,7 @@ import "./footer.scss";
 
 type Props = {
   userSignedIn: boolean,
-  openModal: () => void
+  openModal: Function
 };
 
 const mapStateToProps = ({ Auth }) => ({
