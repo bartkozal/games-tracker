@@ -1,5 +1,7 @@
 # Games Tracker
 
+![](https://github.com/brtjkzl/games-tracker/blob/master/demo.png?raw=true)
+
 ## Dependencies
 
 - Ruby 2.5.1
